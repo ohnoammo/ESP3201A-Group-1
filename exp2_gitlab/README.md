@@ -25,7 +25,7 @@ python score_baselines_correctness.py                                           
 |---|---|
 | Scaled Exp 1: alpha 1 loses gold_in_budget 167 → 155 of 201 (Holm 0.002) | `results/exp1_gitlab_A2000_stats.txt` |
 | Unanswerables answered F0 5, P0 13, CB 18 of 18; F0 vs P0 Holm p 0.023 | `results/baselines_counts.csv`, `results/baselines_tests.csv` |
-| Correctness: strict F0 30, P0 30, CB 0 of 52 (Clifton's blind labels) | `results/baselines_correctness.md`, `results/baselines_correctness_clifton_*.csv` |
+| Correctness: strict F0 30, P0 30, CB 0 of 52 (Clifton's blind labels) | `results/baselines_correctness.md` (canonical). The `results/baselines_correctness_clifton*` files are a cross-check from Clifton's scorer. They agree on every count, but their F0 vs CB p values print as `0` because of rounding: the true values are 1.9e-9 and 3.8e-11. Cite `baselines_correctness.md`. |
 | Post hoc human read of the 36 answered unanswerables | `results/UNANSWERABLE_READ_RESULTS.md`, `results/unanswerable_read_unblinded.csv` |
 | Gate on GitLab, and retrieval carry-through | `results/baselines_gate*.csv`, `results/baselines_carry*.csv` |
 | Full write-up and decision log | `results/exp2_baselines_report.md`, `results/RUN_LOG.md`, `results/OVERNIGHT_SUMMARY.md` |

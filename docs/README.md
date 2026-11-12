@@ -13,6 +13,15 @@ These are copies of the project's handoff and handover notes. Each part folder a
 | `UPDATE_12Nov.md` | Clifton's 12 Nov update: the unanswerable read, the steering summary and the limits checklist | `FOR_JAMES_update_12Nov/` |
 | `presentation/ESP3201A_final_presentation_6Nov.pptx` | The final presentation slides (6 Nov) | `outputs/2026-11-06_final_presentation/` |
 
+## Report figures (`report_figures/`)
+| File | Report figure | How it was made |
+|---|---|---|
+| `fig_exp1_links.png` | Exp 1 links chart (Fig. 2) | `python fig_links.py`. Its values are typed into the script; they equal the mean dense `budget_recall` (test, n = 181) in `../exp1_retrieval/results/swe_exp1_test{,H}_tuned_per_query.csv`, alpha 0 vs the locked alpha. |
+| `fig_app_answer.png`, `fig_app_notfound.png`, `fig_app_feedback.png`, `fig_app_supportcheck.png` | App figures 1–4 | Screenshots of `../app` (12 Nov). The captions are in `report_app_section.md`. |
+| `report_app_section.md` | The app section text and figure captions, as drafted for the report | – |
+
+The other report figures are in the result folders: `../exp2_gitlab/results/baselines_tradeoff.png`, and `../steering/results_final/steering_tradeoff.png` / `.svg` and `sweep.png`.
+
 ## Pre-registered rule files (written before the runs they govern)
 | File | Governs |
 |---|---|

@@ -20,3 +20,7 @@ steering/out/acts/
 
 # not pushed
 ESP3201A_submission_archive/
+
+# run-time markers of exp2_gitlab_baselines.py (the .log and .done files are kept)
+exp2_gitlab/results/logs/*.pid
+exp2_gitlab/results/logs/*.progress

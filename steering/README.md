@@ -21,7 +21,7 @@
 **Run.** Use a GPU with at least 10 GB and a CUDA build of torch, plus `transformers`. The script finds the Exp 2 code through `--repo`, which in this layout is `../exp2_gitlab`:
 ```
 python steering/codex_steer.py --repo exp2_gitlab <stage>         # stages: see README_CODEX_FOR_JAMES.md
-python steering/verify/verify_codex_results.py --out steering/results_final --repo exp2_gitlab
+python steering/verify/verify_codex_results.py --out "$PWD/steering/results_final" --repo "$PWD/exp2_gitlab"   # absolute paths: the verifier changes into --repo first
 ```
 
 **Caches.** `out/acts/` holds per-question activations (about 11 MB). It is git-ignored and rebuilt by the vectors stage. The model downloads from Hugging Face on first use (about 8 GB).
@@ -30,4 +30,6 @@ python steering/verify/verify_codex_results.py --out steering/results_final --re
 - **Pre-registered tests, unanswerables answered out of 18:** unsteered 7, 50:50 5, 60:40 6, all Holm 1. File: `results_final/stats_tests.csv`.
 - **Correctness, strict, out of 52:** 39 → 31 at 50:50 and 39 → 12 at 60:40. File: `results_final/codex_report.md`.
 - **Post hoc, paraphrased refusals counted:** file `results_final/posthoc_paraphrased_refusals.md`.
-- **Trade-off figure:** `results_final/steering_tradeoff.svg` and `sweep.png`.
+- **Trade-off figure:** `results_final/steering_tradeoff.png` / `.svg` and `sweep.png`.
+
+**Token note.** `prompts.jsonl` (in `out/` and `results_final/`) contains verbatim excerpts of public GitLab Runner MRs, including example and test-fixture runner tokens from those MRs (e.g. `helpers/shorten_token_test.go` in !5270/!5580/!7018, and the GDK example in !3910). They are not project credentials.

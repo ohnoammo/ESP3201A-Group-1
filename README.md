@@ -49,7 +49,7 @@ We ran two experiments.
 | [`transfer_sympy/`](transfer_sympy/) | SymPy transfer: Exp 1 and Exp 2 with Django's settings unchanged (Clifton) | 1, 2 |
 | [`steering/`](steering/) | Activation steering on the GitLab Runner 70: code, prepared inputs, final results, independent verifier | 3 |
 | [`app/`](app/) | PR Explainer demo app: local web/desktop UI, feedback log, optional support check | – |
-| [`docs/`](docs/) | Handoff notes and an index of the pre-registered rule files | – |
+| [`docs/`](docs/) | Handoff notes, an index of the pre-registered rule files, and the report's figures with their scripts (`docs/report_figures/`) | – |
 
 Each folder has its own README, covering how to run it, which caches to regenerate and which file holds which number. `TIDY_LOG.md` records where every file came from.
 
@@ -67,6 +67,7 @@ Quick checks: `python exp1_retrieval/sparse_retrieval.py --selftest`, then `pyth
 | Dense beat hybrid and BM25. Django test, pool A, tuned dense fixed 512/77: Hit@5 0.978, MRR@5 0.937 | `exp1_retrieval/results/stats_test_poolA_full.txt` |
 | Same comparison on the hard pool H | `exp1_retrieval/results/stats_test_poolH_full.txt` |
 | Per-query Exp 1 test rows (tuned and untuned, pools A and H) | `exp1_retrieval/results/swe_exp1_test{,H}_{tuned,untuned}_per_query.csv` |
+| Post hoc: structural + links ≈ fixed 512 + links on pool A and beats size-matched + links by 0.16 on both pools | `exp1_retrieval/results/posthoc_links_test.txt` |
 | Exp 2 Django Findings 1–9: no arm difference survives Holm; 8B answers more unanswerables; prompt v3; correctness; gate; AUROC; W-F; H0 | `exp2_django/results/exp2_results_tables.md` |
 | GitLab Runner closed book: 0/52 strictly correct; grounded F0 and plain RAG P0: 30/52 each | `exp2_gitlab/results/baselines_correctness.md` |
 | GitLab Runner unanswerables answered: F0 5, P0 13, CB 18 of 18 (F0 vs P0 Holm p 0.023) | `exp2_gitlab/results/baselines_counts.csv`, `baselines_tests.csv`, `exp2_baselines_report.md` |
@@ -90,6 +91,9 @@ Quick checks: `python exp1_retrieval/sparse_retrieval.py --selftest`, then `pyth
 - **The gate:** it measures citation support, not truth.
 - **Steering:** a single vector cannot make refusal depend on whether the evidence is present.
 - **Gold answers:** written by Claude.
+
+## AI use
+*AI use:* Claude (Anthropic) helped write code and analysis scripts, wrote the GitLab Runner questions and gold answers, and drafted correctness-label and category suggestions that a team member checked row by row; Codex produced the LLM-judge labels (validated against human labels) and, with DeepSeek, the automated question checks.
 
 ## Team
 Clifton Liu Ziheng, Alyssa Chua Sin Ru, James Kwek Tze Xuan (NUS ESP3201A, Group 1).

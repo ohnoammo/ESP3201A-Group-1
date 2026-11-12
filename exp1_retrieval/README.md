@@ -11,6 +11,9 @@
 >   - **Pool H (hard distractors):** `results/stats_test_poolH_full.txt`.
 >   - **Per-query rows:** `results/swe_exp1_test{,H}_{tuned,untuned}_per_query.csv`.
 >   - **Dev tuning:** `results/swe_exp1_dev*.csv` and `results/selection_log.txt`.
+> - **Post hoc test** (added after the test results were seen; labelled post hoc in the report). `posthoc_links_test.py` compares budget line recall with relation links: structural vs size-matched fixed, and structural vs fixed 512/77. It runs on dense retrieval over both pools, using each condition's locked alpha and a paired permutation test (10,000 draws, seed 0, unadjusted). It reads only the per-query test CSVs and uses the standard library only. Run it from this folder with `python posthoc_links_test.py > results/posthoc_links_test.txt`.
+>   - Pool A: 0.924 vs 0.923 vs 0.763. Structural vs size-matched p 0.0001; structural vs fixed 512 p 0.94.
+>   - Pool H: 0.858 vs 0.890 vs 0.698. Structural vs size-matched p 0.0001; structural vs fixed 512 p 0.078.
 
 ---
 

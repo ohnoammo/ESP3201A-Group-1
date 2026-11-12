@@ -1,0 +1,14 @@
+Post hoc: relation links, dense, test set (n = 181 per pool). Paired permutation, two-sided, unadjusted.
+
+Pool A (swe_exp1_test_tuned_per_query.csv)
+  budget recall with links: structural (a=0.5) 0.924 | fixed 512/77 (a=1.0) 0.923 | size-matched fixed_s110_o0 (a=1.0) 0.763
+  structural+links vs size-matched+links: diff +0.161, p = 0.0001
+  structural+links vs fixed 512+links:    diff +0.001, p = 0.9445
+  size-matched gold-in-budget: 0.989 -> 0.967 (alpha 0 -> 1.0)
+
+Pool H (swe_exp1_testH_tuned_per_query.csv)
+  budget recall with links: structural (a=0.25) 0.858 | fixed 512/77 (a=0.5) 0.890 | size-matched fixed_s111_o0 (a=0.5) 0.698
+  structural+links vs size-matched+links: diff +0.160, p = 0.0001
+  structural+links vs fixed 512+links:    diff -0.032, p = 0.0779
+  size-matched gold-in-budget: 0.983 -> 0.972 (alpha 0 -> 0.5)
+

@@ -144,3 +144,29 @@ The extra Exp 2, SymPy and pilot keys were included on James's decision at the p
 ## 6. Commit
 - `git init -b main`, then one commit authored by Kwek Tze Xuan (`113795508+ohnoammo@users.noreply.github.com`), with co-author trailers for Alyssa Chua Sin Ru and Liu Ziheng, Clifton, as in the app repo.
 - Remote `origin` = `https://github.com/ohnoammo/ESP3201A-Group-1.git`. **Not pushed.**
+
+## 7. Update, 12 Nov evening (second commit): REPO_CHECK_12Nov additions and fixes
+- **Added from `FOR_JAMES_repo_additions/`** (all new; nothing overwritten):
+  - `exp1_retrieval/posthoc_links_test.py`;
+  - `exp1_retrieval/results/posthoc_links_test.txt`. Re-running the script reproduces this file exactly.
+  - `steering/results_final/steering_tradeoff.png`.
+- **Added from `report_app_figs/`** as `docs/report_figures/`: Fig. 2 (`fig_exp1_links.png` plus `fig_links.py`; its 12 values match the per-query CSVs), the four app screenshots, and `report_app_section.md`.
+- **README changes:**
+  - top README: a post hoc row in the results index, an AI-use section and a `docs/report_figures/` mention;
+  - `exp1_retrieval/README.md`: the post hoc test;
+  - `steering/README.md`: the PNG, the token note, and the verifier command fixed to absolute paths (the verifier changes into `--repo` before importing, so relative paths fail);
+  - `exp2_gitlab/README.md`: `baselines_correctness.md` is the canonical file, and the `clifton*` files print p = 0 because of rounding;
+  - `app/README.md`: the live pass case (0.95) shown in the report screenshot;
+  - `docs/README.md`: a report-figures section.
+- **Removed:** `exp2_gitlab/results/logs/*.pid` and `*.progress` (10 run-time markers), now git-ignored. The `.log` and `.done` files are kept, because they record completion times and row counts. No result numbers or label files were changed.
+- **Not applied:**
+  - the report link, because there is no final PDF yet (only drafts in `.docx`);
+  - deleting the `baselines_correctness_clifton*` files: they are kept as a cross-check, and the README says which file to cite.
+- **Re-run checks** on a copy of the working tree:
+  - Exp 1 `stats.py` for pools A and H, and SymPy `stats.py`: identical to the committed stats files.
+  - `exp2_django/make_results_tables.py`: identical, apart from the commit stamp.
+  - `score_baselines_correctness.py`: identical `.csv` and `.md`.
+  - `steering/verify/verify_codex_results.py`: ALL CHECKS PASSED.
+  - BM25 selftest: OK.
+  - `app/server.py` import: OK.
+  - All 119 `.py` files parse.

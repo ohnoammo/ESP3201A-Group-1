@@ -14,7 +14,7 @@
 >   - `feedback_summary.py` moved in here.
 > - **Run.** `pip install -r ../requirements.txt`, then `ollama pull qwen3:4b-instruct-2507-q4_K_M`, then `python app/server.py` from the repo root. The app opens at http://localhost:8000.
 > - **Caches to regenerate.** The PR files, embeddings and Qdrant index under `../exp1_retrieval/`. Rebuild them with the Exp 1 download plus `app/import_repo_data.py` for SymPy and GitLab Runner. The first question on a repo builds its index.
-> - **Tested.** The support check was tested live for a held-back answer (score 0.04) and for a refusal. The pass case (0.94) and the no-citation case were tested in Python only. No live demo is planned.
+> - **Tested.** The support check was first tested live for a held-back answer (score 0.04) and for a refusal; the pass case (0.94) and the no-citation case were then tested in Python only. The report screenshot `../docs/report_figures/fig_app_supportcheck.png` (12 Nov) shows a live pass (q16966, score 0.95) and a live held-back answer (q8596, score 0.10). The no-citation case remains tested in Python only. No live demo is planned.
 
 ---
 
