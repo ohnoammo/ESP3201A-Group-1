@@ -1,0 +1,5 @@
+comparison,scoring,n,F0,other,b_F0_only,c_other_only,p_exact_two_sided,adjustment
+F0 vs P0,strict,52,30,30,4,4,1.0,"none (pre-registered, unadjusted)"
+F0 vs P0,lenient,52,42,47,1,6,0.125,"none (pre-registered, unadjusted)"
+F0 vs CB,strict,52,30,0,30,0,0.0,"none (pre-registered, unadjusted)"
+F0 vs CB,lenient,52,42,3,40,1,0.0,"none (pre-registered, unadjusted)"

@@ -1,0 +1,16 @@
+{
+ "chunking": "fixed_s512_o77",
+ "n_chunks": 8837,
+ "links_by_type": {
+  "parent": 7108,
+  "conv_next": 1587,
+  "conv_prev": 1587,
+  "hunk->thread": 2210,
+  "thread->hunk": 2210
+ },
+ "chunks_with_any_link": 7125,
+ "mean_links_per_chunk": 1.6636867715287993,
+ "prs_with_review_threads": 947,
+ "prs_with_threads_but_zero_hunk_thread_links": 392,
+ "file": "C:/Users/kwekt/ESP3201A_local\\links_fixed_s512_o77.json"
+}

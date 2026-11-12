@@ -1,0 +1,81 @@
+
+===== baseline  2026-11-08 22:11:39  code 95974b01ac79  args {'command': 'baseline', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+baseline: 0 done, 70 to generate
+loading Qwen/Qwen3-4B-Instruct-2507 rev cdbee75f17c01a7cc42f958dc650907174af0554 as bfloat16 on cuda ...
+Loading weights:   0%|                                                                         | 0/398 [00:00<?, ?it/s]Loading weights: 100%|█████████████████████████████████████████████████████████████| 398/398 [00:00<00:00, 4581.47it/s]
+  loaded in 8s; 36 decoder layers, hidden 2560
+  base|q3220                         ANSWER   52 tok 64.03s  'The feature flags documentation table stopped using an x in '
+  base|q7533                         ANSWER   35 tok 61.63s  'To save one API write request for each removal on providers '
+  base|q1063                         ANSWER   35 tok 61.05s  'To prevent the script from exiting prematurely when grep fin'
+  base|q2606                         REFUSE    8 tok 52.71s  'Not found in the provided PRs'
+  base|q2744                         ANSWER   48 tok 74.92s  'To prevent accidentally sending GitLab unsupported failure r'
+  base|q2379                         ANSWER   80 tok 71.19s  'To avoid recursive includes in the Git configuration, which '
+  base|q3408                         ANSWER   37 tok 53.41s  'To ensure the updated image works correctly, a minor documen'
+  base|q1383                         ANSWER   92 tok 75.49s  'To make the build log nicer by improving readability and lay'
+  base|q3881                         ANSWER   63 tok 69.96s  'Because the `gitlab-runner run-single` command does not use '
+  base|q535                          ANSWER   40 tok 62.73s  'To ensure job-level configurations take precedence over glob'
+  base|q3137                         REFUSE    8 tok 53.89s  'Not found in the provided PRs'
+  base|q6056                         ANSWER   86 tok 71.22s  'The reason step-runner exposes job variables under `vars` ra'
+  base|q2682                         ANSWER   57 tok 73.07s  "Otherwise we'd need to make the `unit test` job depend on th"
+  base|q1934                         ANSWER   89 tok 82.45s  'To avoid issues caused by default skeleton (`skel`) director'
+  base|q2737                         ANSWER   67 tok 94.44s  'To prevent a panic when attempting to access a nil payload f'
+  base|q6672                         ANSWER   41 tok 67.53s  'To enable pause pod images to be pulled from private registr'
+  base|q106                          ANSWER   56 tok 67.47s  'To allow runners to adjust the Git client configuration (e.g'
+  base|q7545                         ANSWER   79 tok 72.36s  'To prevent jobs from waiting indefinitely in `Pending` state'
+  base|q2913                         ANSWER   42 tok 63.62s  "The docker executor's user setting does not apply to service"
+  base|q3239                         ANSWER   18 tok 49.04s  'To test if the new image works. [PR3239-c0]'
+  base|q4037                         ANSWER   37 tok 61.77s  'To distribute the reviewer workload more evenly across a lar'
+  base|q779                          ANSWER   29 tok 60.83s  'To keep binary dependencies outside of the global GOPATH and'
+  base|q2722                         ANSWER   35 tok 84.21s  'To remove the need to use Docker CLI in experimental mode, w'
+  base|q5065                         ANSWER   61 tok 72.64s  'To ensure the behavior when the service name is empty is pro'
+  base|q4206                         ANSWER   95 tok  77.7s  "Git-lfs is compiled from source in the runner's ubi-fips ima"
+  base|q5692                         ANSWER   41 tok 57.86s  'To prevent `find` from searching in a directory that has alr'
+  base|q1189                         ANSWER   68 tok 74.45s  'The Parallels executor looks for `ntpdate` before trying to '
+  base|q589                          ANSWER   59 tok 70.16s  'The case label was changed from "VirtualBox" to "virtualbox"'
+  base|q7018                         ANSWER   48 tok 63.54s  'Kubernetes labels and resource names require identifiers to '
+  base|q3958                         ANSWER   63 tok 72.52s  'To address critical and high-severity vulnerabilities in pac'
+  base|q6333                         ANSWER   35 tok 57.36s  'To prevent a breaking change that affected users with custom'
+  base|q1583                         REFUSE    8 tok 53.37s  'Not found in the provided PRs'
+  base|q1754                         ANSWER   43 tok 69.07s  'When a fork tries to run these jobs, it leads to a failure b'
+  base|q2211                         ANSWER   53 tok 72.47s  'The tests `TestDockerCommandBuildFail` and `TestDockerComman'
+  base|q2223                         ANSWER   48 tok 62.37s  'The integration tests moved away from the latest helper imag'
+  base|q4275                         ANSWER   34 tok 54.04s  'To make it easier to understand and use the issue templates,'
+  base|q5745                         ANSWER   52 tok 65.59s  'To enable users to set the `user` image executor opts in the'
+  base|q2227                         ANSWER   44 tok 58.72s  'The custom executor translates `"step_script"` to `"build_sc'
+  base|q3246                         ANSWER   42 tok 63.75s  'Right now there is no way to run `gitlab-runner exec` on a p'
+  base|q4967                         ANSWER   66 tok 72.38s  'To ensure that configuring a Docker executor with a `MacAddr'
+  base|q4379                         ANSWER   59 tok 65.63s  'To ensure that the ConfigExec stage receives the most up-to-'
+  base|q3528                         ANSWER   62 tok 72.98s  'The release stage now checks whether pushing is enabled for '
+  base|q2461                         ANSWER   52 tok 68.22s  'To allow storing VMs across multiple SSDs to avoid bottlenec'
+  base|q4218                         ANSWER   90 tok 75.79s  "The runner's git fetch was changed to include the `+refs/tag"
+  base|q2003                         ANSWER   34 tok 61.12s  'To make it more obvious to the recipient that the reply is b'
+  base|q5846                         ANSWER   45 tok 66.57s  'To improve debugging and observability by providing complete'
+  base|q3831                         ANSWER   60 tok 90.31s  'The runner went back to sending PowerShell its commands with'
+  base|q6695                         ANSWER  101 tok 85.34s  'Because in partial-clone repositories, `git checkout` can tr'
+  base|q1647                         ANSWER   63 tok 67.38s  'To prevent multiple processes from using the same config fil'
+  base|q4145                         ANSWER   42 tok 62.48s  'To avoid warnings when the `config_exec_timeout` field is mi'
+  base|rm584                         REFUSE    8 tok 53.18s  'Not found in the provided PRs'
+  base|rm2555                        REFUSE    8 tok 57.94s  'Not found in the provided PRs'
+  base|rm3960                        REFUSE    8 tok 48.83s  'Not found in the provided PRs'
+  base|rm3265                        ANSWER   71 tok 72.46s  'The change was made because the initial submodule update may'
+  base|rm2971                        REFUSE    8 tok 57.42s  'Not found in the provided PRs'
+  base|rm2968                        REFUSE    8 tok 55.16s  'Not found in the provided PRs'
+  base|rm3119                        ANSWER   72 tok 96.47s  'The Kubernetes executor forces UTF-8 output for PowerShell b'
+  base|rm3846                        ANSWER   98 tok 84.04s  'To enable Windows tests for community merge requests, the MR'
+  base|rm4142                        REFUSE    8 tok 53.92s  'Not found in the provided PRs'
+  base|rm7008                        REFUSE    8 tok 56.69s  'Not found in the provided PRs'
+  base|nr3177                        ANSWER   65 tok 76.19s  'The .deb files for other architectures were left in /tmp bec'
+  base|nr1781                        ANSWER   34 tok 59.97s  'To reduce the size of the image and align with Docker best p'
+  base|nr3805                        ANSWER   49 tok 63.81s  'To prevent users from mixing server-side configuration optio'
+  base|nr5841                        REFUSE    8 tok 53.13s  'Not found in the provided PRs'
+  base|nr3147                        REFUSE    8 tok 52.23s  'Not found in the provided PRs'
+  base|nr4460                        ANSWER   77 tok 73.09s  'The test fails on modern Linux hosts with systemd because it'
+  base|q6848                         REFUSE    8 tok 48.27s  'Not found in the provided PRs'
+  base|nr1372                        REFUSE    8 tok 63.77s  'Not found in the provided PRs'
+  base|nr4102                        REFUSE    8 tok 62.57s  'Not found in the provided PRs'
+  base|q5853                         ANSWER   32 tok 60.05s  'GitLab developers switched from asdf to mise because the org'
+BASELINE OK
+[0m
+===== baseline  2026-11-08 23:53:12  code 95974b01ac79  args {'command': 'baseline', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+baseline: 70 done, 0 to generate
+BASELINE OK

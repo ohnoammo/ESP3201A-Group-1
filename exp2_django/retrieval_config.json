@@ -1,0 +1,19 @@
+{
+ "retriever": "dense",
+ "implementation": "retrieve.py: exact cosine (dot product of L2-normalised vectors) in numpy; read-only stand-in for Clifton's Exp 1 wrapper",
+ "chunking": "fixed_s512_o77",
+ "chunk_source": "Exp 1 chunking.fixed_size_chunks on pr_document.build_document, pool A2000 (2,231 PRs)",
+ "exp1_chunk_cache": "chunks/swe_fixed_s512_o77_2231docs_9cb76462.json (verified identical, all chunks)",
+ "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+ "embedding_model_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+ "max_seq_length": 1024,
+ "dtype_on_gpu": "fp16",
+ "document_embeddings": "Exp 1 cache (embedded by Exp 1, documents without instruction), keyed by sha1(chunk text)",
+ "emb_cache_copy": "C:/Users/kwekt/ESP3201A_local/emb_cache/qwen3-embedding-0.6b_swe.npz",
+ "emb_cache_sha256": "bb28cd20e04cad5d20105c09663dd58d5962d36f3a716f98b898835182ed6f08",
+ "index_dir": "C:/Users/kwekt/ESP3201A_local",
+ "query_instruction": "Given a question about why a change was made in a Django pull request, retrieve the pull request excerpts (description, commit messages, review comments or discussion) that state the reason",
+ "query_instruction_note": "Exp 2 instruction for 'why' questions, written before any retrieval result was seen; not tuned. Exp 1 used a bug-report instruction.",
+ "query_prompt_format": "Instruct: {instruction}\nQuery:{question}",
+ "k": 5
+}

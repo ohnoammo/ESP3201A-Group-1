@@ -1,0 +1,5 @@
+model,arm,prompt,answerable_answered,answerable_kept_minicheck,answerable_correct_kept_minicheck,answerable_kept_hhem,answerable_correct_kept_hhem,unanswerable_answered,unanswerable_kept_minicheck,unanswerable_kept_hhem,answerable_correct_ungated,git_commit
+4b-instruct,W-F,v2,32,14,10,18,13,5,4,3,22,74bf409
+4b-instruct,W-F,v3,28,16,10,19,13,2,2,0,19,74bf409
+8b,W-F,v2,38,18,9,27,13,13,7,7,19,74bf409
+8b,W-F,v3,35,16,5,24,12,13,8,7,19,74bf409

@@ -1,0 +1,28 @@
+[fixed_s512_o77] 17636 chunks, avg 484 tokens (median 512, p90 512), 2.6s -> chunks\gitlab_nobots2_fixed_s512_o77_2231docs_111084af.json
+Loading Qwen/Qwen3-Embedding-0.6B on cuda (first run downloads ~1.2 GB) ...
+The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 310/310 [00:00<00:00, 4687.71it/s]
+Loaded 3344 cached chunk embeddings from emb_cache\qwen3_gitlab.npz
+Embedding 14904 new chunks (2732 cached) ...
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (1056 > 1024). Running this sequence through the model will result in indexing errors
+  1024/14904 embedded
+  2048/14904 embedded
+  3072/14904 embedded
+  4096/14904 embedded
+  5120/14904 embedded
+  6144/14904 embedded
+  7168/14904 embedded
+  8192/14904 embedded
+  9216/14904 embedded
+  10240/14904 embedded
+  11264/14904 embedded
+  12288/14904 embedded
+  13312/14904 embedded
+  14336/14904 embedded
+  14904/14904 embedded
+  note: 514 chunks exceeded 1024 tokens and were truncated
+  note: 29 queries exceeded 1024 tokens and were truncated
+231 tasks, 2231 MRs, 17636 chunks, set 111084af, query truncated 29, chunks truncated 514, copied 10-gram 85
+alpha 0.0: Hit@5 193/231, MRR@5 0.717, gold MR in budget 191/231, budget recall 0.430, precision 0.072, F1 0.086, linked chunks 0.0, chunks 5.7
+alpha 1.0: Hit@5 193/231, MRR@5 0.717, gold MR in budget 177/231, budget recall 0.463, precision 0.088, F1 0.108, linked chunks 3.0, chunks 5.7

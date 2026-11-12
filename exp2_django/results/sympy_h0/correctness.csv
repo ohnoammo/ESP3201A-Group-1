@@ -1,0 +1,4 @@
+arm,answered,n_answerable,wrong_lower,partial_lower,correct_lower,wrong_upper,partial_upper,correct_upper,overlap_cited,span_in_context,unanswerable_answered,unanswerable_ids
+"F0 (Clifton, 3050 Ti)",10,15,0,1,9,0,1,9,10,12,4,rm14446 nr18354 nr13406 nr23239
+F0 rerun (5070),9,15,0,1,8,0,1,8,9,12,4,rm14446 nr18354 nr13406 nr23239
+H0 (5070),12,15,0,1,11,0,1,11,12,15,4,rm13803 nr18354 nr13406 nr23239

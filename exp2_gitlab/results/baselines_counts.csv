@@ -1,0 +1,5 @@
+arm,n_rows,n_answerable,n_unanswerable,unanswerable_answered_lenient,unanswerable_answered_strict,no_reason_answered_lenient,removed_answered_lenient,unanswerable_answered_lenient_excl_doubtful,answerable_answered_lenient,answerable_answered_strict,unanswerable_answered_broad,answerable_answered_broad,any_citation_of_answerable,valid_citation_of_answerable,overlap_cited_of_answerable,empty_answers,median_eval_tokens,hit_num_predict
+F0,70,52,18,5,5,4,1,3,43,43,5,42,43,43,40,0,45,0
+P0,70,52,18,13,18,8,5,11,47,52,12,44,12,12,10,0,467,30
+CB,70,52,18,18,18,8,10,16,51,52,17,47,0,0,0,0,512,45
+F0_rerun,70,52,18,5,5,4,1,3,43,43,5,42,43,43,40,0,45,0

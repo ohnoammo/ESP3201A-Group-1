@@ -1,0 +1,11 @@
+{
+  "finalized": true,
+  "_how_to_use": "Settings chosen from the final results of Experiments 1 and 2. Set finalized to false to go back to experiment mode (all toggles open). Restart the server after editing.",
+  "retriever": "dense",
+  "chunking": "fixed",
+  "mode": "strict",
+  "links": true,
+  "pool": "A2000",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "evidence": "dense retrieval, fixed 512-token chunks, relation links (alpha 1), Qwen3 4B, strict grounded prompt v3"
+}

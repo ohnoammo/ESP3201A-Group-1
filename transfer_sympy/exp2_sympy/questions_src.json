@@ -1,0 +1,340 @@
+{
+ "written_by": "Claude (claude.ai session with Clifton), 4 Nov 2026, from exp2_sympy/digests.txt; to be checked by a person (step 3)",
+ "rule": "Went through shortlist.json in its fixed order. Each PR gets at most one question. Answerable = an author or reviewer states the reason for a decision in words; the first 15 such PRs are answerable, the next 3 are re-used as 'removed' (PR excluded from retrieval). After that, PRs were checked only for no-reason questions (a change the PR makes whose reason is not stated anywhere in the PR and does not follow from general knowledge); the first 5 are used. Skipped PRs and why are in selection_log.",
+ "questions": [
+  {
+   "type": "answerable",
+   "pr": 16636,
+   "parts": [
+    "review_thread"
+   ],
+   "q": "Why were short symbols such as V and M chosen as the y-axis labels of the beam plots instead of the full names of the quantities?",
+   "a": "Symbols take less space and make the plots neater, and the quantity's name is already shown in the title of each subplot.",
+   "quotes": [
+    "+1 for using symbols, they will take lesser space and hence make the plot neater. Also, the name of the quantity in the y-axis will already be present in the title of the subplot."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 15341,
+   "parts": [
+    "review_thread"
+   ],
+   "q": "Why did the reviewer want Matrix.solve() to catch the singular case and raise a ValueError after it switched to Gauss-Jordan elimination?",
+   "a": "To preserve the existing behaviour: the old inverse-based solve raised an error for singular matrices, but Gauss-Jordan elimination does not, so catching that case keeps the error while still using the faster routine.",
+   "quotes": [
+    "Because it is currently based on `inv` it raises an error when the matrix is singular. G-J won't do that so the changes I recommend catch that case and raise an error while still using a faster routine to calculate the solution."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 22551,
+   "parts": [
+    "review_thread",
+    "review_thread"
+   ],
+   "q": "Why did the reviewers object to temporarily changing sympify's converters inside CodePrinter so that lists become List objects?",
+   "a": "Modifying a shared mutable object in place and reverting it afterwards is fragile and not thread-safe; the converters are only meant to be registered at start-up, so the conversion should be done explicitly instead.",
+   "quotes": [
+    "This is also not thread-safe. The converters are only really supposed to be registered during start up.",
+    "importing a mutable object, modifying it in-place, calling a function using it, and then reverting the change"
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 16343,
+   "parts": [
+    "description"
+   ],
+   "q": "Why was SparseMatrix extended to accept matrix-like values in its instantiation dictionary?",
+   "a": "It will be used to provide a simple way of instantiating banded matrices (as in #16180).",
+   "quotes": [
+    "This will be used to provide a simple method of instantiating banded matrices as in #16180 ."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 12065,
+   "parts": [
+    "comment"
+   ],
+   "q": "Why was it important that nsolve accept SymPy complex numbers as initial points?",
+   "a": "Because the default secant solver of mpmath's findroot will not find complex roots of real functions unless the initial point is non-real.",
+   "quotes": [
+    "Worth noting that this is important because the secant solver of findroot (the default) won't find complex roots of real functions unless the initial point is nonreal."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 18777,
+   "parts": [
+    "review_thread",
+    "review_thread"
+   ],
+   "q": "Why does the srepr printer's ordering option use the string 'none' rather than Python's None to turn ordering off?",
+   "a": "order=None already means that no ordering was given (use the default, e.g. 'lex'), whereas the string 'none' is the existing convention in the other printers for not reordering terms.",
+   "quotes": [
+    "Having `order=None` means no ordering was provided rather than the \"none\" (aka don't reorder terms) ordering we are looking for.",
+    "IIRC `None` means use the default (which I think is `'lex'`) whereas `'none'` means no ordering (all the orderings are strings)."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 20208,
+   "parts": [
+    "review_thread"
+   ],
+   "q": "Why had the contributor first put the fix for set equality into relational.py instead of adding equality handlers to the sets module?",
+   "a": "They had tried the handler approach first, but the two modules are so closely linked that they could not solve the resulting circular import.",
+   "quotes": [
+    "Yes , thats what I tried at first but the two modules are so closely linked that their circular import issue couldn't be solved."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 15036,
+   "parts": [
+    "comment"
+   ],
+   "q": "Why did the reviewer say that principal_value() did not need separate code for the cases with zero or one singularity?",
+   "a": "If I is first computed from the end-point limits and kept, the loop over the singularities leaves it unchanged when there are none and also works when there is exactly one, so no special cases are needed.",
+   "quotes": [
+    "The for-loop over the singularities list will not change the value of `I` if there are no singularities. The loop can also work when `n = 1`, so there is no need to add code for that case."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 15727,
+   "parts": [
+    "description"
+   ],
+   "q": "Why was the default routine of solve_least_squares replaced with a call to solve?",
+   "a": "Because solve can use more efficient methods than computing an inverse, and it still includes the inverse method as an option.",
+   "quotes": [
+    "I think `solve_least_squares` can make use of more efficient routines than computing inverses, and I simply replaced the default routine with solve, to make use of any linear solver implemented in and also by the fact that it already contains the naive inverse computation method."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 23426,
+   "parts": [
+    "description",
+    "commit"
+   ],
+   "q": "Why can CRootOf postpone computing its isolating intervals when the polynomial is irreducible, but not when it is composite?",
+   "a": "For an irreducible polynomial the root index n never needs adjusting, so the intervals can wait until they are needed; for a composite polynomial the index may need adjusting, which requires the intervals at construction time.",
+   "quotes": [
+    "If `f` is irreducible, and you construct `CRootOf(f, n)`, then the index `n` need not be adjusted.",
+    "If `f` is irreducible, and you construct `CRootOf(f, n)`, then the index `n` need not be adjusted."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 15404,
+   "parts": [
+    "comment"
+   ],
+   "q": "Why did the reviewer prefer keeping doit()'s deep flag defaulting to True and passing deep=False only from __pow__?",
+   "a": "Most users don't know about the deep flag and call doit() expecting full simplification; defaults should be what end users expect, while library code can change them for its own uses.",
+   "quotes": [
+    "The reason being that most people don't know about the deep flag, so they just call `doit()` expecting it to simplify the expression fully."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 19091,
+   "parts": [
+    "description"
+   ],
+   "q": "Why did tensor contractions with replace_with_arrays give incorrect results before this fix?",
+   "a": "replace_with_arrays contracted the data arrays prematurely, before the metric had been applied.",
+   "quotes": [
+    "Tensor contractions using `replace_with_arrays` would prematurely contract the data arrays before applying the metric"
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 16095,
+   "parts": [
+    "review_thread"
+   ],
+   "q": "In the code-quality fixes to prde.py, why did a reviewer ask for a removed minus sign to be kept?",
+   "a": "The minus sign comes from the pseudocode in the book that the code follows.",
+   "quotes": [
+    "I would have preserved the minus sign here. It comes from the pseudocode in the book."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 21508,
+   "parts": [
+    "description"
+   ],
+   "q": "Why were replace and bottom_up changed to use exact equality testing?",
+   "a": "They used a weaker equality test, so some replacements failed, for example replacing 0.5 with S.Half (1/2).",
+   "quotes": [
+    "`replace` and `simplify.bottom_up` use weaker testing for equality, making replacements fail, e.g. `0.5 -> S.Half` fails."
+   ]
+  },
+  {
+   "type": "answerable",
+   "pr": 21346,
+   "parts": [
+    "description",
+    "description"
+   ],
+   "q": "Why was get_relevant_facts() redesigned, with a new extract_predargs() function taking over part of its work?",
+   "a": "It had two completely different functionalities depending on whether exprs was passed, which made the design very confusing; extract_predargs now does the first and get_relevant_facts only the second.",
+   "quotes": [
+    "In master, `get_relevant_facts()` has completely different two functionalities.",
+    "This design is very confusing."
+   ]
+  },
+  {
+   "type": "removed",
+   "pr": 14446,
+   "parts": [
+    "description"
+   ],
+   "q": "Why do Beam's slope() and deflection() methods now include integration constants such as C3 and C4?",
+   "a": "Integrating the bending moment twice without constants gave incomplete and sometimes misleading results; the constants mark the solution as incomplete when there are not enough boundary conditions.",
+   "quotes": [
+    "This sometimes is misleading, hence constants are required to mark the incomplete solution."
+   ]
+  },
+  {
+   "type": "removed",
+   "pr": 13335,
+   "parts": [
+    "review_thread",
+    "review_thread"
+   ],
+   "q": "Why does continuous_domain find singularities by solving over the complex numbers and intersecting with the domain, rather than solving directly in the given domain?",
+   "a": "solveset gives inconsistent results for some functions such as 1/tan(x) (an empty set in bounded domains), so solving in the complex plane and intersecting with the domain avoids the problem.",
+   "quotes": [
+    "the solveset returns an ImageSet union if the domain is `S.Complexes` or `S.Reals`, but returns an empty set in bounded domains like `Interval(0, pi)`.",
+    "Solving the function in the complex plain and taking the intersection with the domain solves this problem."
+   ]
+  },
+  {
+   "type": "removed",
+   "pr": 13803,
+   "parts": [
+    "description"
+   ],
+   "q": "Why did SymPy start refusing some substitutions inside a Derivative, such as replacing y with x in the derivative of f(x, y) with respect to y?",
+   "a": "Such a substitution produced Derivative(f(x, x), x), which is a different derivative, and this broke higher-order derivatives of expressions with undefined functions.",
+   "quotes": [
+    "Currently, a substitution such as `Derivative(f(x, y), y).subs(y, x)` results in `Derivative(f(x, x), x)` which is a different derivative."
+   ]
+  },
+  {
+   "type": "no_reason",
+   "pr": 18354,
+   "q": "What motivated adding methods to PermutationGroup for computing conjugacy classes?",
+   "note": "The PR says what the methods compute and references #9160 (not in the pool); no motivation is stated."
+  },
+  {
+   "type": "no_reason",
+   "pr": 13406,
+   "q": "Why was the `pip install matchpy` step removed from the Travis configuration?",
+   "note": "The commit comes from the dependency PR #13405 (not in the pool); this PR gives no reason."
+  },
+  {
+   "type": "no_reason",
+   "pr": 23239,
+   "q": "Why was an option added to the LaTeX printer for choosing the symbol used for the differential operator?",
+   "note": "'for convenience' in the description refers to the 'rd'/'td' shortcuts, not to the option itself; the motivation is only in issue #23226."
+  },
+  {
+   "type": "no_reason",
+   "pr": 18630,
+   "q": "Why was a dedicated _eval_nseries() method implemented for hyper?",
+   "note": "Only 'In reference to Issue #18193'; no motivation is stated in the PR."
+  }
+ ],
+ "selection_log": {
+  "answerable (shortlist 1-15)": [
+   16636,
+   15341,
+   22551,
+   16343,
+   12065,
+   18777,
+   20208,
+   15036,
+   15727,
+   23426,
+   15404,
+   19091,
+   16095,
+   21508,
+   21346
+  ],
+  "removed (shortlist 16-18)": [
+   14446,
+   13335,
+   13803
+  ],
+  "no_reason checks from shortlist 19 on": {
+   "24313": "skip: every change is explained",
+   "14739": "skip: explained",
+   "16898": "skip: explained",
+   "12253": "skip: explained",
+   "18354": "NO_REASON",
+   "13406": "NO_REASON",
+   "15979": "skip: explained",
+   "23538": "skip: explained",
+   "14942": "skip: explained",
+   "12240": "skip: explained",
+   "24096": "skip: cause hinted by the title",
+   "15599": "skip: removed quick exit was restored",
+   "13974": "skip: explained",
+   "17375": "NO_REASON -> dropped after human check (reason in a code comment)",
+   "17348": "skip: explained",
+   "16108": "skip: explained",
+   "16028": "skip: explained",
+   "15434": "skip: explained",
+   "19004": "skip: explained",
+   "18746": "skip: reason implied by 'fixes'",
+   "18577": "skip: explained",
+   "24382": "skip: default change partly motivated by stated advantages",
+   "20754": "skip: explained",
+   "23033": "skip: answer follows from general knowledge",
+   "23239": "NO_REASON",
+   "15008": "skip: explained",
+   "18450": "skip: explained",
+   "13943": "skip: explained",
+   "11947": "skip: alignment reasons discussed",
+   "13325": "skip: answer follows from general knowledge",
+   "16828": "skip: title says the old result was an error",
+   "14202": "skip: explained",
+   "18630": "NO_REASON",
+   "20466": "skip (checked after the drop): reason stated or implied",
+   "17251": "skip (checked after the drop): reason stated or implied",
+   "16192": "skip (checked after the drop): reason stated or implied",
+   "16162": "skip (checked after the drop): reason stated or implied",
+   "19083": "skip (checked after the drop): reason stated or implied",
+   "20700": "skip (checked after the drop): reason stated or implied",
+   "23456": "skip (checked after the drop): reason stated or implied",
+   "21208": "skip (checked after the drop): reason stated or implied",
+   "20773": "skip (checked after the drop): reason stated or implied"
+  }
+ },
+ "human_check": {
+  "by": "Alyssa, 4 Nov 2026 (exp2_sympy/question_check_sheet_alyssa.xlsx)",
+  "result": "21 ok, 2 fix",
+  "changes": [
+   "q15727: gold answer reworded as suggested ('Because solve can use more efficient methods than computing an inverse, and it still includes the inverse method as an option.')",
+   "nr17375: dropped. The reason IS stated, in a code comment in the diff (gamma_functions.py, _eval_evalf: 'the mpmath polygamma implementation valid only for nonnegative integers'), so it is not a no-reason question. No replacement: shortlist PRs 52-60 were checked in order and none has a change whose reason is unstated (20466, 17251, 16192, 16162, 19083, 20700, 23456, 21208, 20773 all explain or imply theirs). The other four no-reason PRs were re-checked for explanatory code comments in their diffs: none."
+  ]
+ },
+ "dropped_after_check": [
+  {
+   "type": "no_reason",
+   "pr": 17375,
+   "q": "Why should polygamma refuse numerical evaluation when its order (the first argument) is not a non-negative integer?",
+   "note": "The description only says what _eval_evalf does ('prevent evaluation'); no reason is stated."
+  }
+ ]
+}

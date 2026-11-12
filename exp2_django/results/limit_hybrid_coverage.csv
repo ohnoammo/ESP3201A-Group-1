@@ -1,0 +1,9 @@
+n,scenario,both,only_H0,only_F0,coverage,nominal
+17,"low rate, no change",0.1,0.05,0.05,0.9912,0.95
+17,"mid rate, no change",0.5,0.1,0.1,0.9592,0.95
+17,"high rate, no change",0.7,0.05,0.05,0.9911,0.95
+17,"mid rate, real fall",0.4,0.05,0.2,0.9159,0.95
+50,"low rate, no change",0.1,0.05,0.05,0.9527,0.95
+50,"mid rate, no change",0.5,0.1,0.1,0.9328,0.95
+50,"high rate, no change",0.7,0.05,0.05,0.9513,0.95
+50,"mid rate, real fall",0.4,0.05,0.2,0.9352,0.95

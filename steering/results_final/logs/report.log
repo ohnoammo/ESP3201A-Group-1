@@ -1,0 +1,12 @@
+
+===== report  2026-11-09 02:49:22  code 95974b01ac79  args {'command': 'report', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+report -> C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\out\codex_report.md
+REPORT OK
+
+===== report  2026-11-09 04:18:59  code 95974b01ac79  args {'command': 'report', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+report -> C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\out\codex_report.md
+REPORT OK
+
+===== report  2026-11-10 00:47:50  code 95974b01ac79  args {'command': 'report', 'repo': '/tmp/claude-0/-home-claude/97b21b69-1b74-5f54-a7dd-7e70b88b1321/scratchpad/steer_test', 'out': '/tmp/claude-0/-home-claude/97b21b69-1b74-5f54-a7dd-7e70b88b1321/scratchpad/final/out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+report -> /tmp/claude-0/-home-claude/97b21b69-1b74-5f54-a7dd-7e70b88b1321/scratchpad/final/out/codex_report.md
+REPORT OK

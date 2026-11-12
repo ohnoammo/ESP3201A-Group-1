@@ -1,0 +1,11 @@
+id,identical,same_context,stored_first120,rerun_first120
+q1063,True,True,"To prevent the script from exiting prematurely when grep finds no matches, since the error behavior is already handled l","To prevent the script from exiting prematurely when grep finds no matches, since the error behavior is already handled l"
+q106,False,True,"To allow runners to adjust the Git client configuration (e.g., setting proxy URLs) before cloning large repositories, es","To allow runners to adjust the Git client configuration (e.g., setting proxy URLs) before cloning large repositories, es"
+nr3177,True,True,"Because the build process installs .deb files but only removes those that match the target architecture, leaving the oth","Because the build process installs .deb files but only removes those that match the target architecture, leaving the oth"
+nr1781,True,True,"Because having editors like `vim` and `nano` in a container is unnecessary, and removing them aligns with Docker best pr","Because having editors like `vim` and `nano` in a container is unnecessary, and removing them aligns with Docker best pr"
+nr3805,True,True,Because the glrt- runner token is intended to be used exclusively for authentication and not for registration with serve,Because the glrt- runner token is intended to be used exclusively for authentication and not for registration with serve
+nr5841,True,True,Not found in the provided PRs,Not found in the provided PRs
+nr3147,True,True,Not found in the provided PRs,Not found in the provided PRs
+nr4460,True,True,"TestGetServiceArguments breaks on current systemd-based Linux machines because the test includes a ""--syslog"" flag that ","TestGetServiceArguments breaks on current systemd-based Linux machines because the test includes a ""--syslog"" flag that "
+nr1372,True,True,Not found in the provided PRs,Not found in the provided PRs
+nr4102,True,True,Not found in the provided PRs,Not found in the provided PRs

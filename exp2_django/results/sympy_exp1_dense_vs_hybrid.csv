@@ -1,0 +1,5 @@
+project,A,B,hit5_mcnemar_p,mrr5_permutation_p
+Django,fixed_s512_o77|dense|alpha=0,"fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75",0.250,0.000
+Django,struct_c256|dense|alpha=0,"struct_c256|hybrid|alpha=0|k1=1.2,b=0.75",0.092,0.000
+SymPy,fixed_s512_o77|dense|alpha=0,"fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75",0.125,0.007
+SymPy,struct_c256|dense|alpha=0,"struct_c256|hybrid|alpha=0|k1=1.2,b=0.75",1.000,0.111

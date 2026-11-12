@@ -1,0 +1,9 @@
+model,prompt,comparison,n_both_span,W_strict,other_strict,W_answered,other_answered,W_lenient,other_lenient,counts_only,git_commit
+4b-instruct,v2,W-F vs F0,31,20,14,28,26,23,22,True,74bf409
+4b-instruct,v2,W-F vs S-0.25,31,20,19,28,29,23,26,True,74bf409
+4b-instruct,v3,W-F vs F0,31,18,15,26,23,22,21,True,74bf409
+4b-instruct,v3,W-F vs S-0.25,31,18,19,26,27,22,23,True,74bf409
+8b,v2,W-F vs F0,31,18,17,31,30,26,25,True,74bf409
+8b,v2,W-F vs S-0.25,31,17,19,31,31,26,28,True,74bf409
+8b,v3,W-F vs F0,31,18,14,29,29,25,23,True,74bf409
+8b,v3,W-F vs S-0.25,31,17,18,29,30,25,25,True,74bf409

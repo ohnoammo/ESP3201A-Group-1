@@ -1,0 +1,8 @@
+Loading Qwen/Qwen3-Embedding-0.6B on cuda (first run downloads ~1.2 GB) ...
+The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights: 100%|##########| 310/310 [00:00<00:00, 8943.32it/s]
+Loaded 18248 cached chunk embeddings from emb_cache\qwen3_gitlab.npz
+[fixed_s512_o77] loaded 17636 chunks from chunks\swe_fixed_s512_o77_2231docs_111084af.json
+[fixed_s512_o77] 70 questions -> exp2_gitlab_A2000\candidates_fixed_s512_o77.jsonl; gold PR in the top 5 PRs for 50/51 answerable questions
+rc=0 seconds=21

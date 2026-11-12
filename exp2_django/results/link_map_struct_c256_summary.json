@@ -1,0 +1,16 @@
+{
+ "chunking": "struct_c256",
+ "n_chunks": 33298,
+ "links_by_type": {
+  "parent": 35066,
+  "conv_next": 5193,
+  "conv_prev": 5193,
+  "hunk->thread": 2944,
+  "thread->hunk": 2944
+ },
+ "chunks_with_any_link": 30947,
+ "mean_links_per_chunk": 1.5418343444050693,
+ "prs_with_review_threads": 947,
+ "prs_with_threads_but_zero_hunk_thread_links": 316,
+ "file": "C:/Users/kwekt/ESP3201A_local\\links_struct_c256.json"
+}

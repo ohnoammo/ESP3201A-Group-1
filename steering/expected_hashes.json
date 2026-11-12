@@ -1,0 +1,20 @@
+{
+ "made_from": "C:\\Users\\liuzh\\OneDrive\\Desktop\\NUS Y4S1\\ESP3201A Machine Learning in Engineering Science\\RAG Project\\Latest\\TX addtions\\TX addtions\\gitlab_runner_copy",
+ "files": {
+  "exp2_gitlab_scale.py": "22480d32b4fa746194dedf8c1957d12a9716ca744fd574266b726d89922aa555",
+  "relations.py": "f0d493c193f42a98fe82c9c08a7b396a1027d67397833da14c888c1b55236e22",
+  "chunking.py": "e2e50c476141a3ed36477cf89f0812439206fc1193b3ad5ab4823b99252b13a4",
+  "exp1_common.py": "700c9b395afbf9ceb335a2b229a425cb0fb605ff1201fa1eabefa294e00aaf0b",
+  "pr_document.py": "f945bd644161b3e8e798556ccf17ee7a06ca6d607ff31a82c8c948f7b1facda1",
+  "github_prs.py": "dd36e25cfe0d73c2f10e484ed484ee6181992aa593545282d7b8945b92430202",
+  "swebench_loader.py": "b252aad2fb4666c83ad1c5282f789c8e01494f52d64834aacf7301fd3bc0048e",
+  "sparse_retrieval.py": "be18398a91c5749c6ea7d35ce3bd9fb19ddf6fe713f1e1f692965d7d048dc696",
+  "dense_retrieval.py": "0a7c8f9647719a3c360d4d233701bc87bf2cced35ceb5b1e3771558e2ab0e26d",
+  "exp2_gitlab_A2000/questions.jsonl": "352a1d5a3fc9662c667cf3b7060d5337c9470b7f138b745249cb421784eed7d5",
+  "exp2_gitlab_A2000/candidates_fixed_s512_o77.jsonl": "9032d4cccd0c6e038bccf0a29a2d074e45586a4030de64d6273bc24b39c54923",
+  "exp2_gitlab_A2000/gen_F0.jsonl": "7f62bb24e7468c3be08ff0b0e05c4ba4ddf1377247668c86804190fc76453668",
+  "chunks/swe_fixed_s512_o77_2231docs_111084af.json": "85da0baacf11e223b6cbe1fce37e3a225a85c190e6258f1877c40f6b58eb3090",
+  "prs/gitlab-org_gitlab-runner/_pool_A2000.json": "f8c16a310bdea0a0e028f06577bb52e964293dccc801b7d4a936a9ca48425a5c",
+  "prs/gitlab-org_gitlab-runner/<pool MR files, combined>": "f373ce3e4913d7e32b48a298c120ed17eb09c038dbbe352184ad64065f0fc959"
+ }
+}

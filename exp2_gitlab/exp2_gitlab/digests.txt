@@ -1,0 +1,4008 @@
+=================== PR 6374   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6374
+--- [title_description] 0-1040
+Title: Avoid interpolation without defined job inputs
+
+Description:
+## What does this MR do?
+
+Avoid interpolation without defined job inputs
+
+This change set addresses a breaking change issues with the newly
+introduced job inputs.
+The issue is described in full at
+https://gitlab.com/gitlab-org/step-runner/-/work_items/369
+
+The gist of it is that when a user already used the job input
+interpolation syntax (`${{ ... }}`) for an unrelated reason then
+those expressions may fail to evaluate.
+
+We can mitigate this (this change set) by not evaluating job input
+interpolation expressions when no inputs are defined on the job. In this
+case we just use it as a literal. We go one step further and try to
+detect if a job input is being accessed in the interpolation expression
+and if so we log a warning that no inputs are defined and hence no
+interpolation is performed. This is done to help with debugging in case
+the user forgets to declare job inputs, but tries to use them.
+
+Refs https://gitlab.com/gitlab-org/step-runner/-/work_items/369
+
+--- [commits] 1041-2004
+Commit messages:
+Avoid interpolation without defined job inputs
+
+This change set addresses a breaking change issues with the newly
+introduced job inputs.
+The issue is described in full at
+https://gitlab.com/gitlab-org/step-runner/-/work_items/369
+
+The gist of it is that when a user already used the job input
+interpolation syntax (`${{ ... }}`) for an unrelated reason then
+those expressions may fail to evaluate.
+
+We can mitigate this (this change set) by not evaluating job input
+interpolation expressions when no inputs are defined on the job. In this
+case we just use it as a literal. We go one step further and try to
+detect if a job input is being accessed in the interpolation expression
+and if so we log a warning that no inputs are defined and hence no
+interpolation is performed. This is done to help with debugging in case
+the user forgets to declare job inputs, but tries to use them.
+
+Refs https://gitlab.com/gitlab-org/step-runner/-/work_items/369
+
+--- [review_thread] 7576-10610
+Review thread on common/spec/inputs.go:
+@cam_swords: Is this right @timofurrer?
+
+- If there are no inputs and someone uses `${{ job.inputs.xyz }}` then it's appropriate to error with `attribute not found` (on the `xyz`). I think the job should stop, not continue with a potentially incorrect value :thinking: (or have I read this wrong?)
+- What happens if there are job inputs and someone uses `${{ export_file }}` in the script? Don't we need to catch the error from `evaluator.Eval` and act accordingly?
+
+Here's an alternative that @ggeorgiev_gitlab suggested earlier. Thoughts?
+
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6367+
+@timofurrer: > What happens if there are job inputs and someone uses `${{ export_file }}` in the script? Don't we need to catch the error from `evaluator.Eval` and act accordingly?
+
+@cam_swords I need to think about this use case more. I didn't account for it because I first wanted to prevent a ~"breaking change". I don't consider this a breaking change, because the user would have to introduce job inputs first and only then this issue would surface. 
+
+However, that really only solves the ~"breaking change" situation and not the problem with the step-runner - which is the one I need to think about :sweat_smile: I appreciate all insights here :smile: 
+
+> Here's an alternative that @ggeorgiev_gitlab suggested earlier. Thoughts?
+
+I'll give it a proper look later but at first glance it only checks for specific errors (attribute not found) and apply to the step-runner. I wonder if we should consider the step-runner here as just another thing used in `script` that happens to use `${{ ... }}`. I imagine that there could be other tools using the same syntax (jinja?) and fail with completely different errors - so I'd wonder when to fallback t [...]
+--- [conversation] 10611-10697
+Comment by @timofurrer:
+@cam_swords would you mind giving this a first review? :pray:
+
+--- [conversation] 10698-10805
+Comment by @timofurrer:
+@avonbertoldi I'd also appreciate a review from you as a Runner maintainer? :pray:
+
+--- [conversation] 10806-10860
+Comment by @avonbertoldi:
+LGTM @timofurrer :thumbsup:
+
+--- files: common/build.go, common/spec/inputs.go, common/spec/inputs_test.go
+
+=================== PR 1188   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1188
+--- [title_description] 0-1742
+Title: Split `make docker` for GitLab Runner Helper
+
+Description:
+## What does this MR do?
+
+Split `make docker` for GitLab Runner Helper to build binaries and containers separately
+
+## Why was this MR needed?
+
+Take 2 of https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1174 but this time it doesn't rename the final tarball so the runner will pick it up.
+
+GitLab Runner helper is built using `make docker` which builds the
+binary, creates a Docker container and extract the files system of that
+container for publishing at a later stage.
+
+Because of  #3755 we
+have to split this command up so we generate the binaries and the docker
+archive separately since Windows containers cannot be built on Linux systems
+or vice versa.
+
+We are keeping the binary generation in one command to have both
+Windows and Linux binaries consistent, and the diverging on how we
+create the containers since they need to done separately.
+
+The create of the container for Linux based image will stay in the
+Makefile since it's perfectly fine. For windows it will be separate
+powershell script since to run natively on Windows since we cannot run
+bash on windows server.
+
+The reason for this, so that we keep the binary
+generation consistent between both platforms and then
+
+Drop support for `USE_PRECOMPILED_IMAGES` since it's just extra
+complexity that is not needed.
+
+## Are there points in the code the reviewer needs to double check?
+
+- [ ] File can still be loaded locally
+
+## Does this MR meet the acceptance criteria?
+
+- [ ] Documentation created/updated
+- [ ] Added tests for this feature/bug
+- [ ] In case of conflicts with `master` - branch was rebased
+
+## What are the relevant issue numbers?
+
+#3755
+
+--- [commits] 1743-3140
+Commit messages:
+Split `make docker` for GitLab Runner Helper
+
+GitLab Runner helper is built using `make docker` which builds the
+binary, creates a Docker container and extract the files system of that
+container for publishing at a later stage.
+
+Because of  https://gitlab.com/gitlab-org/gitlab-runner/issues/3755 we
+have to split this command up so we generate the binaries and the docker
+archive separately since Windows containers cannot be built on Linux systems
+or vice versa.
+
+We are keeping the binary generation in one command to have both Windows
+and Linux binaries consistent, and built them on a Linux platform where
+`make` is installed. The make command already sets up the $GOPATH,
+dependencies and environment for building the binaries so there is no
+point of duplicating that. Then diverge when building the docker
+containers, since they have to be done on different platforms.  Windows
+does have GNUMake http://gnuwin32.sourceforge.net/packages/make.htm but
+it's fairly outdated and doesn't seem to work when installing it on
+Windows server 2019.
+
+Drop support for `USE_PRECOMPILED_IMAGES` since it's just extra
+complexity that is not needed, and it doesn't seem to be used anywhere.
+If the user runs `make helper-docker` and the binaries are already
+present they are not rebuild.
+
+Add compilation for windows helper binary
+
+Start compiling and storing  the windows helper binary.
+
+--- [review_thread] 8769-9125
+Review thread on .gitlab-ci.yml:
+@tmaczukin: @steveazz Shouldn't we call `make helper-build helper-docker` and add the windows helper binary to artifacts list?
+
+Currently this is only generating Linux helper binaries.
+@sxuereb: I was not going to add this in this MR, but it's a small change so why not, done so in 956c880b6a80f9795a86480aea59155173a97420
+
+--- [conversation] 9126-9201
+Comment by @sxuereb:
+@nolith mind if you take a look at take 2 of this MR?
+
+--- [conversation] 9202-9704
+Comment by @nolith:
+For the next time, avoiding the file rename will make reviewing easier.
+
+I'm a bit concerned about [`docker.executor.getPrebuiltImage()`](https://gitlab.com/gitlab-org/gitlab-runner/blob/master/executors/docker/executor_docker.go#L289).
+
+that method is deeply coupled with image names.
+
+I do understand that this is the most backward compatible naming, but are we ok with the extra complexity of defaulting OS?
+
+@ayufan @tmaczukin  I'd like to ghather other opinions on this topic.
+
+--- [conversation] 9705-10726
+Comment by @sxuereb:
+> For the next time, avoiding the file rename will make reviewing easier.
+
+I fully agree yes, this MR only renames the intermidates binaries, tar files but the final `tar.xz` are of the same value.
+
+> I do understand that this is the most backward compatible naming, but are we ok with the extra complexity of defaulting OS?
+
+I think it's a good idea to "default" to Linux because looking at the tags strategy we are doing the same https://gitlab.com/gitlab-org/gitlab-runner/issues/3755#note_136096327 which is something the docker community seems to have standardized on. 
+
+---
+
+We do need to do some code split for now because windows containers do not support `docker export` which is why ideally we consolidate using `docker save` which where https://gitlab.com/gitlab-org/gitlab-runner/issues/3979 comes to play for now windows docker executor will most likely not support this mechninisim (I think have the code split is easier then having two complelty different building/import mechanizims)
+
+--- [conversation] 10727-11013
+Comment by @nolith:
+>I think it's a good idea to "default" to Linux because looking at the tags strategy we are doing the same https://gitlab.com/gitlab-org/gitlab-runner/issues/3755#note_136096327 which is something the docker community seems to have standardized on.
+
+good point :+1:
+
+--- [conversation] 11014-11092
+Comment by @nolith:
+@tmaczukin do you mind reviewing and merging this? :pray:
+
+--- [conversation] 11093-11209
+Comment by @tmaczukin:
+I also think it's OK to default to Linux. And I like the fact that it's backward compatible.
+
+--- [conversation] 11210-11299
+Comment by @tmaczukin:
+@steveazz One question left. Other than that it looks good to me.
+
+--- files: .gitlab-ci.yml, Makefile, Makefile.docker.mk, Makefile.runner_helper.mk
+
+=================== PR 6045   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6045
+--- [title_description] 0-447
+Title: Rename GITLAB_TOKEN to GITLAB_TEST_TOKEN in test utilities
+
+Description:
+This MR introduces GITLAB_TEST_TOKEN for integration tests and removes GITLAB_TOKEN. The `GITLAB_TOKEN` variable for this. I've seen "oupsies" in the past. It's a variable that's used with many toolings, and people often have (too) high-privileged tokens in their shell exported as `GITLAB_TOKEN`.
+
+Related: https://gitlab.com/gitlab-org/gitlab-runner/-/issues/39159
+
+--- [commits] 448-574
+Commit messages:
+Rename GITLAB_TOKEN to GITLAB_TEST_TOKEN in test utilities
+
+Merge branch gitlab-runner:main into issue-39159
+
+--- [conversation] 1467-1630
+Comment by @timofurrer:
+@kumaraayush9810 thanks for the contribution. LGTM. I'm running a pipeline to check if everything is still working as expected :handshake:
+
+--- [conversation] 1631-1727
+Comment by @Aayush-Saini:
+thank you @timofurrer : ) seems some steps in the pipeline is failing
+
+--- [conversation] 1728-1817
+Comment by @Aayush-Saini:
+@GitLabDuo Update my branch with the latest changes from main.
+
+--- [conversation] 1818-2033
+Comment by @Aayush-Saini:
+@GitLabDuo is there any way we can add a shorthand command that will update the branch with the latest changes read the last comment in this issue https://github.com/asyncapi/cli/pull/1974
+
+--- [conversation] 2034-2077
+Comment by @Aayush-Saini:
+@gitlab-bot help
+
+--- [conversation] 2078-2165
+Comment by @timofurrer:
+@kumaraayush9810 I'm still trying to get a passing pipeline ;)
+
+--- [conversation] 2166-2244
+Comment by @Aayush-Saini:
+Got it thanks @timofurrer seems all passing now : )
+
+--- [conversation] 2245-2407
+Comment by @timofurrer:
+@kumaraayush9810 thanks for the contribution! LGTM :handshake: 
+
+@avonbertoldi would you mind giving this a second review, please? :pray:
+
+--- [conversation] 2408-2606
+Comment by @avonbertoldi:
+@kumaraayush9810 re:
+
+> @GitLabDuo Update my branch with the latest changes from main.
+
+You can use the `/rebase` command for this (literally type `/rebase` in a comment).
+
+--- [conversation] 2607-2727
+Comment by @Aayush-Saini:
+@avonbertoldi @timofurrer, I have synced my MR. It seems need your approval again, thanks : )
+
+--- [conversation] 2728-2837
+Comment by @timofurrer:
+@kumaraayush9810 looks like we don't need a re-approval. I'm going to merge :train2:
+
+--- [conversation] 2838-2984
+Comment by @timofurrer:
+However, it looks like we are missing a docs approval.
+
+@rsarangadharan would you mind giving this a quick review? :pray:
+
+--- [conversation] 2985-3074
+Comment by @rsarangadharan:
+Thanks @kumaraayush9810 @timofurrer. LGTM :white_check_mark:
+
+--- [conversation] 3075-3284
+Comment by @Aayush-Saini:
+Thanks a lot @timofurrer @avonbertoldi @rsarangadharan, looking forward to more contributions.
+
+Need your thoughts on this: https://gitlab.com/gitlab-org/gitlab-runner/-/issues/39196
+
+--- files: common/buildtest/test.go, docs/development/_index.md
+
+=================== PR 5540   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5540
+--- [title_description] 0-5406
+Title: Add support for uid:gid format for Kubernetes executor options
+
+Description:
+## What does this MR do?
+
+In merge request !5469, we implemented support for Kubernetes executor options in `gitlab-ci.yml` files. However, unlike the Docker executor options, the current implementation doesn't support the `uid:gid` format for specifying both user and group IDs.
+
+This MR extends the Kubernetes executor options to support the `uid:gid` format, ensuring consistency between Docker and Kubernetes executor configurations.
+
+## Why was this MR needed?
+
+Bring consistency between Docker and Kubernetes executor options
+
+## What's the best way to test this MR?
+
+```bash
+❯ go test -tags integration,kubernetes -timeout=60m -run "^TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup*" -v gitlab.com/gitlab-org/gitlab-runner/executors/kubernetes
+=== RUN   TestRunIntegrationTestsWithFeatureFlag
+=== PAUSE TestRunIntegrationTestsWithFeatureFlag
+=== CONT  TestRunIntegrationTestsWithFeatureFlag
+=== RUN   TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup
+=== PAUSE TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup
+=== CONT  TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup
+=== RUN   TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup/FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY:on
+=== PAUSE TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup/FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY:on
+=== RUN   TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup/FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY:off
+=== PAUSE TestRunIntegrationTestsWithFeatureFlag/testKubernetesOptionsUserAndGroup/FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY:off
+=== CONT  TestRunInteg [...]
+--- [commits] 5407-5491
+Commit messages:
+Add support for uid:gid format
+
+Improve unit and integration tests
+
+--- [review_thread] 11525-12674
+Review thread on common/network_test.go:
+@ajwalker: If a job provides us with `1000`, rather than `"1000"` - does GitLab's validation handles this (ensuring a string, rather than an integer)? I'm wondering if Runner should handle `1000`, `"1000"`, and `"1000:1000"` formats (so an uid integer on its own is also acceptable).
+@ajwalker: It's probably fine, because we're doing it for Docker like this already?
+@ratchade: I asked myself the same question and wanted to improve that until I realized that we are doing the same with Docker already.
+
+I wouldn't mind covering it on the Runner side and then having a follow-up MR on the Rails Side to allow both. 
+
+Let me have a look at it :slight_smile:
+@ajwalker: @ratchade Hopefully rails is just converting to a string for us
+@ratchade: Hum :thinking: I will check that too :grin:
+@ratchade: @ajwalker I would suggest to continue this work in a follow-up MR so that I can test the improvements made in GitLab Rails with the improvements required (if any) on the Runner Side (https://gitlab.com/gitlab-org/gitlab/-/merge_requests/189827#note_2486983059). 
+
+WDYT ?
+@ajwalker: @ratchade Yeah, that works
+
+--- [review_thread] 12675-13331
+Review thread on common/network.go:
+@ajwalker: Maybe nicer here to use `Cut`, rather than `Split`?
+
+```suggestion:-17
+func (iko *ImageKubernetesOptions) GetUIDGID() (int64, int64, error) {
+	user, group, ok := strings.Cut(iko.User, ":")
+
+	uid, err := strconv.ParseInt(user, 10, 64)
+	if err != nil {
+		return 0, 0, fmt.Errorf("failed to parse UID %w", err)
+	}
+
+	var gid int64
+	if ok {
+		gid, err = strconv.ParseInt(group, 10, 64)
+		if err != nil {
+			return 0, 0, fmt.Errorf("failed to parse GID %w", err)
+		}
+	}
+
+	return uid, gid, err
+}
+```
+@ratchade: Thank for `strings.Cut`. Read its doc and it is indeed nicer. Applying the suggested changes :bow_tone5:
+
+--- [conversation] 13332-13420
+Comment by @ratchade:
+Once the GitLab Rails MR merged, I am going to add a manual test.
+
+--- [conversation] 13421-13507
+Comment by @ratchade:
+@ajwalker would you mind reviewing this MR please ? :bow_tone5:
+
+--- [conversation] 13508-13567
+Comment by @ratchade:
+@ajwalker gentle ping :slight_smile:
+
+--- [conversation] 13568-13643
+Comment by @ajwalker:
+@ratchade Left two comments. Back to you :ping_pong:
+
+--- files: common/network.go, common/network_test.go, executors/kubernetes/kubernetes.go, executors/kubernetes/kubernetes_integration_test.go
+
+=================== PR 456   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/456
+--- [title_description] 0-1318
+Title: Reduce size of gitlab-runner-helper images
+
+Description:
+## What does this MR do?
+
+This MR reduces the size of the `gitlab-runner-helper` images by:
+- Using `miniperl` instead of `perl` (required for `git-submodule`)
+- Using `apk --no-cache` when installing Alpine packages
+
+```
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+gitlab/gitlab-runner-helper   arm-7f95086         a6c261cb3c57        5 days ago          135.7 MB
+gitlab/gitlab-runner-helper   x86_64-7f95086      150caa5f8496        5 days ago          81.79 MB
+gitlab/gitlab-runner-helper   arm-d18f38e         5c70f6e2a381        29 minutes ago      101.7 MB
+gitlab/gitlab-runner-helper   x86_64-d18f38e      539912ee8c70        30 minutes ago      40.38 MB
+```
+
+- The `arm` image size is reduced by 34MB (25.0%)
+- The `x86_64` image size is reduced by 41.4MB (50.6%)
+
+## Does this MR meet the acceptance criteria?
+
+- [ ] Documentation created/updated
+- Tests
+  - [ ] Added for this feature/bug
+  - [ ] All builds are passing
+- [ ] Branch has no merge conflicts with `master` (if you do - rebase it please)
+
+## What are the relevant issue numbers?
+
+See https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/merge_requests/443/diffs#ad79990b3e834afa27f538ac9b0bf4e57f84f7c3_4_3
+
+cc @ayufan @tmaczukin
+
+--- [commits] 1319-2273
+Commit messages:
+Reduce size of builtin Docker images
+
+1. Install `miniperl` instead of `perl` package
+
+   While Alpine's `perl` package is 29.72 MB installed [1], `miniperl` is
+   only 1.61 MB installed [2] and provides everything needed for `git
+   submodule` to work.
+
+2. Change ARM image from scaleway/alpine to multiarch/alpine:armhf-v3.4
+
+   This is smaller, and is the base image for scaleway/alpine anyway [3].
+   It is also more up-to-date (3.4 as opposed to 3.2.3).
+
+3. Use `apk add --no-cache` instead of `apk add --update`
+
+   This avoids local cache usage (recommended for Docker builds) [4].
+   The --no-cache option was added in Alpine Linux 3.3.
+
+[1]: http://pkgs.alpinelinux.org/package/edge/main/x86/perl
+[2]: http://pkgs.alpinelinux.org/package/edge/main/x86/miniperl
+[3]: https://github.com/scaleway/image-alpine/blob/e06ab285/Dockerfile#L5
+[4]: https://github.com/gliderlabs/docker-alpine/blob/acfc8848/docs/usage.md#disabling-cache
+
+--- [conversation] 2834-2890
+Comment by @ayufan:
+This is what I like :) Awesome job!
+
+--- [conversation] 2891-3024
+Comment by @ayufan:
+This also raises a question why there's so significant difference in size of `arm-d18f38e` and `x86_64-d18f38e`?
+
+--- [conversation] 3025-3448
+Comment by @ayufan:
+It seems that `scaleway/alpine` weights a lot:
+
+```
+alpine              latest              88e169ea8f46        3 weeks ago         3.98 MB
+armhf/alpine        latest              a42bfb47e0dd        2 months ago        3.93 MB
+scaleway/alpine     latest              db0d647733a9        13 months ago       22.8 MB
+```
+
+Is it a right thing to switch to: https://hub.docker.com/r/armhf/alpine/?
+
+--- [conversation] 3449-3996
+Comment by @tmaczukin:
+@ayufan Base images:
+
+```
+REPOSITORY                                                TAG                 IMAGE ID            CREATED             SIZE
+alpine                                                    latest              88e169ea8f46        3 weeks ago         3.98 MB
+scaleway/alpine                                           latest              db0d647733a9        13 months ago       22.7 MB
+```
+
+`scaleway/alpine` is ~20MB bigger than `alpine`. And probably `gitlab-runner-helper` compiled for arm is also bigger.
+
+--- [conversation] 3997-4406
+Comment by @JonathonReinhart:
+> Is it a right thing to switch to: https://hub.docker.com/r/armhf/alpine/?
+
+This quote makes me think not :)
+
+> THESE IMAGES ARE VERY, VERY EXPERIMENTAL; THEY ARE PROVIDED ON A BEST-EFFORT BASIS WHILE docker/docker#15866 IS STILL IN-PROGRESS -- PLEASE DO NOT USE THEM FOR ANYTHING SERIOUS OR IMPORTANT
+
+Then again, things are always "experimental" until they're proven...
+
+--- [conversation] 4407-4828
+Comment by @tmaczukin:
+```bash
+# For amd64
+$ du -k dockerfiles/build/gitlab-runner-helper
+10940   dockerfiles/build/gitlab-runner-helper
+
+# For arm
+$ du -k dockerfiles/build/gitlab-runner-helper
+9788    dockerfiles/build/gitlab-runner-helper
+```
+
+So my guess was wrong, there need to be something else which is adding ~60MB to arm image.
+
+@ayufan I think we can try to switch to `armhf/alpine` and test how it's working.
+
+--- [conversation] 4829-4934
+Comment by @ayufan:
+@JonathonReinhart I know, but do we consider `scaleway/alpine` to be more stable? ;)
+
+--- [conversation] 4935-5064
+Comment by @ayufan:
+It seems that these images are built from: 
+
+https://github.com/gliderlabs/docker-alpine/tree/master/builder
+
+--- [conversation] 5065-5276
+Comment by @JonathonReinhart:
+If `armhf/alpine` works I have no problem using it. I just saw that warning on Docker Hub and it made me hesitate!  Do you want me to go forward with this change to `armhf/alpine`?
+
+--- [conversation] 5277-5420
+Comment by @ayufan:
+It seems to me that `scaleway` is more trustworthy than some random `armhf` group :) So I'm not sure. Just throwing ideas!
+
+--- [conversation] 5421-5581
+Comment by @JonathonReinhart:
+This is true. I think `armhf` is owned by https://github.com/tianon who works for Docker, but there's nothing that confirms that.
+
+--- [conversation] 5582-5865
+Comment by @JonathonReinhart:
+@ayufan  I tried playing with `armhf/alpine` and found that it doesn't even have `/bin/sh`, much less `apk`. I'm not sure how you're supposed to use it.
+
+I think `scaleway/alpine` is our best bet at this point. This MR is ready as far as I'm concerned.
+
+--- [conversation] 5866-6358
+Comment by @tmaczukin:
+@ayufan @JonathonReinhart We could use https://hub.docker.com/r/multiarch/alpine/:
+
+```
+REPOSITORY                                                TAG                 IMAGE ID            CREATED              SIZE
+alpine                                                    3.4                 0766572b4bac        4 weeks ago          4.8 MB
+multiarch/alpine                                          armhf-v3.4          38edfc18cfe8        4 weeks ago          12.6 MB
+```
+
+--- [conversation] 6359-6472
+Comment by @ayufan:
+I prefer to stick with scaleway one and remove what we don't use. We still
+do flatten image.
+
+--- [conversation] 6473-7595
+Comment by @tmaczukin:
+```
+REPOSITORY                                                TAG                 IMAGE ID            CREATED              SIZE
+gitlab/gitlab-runner-helper                               arm-224ae8f4        0fb1c600845e        About a minute ago   43 MB
+gitlab/gitlab-runner-helper                               x86_64-224ae8f4     0dc8cd1b952d        2 minutes ago        38.8 MB
+gitlab/gitlab-runner-helper                               arm-d18f38ea        36e74cdbdf57        8 minutes ago        102 MB
+gitlab/gitlab-runner-helper                               x86_64-d18f38ea     9aaf81dc596c        9 minutes ago        40.4 MB
+gitlab/gitlab-runner-helper                               arm-d2beb587        6b85a5aac206        13 minutes ago       136 MB
+gitlab/gitlab-runner-helper                               x86_64-d2beb587     411717f1c38a        14 minutes ago       81.8 MB
+```
+
+- `d2beb587` is current master,
+- `d18f38ea` is @JonathonReinhart's branch
+- `224ae8f4` is @JonathonReinhart's branch with images changed to `alpine:v3.4` for x86_64 and `multiarch/alpine:armhf-v3.4` for arm
+
+--- [conversation] 7596-7807
+Comment by @tmaczukin:
+@ayufan And it looks that `multiarch/alpine` is the base image for `scaleway/alpine` so I think we could give it a try: https://github.com/scaleway/image-alpine/blob/master/Dockerfile#L5.
+
+--- [conversation] 7808-7866
+Comment by @ayufan:
+Looks much better :)
+
+Lets go for it!
+
+--- [conversation] 7867-8414
+Comment by @tmaczukin:
+@JonathonReinhart Can you change:
+- `FROM alpine` => `FROM alpine:3.4` in [`dockerfiles/build/Dockerfile.x86_64`](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/d18f38ea0f7335fe467818951af1919c2f8e90d7/dockerfiles/build/Dockerfile.x86_64#L1),
+- `FROM scaleway/alpine:armhf-3.3` => `multiarch/alpine:armhf-v3.4` in [`dockerfiles/build/Dockerfile.arm`](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/d18f38ea0f7335fe467818951af1919c2f8e90d7/dockerfiles/build/Dockerfile.arm#L1)
+
+and push the changes? :)
+
+--- [conversation] 8415-8652
+Comment by @JonathonReinhart:
+Interesting... I force-pushed [33973515](https://gitlab.com/JonathonReinhart/gitlab-ci-multi-runner/commit/33973515ac2f5a55e2e2784b117283a93f59a9c9) twelve minutes ago and still haven't seen this MR update.
+
+--- [conversation] 8653-8784
+Comment by @tmaczukin:
+It looks that sidekiq queue is overloaded at the moment. We need to wait, it should be visible here soon :)
+
+--- [conversation] 8785-8832
+Comment by @JonathonReinhart:
+Wow, 39 minutes.
+
+--- [conversation] 8833-8935
+Comment by @pbr:
+What's the reason for using Alpine 3.4 (old stable) instead of 3.5 (current stable)?
+
+--- [conversation] 8936-9156
+Comment by @tmaczukin:
+@pbr `multiarch/alpine` doesn't have 3.5 version for arm architecture. And for our usage I think the old stable is good enough. When alpine 3.5 for arm will be available, then we can switch to it.
+
+--- files: dockerfiles/build/Dockerfile.arm, dockerfiles/build/Dockerfile.x86_64
+
+=================== PR 2462   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2462
+--- [title_description] 0-647
+Title: Detach runtime state/metric from CI_JOB_STATUS
+
+Description:
+## What does this MR do?
+
+Detaches the runtime state, that we also use for metrics, from the `CI_JOB_STATUS` we set to let `after_script` know if the previous stages were a success or failure.
+
+## Why was this MR needed?
+
+Having `CI_JOB_STATUS` be equal to the runtime state meant that the newly introduced `after_script` even on failure behaviour would report via metrics that the job was no longer `running`, but instead completed.
+
+## What's the best way to test this MR?
+
+`TestBuildJobStatusEnvVars` remains unchanged.
+
+## What are the relevant issue numbers?
+
+Closes #27068
+
+--- [commits] 648-712
+Commit messages:
+Detach runtime state/metric from CI_JOB_STATUS
+
+--- [conversation] 3146-3247
+Comment by @ajwalker:
+@steveazz Not sure if you want to just do the maintainer review straight away?
+
+--- [conversation] 3248-3371
+Comment by @sxuereb:
+@ajwalker  Yes lets do that to make it a bit faster since we would like to merge this today/tomorrow!
+
+--- [conversation] 3372-3417
+Comment by @sxuereb:
+LGTM @ajwalker :rocket:
+
+--- [conversation] 3418-3577
+Comment by @sxuereb:
+Going to wait for https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2463 to be merged before I'll add this to the merge train.
+
+--- files: common/build.go
+
+=================== PR 3868   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3868
+--- [title_description] 0-411
+Title: Improve Docker Machine executor finish message
+
+Description:
+## What does this MR do?
+
+After a build, the executor would complete with:
+
+```
+Finished docker-machine build: <nil>
+```
+
+Some might mistaken this as a failure. With this change, successful
+jobs will show:
+
+```
+Finished docker-machine build
+```
+
+While unsuccessful jobs may show:
+
+```
+Finished docker-machine build with error: exit code 1
+```
+
+--- [commits] 412-794
+Commit messages:
+Improve Docker Machine executor finish message
+
+After a build, the executor would complete with:
+
+```
+Finished docker-machine build: <nil>
+```
+
+Some might mistaken this as a failure. With this change, successful
+jobs will show:
+
+```
+Finished docker-machine build
+```
+
+While unsuccessful jobs may show:
+
+```
+Finished docker-machine build with error: exit code 1
+```
+
+--- [conversation] 1228-1374
+Comment by @stanhu:
+@avonbertoldi I think `master` is broken. Seeing https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/3668831269 in other jobs.
+
+--- [conversation] 1375-1780
+Comment by @avonbertoldi:
+I think this is the problem https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/3668831236#L263 (`failed to call `git rev-parse --git-common-dir`: exit status 128`) Some of those windows integration tests are a bit flaky, but I haven't see this particular one fail before. I can't see how your changes could have caused this test to fail though. I think we should just re-run it.
+
+--- [conversation] 1781-2084
+Comment by @avonbertoldi:
+I thin there's something wring with this pipeline...
+- I fixed the failed runner-incept sub-pipeline, but it's new state isn't reflected here
+- I don't have the option to re-run any job in the pipeline.
+
+@stanhu can you please poke this by rebasing against master and pushing?
+
+--- [conversation] 2085-2176
+Comment by @avonbertoldi:
+I added it to the merge train again... let's see what happens...
+
+--- files: executors/docker/machine/machine.go
+
+=================== PR 2977   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2977
+--- [title_description] 0-1353
+Title: Move build log's ANSI Reset to before newline to fix test output 
+
+Description:
+## What does this MR do?
+
+Moves ANSI Reset to before `\n` on build log lines.
+
+## Why was this MR needed?
+
+Whilst this will effect all log lines that come from the build logger (which does not include user script execution), it's mainly done to help make our internal tests parsable.
+
+#28000 details on why the existing order does not work.
+
+## What's the best way to test this MR?
+
+- Ensure that `TestArtifactDownloadRunFailure` log output is written correctly.
+
+  Before MR:
+
+  ```
+  \033[0;m\033[31;1mERROR: Job failed (system failure): build fail
+  \033[0;m--- PASS: TestArtifactDownloadRunFailure (0.00s)
+  ```
+
+  After MR:
+  ```
+  \033[31;1mERROR: Job failed (system failure): build fail\033[0;m
+  --- PASS: TestArtifactDownloadRunFailure (0.00s)
+  ```
+- Ensure that all log entries are rendered correctly by GitLab. Coloured output should be unaffected.
+
+By looking at the `TestArtifactDownloadRunFailure` from this pipeline: https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/1360574568#L2068 and from 14.0: https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/1360750410#L2078 we can see that the colour rendering is identical. If you look at the raw logs, you'll see `--- PASS` is now on its own line.
+
+## What are the relevant issue numbers?
+
+Closes #28000
+
+--- [commits] 1354-1436
+Commit messages:
+Move build log's ANSI Reset to before newline to fix test output
+
+--- [review_thread] 3271-3582
+Review thread on common/build_logger.go:
+@pedropombeiro: **suggestion**: maybe we can add more detail regarding the intended difference?
+
+```suggestion:-0+0
+		// difference between that and fmt.Sprintln than just the newline character being added (fmt.Sprintln consistently adds a space between arguments).
+```
+
+--- [review_thread] 3583-4274
+Review thread on common/build_logger.go:
+@sxuereb: **question:** In the previous implementation we used `ScrubSecrets` on the [logPrefix](https://gitlab.com/gitlab-org/gitlab-runner/-/blob/a2cbfa1096a78b42b3300a66697dadfb789b5aa0/common/build_logger.go#L38) as well. Now looking at all arguments of `logPrefix` these seem to be the ANSI and `ERROR` or `WARNING`, which probably never have tokens in them.
+
+I don't see any problems with this, is this an explicit change you did?
+@ajwalker: @steveazz 
+
+Yes, sorry, I was supposed to comment about this small change.
+
+Our log prefixes are pretty much static and won't include URL tokens, and the smaller the input to `ScrubSecrets` the better.
+
+--- [conversation] 4275-4530
+Comment by @ajwalker:
+@pedropombeiro Are you able to review this? It's similar to another change we made recently, however, whilst this is intended to fix tests, it does modify the way the build logger in general works, but _should_ have no side effects.
+
+--- [conversation] 4531-4659
+Comment by @pedropombeiro:
+LGTM! I just added a minor suggestion regarding adding more detail to the comment. Thanks @ajwalker!
+
+--- [conversation] 4660-4860
+Comment by @sxuereb:
+:wave: 
+
+We've updated the target branch to be main since we are removing the master branch, for more information check
+https://gitlab.com/gitlab-org/gitlab-runner/-/issues/27239
+
+--- [conversation] 4861-4957
+Comment by @ajwalker:
+@steveazz Would you be able to do the maintainer review please? Thank you
+
+--- [conversation] 4958-5021
+Comment by @sxuereb:
+@ajwalker sure, I'll do so tomorrow :bow:
+
+--- [conversation] 5022-5253
+Comment by @sxuereb:
+@ajwalker just one tiny question and then we're able to merge it. I'm going to approve it, so you can merge it if you agree with https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2977#note_626222871
+
+--- [conversation] 5254-5319
+Comment by @ajwalker:
+Merging :rocket: Thank you for the review!
+
+--- files: common/build_logger.go, common/build_logger_test.go
+
+=================== PR 188   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/188
+--- [title_description] 0-436
+Title: Allow experimentally to specify GIT_DEPTH
+
+Description:
+This allows to shallow clone repository. The value is passed to `git fetch` and `git clone`.
+
+It doesn't introduce any new syntax, it only requires to pass `GIT_DEPTH` variable to build environment. I think of this as an experimental feature that we can later extend with .gitlab-ci.yml syntax:
+
+```
+variables:
+  GIT_DEPTH: "20"
+```
+
+@tmaczukin What do you think?
+
+--- [commits] 437-752
+Commit messages:
+Allow experimentally to specify GIT_DEPTH
+
+This allows to shallow clone repository. The value is passed to `git fetch` and `git clone`.
+
+Merge remote-tracking branch 'origin/master' into support-git-depth
+
+Support shallow clone with `GIT_DEPTH`
+
+Support to overwrite git strategy with GIT_STRATEGY
+
+--- [conversation] 4429-4483
+Comment by @markpundsack:
+Seems like a good approach.
+
+--- [conversation] 4484-4857
+Comment by @tmaczukin:
+Nice idea! @ayufan can we also make the fetch/clone decision basing on some `GIT_STRATEGY: clone`/`GIT_STRATEGY: fetch` variable? Then we could move this decision to `.gitlab-ci.yaml` and leave setting in project settings as a fallback (just like we talked) and test this without waiting for `GitlabCiYamlProcessor` refactoring to be finished :wink:
+
+--- [conversation] 4858-4942
+Comment by @ayufan:
+@tmaczukin If specified `GIT_STRATEGY` would take a precedence?
+
+--- [conversation] 4943-5571
+Comment by @tmaczukin:
+Yes, we could do something like:
+```go
+func (b *AbstractShell) isFetchAllowed(build *common.Build) bool {
+        switch build.GetAllVariables().ExpandValue("GIT_STRATEGY") {
+                case "fetch":
+                        return true
+                case "clone":
+                        return false
+                default:
+                        return build.AllowGitFetch
+        }
+}
+```
+The only problem is that `build.AllowGitFetch` is used also out of the shell's scope: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/executors/docker/executor_docker.go#L341
+
+--- [conversation] 5572-5717
+Comment by @ayufan:
+Right, it can be tricky. However, maybe we can make this a setting of `common.Build` rather then setting of `AbstractShell`?
+
+--- [conversation] 5718-5924
+Comment by @tmaczukin:
+Yes, good point! And `getGitDepth` should be also moved to common.Build because is working on build variables and - in the future - it will be working on build data sent from GitLab.
+
+--- [conversation] 5925-6073
+Comment by @ayufan:
+I also added:
+
+```
+variables:
+  GIT_STRATEGY: clone
+  GIT_STRATEGY: fetch
+```
+
+If specified it will overwrite settings.
+
+--- [conversation] 6074-6243
+Comment by @ayufan:
+@tmaczukin Where we should document that?
+
+Is this a good place to add configuration variables? http://docs.gitlab.com/ce/ci/variables/README.html
+
+--- [conversation] 6244-6539
+Comment by @markpundsack:
+@ayufan http://docs.gitlab.com/ce/ci/variables/README.html is for documenting pre-defined variables, but I think you're asking about documenting `GIT_STRATEGY` and `GIT_DEPTH` which seems like they should be documented in http://docs.gitlab.com/ce/ci/yaml/README.html.
+
+--- [conversation] 6540-6634
+Comment by @markpundsack:
+Is there any reason to specify anything more than `GIT_DEPTH` of 1?
+
+--- [conversation] 6635-6751
+Comment by @markpundsack:
+Documented in https://gitlab.com/gitlab-org/gitlab-ce/merge_requests/4720. Please review.
+
+--- [conversation] 6752-7057
+Comment by @ayufan:
+@markpundsack 
+
+Yes. If you update a branch and want to retest your past changes, having GIT_DEPTH set to 1 will result in `unresolved reference`. 
+To solve that for most Travis uses `GIT_DEPTH=50` by default: https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth.
+
+--- [conversation] 7058-7718
+Comment by @markpundsack:
+Feels like that might be a downside to including this in version controlled `.gitlab-ci.yml`, unless we can also specify an override variable on retry. Like do a shallow clone the vast majority of times, but if you happen to retry, then sure, do a larger depth or even a full clone.
+
+Interestingly they also bring it up in the context of queuing so if you have multiple pipeline runs, you need a depth of at least the length of your queue. But setting `GIT_DEPTH=1` could be an interesting way to shortcut killing out-of-date builds. e.g. anything but HEAD will just fail, and flush the queue, so the HEAD commit can start testing.
+
+--- [conversation] 7719-7894
+Comment by @ayufan:
+@markpundsack The `GIT_DEPTH=1` seems like a not nice hack :) I would rather implement this nicely: https://gitlab.com/gitlab-org/gitlab-ce/issues/8998 :)
+
+--- [conversation] 7895-7945
+Comment by @markpundsack:
+@ayufan Yes, agreed! :)
+
+--- [conversation] 7946-9692
+Comment by @LordMike:
+Sorry to revive an old thread, but I'm pondering speeding our CI up. Thanks to new metrics, I discovered that 94% of our build time went to `get_sources` (50+ seconds) and have confirmed that a `GIT_DEPTH` of e.g. 3 reduces this time to approx. 3 seconds.
+
+I came here with the same concern as @markpundsack - this being version controlled means we can never recover from an `unreferenced sources` - but I was wondering. Why not clone the specific SHA at all times?
+
+So. Git doesn't allow this natively, but surely you can:
+
+* Create temporary branches
+* Create temporary tags
+  * Even hide these tags from normal git clients and the web UI
+* Check out HEAD at some dynamic depth, enough to hit the target commit.
+  * A calculation could be done to find the closest branch HEAD to the target commit. F.ex. if we wanted to build 20 commits before `master/HEAD`, we might find that `new-feature01/HEAD` branched off just after the target commit, and is only 1 commit ahead - so we could checkout `new-feature01` at a smaller depth, than `master`.
+
+.. and then check these out?
+
+Altenatively, the runner can:
+
+* Evaluate if the current git history for the local repo contains the desired commit, and then take some action (proceed, do a new clone, ..)
+
+----
+
+We will proceed with a depth of 50 or so to cover most cases, and for emergencies we can branch off or tag our way out of it to make builds work (I hope). But I'd really love for Gitlab CI to figure this out on its own. I shouldn't have to make decisions like this, that can potentially kill our builds some time in the future.
+
+In the worst case, we might have to build an old version, but on the other hand we cannot ignore 94% speedups in CI.
+
+--- files: common/build.go, executors/docker/executor_docker.go, shells/abstract.go
+
+=================== PR 5089   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5089
+--- [title_description] 0-833
+Title: Improve helpers/cli/FixHOME
+
+Description:
+## What does this MR do?
+
+FixHOME was previously relying on an external dependency
+that recently deprecated some of its parts. That forced
+us to make some changes as in 452ac0a2eb7bdf2895467b2cdab95d5f253e8d48
+which, unfortunately, created a regression.
+
+This commit was started with an intention to add some tests
+to helpers/cli/fixHOME so that we will not repeat the same
+regression in the past. However, during a short discussion we
+had about the problem, we've decided that the code we're relying
+on is so simple that we could just bring it to runner's codebase
+directly, shaping the FixHOME behavior in the way we expected
+it to work and dropping the dependency usage.
+
+## Why was this MR needed?
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+--- [commits] 834-1528
+Commit messages:
+Improve helpers/cli/FixHOME
+
+FixHOME was previously relying on an external dependency
+that recently deprecated some of its parts. That forced
+us to make some changes as in 452ac0a2eb7bdf2895467b2cdab95d5f253e8d48
+which, unfortunately, created a regression.
+
+This commit was started with an intention to add some tests
+to helpers/cli/fixHOME so that we will not repeat the same
+regression in the past. However, during a short discussion we
+had about the problem, we've decided that the code we're relying
+on is so simple that we could just bring it to runner's codebase
+directly, shaping the FixHOME behavior in the way we expected
+it to work and dropping the dependency usage.
+
+--- [review_thread] 11184-11669
+Review thread on helpers/homedir/homedir.go:
+@avonbertoldi: Can we rename/refactor this this? When I first read the function name I though "this is already available in the stdlib"? Maybe this?
+
+```suggestion:-6+0
+func GetWDOrDefault(default string) string {
+	dir, err := os.Getwd()
+	if err == nil {
+		return dir
+	}
+	return default
+}
+```
+Or rename it to `GetWDOrEmpty` or something, just to make it clear that the method does something beyond what `os.Getwd()` does.
+@tmaczukin: Done!
+
+--- [review_thread] 11670-12192
+Review thread on helpers/cli/fix_home.go:
+@avonbertoldi: Not sure we need a struct + method here; a plain function will do:
+```suggestion:-17+0
+func fixHomeDir(env, homedir string) error {
+	if os.Getenv(env) != "" {
+		return nil
+	}
+
+	if homedir == "" {
+		return fmt.Errorf("%w: %q", ErrHomedirVariableNotSet, env)
+	}
+
+	_ = os.Setenv(h.env, h.homedir)
+
+	return nil
+}
+```
+@tmaczukin: Yeah, I was experimenting with ways to test this, and at some moment introduced the struct. We definitely don't need it in this form :wink:
+
+--- [review_thread] 12193-12396
+Review thread on helpers/cli/fix_home.go:
+@avonbertoldi: :shrug: 
+```suggestion:-7+0
+		if fixHomeDir(homedir.Env(), homedir.Get()); err != nil {
+			return err
+```
+@tmaczukin: Yup, changed that a little.
+
+--- [conversation] 12397-12479
+Comment by @avonbertoldi:
+Hey @tmaczukin , just a couple of comments/suggestions.
+
+--- [conversation] 12480-12690
+Comment by @tmaczukin:
+@avonbertoldi How about now? I've moved all home directory mangling functions to the `helpers/homedir` package (together with the test) and simplified a lot the `FixHOME` function :wink:
+
+--- [conversation] 12691-12754
+Comment by @avonbertoldi:
+@tmaczukin Looks good now :thumbsup:
+
+--- [conversation] 12755-12942
+Comment by @avonbertoldi:
+@tmaczukin You'll have to add `//go:build !integration` to `helpers/homedir/homedir_test.go` (see https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/8126698988)
+
+--- files: commands/config_unix.go, commands/config_windows.go, commands/service.go, commands/service_integration_test.go, executors/docker/docker.go, helpers/cli/fix_home.go, helpers/home_dir.go, helpers/homedir/homedir.go, helpers/homedir/homedir_test.go
+
+=================== PR 4085   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4085
+--- [title_description] 0-593
+Title: Variable expansion implementation in cache policy field
+
+Description:
+## What does this MR do?
+
+Add support for variable expansion in the `cache:policy` field in CI
+
+## Why was this MR needed?
+
+It allows reducing duplication in jobs, by leveraging variables (via `rules`) to customize the value of `cache:policy`
+ 
+## What's the best way to test this MR?
+
+A new unit test has been added (`TestAbstractShell_cachePolicy`) that validates all the different values for `cache:policy`
+
+## What are the relevant issue numbers?
+
+Relates to https://gitlab.com/gitlab-org/gitlab/-/issues/371480
+
+--- [commits] 594-752
+Commit messages:
+Variable expansion implementation in cache policy field
+
+Add back removed test
+
+Simplify logic for expanding variables in cache policy field
+
+--- [review_thread] 4479-9650
+Review thread on shells/abstract.go:
+@ratchade: **suggestion:** WDYT about replacing the 3 lines above by the following :
+
+```go
+		cacheOptions.Policy = common.CachePolicy(info.Build.GetAllVariables().ExpandValue(string(cacheOptions.Policy)))
+```
+
+I tried to understand why the `""` was checked but I personally couldn't find why. In addition, I can see that `""` is valid `CachePolicy` value
+
+```go
+const (
+	CachePolicyUndefined CachePolicy = ""
+	CachePolicyPullPush  CachePolicy = "pull-push"
+	CachePolicyPull      CachePolicy = "pull"
+	CachePolicyPush      CachePolicy = "push"
+)
+```
+
+Is there anything you believe I missed :bow_tone5: ?
+@renehernandez: @ratchade Good idea! I'll confirm, but the concern was that it would fail if the value of `cacheOptions.Policy` is one of `pull-push`, `pull` or `push`. Since it would be trying to expand those as variables
+@ratchade: Yes, I missed that point. How about using a switch catch then. Let me come up with a suggestion :bow_tone5:
+@renehernandez: @ratchade I've checked `os.Expand` (used under the hood in `ExpandValue`) and non-variables are returned as is, so it should be fine. And tests ran successful, after applying the change locally
+@ratchade: @renehernandez How about this then
+
+```diff
+diff --git a/shells/abstract.go b/shells/abstract.go
+index dcfcc4570..791a4d6c2 100644
+--- a/shells/abstract.go
++++ b/shells/abstract.go
+@@ -118,10 +118,7 @@ func (b *AbstractShell) cacheExtractor(w ShellWriter, info common.ShellScriptInf
+                        continue
+                }
+ 
+-               cachePolicy := info.Build.GetAllVariables().ExpandValue(string(cacheOptions.Policy))
+-               if cachePolicy != "" {
+-                       cacheOptions.Policy = common.CachePolicy(cachePolicy)
+-               }
++               cacheOpt [...]
+--- [review_thread] 9651-9724
+Review thread on shells/abstract.go:
+@ratchade: Same as suggestion above
+
+--- [conversation] 9725-9770
+Comment by @renehernandez:
+@gitlab-bot ready
+
+--- [conversation] 9771-9895
+Comment by @renehernandez:
+@peterhegman Can you see if you can trigger a pipeline? Some jobs seems to be not allowed to run
+
+--- [conversation] 9896-10193
+Comment by @peterhegman:
+@renehernandez thanks for the contribution! I am not familar with this project so going to pass this off to someone who knows this project. They can start a new pipeline and help with any potential failures. 
+
+@ratchade can you help review this ~"Community contribution"?
+
+--- [conversation] 10194-10332
+Comment by @ratchade:
+Hey @renehernandez apologies for the delay to get back to you. I am going to review the MR by next week :bow_tone5:
+
+--- [conversation] 10333-10466
+Comment by @renehernandez:
+@ratchade Thanks!! The associated MR in gitlab is almost ready, but should wait for this one to be merged
+
+--- [conversation] 10467-10606
+Comment by @ratchade:
+Hey @renehernandez I left a comment above. Let me know what you think about it :bow_tone5: 
+
+Back to you :ping_pong:
+
+--- [conversation] 10607-10702
+Comment by @renehernandez:
+@ratchade Pipeline failed again due to some job dependencies issues
+
+--- [conversation] 10703-10752
+Comment by @ratchade:
+Restarted :thumbsup_tone5:
+
+--- [conversation] 10753-13310
+Comment by @ratchade:
+@renehernandez 
+
+Apologies for another ping but I think my previous comments get lost in the thread discussion. WDYT about the following suggestion: 
+
+```diff
+diff --git a/shells/abstract.go b/shells/abstract.go
+index dcfcc4570..791a4d6c2 100644
+--- a/shells/abstract.go
++++ b/shells/abstract.go
+@@ -118,10 +118,7 @@ func (b *AbstractShell) cacheExtractor(w ShellWriter, info common.ShellScriptInf
+                        continue
+                }
+ 
+-               cachePolicy := info.Build.GetAllVariables().ExpandValue(string(cacheOptions.Policy))
+-               if cachePolicy != "" {
+-                       cacheOptions.Policy = common.CachePolicy(cachePolicy)
+-               }
++               cacheOptions.Policy = getCachePolicy(cacheOptions.Policy, info)
+ 
+                if ok, err := cacheOptions.CheckPolicy(common.CachePolicyPull); err != nil {
+                        return fmt.Errorf("%w for %s", err, cacheKey)
+@@ -140,6 +137,16 @@ func (b *AbstractShell) cacheExtractor(w ShellWriter, info common.ShellScriptInf
+        return nil
+ }
+ 
++func getCachePolicy(policy common.CachePolicy, info common.ShellScriptInfo) common.CachePolicy {
++       cachePolicy := common.CachePolicy(info.Build.GetAllVariables().ExpandValue(string(policy)))
++       switch cachePolicy {
++       case common.CachePolicyPull, common.CachePolicyPullPush, common.CachePolicyPush, common.CachePolicyUndefined:
++               return cachePolicy
++       default:
++               return common.CachePolicyUndefined
++       }
++}
++
+ func (b *AbstractShell) extractCacheOrFallbackCachesWrapper(
+        w ShellWriter,
+        info common.ShellScriptInfo,
+@@ -716,10 +723,7 @@ func (b *AbstractShell) archiveCache(w ShellWriter, info common.ShellScriptInfo,
+                        continue
+ [...]
+--- [conversation] 13311-13386
+Comment by @renehernandez:
+@ratchade Sure, I can make that change as well.
+
+--- [conversation] 13387-13793
+Comment by @renehernandez:
+@ratchade On testing the new function, it no longer returns an error when the variable results in an invalid value. Like if
+
+```yaml
+
+variables:
+  CACHE_POLICY: blah
+
+cache_test:
+  cache: $CACHE_POLICY
+  ...
+```
+
+With the currently implementation it would fail, while switching to the new function, it will silently use `CachePolicyUndefined` and as such, use `pull-push` option
+
+--- [conversation] 13794-13978
+Comment by @ratchade:
+Thank you for the feedback. I guess then we will keep the current implementation (without the function above), so that user will be aware of failure. :bow_tone5:
+
+--- [conversation] 13979-14154
+Comment by @renehernandez:
+@ratchade development docker images: [ubi-fips, amd64] job failed: https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/4337266946. Can you retry it?
+
+--- [conversation] 14155-14276
+Comment by @ratchade:
+Thank you @renehernandez for the contribution. Approving and adding to the merge train :bow_tone5:
+
+--- [conversation] 14277-14347
+Comment by @renehernandez:
+@ratchade Pipeline still failing :pensive:
+
+--- [conversation] 14348-14441
+Comment by @ratchade:
+I need to figure out why it is still failing :slight_frown: :thinking:
+
+--- [conversation] 14442-14584
+Comment by @ratchade:
+@renehernandez Would you mind rebasing your branch against the main ? Other pipeline seems to work just fine :thinking:
+
+--- [conversation] 14585-14628
+Comment by @renehernandez:
+@ratchade Done!
+
+--- [conversation] 14629-14687
+Comment by @renehernandez:
+I got the same yaml lint error
+
+--- [conversation] 14688-14886
+Comment by @ratchade:
+First pipeline passed. The merge train pipeline is now running. I believe we will have it merged soon :tada:.
+
+Thank you for your patience as always @renehernandez :bow_tone5:
+
+--- [conversation] 14887-15103
+Comment by @renehernandez:
+@gitlab-bot feedback
+
+- Pipelines in the gitlab-runner project don't work out of the box from pushes in forks
+- Pipelines could be faster. Sometimes they fail after over an hour of running
+
+--- [conversation] 15104-15303
+Comment by @ratchade:
+There is an https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4077+ to fix at least the first point. Making sure it gets merged soon.
+
+2nd point is WIP :sweat_smile:
+
+--- files: shells/abstract.go, shells/abstract_test.go
+
+=================== PR 5997   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5997
+--- [title_description] 0-930
+Title: Recursively set up Git submodules credentials
+
+Description:
+## What does this MR do?
+
+Previously if you used `GIT_SUBMODULE_STRATEGY: normal` and accessed
+nested submodules,
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5962 only
+initialized the credentials for the top-level submodules. However, there
+are existing workflows that rely on `git submodule update --init` to
+just work from the nested directory.
+
+To preserve existing workflows, recursively update the nested submodules
+credentials.
+
+## Why was this MR needed?
+
+## What's the best way to test this MR?
+
+1. Find/create a project with nested submodules.
+1. Set `GIT_SUBMODULE_STRATEGY: normal` in the `.gitlab-ci.yml` `variables`.
+1. Run a pipeline.
+1. Verify that running `cd path/to/nested-submodule && git submodule update --init` works.
+
+## What are the relevant issue numbers?
+
+Relates to https://gitlab.com/gitlab-org/gitlab/-/issues/583366
+
+--- [commits] 931-1485
+Commit messages:
+Recursively set up Git submodules credentials
+
+Previously if you used `GIT_SUBMODULE_STRATEGY: normal` and accessed
+nested submodules,
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5962 only
+initialized the credentials for the top-level submodules. However, there
+are existing workflows that rely on `git submodule update --init` to
+just work from the nested directory.
+
+To preserve existing workflows, recursively update the nested submodules
+credentials.
+
+Relates to https://gitlab.com/gitlab-org/gitlab/-/issues/583366
+
+--- [review_thread] 5379-7709
+Review thread on shells/abstract.go:
+@avonbertoldi: :thinking: 
+```suggestion:-0+0
+	args := foreachArgs
+```
+@stanhu: Thanks! I was worried about mutating `foreachArgs`, but Claude set me straight:
+
+```go
+package main
+
+import "fmt"
+
+func test(foreachArgs []string) {
+    args := foreachArgs
+    args = append(args, "new")
+    fmt.Printf("args is now: %v, forEachArgs: %v\n", args, foreachArgs)
+}
+
+func main() {
+    foreachArgs := []string{"hello"}
+    test(foreachArgs)
+    fmt.Printf("main: forEachArgs is %v\n", foreachArgs)
+}
+```
+
+In Go, **slices are passed by value**, but the value being passed is a slice header that contains a pointer to the underlying array. This makes it behave somewhat like "pass by reference" in some situations, but not all.
+
+Let me explain what happens with your code:
+
+## What Your Code Demonstrates
+
+When you run your code, you'll see:
+```
+args is now: [hello new], forEachArgs: [hello]
+main: forEachArgs is [hello]
+```
+
+Here's why:
+
+1. **The slice header is copied** - When you call `test(foreachArgs)`, Go copies the slice header (which contains: pointer to backing array, length, and capacity)
+
+2. **Both slices initially point to the same backing array** - `args` and `foreachArgs` point to the same underlying data
+
+3. **`append` may create a new backing array** - When you do `args = append(args, "new")`, if there isn't enough capacity, `append` allocates a new backing array and returns a new slice pointing to it
+
+4. **The reassignment is local** - `args = append(...)` updates the local `args` variable, but `foreachArgs` in the calling function still points to the original backing array
+
+## Key Points
+
+**If you modify existing elements:**
+```go
+func test(s []string) {
+    s[0] = "modified"  // This WILL affect the caller's slice
+}
+```
+
+**If you append w [...]
+--- [review_thread] 7710-7950
+Review thread on shells/abstract.go:
+@avonbertoldi: Do we even need this check? Is there any harm in always doing this?
+@stanhu: This is to avoid having `--recursive` inserted twice, such as `git submodule foreach --recursive --recursive`.
+
+--- [conversation] 7951-8045
+Comment by @avonbertoldi:
+Looks good @stanhu. One minor suggestion and one question.
+
+Thanks.
+
+--- [conversation] 8046-9360
+Comment by @hydezhao:
+Hello, I upgraded runner to 18.7.2. but it seems the bug is still here.
+
+to reprodure, in a project having a submodule:
+
+```yaml
+test-submodule:
+  image: ubuntu:latest
+  variables:
+    GIT_SUBMODULE_STRATEGY: none
+  script:
+    - apt update -y && apt install git -y
+    - git submodule update --init --recursive
+```
+
+error logs:
+```
+Submodule 'test-git-b' (https://gitlab.example.com/yzhao/test-git-b.git) registered for path 'test-git-b'
+Cloning into '/builds/yzhao/test-git-a/test-git-b'...
+fatal: could not read Username for 'https://gitlab.example.com': No such device or address
+fatal: clone of 'https://gitlab.example.com/yzhao/test-git-b.git' into submodule path '/builds/yzhao/test-git-a/test-git-b' failed
+Failed to clone 'test-git-b'. Retry scheduled
+Cloning into '/builds/yzhao/test-git-a/test-git-b'...
+fatal: could not read Username for 'https://gitlab.example.com': No such device or address
+fatal: clone of 'https://gitlab.example.com/yzhao/test-git-b.git' into submodule path '/builds/yzhao/test-git-a/test-git-b' failed
+Failed to clone 'test-git-b' a second time, aborting
+```
+
+i had to add 
+```
+- git config --global url."https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.example.com".insteadOf "https://gitlab.example.com"
+```
+
+before `git submodule` command to make it work.
+
+--- files: shells/abstract.go, shells/abstract_test.go
+
+=================== PR 5982   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5982
+--- [title_description] 0-1330
+Title: Allow overriding git credentials in shell integration tests
+
+Description:
+## What does this MR do?
+
+Some shell integration tests interact with GitLab.com repositories and
+require authentication. Previously, these tests hard-coded the username
+as 'gitlab-ci-token', making it impossible to run them locally without a
+CI job token.
+
+This commit introduces the GITLAB_TEST_USERNAME environment variable to
+allow developers to override the username for local testing. When set
+along with GITLAB_TOKEN, developers can now run shell integration tests
+locally using their own credentials.
+
+Changes:
+
+- Modified getGitCred() to use GITLAB_TEST_USERNAME env var with
+  fallback to 'gitlab-ci-token'.
+- Modified setGitCred() to use the same environment variable
+- Added documentation in docs/development/_index.md with usage
+  examples
+
+Example usage:
+
+```
+export GITLAB_TEST_USERNAME="your-username"
+export GITLAB_TOKEN="your-personal-access-token"
+go test -count=1 -v -run TestGitIncludePaths --tags=integration ./executors/shell
+```
+
+This was needed for local testing of
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5977, which
+requires running integration tests with relative builds_dir
+configurations.
+
+## Why was this MR needed?
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+--- [commits] 1331-2522
+Commit messages:
+Allow overriding git credentials in shell integration tests
+
+Some shell integration tests interact with GitLab.com repositories and
+require authentication. Previously, these tests hard-coded the username
+as 'gitlab-ci-token', making it impossible to run them locally without a
+CI job token.
+
+This commit introduces the GITLAB_TEST_USERNAME environment variable to
+allow developers to override the username for local testing. When set
+along with GITLAB_TOKEN, developers can now run shell integration tests
+locally using their own credentials.
+
+Changes:
+
+- Modified getGitCred() to use GITLAB_TEST_USERNAME env var with
+  fallback to 'gitlab-ci-token'.
+- Modified setGitCred() to use the same environment variable
+- Added documentation in docs/development/_index.md with usage
+  examples
+
+Example usage:
+
+```
+export GITLAB_TEST_USERNAME="your-username"
+export GITLAB_TOKEN="your-personal-access-token"
+go test -count=1 -v -run TestGitIncludePaths --tags=integration ./executors/shell
+```
+
+This was needed for local testing of
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5977, which
+requires running integration tests with relative builds_dir
+configurations.
+
+--- [review_thread] 4329-4484
+Review thread on executors/shell/shell_integration_test.go:
+@stanhu: `setInvalidGitCreds` uses invalid credentials, so we shouldn't need to override that.
+
+--- [review_thread] 4485-4953
+Review thread on docs/development/_index.md:
+@timofurrer: I'm a little bit hesitant to use the `GITLAB_TOKEN` variable for this. I've seen "oupsies" in the past. It's a variable that's used with many toolings and people often have (too) high-privileged tokens in their shell exported as `GITLAB_TOKEN`. 
+
+If there is no strong reason to use `GITLAB_TOKEN`, I'd recommend using `GITLAB_TEST_TOKEN` (to follow the naming pattern of the username variable) instead. WDYT?
+
+--- [review_thread] 4954-5112
+Review thread on docs/development/_index.md:
+@rsarangadharan: ```suggestion:-0+0
+your own credentials, override the username using environment variables:
+```
+
+--- [review_thread] 5113-5339
+Review thread on docs/development/_index.md:
+@rsarangadharan: ```suggestion:-1+0
+If you don't set the environment variables, the tests default to `gitlab-ci-token`,
+maintaining backward compatibility with CI/CD pipelines.
+```
+
+--- [conversation] 5340-5416
+Comment by @rsarangadharan:
+Thanks @stanhu. I left a couple of suggestions.
+
+--- files: docs/development/_index.md, executors/shell/shell_integration_test.go
+
+=================== PR 7461   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/7461
+--- [title_description] 0-656
+Title: Add code owners for the translation MR template
+
+Description:
+#### What does this MR do?
+
+Makes `@gitlab-com/localization/maintainers/tech-docs` a code owner of `.gitlab/.argo/`. That directory holds `mr_template_doc_ai.md`, the template the GitLab Argo Bot uses to open documentation translation MRs, and the localization team maintains it.
+
+#### Background
+
+A wording change to this template currently needs an approval from the `*` rule owners. This came up in gitlab-org/omnibus-gitlab!9802, where the reviewer roulette assigned two Build engineers to a wording change in the template.
+
+Tracked in gitlab-com/localization/localization-team#952.
+
+--- [commits] 657-850
+Commit messages:
+Add localization code owners for Argo template
+
+The localization team maintains .gitlab/.argo/mr_template_doc_ai.md,
+the template the GitLab Argo Bot uses for translation MRs.
+
+--- [conversation] 1772-2021
+Comment by @duo-risk-classification-gitlab-org:
+✅ Duo Risk Classification has started. You can view progress <a href="https://gitlab.com/gitlab-org/gitlab-runner/-/automate/agent-sessions/8603525" target="_blank" rel="noopener noreferrer">here</a>.
+
+--- [conversation] 2022-2284
+Comment by @rasamhossain:
+@opysaryuk,
+
+Personally I've never experienced something like this in the CODEOWNERS file `!/.gitlab/.argo/` , so perhaps let's test this out by making a quick change to the template (if possible). Other than this, it looks good to me!
+
+--- [conversation] 2285-2534
+Comment by @duo-risk-classification-gitlab-org:
+✅ Duo Risk Classification has started. You can view progress <a href="https://gitlab.com/gitlab-org/gitlab-runner/-/automate/agent-sessions/8608457" target="_blank" rel="noopener noreferrer">here</a>.
+
+--- [conversation] 2535-2630
+Comment by @opysaryuk:
+Tiny change , no need to test , or rather let's see live how it behaves
+
+--- files: .gitlab/CODEOWNERS
+
+=================== PR 6015   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6015
+--- [title_description] 0-850
+Title: Fix connector interface not being exposed for docker+machine and docker-autoscaler executors
+
+Description:
+## What does this MR do?
+
+The docker executor implements `InterativeTerminal` and `Connector` interfaces.
+
+- `docker-autoscaler` was not exposing either of these implementations via its executor wrapper.
+- `docker+machine` was not exposing the `Connector` implementation via its executor wrapper.
+
+## Why was this MR needed?
+
+Advertises to the rest of Runner that `InterativeTerminal` and `Connector` are implemented.
+
+## What's the best way to test this MR?
+
+- Use docker-autoscaler with a simple step. Before this change it hangs. After this change, it works.
+
+## What are the relevant issue numbers?
+
+Closes https://gitlab.com/gitlab-org/gitlab-runner/-/issues/39165
+Closes https://gitlab.com/gitlab-org/gitlab-runner/-/issues/37860
+
+--- [commits] 851-1016
+Commit messages:
+Expose Connector interface for docker through docker+machine executor
+
+Expose Connector and InteractiveTerminal through autoscaler executor wrapper
+
+--- [review_thread] 9813-9916
+Review thread on common/build.go:
+@cam_swords: Nice. So I assume this errors now, instead of crashing.
+
+--- [review_thread] 9917-10142
+Review thread on executors/internal/autoscaler/executor.go:
+@cam_swords: You don't need `TerminalConnect()` on docker machine? (I know it's an unrelated fix to the current issue)
+@ajwalker: Docker machine already exposes it.
+
+--- [review_thread] 10143-10664
+Review thread on executors/internal/autoscaler/executor.go:
+@cam_swords: It's strange to me that the autoscaler's `executor` and machine's `machineExecutor` depend on `common.Executor`, when it doesn't provide all the interface methods needed. Maybe eventually it could depend on a different interface, such as a `DockerExecutor`? :shrug:
+@ajwalker: For `docker+machine` it's odd, because it can only wrap the docker executor.
+
+For `autoscaler`, this can wrap different executors, that might not have this functionality.
+
+--- [conversation] 10665-10713
+Comment by @cam_swords:
+Thanks, @ajwalker :bow:
+
+--- [conversation] 10714-10928
+Comment by @ajwalker:
+@cam_swords Rather than integration tests, I saw that `docker+machine` checked with `TerminalConnect` with a mock setup. I've copied that for our `Connect()` interface.
+
+Can you review again?
+
+--- [conversation] 10929-10975
+Comment by @cam_swords:
+LGTM, @ajwalker :bow:
+
+--- files: common/build.go, common/executor.go, executors/docker/machine/machine.go, executors/docker/machine/machine_test.go, executors/docker/machine/terminal.go, executors/docker/machine/terminal_test.go, executors/internal/autoscaler/executor.go, executors/internal/autoscaler/executor_test.go
+
+=================== PR 4980   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4980
+--- [title_description] 0-2991
+Title: Prevent script dump on job cancellation through UI
+
+Description:
+## What does this MR do?
+
+When the job is cancelled through the UI, GitLab Runner sends SIGTERM to all PIDs related to the stage script. On Bash version 4, the procession termination dumps the executed script in the job logs. To prevent this behaviour the TERM signals are trapped and cause the script to exit 1.
+
+## Why was this MR needed?
+
+To prevent script dump on job cancellation through UI
+
+## What's the best way to test this MR?
+
+<details><summary>gitlab-ci</summary>
+
+```yaml
+variables:
+  CACHE_FALLBACK_KEY: fallback-keys
+  # FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY: "true".  # <---- Tested in both attach and exec mode
+  FF_USE_POWERSHELL_PATH_RESOLVER: "true"
+  FF_RETRIEVE_POD_WARNING_EVENTS: "true"
+  FF_PRINT_POD_EVENTS: "true"
+  FF_SCRIPT_SECTIONS: "true"
+  CI_DEBUG_SERVICES: "true"
+  GIT_DEPTH: 5
+  MY_TEST_VARIABLE_1: gitlab-ci
+  MY_TEST_VARIABLE_2: gitlab-ci
+  SAST_GOSEC_LEVEL: 2
+  END_LOOP: 400
+
+testing_k8s:
+  image:
+    name: registry.access.redhat.com/ubi8:latest
+  script:
+    # - echo "Missing closing quote
+    - export TEST='foo'
+    - |
+      i=1
+      while [ $i -le "${END_LOOP}" ]; do
+          echo "From build container Iteration $i - Current Time: $(date +"%T")"
+          i=$((i + 1))
+          sleep 1
+      done
+```
+
+</details>
+
+<details><summary>config.toml</summary>
+
+```toml
+concurrent = 1 
+check_interval = 1
+log_level = "debug"
+log_format = "runner"
+shutdown_timeout = 0
+
+listen_address = ':9252'
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "investigation"
+  url = "https://gitlab.com/"
+  id = 0
+  token = "glrt-REDACTED"
+  token_obtained_at = "0001-01-01T00:00:00Z"
+  token_expires_at = "0001-01-01T00:00:00Z"
+  executor = "kubernetes"
+  shell = "bash"
+  lim [...]
+--- [commits] 2992-3060
+Commit messages:
+Prevent script dump on job cancellation through UI
+
+--- [review_thread] 3943-6788
+Review thread on shells/bash.go:
+@ratchade: I guess somewhere, there is this setup where  the `TERM` signal is trapped. For this reason, I was also thinking about adding this instruction at the end of the script before the `buf.WriteString("exit 0\n")` instruction. 
+
+As bash execute the trapped function in the order there where set, it wouldn't break anything existing setups (I think but I might be wrong).
+@ajwalker: > I guess somewhere, there is this setup where the `TERM` signal is trapped.
+
+If I read this correctly, you're concerned that a user as setup this trap in their user script?
+
+Does adding our trap to the end work? Scripts are evaluated linearly, so does this work if canceling mid-script?
+@ratchade: > If I read this correctly, you're concerned that a user as setup this trap in their user script?
+
+Correct. You got it right. 
+
+> Does adding our trap to the end work? Scripts are evaluated linearly, so does this work if canceling mid-script?
+
+You are correct, it wouldn't work :face_palm_tone5:. So this concern is not covered :disappointed:
+@ajwalker: Maybe it's fine if we add our TRAP first. My assumption is that TRAPs are a bit like Go's defer, and execute backwards. So the user's trap would be executed first, and then ours, as it was defined first. Not sure if this is what happens in practice though.
+@ratchade: I am going to test it and see how it behaves.
+@ratchade: So I ran some tests using this
+
+<details><summary>gitlab-ci</summary>
+
+```yaml
+variables:
+  CACHE_FALLBACK_KEY: fallback-keys
+  FF_USE_POWERSHELL_PATH_RESOLVER: "true"
+  FF_RETRIEVE_POD_WARNING_EVENTS: "true"
+  FF_PRINT_POD_EVENTS: "true"
+  FF_SCRIPT_SECTIONS: "true"
+  CI_DEBUG_SERVICES: "true"
+  GIT_DEPTH: 5
+  MY_TEST_VARIABLE_1: gitlab-ci
+  MY_TEST_VARIABLE_2: gitlab-ci
+  SAST_GOSEC_LEVEL: 2
+  EN [...]
+--- [conversation] 6789-6868
+Comment by @ratchade:
+@ajwalker would you mind reviewing this MR ? :bow_tone5:
+
+--- [conversation] 6869-6925
+Comment by @ratchade:
+@ajwalker gentle ping :bow_tone5:
+
+--- [conversation] 6926-6982
+Comment by @ratchade:
+@ajwalker gentle ping :bow_tone5:
+
+--- files: shells/bash.go
+
+=================== PR 5608   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5608
+--- [title_description] 0-1159
+Title: Limit Unit test job to only MR pipelines for forks
+
+Description:
+## What does this MR do?
+
+`clone test repo` and `prepare done` jobs are set to only run in MR pipelines for non-canonical (forks/community): https://gitlab.com/gitlab-org/gitlab-runner/-/blob/1da69ed13189b4edc5fc05205118bdc17283e990/.gitlab/ci/build.gitlab-ci.yml#L129
+
+But `unit test`, with the new rules added in https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5576, is accidentally running in _all_ pipelines in forks/community, including default branches. Those default branches pipelines (in forks/community) do not have `clone test repo` and `prepare done`, so the pipelines are failing: https://gitlab.com/gitlab-community/gitlab-org/gitlab-runner/-/pipelines/1844443078
+
+Pipelines in MRs are working fine, as expected: https://gitlab.com/gitlab-com/localization/tech-docs-forked-projects/prod/gitlab-runner/-/pipelines/1845593991
+
+This MR updates the new rule to set `unit test` to run for _MR pipelines_ in community/fork pipelines (not _all_ pipelines).
+
+## Why was this MR needed?
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+--- [commits] 1160-1228
+Commit messages:
+Limit Unit test job to only MR pipelines for forks
+
+--- [review_thread] 2156-2320
+Review thread on .gitlab/ci/_rules.gitlab-ci.yml:
+@marcel.amirault: I'm using this exact expression in the new rule config below, to find non-canonical namespaces.
+
+--- [review_thread] 2321-2462
+Review thread on .gitlab/ci/_rules.gitlab-ci.yml:
+@marcel.amirault: New rule for running for MR pipelines in non-canonical (Forks/Community)
+
+--- [review_thread] 2463-2626
+Review thread on .gitlab/ci/_rules.gitlab-ci.yml:
+@marcel.amirault: Use new rule to run `unit test` job for MR pipelines (not default branches), in non-canonical.
+
+--- [conversation] 2627-2930
+Comment by @marcel.amirault:
+@ggeorgiev_gitlab I made a small mistake in the config I added. While community/fork MRs are fine now, their fork's pipeline list will show failing default branch pipelines: https://gitlab.com/gitlab-com/localization/tech-docs-forked-projects/prod/gitlab-runner/-/pipelines
+
+--- [conversation] 2931-3074
+Comment by @marcel.amirault:
+@laurenbarker @rasamhossain FYI, this is why the default branch pipelines are suddenly failing in the fork. :bow:
+
+--- [conversation] 3075-3138
+Comment by @ggeorgiev_gitlab:
+Thank you @marcel.amirault :100:
+
+--- files: .gitlab/ci/_rules.gitlab-ci.yml
+
+=================== PR 1301   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1301
+--- [title_description] 0-647
+Title: Refactor TestDefaultVariables test
+
+Description:
+## What does this MR do?
+
+Refactor TestDefaultVariables test
+
+## Why was this MR needed?
+
+Use a map[string]struct for the `TestDefaultVariables` test to be a
+consistent with our new table tests.
+
+Rename the variable `test` to `c` since test is the name of the package
+and can be confusing.
+
+This is a small follow up from https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1267
+
+
+## Does this MR meet the acceptance criteria?
+
+- [-] Documentation created/updated
+- [-] Added tests for this feature/bug
+- [-] In case of conflicts with `master` - branch was rebased
+
+--- [commits] 648-997
+Commit messages:
+Refactor TestDefaultVariables test
+
+Use a map[string]struct for the `TestDefaultVariables` test to be a
+consistent with our new table tests.
+
+Rename the variable `test` to `c` since test is the name of the package
+and can be confusing.
+
+This is a small follow up from https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1267
+
+--- [review_thread] 2353-2418
+Review thread on common/build_test.go:
+@ayufan: Why not `tests`?
+
+--- [review_thread] 2419-2633
+Review thread on common/build_test.go:
+@ayufan: Why not prefer full name not, abbreviation `test`?
+@sxuereb: > Rename the variable `test` to `c` since test is the name of the package and can be confusing.
+
+@ayufan
+
+--- [conversation] 2634-2797
+Comment by @sxuereb:
+@ayufan do mind if you take a quick look at this? It's a small follow up from https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1267
+
+--- [conversation] 2798-2941
+Comment by @ayufan:
+I don't like that change:
+- changing to `cases`
+- changing to `c`
+
+Can you describe in more detail reasons for doing that?
+
+--- [conversation] 2942-3318
+Comment by @sxuereb:
+The reasoning for that was done because we have a package named `test` already in the imports from `github.com/sirupsen/logrus/hooks/test` so when just reading git config it's a bit confusing seeing if `test` reading it you have to check if it's scoped for the variable or the package, but this to not too much of an issue anyways, I reverted the change.
+
+--- [conversation] 3319-3395
+Comment by @ayufan:
+We agreed that we not gonna proceed with this change :)
+
+--- [conversation] 3396-3599
+Comment by @sxuereb:
+@ayufan this MR changes other things then just the `test` => `case` rename, it moves `[]struct{}` to `map[string]struct{}` to be consistent. Would you mind if you take another look?
+
+--- [conversation] 3600-3642
+Comment by @ayufan:
+Sorry. Didn't notice.
+
+--- files: common/build_test.go
+
+=================== PR 5609   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5609
+--- [title_description] 0-1262
+Title: Improve runner_name metric label coverage
+
+Description:
+- [ ] Please check this box if this contribution uses AI-generated content (including content generated by GitLab Duo features) as outlined in the [GitLab DCO & CLA](https://about.gitlab.com/community/contribute/dco-cla/). As a benefit of being a GitLab Community Contributor, you [receive complimentary access to GitLab Duo](https://gitlab.com/gitlab-community/meta#gitlab-duo).
+
+## What does this MR do?
+
+Adds runner name label to several prometheus metrics
+- gitlab_runner_jobs
+- gitlab_runner_jobs_total
+- gitlab_runner_failed_jobs_total
+- gitlab_runner_job_duration_seconds
+- gitlab_runner_job_queue_duration_seconds
+- gitlab_runner_job_stage_duration_seconds
+- gitlab_runner_acceptable_job_queuing_duration_exceeded_total
+- gitlab_runner_limit
+
+## Why was this MR needed?
+
+Runner short description isn't helpful to humans when building dashboards, in multi runner setups this makes visualizing these metrics much more useful.
+
+## What's the best way to test this MR?
+
+`make test` or launch gitlab-runner and verify metrics are available with expected runner_name label over metrics endpoint.
+
+## What are the relevant issue numbers?
+
+https://gitlab.com/gitlab-org/gitlab-runner/-/issues/26660
+
+--- [commits] 1263-1373
+Commit messages:
+Improve runner_name metric label coverage
+
+Add runner_name metric label to new queue metrics
+
+--- [review_thread] 13162-13317
+Review thread on helpers/prometheus/failures_collector_test.go:
+@stanhu: Nitpick: Does this comment need to be here?
+@avonbertoldi: ```suggestion:-0+0
+```
+
+--- [review_thread] 13318-13449
+Review thread on helpers/prometheus/failures_collector_test.go:
+@stanhu: Same question here.
+@avonbertoldi: ```suggestion:-0+0
+```
+
+--- [conversation] 13450-13597
+Comment by @avonbertoldi:
+Looks good @jsmith25. We just need to remove those two commented out lines and this MR will be ready to merge :thumbsup:
+
+--- [conversation] 13598-13732
+Comment by @avonbertoldi:
+@jsmith25 Ugh, it looks like there are some merge conflicts that need to be fixed before we can merge this.
+
+--- [conversation] 13733-13784
+Comment by @avonbertoldi:
+@jsmith25 nag :point_up:
+
+--- [conversation] 13785-13916
+Comment by @jsmith25:
+Thanks @avonbertoldi, fixed and also added runner_name label to some new interesting metrics added in 18.1.0
+
+--- [conversation] 13917-14033
+Comment by @jsmith25:
+@avonbertoldi Do I need to take another look at this or do these pipelines just need a retry?
+
+--- [conversation] 14034-14168
+Comment by @avonbertoldi:
+:rage: more merge conflicts :rage: @jsmith25 if you can fix those please, I'll get this thing merged :pray:
+
+--- [conversation] 14169-14222
+Comment by @jsmith25:
+Resolved and pushed :thumbsup:
+
+--- files: commands/builds_helper.go, commands/builds_helper_test.go, commands/multi.go, common/network.go, helpers/prometheus/failures_collector.go, helpers/prometheus/failures_collector_test.go, network/trace.go
+
+=================== PR 2114   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2114
+--- [title_description] 0-1137
+Title: Dockerfiles restructuring
+
+Description:
+## What does this MR do?
+
+This MR:
+- renames `dockerfiles/build` (a generic name which doesn't mention anything about helper images) to `dockerfiles/runner-helper`.
+- moves `dockerfiles/alpine` and `dockerfiles/ubuntu` under a new `dockerfiles/runner/` directory.
+- changes scripts to build the helper binaries under `out/binaries` (to be consistent with the Runner build process), instead of building it under `dockerfiles/runner-helper/binaries` and then copying it out to `out/binaries/gitlab-runner-helper/`
+
+## Why was this MR needed?
+
+I feel that the existing folder structure is not obvious to people who are onboarding or external contributors, so by making things more obvious we'll be lowering a bit the overhead required to work with the codebase.
+
+## Are there points in the code the reviewer needs to double check?
+
+## Does this MR meet the acceptance criteria?
+
+- [ ] Documentation created/updated
+- [ ] Added tests for this feature/bug
+- [ ] In case of conflicts with `master` - branch was rebased
+
+## What are the relevant issue numbers?
+
+Closes #25846
+
+--- [commits] 1138-1282
+Commit messages:
+Move Dockerfiles to `runner` and `runner-helper` directories
+
+Build helper binaries under out/binaries instead of dockerfiles/
+
+--- [conversation] 10240-10307
+Comment by @pedropombeiro:
+@lraykov Mind doing the initial review?
+
+--- [conversation] 10308-10509
+Comment by @lraykov:
+I guess it's `build` as in it's used during builds executed by the runner. But I agree `helper` seems to be a term we've converged towards and is easier to associate.
+
+Looks good!
+
+--- [conversation] 10510-10611
+Comment by @pedropombeiro:
+Thanks for the review Lyubo! 
+Mind doing the maintainer review @steveazz?
+
+--- [conversation] 10612-10891
+Comment by @sxuereb:
+Thank you for doing this @pedropombeiro. Do we have an issue for this? If not can we create one so we can have it in our [kanban board](https://gitlab.com/groups/gitlab-org/-/boards/1605623?label_name[]=group%3A%3Arunner) in the ~"workflow::In review" :bow:
+
+--- [conversation] 10892-11031
+Comment by @pedropombeiro:
+Good point @steveazz. I've created an issue [here](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/25846).
+
+--- [conversation] 11032-11272
+Comment by @sxuereb:
+@ggeorgiev\_ would you mind if you take this over as well? If you have any questions about the structure or how they are being used please feel free to ping me! Even if you would like me to give the final quick look :)
+
+--- [conversation] 11273-11335
+Comment by @ggeorgiev_gitlab:
+LGTM @pedropombeiro :fireworks:
+
+--- files: .gitignore, .gitlab/ci/prebuild.gitlab-ci.yml, Makefile, Makefile.runner_helper.mk, ci/build_release_windows_images.ps1, ci/release_docker_images, dockerfiles/runner-helper/Dockerfile.arm, dockerfiles/runner-helper/Dockerfile.arm64, dockerfiles/runner-helper/Dockerfile.x86_64, dockerfiles/runner-helper/Dockerfile.x86_64_servercore, dockerfiles/runner-helper/apk-repositories, dockerfiles/runner-helper/binaries/.gitkeep, dockerfiles/runner-helper/helpers/checksum.ps1, dockerfiles/runner-helper/scripts/gitlab-runner-build, dockerfiles/runner/alpine/Dockerfile, dockerfiles/runner/alpine/README.md, dockerfiles/runner/alpine/entrypoint, dockerfiles/runner/alpine/install-gitlab-runner, dockerfiles/runner/install-deps, dockerfiles/runner/ubuntu/Dockerfile, dockerfiles/runner/ubuntu/README.md, dockerfiles/runner/ubuntu/entrypoint, dockerfiles/runner/ubuntu/install-gitlab-runner
+
+=================== PR 7093   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/7093
+--- [title_description] 0-1531
+Title: [FixPipeline] https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2720670918
+
+Description:
+## Summary
+
+**File modified:** `steps/localserver/localserver.go`
+
+**Change:** In the `serve()` function, the condition checking the return value of `srv.Serve(listener)` was updated to exclude `grpc.ErrServerStopped` from being treated as an error:
+
+```go
+// Before:
+
+if err := srv.Serve(listener); err != nil {
+    return fmt.Errorf("step-runner server: %w", err)
+}
+
+// After:
+
+if err := srv.Serve(listener); err != nil && err != grpc.ErrServerStopped {
+    return fmt.Errorf("step-runner server: %w", err)
+}
+```
+
+**Root cause:** When `GracefulStop()` is called (triggered by context cancellation in `Stop()`), the gRPC library's `Serve()` returns `grpc.ErrServerStopped` as a sentinel value indicating normal graceful shutdown — not an actual error. The previous code propagated this as a non-nil error into the `done` channel, causing `TestStartStopRemove` to fail at the `require.NoError` assertion. The fix treats `grpc.ErrServerStopped` as a normal termination signal and returns `nil` in that case. The `grpc` package was already imported in the file, so no new imports were needed.
+
+Fixes [failing pipeline](https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2720670918)\
+\
+[Session 5922124](https://gitlab.com/gitlab-org/gitlab-runner/-/automate/agent-sessions/5922124)
+
+_Powered by _[_Duo Fix Pipeline_](https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/fix_pipeline/#give-feedback)_ flow_
+
+--- [commits] 1532-2235
+Commit messages:
+Ignore grpc.ErrServerStopped on clean shutdown
+
+GracefulStop() causes srv.Serve() to return grpc.ErrServerStopped,
+which is expected behaviour during context-driven shutdown. Treating
+it as an error produces false failures on every clean exit. Filter
+it out so only unexpected errors are propagated.
+
+Use errors.Is for grpc.ErrServerStopped comparison
+
+Direct sentinel comparison (!=) works today since gRPC returns this
+error unwrapped, but errors.Is is the idiomatic Go approach for error
+identity checks and stays correct if the error is ever wrapped in a
+future gRPC release.
+
+Suggested by GitLab Duo Code review on
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/7093
+
+--- [conversation] 2711-3728
+Comment by @lachie-gitlab:
+This looks good.
+
+From Claude:
+
+> Verdict: yes, it makes sense
+>
+> The bot correctly diagnosed a real, flaky-looking failure and applied the standard fix:
+>
+> - Failing job: windows 1809 unit tests 1/2 in pipeline 2720670918
+> - Actual failure (confirmed from the job trace): TestStartStopRemove failed with Received unexpected error: step-runner server: grpc: the server has been stopped — message: "graceful stop should not surface an error"
+> - Root cause: steps/localserver/localserver.go's serve() calls srv.GracefulStop() on context cancellation, then checks srv.Serve(listener)'s return value. gRPC's Serve() returns the sentinel grpc.ErrServerStopped in exactly this graceful-shutdown case — it's documented behavior, not a real error — so the old code wrapped it as step-runner server: %w and propagated it into Server.Done(), which the test asserts is nil.
+> - Fix: err != nil && err != grpc.ErrServerStopped — one-line change, grpc was already imported, no other imports needed.
+
+--- [conversation] 3729-3983
+Comment by @lachie-gitlab:
+- Graceful stop, mid-Serve(): Accept loop notices s.quit.HasFired() → nil
+- Graceful stop, raced ahead of Serve(): Serve() never gets going → ErrServerStopped (this sentinel)
+- Any real failure: the underlying error, untouched
+
+--- [conversation] 3984-4314
+Comment by @takax:
+LGTM!
+
+Non-blocking follow-up: It might worth looking into the root cause. `net.ListenUnix` runs before `di.NewContainer(...).StepRunnerService()`, so the socket is dialable while `serve()` is still initializing and `waitForListening` returns early. Moving the listen after the DI setup might close the window.
+
+--- [conversation] 4315-4468
+Comment by @lachie-gitlab:
+Filed https://gitlab.com/gitlab-org/gitlab-runner/-/work_items/39653 to track the root cause @takax flagged above.
+
+cc @takax
+
+--- [conversation] 4469-4512
+Comment by @takax:
+Thanks for creating it!
+
+--- files: steps/localserver/localserver.go
+
+=================== PR 1060   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1060
+--- [title_description] 0-908
+Title: Generate junit report file for tests
+
+Description:
+## What does this MR do?
+
+Adds integration to [GitLab's JUnit reports support](https://docs.gitlab.com/ee/ci/junit_test_reports.html) to Runner's test suite. Additionally it makes the `coverage` stage jobs to be executed always.
+
+## Why was this MR needed?
+
+To make it easier to find out what test failed and dogfood our JUnit support solution :)
+
+One of the changes added in this MR is to run `coverage` stage jobs always. I think that coverage metrics and race condition detection results may be useful even if the test suite fails.
+
+## Are there points in the code the reviewer needs to double check?
+
+## Does this MR meet the acceptance criteria?
+
+- [x] Documentation created/updated
+- [x] Added tests for this feature/bug
+- [x] In case of conflicts with `master` - branch was rebased
+
+## What are the relevant issue numbers?
+
+Successor of !1059
+
+--- [commits] 909-1143
+Commit messages:
+Fix shellcheck offenses in scripts/go_test_with_coverage_report
+
+Generate JUnit report in coverage stage and integrate with GitLab JUnit support
+
+Run coverage jobs always
+
+Install go-junit-report in the base CI image
+
+--- [review_thread] 4945-5501
+Review thread on .gitlab-ci.yml:
+@sxuereb: Since we are touching this coverage, would upgrading to `1.11` be a bad idea here? I'm okay if we want to do this in a separate MR :)
+@tmaczukin: Let's leave it for now. `1.10` was chosen for these few jobs only because tests listing and coverage report calculation are much faster in `1.10`, than in `1.8`. I haven't tested if `1.11` adds any speed here.
+
+And I hope we'll be soon able to move Runner to Go `>= 1.9` - then we will be able to use `1.11` in our CI image and remove these custom definitions :wink:
+
+--- [review_thread] 5502-6839
+Review thread on .gitlab-ci.yml:
+@sxuereb: Do we never want to expire this artifact? If we expire it will it break the junit report summary (can't find it in the docs)? Do we care if we don't see the report after ~1month :thinking:
+@tmaczukin: Is `reports` even supporting expiration?
+
+@dosuken123 @ayufan You were involved in creating this - can you share your thoughts?
+@ayufan: No. We do not support expiration for reports.
+
+Maybe it inherits expiration from original artifacts? @dosuken123?
+@shinya.maeda: > Maybe it inherits expiration from original artifacts? @dosuken123?
+
+Yes
+@sxuereb: @dosuken123 and if it expires, does it remove the report? Or we store the computed result that doesn't depend on the `xml` to be available anymore?
+@shinya.maeda: @SteveAzz Compouted results are stored in Redis via ReactiveCache. Currently it's expired in [10 minutes](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/app/models/merge_request.rb#L22) after user stopped seeing MR widget. 
+
+So that removing reports mean users can not see the results anymore.
+
+Maybe we should have a separete retention policy for each report type (`junit`, `sast`, `dast`, etc)
+@sxuereb: Thanks, @dosuken123 ! Maybe we should update the documentation to specify that the test report should have no expiry date? 
+
+@tmaczukin let's leave it like this then :)
+
+--- [review_thread] 6840-7342
+Review thread on scripts/go_test_with_coverage_report:
+@sxuereb: [shellcheck](https://github.com/koalaman/shellcheck) throws a warning here `^-- SC2155: Declare and assign separately to avoid masking return values.` which seems valid since we are setting `set -eo pipefail` would yo mind if you fix this one? There are other warnings but we can fix them in a seperate MR, we should create an issue
+@tmaczukin: Let's leave it here like that (for consistency) and next update all in a separate MR :wink:
+
+--- [conversation] 7343-7394
+Comment by @tmaczukin:
+@SteveAzz How about now? :)
+
+--- [conversation] 7395-7500
+Comment by @sxuereb:
+Thank you for adding this :rocket: Overall looks good just a few questions :rocket:
+
+--- [conversation] 7501-7654
+Comment by @tmaczukin:
+@ayufan Can you address our concerns discussed at https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1060#note_109931940?
+
+--- [conversation] 7655-7734
+Comment by @sxuereb:
+@tmaczukin LGTM and a nice improvement :heart\_eyes\_cat:
+
+--- [conversation] 7735-8052
+Comment by @Ravlen:
+@tmaczukin This is failing for me here https://gitlab.com/Ravlen-Repos/gitlab-runner/pipelines/34240343, (both junit and coverage reports), is there something wrong with my MR, or is it the test? I'm submitting from a branch in a fork, not a branch in the main repo, if that makes any difference.
+
+--- [conversation] 8053-8558
+Comment by @tmaczukin:
+@Ravlen The problem was introduced by removing `<<: *except_docs` from the definition of these three jobs. I wanted to move it to the coverage job template and it looks like I've forgotten about this.
+
+And since you're preparing a documentation change in a `docs-*` branch no tests are being executed, so all three jobs in the coverage stage are failing, because there are no artifacts on which they are working.
+
+I'll prepare a fix in a moment. Thank you very much for the info :)
+
+--- [conversation] 8559-8694
+Comment by @Ravlen:
+@tmaczukin Ahhh, thanks for the explanation! I'll go look myself so I can learn a little about how it works :wink:
+
+--- [conversation] 8695-8759
+Comment by @tmaczukin:
+@Ravlen You have the fix in !1065 :wink:
+
+--- files: .gitlab-ci.yml, Makefile, dockerfiles/ci/Dockerfile, scripts/go_test_with_coverage_report
+
+=================== PR 5988   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5988
+--- [title_description] 0-1269
+Title: Warn users about legacy /ci URL suffix in runner configuration
+
+Description:
+## What does this MR do?
+
+In GitLab Runner versions before 1.0.0, the runner URL was configured
+with a /ci suffix (e.g., https://gitlab.example.com/ci). This suffix was
+deprecated in 2016 via
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/289, but
+some legacy configurations still use it.
+
+While the /ci suffix is automatically stripped in most contexts, it can
+cause Git submodule authentication failures when
+GIT_SUBMODULE_FORCE_HTTPS is enabled. The suffix interferes with Git URL
+rewriting rules, causing submodules to fail with "could not read
+Username" errors.
+
+This commit adds:
+
+1. A WarnOnLegacyCIURL() method that logs a warning when a runner
+   configuration contains the /ci suffix.
+2. The warning is triggered during configuration loading so users
+   are notified at startup.
+3. Documentation explaining the issue and how to resolve it.
+
+The warning message directs users to remove the /ci suffix from their
+config.toml and links to documentation with detailed resolution steps.
+
+Related to https://gitlab.com/gitlab-org/gitlab/-/work_items/581678
+
+## Why was this MR needed?
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+--- [commits] 1270-2400
+Commit messages:
+Warn users about legacy /ci URL suffix in runner configuration
+
+In GitLab Runner versions before 1.0.0, the runner URL was configured
+with a /ci suffix (e.g., https://gitlab.example.com/ci). This suffix was
+deprecated in 2016 via
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/289, but
+some legacy configurations still use it.
+
+While the /ci suffix is automatically stripped in most contexts, it can
+cause Git submodule authentication failures when
+GIT_SUBMODULE_FORCE_HTTPS is enabled. The suffix interferes with Git URL
+rewriting rules, causing submodules to fail with "could not read
+Username" errors.
+
+This commit adds:
+
+1. A WarnOnLegacyCIURL() method that logs a warning when a runner
+   configuration contains the /ci suffix.
+2. The warning is triggered during configuration loading so users
+   are notified at startup.
+3. Documentation explaining the issue and how to resolve it.
+
+The warning message directs users to remove the /ci suffix from their
+config.toml and links to documentation with detailed resolution steps.
+
+Related to https://gitlab.com/gitlab-org/gitlab/-/work_items/581678
+
+--- [review_thread] 6087-6208
+Review thread on docs/configuration/advanced-configuration.md:
+@rsarangadharan: ```suggestion:-0+0
+#### Known issues
+```
+
+--- [review_thread] 6209-6421
+Review thread on docs/configuration/advanced-configuration.md:
+@rsarangadharan: ```suggestion:-0+0
+- Git submodule authentication failures: When `GIT_SUBMODULE_FORCE_HTTPS=true` is set, submodules might fail
+```
+
+--- [review_thread] 6422-6633
+Review thread on docs/configuration/advanced-configuration.md:
+@rsarangadharan: ```suggestion:-0+0
+  This issue occurs because the `/ci` suffix interferes with Git URL rewriting rules. For more details, see
+```
+
+--- [review_thread] 6634-6768
+Review thread on docs/configuration/advanced-configuration.md:
+@rsarangadharan: ```suggestion:-0+0
+**Problematic configuration**:
+```
+
+--- [review_thread] 6769-6901
+Review thread on docs/configuration/advanced-configuration.md:
+@rsarangadharan: ```suggestion:-0+0
+**Corrected configuration**:
+```
+
+--- [conversation] 6902-6981
+Comment by @sroque-worcel:
+Hi @stanhu 
+
+MR looks correct to me :thumbsup: LGTM
+
+--- [conversation] 6982-7072
+Comment by @rsarangadharan:
+Thanks @stanhu. I left some minor format related suggestions.
+
+--- [conversation] 7073-7322
+Comment by @rsarangadharan:
+@stanhu I'm not able to see the changes in you made in this [commit](https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5988/diffs?commit_id=b124079853e37ca898ce1772374b5fd5e246826a). Something wrong at my end?
+
+--- [conversation] 7323-7376
+Comment by @stanhu:
+I must have rebased incorrectly.
+
+--- [conversation] 7377-7495
+Comment by @stanhu:
+Flaky tests will be fixed with https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5994.
+
+--- [conversation] 7496-7557
+Comment by @rsarangadharan:
+I can see now. Approved. Thanks!
+
+--- files: commands/multi.go, common/config.go, docs/configuration/advanced-configuration.md
+
+=================== PR 6791   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6791
+--- [title_description] 0-2202
+Title: Docker+machine: cap finalizeRemoval retries
+
+Description:
+## Bug
+
+When `removeMachine` returns a permanent error (one that retrying will not fix), `finalizeRemoval` retries it forever. One goroutine gets pinned per stuck machine and its IdleCount slot is never freed. This was the cost-driver behind [INC-10515](https://app.incident.io/gitlab/incidents/10515) on GitLab.com: 10,200 stuck machines across one shard during a 6-hour window, with the runner-managers spinning indefinitely against unresolvable state.
+
+The most common trigger for a permanent error today is a docker-machine driver bug. [docker-machine!175](https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/merge_requests/175) fixes the trigger we have so far, but the runner is the layer that gets to decide how long to keep trying, and forever is the wrong answer for any failure class.
+
+## Fix
+
+`finalizeRemoval` now bounds the retry loop. When the cap is hit, the runner logs a warning, frees the local state, and lets the IdleCount slot recycle. The orphaned VM is left for an external sweep, which is what the operator was getting anyway after the retry storm started.
+
+The cap is set well above the existing `removeRetryTries` threshold that already powers the `stuck-on-removing` metric, so the metric continues to fire first and operators see the warning sign before the runner gives up.
+
+## Testing
+
+Existing tests pass. There is a new regression test that pins the bound by using a permanently-failing remove, asserts `finalizeRemoval` returns within a small wall-clock window, and asserts the local state is cleared.
+
+Also validated end-to-end in a sandbox runner-manager fleet against three synthetic failure modes injected at the docker-machine layer. Without the cap, machines accumulated in `stuck-on-removing` a [...]
+--- [commits] 2203-4582
+Commit messages:
+Cap finalizeRemoval retries in docker+machine
+
+Before this commit finalizeRemoval ran 'for { ... }' until removeMachine
+succeeded. When the underlying error is permanent (e.g. the machine's
+Driver.ResolvedZone is unset because bulkInsert succeeded but the
+follow-up AggregatedList discovery failed, and GCP rejects every delete
+with 'Invalid value for field zone: ""' / HTTP 400), the loop runs
+forever. Each stuck machine pins one goroutine and holds its IdleCount
+slot indefinitely.
+
+This caps the loop at finalizeRemovalMaxAttempts (default 30, well
+above removeRetryTries=3 which gates the stuck-on-removing metric so
+the metric still fires first as an alert signal). On give-up the
+local state is dropped so the IdleCount slot is freed. The remote VM
+may be orphaned and is left for an external sweep. The give-up event
+is logged at WARN level.
+
+Surfaced in production by the bulkInsert + flex rollout, tracked under
+https://gitlab.com/gitlab-com/gl-infra/production-engineering/-/work_items/29053.
+
+Force-remove the local store on finalizeRemoval give-up
+
+The previous commit caps the retry loop but only drops the in-memory
+m.details entry. docker-machine rm -y leaves the JSON file under
+~/.docker/machine/machines/ when the underlying Driver.Remove returns
+an error, so the on-disk view of the world stays out of sync with
+GCP indefinitely.
+
+Call ForceRemove once on the give-up branch. rm -f is a best-effort
+remote delete (ignored on failure) followed by an unconditional local
+purge, which is the cleanup contract that matches give-up semantics.
+
+Surfaced by Tomek's review on
+https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/merge_requests/175.
+
+Make MaxRemovalAttempts configurable on [runners.machine]
+
+The retry cap from the prior commit was a package var with no [...]
+--- [review_thread] 10593-10940
+Review thread on executors/docker/machine/provider.go:
+@tmaczukin: @igorwwwwwwwwwwwwwwwwwwww If we give up the regular removals, we should do a final call with the `ForceRemove()` method you've introduced recently. That will clean the state on the Runner Manager side.
+@igorwwwwwwwwwwwwwwwwwwww: Added in 573b5765a73f2dfe6941d5a344fa27a51492d8ca.
+
+--- [review_thread] 10941-11321
+Review thread on executors/docker/machine/consts.go:
+@tmaczukin: Should we make this configurable on the `[runners.machine]` level, with this being the default?
+@igorwwwwwwwwwwwwwwwwwwww: Hopefully we won't need it, but since it changes existing behaviour it's probably a good idea for safety. Adding!
+@igorwwwwwwwwwwwwwwwwwwww: Added in b5833051d4d46975de506a92c65d16789d242f84.
+
+--- [conversation] 11322-13271
+Comment by @duo-fix-ci-cd-pipeline-gitlab-org:
+Pipeline https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2554633756 could not be fixed automatically. The `danger-review` job failed due to commit message guideline violations on commit `57811be182` — please amend the commit message to fix the two issues described below and force-push the branch.
+
+<details>
+<summary>Analysis details</summary>
+
+## Failing job: `danger-review`
+
+The Danger linter flagged commit `57811be182b5999adf52c2c436fae3c39cb92b6b` for two violations:
+
+1. **Commit subject must start with a capital letter.**
+   The first word of the commit subject line is lowercase. GitLab's [commit message guidelines](https://docs.gitlab.com/ee/development/contributing/merge_request_workflow.html#commit-messages-guidelines) require the subject to begin with a capital letter.
+
+2. **Use full URLs instead of short references.**
+   The commit message contains short-form GitLab references (e.g. `!123`, `#123`, or `%12.3`). These must be replaced with full URLs (e.g. `https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/123`) because short references render as plain text outside of GitLab.
+
+## How to fix
+
+This requires a manual commit message rewrite — it cannot be automated. Here are the steps:
+
+```bash
+# Option 1: amend the most recent commit (if it's the tip of the branch)
+git commit --amend
+
+# Option 2: interactive rebase if the commit is not the tip
+git rebase -i HEAD~<N>   # replace <N> with the number of commits to go back
+# mark the offending commit as 'reword', save, then edit the message
+
+# After amending, force-push the branch
+git push --force-with-lease origin <your-branch-name>
+```
+
+**Checklist for the new commit message:**
+- [ ] Subject line starts with a capital letter
+- [ ] No short references (` [...]
+--- [conversation] 13272-15294
+Comment by @duo-fix-ci-cd-pipeline-gitlab-org:
+Pipeline https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2554635839 could not be fixed automatically. The `danger-review` job is failing due to commit message style violations that require a manual `git commit --amend`, and the integration test failure appears to be a pre-existing flaky test unrelated to this MR's changes.
+
+<details>
+<summary>Analysis details</summary>
+
+### 1. `danger-review` — Commit message lint failure
+
+Commit `57811be182b5999adf52c2c436fae3c39cb92b6b` has two violations flagged by the Danger commit message linter:
+
+1. **Subject must start with a capital letter** — the commit subject begins with a lowercase letter.
+2. **Use full URLs instead of short references** — the commit message contains a short GitLab reference (e.g. `!123` or `gitlab-org/gitlab#123`) instead of a full URL.
+
+**How to fix:**
+
+```bash
+# Amend the most recent commit message interactively
+git commit --amend
+
+# Or, if the commit is not the latest, use an interactive rebase:
+git rebase -i HEAD~<N>  # replace <N> with the number of commits back
+```
+
+Make sure the amended commit message:
+- Starts with a **capital letter** on the subject line.
+- Replaces any short references like `!123` or `gitlab-org/gitlab#123` with full URLs, e.g.:
+  - `https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/123`
+  - `https://gitlab.com/gitlab-org/gitlab/-/issues/123`
+
+Then force-push: `git push --force-with-lease`
+
+---
+
+### 2. `integration test with race 1/4` — Flaky test
+
+`TestBuildChangesBranchesWhenFetchingRepo/pwsh` in `executors/custom` failed intermittently on the first attempt but succeeded on a second attempt within the same run. This test exercises the custom executor's git fetch/branch-switching behavior with PowerShell and has ** [...]
+--- [conversation] 15295-15371
+Comment by @tmaczukin:
+@igorwwwwwwwwwwwwwwwwwwww Back to you :slight_smile:
+
+--- files: common/config.go, executors/docker/machine/consts.go, executors/docker/machine/details.go, executors/docker/machine/provider.go, executors/docker/machine/provider_test.go
+
+=================== PR 3988   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3988
+--- [title_description] 0-3348
+Title: Use Ruby 3.2.1-based docs Docker images
+
+Description:
+## What does this MR do?
+
+For: https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1385, update project to use the latest Docker images for docs-related jobs.
+
+Also synchronize Markdownlint and Vale rules from `gitlab` project.
+
+## Author's checklist
+
+- [X] Optional. Consider taking [the GitLab Technical Writing Fundamentals course](https://about.gitlab.com/handbook/product/ux/technical-writing/fundamentals/).
+- [X] Follow the:
+  - [Documentation process](https://docs.gitlab.com/ee/development/documentation/workflow.html).
+  - [Documentation guidelines](https://docs.gitlab.com/ee/development/documentation/).
+  - [Style Guide](https://docs.gitlab.com/ee/development/documentation/styleguide/).
+- [X] If you're adding or changing the main heading of the page (H1), ensure that the [product tier badge](https://docs.gitlab.com/ee/development/documentation/styleguide/index.html#product-tier-badges) is added.
+- [X] If you are a GitLab team member, [request a review](https://docs.gitlab.com/ee/development/code_review.html#dogfooding-the-reviewers-feature) based on:
+  - The documentation page's [metadata](https://docs.gitlab.com/ee/development/documentation/#metadata).
+  - The [associated Technical Writer](https://about.gitlab.com/handbook/product/ux/technical-writing/#assignments).
+
+If you are a GitLab team member and only adding documentation, do not add any of the following labels:
+
+- `~"frontend"`
+- `~"backend"`
+- `~"type::bug"`
+- `~"database"`
+
+These labels cause the MR to be added to code verification QA issues.
+
+## Reviewer's checklist
+
+Documentation-related MRs should be reviewed by a Technical Writer for a non-blocking review, based on [Documentation Guidelines](https://docs.gitlab.com/ee/development/documentatio [...]
+--- [commits] 3349-3469
+Commit messages:
+Use Ruby 3.2.1-based docs Docker images
+
+Also refresh Markdownlint and Vale rules from GitLab project.
+
+--- [conversation] 8509-8577
+Comment by @eread:
+@jglassman1 Could you review and merge?
+
+Thanks!
+
+--- [conversation] 8578-8692
+Comment by @eread:
+We have an unrelated pipeline failure. I'll probably keep rebasing off `main` until it passes.
+
+--- [conversation] 8693-8846
+Comment by @jglassman1:
+@eread I thought I responded to this, apologies. Happy to review and merge once the pipeline is fixed. I'll take a look as well.
+
+--- [conversation] 8847-9141
+Comment by @eread:
+@jglassman1 That's ok! We needed to wait for: https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3994, which wasn't merged into `main`, but a different branch that has now been merged into `main` (https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3992).
+
+--- [conversation] 9142-9279
+Comment by @eread:
+@ajwalker Do you know why this job would keep failing: https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/3952207229?
+
+--- [conversation] 9280-9365
+Comment by @ajwalker:
+@eread I think we've now fixed this in `main`. Can you rebase?
+
+--- [conversation] 9366-9510
+Comment by @eread:
+@ajwalker This is looking better, thanks.
+
+@rdickenson so I can watch this merge, would you be willing to step in and merge?
+
+--- [conversation] 9511-9611
+Comment by @rdickenson:
+@eread I've reviewed and approved this MR, and added it to the merge train.
+
+--- [conversation] 9612-9784
+Comment by @eread:
+@ajwalker @rdickenson @jglassman1 A different error on the merge train: https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/3962973066.
+
+Let's try again.
+
+--- files: .gitlab/ci/test.gitlab-ci.yml, .markdownlint.yml, docs/.vale/gitlab/Admin.yml, docs/.vale/gitlab/HeadingDepth.yml, docs/.vale/gitlab/SubstitutionSuggestions.yml, docs/.vale/gitlab/spelling-exceptions.txt, docs/development/add-windows-version.md
+
+=================== PR 3309   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3309
+--- [title_description] 0-688
+Title: DeviceCgroupRules for Docker Executors
+
+Description:
+## What does this MR do?
+Add the ability to use the the device_cgroup_rules argument in config.toml files and pass it to Docker containers.
+
+## Why was this MR needed?
+Currently, Gitlab-Runner does not support the device_cgroup_rules argument. Device-cgroup-rules are needed if USB devices are dynamically plugged during the runtime of a container.
+
+## What's the best way to test this MR?
+Use the device_cgroup_rules argument in a config.toml file and observe with `docker inspect` that it is applied to a Docker executor.\
+Example: `device_cgroup_rules = ["c 189:* rmw"]`
+
+## What are the relevant issue numbers?
+Closes #3157
+
+--- [commits] 689-981
+Commit messages:
+Add ability to pass the device-cgroup-rules argument to Docker containers. This is needed to enable dynamic plugging of devices to containers without the privileged argument.
+Update Documentation.
+
+Put cgroup in backticks in documentation
+
+Apply 1 suggestion(s) to 1 file(s)
+
+--- [review_thread] 4142-4503
+Review thread on docs/configuration/advanced-configuration.md:
+@sselhorn: Hi @embeddedcoder This is a small update that will help our docs pipeline run without issue. It likely won't recognize the word `cgroup`, so need to put it in backticks. Thanks.
+
+```suggestion:-0+0
+| `device_cgroup_rules`          | Add rules to the `cgroup` allowed devices list. |
+```
+
+--- [review_thread] 4504-4948
+Review thread on docs/configuration/advanced-configuration.md:
+@pedropombeiro: **suggestion**:  maybe we could use the Docker official documentation wording here:
+
+> Custom device cgroup rules (available in Docker 1.28 or later).
+
+(from https://docs.docker.com/engine/api/version-history/#v128-api-changes)
+@sselhorn: ```suggestion:-0+0
+| `device_cgroup_rules`          | Custom device `cgroup` rules (available in Docker 1.28 or later). |
+```
+
+--- [conversation] 4949-5043
+Comment by @sselhorn:
+Hi @erushton Docs are good on this MR. Sending your way for dev review.
+
+--- [conversation] 5044-5289
+Comment by @martin.kudlacek:
+Hi, thank you for this MR. It is important for me, because I'm building OS images for SBCs and I need to work with loopback devices. This will allow me to set write permissions on them and ditch the privileged mode.
+
+--- [conversation] 5290-5380
+Comment by @cbacharakis:
+Hi @erushton , is this something that you can review? Thank you!
+
+--- [conversation] 5381-5501
+Comment by @matteeyah:
+This is assigned for review. I'll just remove the ~idle label since we're waiting on a response.
+
+--- [conversation] 5502-5582
+Comment by @rymai:
+@pedropombeiro Could you please review? Thanks! :pray_tone2:
+
+--- [conversation] 5583-6135
+Comment by @pedropombeiro:
+This looks good to me. Thanks @embeddedcoder!
+
+I've tested with the config suggested in the description, and can see the resulting container gets the expected configuration:
+
+![image](/uploads/157693a6a56c3f26f9a09388654339a3/image.png)
+
+Job link: https://gitlab.com/pedropombeiro/playground/-/jobs/2527275323
+
+It also works as expected when `device_cgroup_rules` is not specified.
+
+@sselhorn I know you already approved this MR, but could you please look at my suggestion to reuse the official Docker documentation wording?
+
+--- [conversation] 6136-6280
+Comment by @sselhorn:
+Thanks @pedropombeiro I applied the suggestion, so hopefully you're able to merge? Let me know if you need anything else.
+
+--- [conversation] 6281-6326
+Comment by @pedropombeiro:
+Thanks @sselhorn!
+
+--- [conversation] 6327-6410
+Comment by @embeddedcoder:
+Thanks for reviewing that merge request @pedropombeiro!
+
+--- [conversation] 6411-6481
+Comment by @rymai:
+@pedropombeiro Does this need a rebase? :thinking:
+
+--- [conversation] 6482-6589
+Comment by @pedropombeiro:
+Yeah, could be. It's not clear why the merge train button is disabled for me...
+
+--- [conversation] 6590-6786
+Comment by @rymai:
+Maybe it also needs to be approved by a Docs code owner: ![Screen_Shot_2022-06-01_at_17.57.22](/uploads/7fcb204e616b7900f19a61d4bff03dea/Screen_Shot_2022-06-01_at_17.57.22.png)
+
+--- [conversation] 6787-6908
+Comment by @pedropombeiro:
+Hmm, that's weird, but probably why. @erushton do you mind approving this so I can :ship: it?
+
+--- [conversation] 6909-6972
+Comment by @pedropombeiro:
+Started merge train, thanks Elliot!
+
+--- files: common/config.go, docs/configuration/advanced-configuration.md, executors/docker/docker.go
+
+=================== PR 2281   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2281
+--- [title_description] 0-1107
+Title: Add openssh-client to Docker images
+
+Description:
+## What does this MR do?
+
+Add openssh-client dependency for ubuntu image
+
+## Why was this MR needed?
+
+Reason:
+`openssh-client` provides the `ssh` command which is needed for the [ssh
+executor](https://docs.gitlab.com/runner/executors/ssh.html).
+
+Background:
+We used to have `openssh-client` installed automatically, but inside of
+!1781 we
+added `--no-install-recommends` which stopped installing the
+`openssh-client` for the users.
+
+## What's the best way to test this MR?
+
+```sh
+# Build binary
+make runner-bin BUILD_PLATFORMS="-osarch='linux/amd64'"
+# Package binary as deb file
+make package-deb-arch ARCH=amd64 PACKAGE_ARCH=amd64 RUNNER_BINARY=out/binaries/gitlab-runner-linux-amd64
+# Build Docker images just for amd64
+TARGET_ARCHS="amd64" ci/release_docker_images
+# Check that `ssh` is now available, run `docker images` to the the latest image built, there is change the name is <none>
+docker run --rm -it --entrypoint=bash $IMAGE_ID
+# Check if ssh is installed
+which ssh
+/usr/bin/ssh
+```
+
+## What are the relevant issue numbers?
+
+Closes #26580
+
+--- [commits] 1108-1630
+Commit messages:
+Add openssh-client dependency to docker images
+
+Reason:
+`openssh-client` provides the `ssh` command which is needed for the [ssh
+executor](https://docs.gitlab.com/runner/executors/ssh.html).
+
+Background:
+We used to have `openssh-client` installed automatically, but inside of
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1781 we
+added `--no-install-recommends` which stopped installing the
+`openssh-client` for the users.
+
+closes https://gitlab.com/gitlab-org/gitlab-runner/-/issues/26580
+
+--- [review_thread] 2113-2748
+Review thread on dockerfiles/runner/ubuntu/Dockerfile:
+@sxuereb: I wonder if we should have this inside of [install-deps](https://gitlab.com/gitlab-org/gitlab-runner/-/blob/d5f6f9be186745b794ea8715ebac7f701e524dda/dockerfiles/runner/install-deps) instead, would we get any benefit :thinking: ?
+@tmaczukin: I don't have a strong opinion. And given my comment bellow about compatibility between Alpine and Ubuntu images, put the installation wherever it will make it "easier" (`install-deps` is a recent change and I haven't checked if it supports different installation methods for different distributions we support within the images)
+
+--- [conversation] 2749-3174
+Comment by @sxuereb:
+@tmaczukin what do you think of this? 
+
+I also have two questions:
+
+1. Should we ~"Pick into 13.2" since this is a small change for distribution and it's a ~regression ?
+1. I noticed that we never included `openssh` to the alpine image. Should we? I guess we can not include it in alpine, because the goal of the alpine image has always been to be lightweight and used in kubernetes/docker environments.
+
+--- [conversation] 3175-3975
+Comment by @tmaczukin:
+> 1. Should we ~"Pick into 13.2" since this is a small change for distribution and it's a ~regression?
+
+It's small, so feel free to pic it! :slight_smile: 
+
+> 2. I noticed that we never included `openssh` to the alpine image. Should we? I guess we can not include it in alpine, because the goal of the alpine image has always been to be lightweight and used in kubernetes/docker environments.
+
+The goal was to have a small image, but small by the distribution definition, as Alpine Linux footprint is smaller than Ubuntu footprint. Apart of that we've been always - whenever possible - making the two images identical. Which means that if we want to install openssh-client to allow user's jobs to connect with SSH to remotes, we should do it in both Ubuntu and Alpine version.
+
+--- [conversation] 3976-4022
+Comment by @tmaczukin:
+@steveazz Back to you!
+
+--- [conversation] 4023-4122
+Comment by @sxuereb:
+@tmaczukin thank you for the review! Would you mind if you take another look?
+
+--- [conversation] 4123-4228
+Comment by @sxuereb:
+The MR was picked into `13-2-stable` branch and will be released with `v13.2.0-rc2`
+
+--- files: dockerfiles/runner/alpine/Dockerfile, dockerfiles/runner/ubuntu/Dockerfile
+
+=================== PR 5354   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5354
+--- [title_description] 0-834
+Title: Fix step-runner inject container run
+
+Description:
+## What does this MR do?
+
+https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5322 was recently merged that added steps-runner injection to the build container.
+
+This fixes a few problems with the container setup and execution, that only become apparent with a remote docker daemon where latency was present.
+
+## Why was this MR needed?
+
+- Step-runner container was executing predefined scripts and it doesn't need to do that.
+- Container was being removed immediately, which differs from our other containers, and this was unexpected. This was only noticeable due to the latency between requests.
+- Added a little context to error messages that helped me determine what was going on.
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+--- [commits] 835-889
+Commit messages:
+Fix step-runner inject container run
+
+--- [review_thread] 3644-4733
+Review thread on executors/docker/internal/wait/wait.go:
+@ajwalker: This change is the real fix.
+
+We're waiting for the container to be killed, but it's already gone due to auto-remove.
+@cam_swords: Thanks, @ajwalker.
+
+Two questions:
+
+1. Do you know why this only happens for step-runner? It seems to me that this could happen for a non-steps job too :thinking: 
+2. Did you consider writing a test for this? Is it too hard, or do tests that start a container take a long time?
+@ajwalker: @cam_swords 
+
+The function here is waiting for the container to exit, and ordinarily, if it exits, it still exists until we remove it. No other container has auto-remove set.
+
+Step-runner is now a container that exits and is _immediately_ removed, so if we're not waiting for that exit yet (due to latency of the request), it's confused as to why it's no longer there.
+
+I suppose in a way, having this exit with an error if the container has disappeared is probably the right call, because it means something has gone wrong (and removed the container unexpectedly). We now won't detect this scenario.
+
+--- [review_thread] 4734-5630
+Review thread on executors/docker/docker_command.go:
+@ajwalker: This makes it clear that we're not going to run any script.
+@cam_swords: How would you feel about moving the creation of the `ExecutorCommand` to `common`? For example, something like this:
+
+```go
+// executor.go
+
+func (cmd ExecutorCommand) NoOp() ExecutorCommand {
+	return ExecutorCommand{Context: cmd.Context}
+}
+```
+
+```suggestion:-0+0
+			s.stepRunnerContainerOnce.Do(func() { err = s.runContainer(stepRunnerContainerType, cmd.NoOp()) })
+```
+
+
+This is confusing though. Are we passing through a NoOp because we've overwritten the command elsewhere?
+@ajwalker: I wouldn't do this because I remembered we have a `createDependencies()` where bootstrapping the step-runner would probably be the better place to do this.
+
+If added there, I don't think we'd rely on `runContainer`, and therefore, `ExecutorCommand` wouldn't be relevant.
+
+--- [review_thread] 5631-5843
+Review thread on executors/docker/steps.go:
+@ajwalker: We don't need network.
+
+We probably do want to follow the user-provided config for runtime and isolation.
+@cam_swords: TIL about Runtime and Isolation :bow:
+
+--- [review_thread] 5844-5970
+Review thread on executors/docker/steps.go:
+@ajwalker: We don't need `stdin` and the network can also be completely disabled.
+
+--- [review_thread] 5971-6036
+Review thread on executors/docker/docker.go:
+@cam_swords: :clap:
+
+--- [conversation] 6037-6278
+Comment by @cam_swords:
+Thanks, @ajwalker. I've verified this works using the runner on my local machine, if that's of any help.
+
+I've left some questions, nothing blocking. I'll approve, feel free to wait for Axel to review if it you like.
+
+--- [conversation] 6279-6331
+Comment by @avonbertoldi:
+Thanks for this @ajwalker
+
+--- files: executors/docker/docker.go, executors/docker/docker_command.go, executors/docker/internal/wait/wait.go, executors/docker/steps.go
+
+=================== PR 5355   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5355
+--- [title_description] 0-2658
+Title: Fix inconsistent arguments when creating a service in tests
+
+Description:
+- [ ] Please check this box if this contribution uses AI-generated content (including content generated by GitLab Duo features) as outlined in the [GitLab DCO & CLA](https://about.gitlab.com/community/contribute/dco-cla/). As a benefit of being a GitLab Community Contributor, you [receive complimentary access to GitLab Duo](https://gitlab.com/gitlab-community/meta#gitlab-duo).
+
+## What does this MR do?
+
+This MR fixes the creation of test services such that arguments passed to `executor.createService()` are consistent and realistic.
+
+## Why was this MR needed?
+
+This `executor.createService()` method is only [called by `executor.createFromServiceDefinition()`](https://gitlab.com/gitlab-org/gitlab-runner/-/blob/f012c9b6ca224ef296a738df909fbe27319df549/executors/docker/services.go#L155-162) where several arguments are derived from the [`serviceDefinition common.Image`](https://gitlab.com/gitlab-org/gitlab-runner/-/blob/f012c9b6ca224ef296a738df909fbe27319df549/executors/docker/services.go#L136) argument [whose `Name string` field is mandatory](https://gitlab.com/gitlab-org/gitlab-runner/-/blob/f012c9b6ca224ef296a738df909fbe27319df549/common/network.go#L414) and has no proper meaning when defaulting to empty string. Meanwhile, several test cases in `executors/docker/services_test.go` call `executor.createService()` where the `Name string` field of the `definition common.Image` argument is `""` while the value of the `image string` argument is `"alpine"`. This combination of argument values cannot occur in reality, so the call of `executor.createService()` is not realistic. In addition, the `image string` argument is always an image name _plus_ either a tag or a digest, as the [service image name  [...]
+--- [commits] 2659-2736
+Commit messages:
+Fix inconsistent arguments when creating a service in tests
+
+--- [review_thread] 9703-9861
+Review thread on executors/docker/docker_test.go:
+@avonbertoldi: ```suggestion:-1+0
+	expectedInspectImage,
+    expectedPullImage string, //nolint:unparam
+```
+
+--- [review_thread] 9862-10136
+Review thread on executors/docker/docker_test.go:
+@avonbertoldi: @sisp I think we still need the linter exclusion here, sorry for the bad suggestion.
+@sisp: @avonbertoldi Ah, right. I'll drop the commit again to apply the exclusion only to the `expectedPullImage` argument.
+
+--- [conversation] 10137-10303
+Comment by @leetickett-gitlab:
+I'm currently out of the office (and I don't have the knowledge to be able to review it).
+
+@hoegaarden could you review please? :pray:
+
+--- [conversation] 10304-10588
+Comment by @hoegaarden:
+@sisp I haven't looked into too much detail yet, about what you are trying to do here. Need to dig a bit deeper into the code and your description. However, the tests are currently failing: https://gitlab.com/sisp/gitlab-runner/-/pipelines/1670285107/failures
+
+--- [conversation] 10589-11229
+Comment by @sisp:
+@hoegaarden Sorry for my negligence. I didn't properly check the pipeline status, as the `binaries` and `helper images` jobs failed as expected, and missed that the unit test jobs were failing as well. :face_palm: I've updated the MR, the unit test jobs should pass now. :fingers_crossed: Feel free to request more explanation of the rationale behind the changes.
+
+/cc @avonbertoldi, as we had a [related discussion](https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5343#note_2352534519) and it seems that this updated MR might be the corresponding follow-up MR (after rebasing it once !5343 has been merged).
+
+--- [conversation] 11230-12203
+Comment by @sisp:
+Now, only the `static QA` job is failing with this error:
+
+```json
+[
+  {
+    "description": "unparam: `prepareTestDockerConfiguration` - `expectedPullImage` always receives `\"alpine:latest\"`",
+    "check_name": "unparam",
+    "severity": "critical",
+    "fingerprint": "45BD0E199970347BD5E82B97B3B2A21A",
+    "location": {
+      "path": "executors/docker/docker_test.go",
+      "lines": {
+        "begin": 869
+      }
+    }
+  }
+]
+```
+
+I'm not sure how to resolve it though. We shouldn't hardcode the value for `expectedPullImage` to avoid implicit assertions. Since the image passed to `ImageInspectWithRaw` always contains a tag, we could add some logic that appends the `latest` tag when missing. But I don't think that's actually a good idea because (a) I'd prefer minimizing logic in tests to avoid bugs there, and (b) appending `latest` might not be correct when the image reference has no tag but a digest.
+
+Any suggestions what to do about this?
+
+--- [conversation] 12204-12880
+Comment by @hoegaarden:
+Yeah, I think I agree with you, and we can ignore this linter error for this case:
+
+```diff
+diff --git a/executors/docker/docker_test.go b/executors/docker/docker_test.go
+index def60fd8c..85b24737b 100644
+--- a/executors/docker/docker_test.go
++++ b/executors/docker/docker_test.go
+@@ -866,7 +866,7 @@ func prepareTestDockerConfiguration(
+ 	dockerConfig *common.DockerConfig,
+ 	cce containerConfigExpectations,
+ 	expectedInspectImage string,
+-	expectedPullImage string,
++	expectedPullImage string, //nolint:unparam
+ ) (*dockerConfigurationTestFakeDockerClient, *executor) {
+ 	c, e := createExecutorForTestDockerConfiguration(t, dockerConfig, cce)
+ 
+```
+
+--- [conversation] 12881-12930
+Comment by @sisp:
+Thanks! I've pushed an update.
+
+--- [conversation] 12931-13082
+Comment by @hoegaarden:
+@sisp if you could check on the conflict we have now, that'd be great. Once we've resolved those, I am happy to merge this MR.
+
+--- [conversation] 13083-13203
+Comment by @sisp:
+@hoegaarden Done – I've rebased this branch and resolved the conflict. Thanks for your support! :bow:
+
+--- files: executors/docker/docker_test.go, executors/docker/services_test.go
+
+=================== PR 7284   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/7284
+--- [title_description] 0-1876
+Title: Bump base images to 0.0.50 for the FIPS TLS 1.3 fix (19-1-stable)
+
+Description:
+> **Merge order: [base-images!175](https://gitlab.com/gitlab-org/ci-cd/runner-tools/base-images/-/merge_requests/175) must merge and be tagged `v0.0.50` before this MR can merge.** The `ubi-go` image is what carries the fix. This MR only repoints Runner at it and contains no fix of its own.
+
+Backport of [!7281](https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/7281) to `19-1-stable`.
+
+The `ubi-go` toolchain in base images `0.0.43` applies the golang-fips `hkdf-expandlabel-read` patch, which panics `crypto/tls` when the OpenSSL FIPS provider cannot derive the exact HKDF-Expand-Label output length. Every FIPS binary built with that toolchain dies on its first TLS 1.3 handshake on a FIPS-enabled host. Reported as [#39707](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/39707).
+
+- Bump `RUNNER_IMAGES_VERSION` from `0.0.43` to `0.0.50` in `.gitlab/ci/_common.gitlab-ci.yml`.
+- Toolchain effect: go1.26.3 to go1.26.5, both patch releases; a seven-tag jump in base images.
+- The patch removal itself lands in [base-images!175](https://gitlab.com/gitlab-org/ci-cd/runner-tools/base-images/-/merge_requests/175); this MR only consumes the resulting image.
+
+## Merge order
+
+`ubi-go:0.0.50` is `0.0.49` rebuilt with the patch deleted. It does not exist yet, so this MR stays in Draft until it does.
+
+1. [base-images!175](https://gitlab.com/gitlab-org/ci-cd/runner-tools/base-images/-/merge_requests/175) merges, deleting the patch from `dockerfiles/ci/Dockerfile.go`.
+2. base-images is tagged `v0.0.50`, which builds and publishes `ubi-go:0.0.50`. Tracked in [base-images#13](https://gitlab.com/gitlab-org/ci-cd/runner-tools/base-images/-/issues/13).
+3. This MR comes out of Draft and merges.
+
+Me [...]
+--- [commits] 1877-2349
+Commit messages:
+Bump base images to 0.0.50 for the FIPS TLS 1.3 fix
+
+The ubi-go toolchain in base images 0.0.43 applies the golang-fips
+hkdf-expandlabel-read patch, which panics crypto/tls when the OpenSSL
+FIPS provider cannot derive the exact HKDF-Expand-Label length. Every
+FIPS binary built with it dies on its first TLS 1.3 handshake on a
+FIPS-enabled host.
+
+Base images 0.0.50 drops that patch.
+
+Related to https://gitlab.com/gitlab-org/gitlab-runner/-/issues/39707
+
+--- [review_thread] 3172-4122
+Review thread on .gitlab/ci/_common.gitlab-ci.yml:
+@duo-fix-ci-cd-pipeline-gitlab-org: _Recommended fix for the failing job: [`binaries`](https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/16272873335) (and all 16 other jobs failing for the same reason)_
+
+The image tag `0.0.50` does not yet exist in the registry (`registry.gitlab.com/gitlab-org/ci-cd/runner-tools/base-images`). Every job that pulls a base image (or downloads the Windows Go package at this version) fails immediately at the image-pull stage with `manifest unknown`. Per the MR description, this MR must remain in **Draft** until `base-images!175` merges and is tagged `v0.0.50`. Reverting to `"0.0.43"` (the last known-good version) unblocks CI until the upstream tag is published.
+
+```suggestion:-0+0
+  RUNNER_IMAGES_VERSION: "0.0.43"
+```
+
+_Powered by [Duo Fix Pipeline](https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/fix_pipeline/#give-feedback) flow_
+
+--- [review_thread] 4123-5078
+Review thread on .gitlab/ci/_common.gitlab-ci.yml:
+@duo-fix-ci-cd-pipeline-gitlab-org: _Recommended fix for the failing job: [`binaries`](https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/16272873766) (and all other Linux/Windows jobs in the pipeline)_
+
+`RUNNER_IMAGES_VERSION: "0.0.50"` does not yet exist in the base-images registry. Every job that depends on this version fails at image-pull time with `manifest unknown: manifest unknown` (Linux jobs) or a `404 Not found` when downloading `golang-windows-amd64.zip` (Windows jobs). Per the MR description, this MR must remain in **Draft** until `base-images!175` merges and is tagged `v0.0.50`. Reverting to `0.0.43` (the last published version) unblocks CI while the upstream image is being prepared.
+
+```suggestion:-0+0
+  RUNNER_IMAGES_VERSION: "0.0.43"
+```
+
+_Powered by [Duo Fix Pipeline](https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/fix_pipeline/#give-feedback) flow_
+
+--- [conversation] 5079-6192
+Comment by @lachie-gitlab:
+**note (non-blocking):** The red pipeline is unrelated to this change.
+
+Pipeline 2824857280 fails only `integration test 3/4` and `integration test with race 3/4`, both on one test: `TestPwshGitCredHelper` (subtests 7.1, 7.2, 7.2-nativeArgPassing, 7.3).
+
+That test installs git at runtime inside a `powershell:7.x-debian-11` container. The Debian 11 archive is inconsistent across mirrors during the bullseye LTS handover: `libperl5.32_5.32.1-4+deb11u5_amd64.deb` returns 404 from `deb.debian.org` and 200 from `security.debian.org`. apt cannot fetch it, git never installs, and the step fails with `The term 'git' is not recognized`.
+
+This is not specific to `19-1-stable`. `imageMapper` hardcodes `debian-11` on every branch including `main`, so these backports were simply the first pipelines to run after the pool went inconsistent. `bullseye-security` expires at 2026-09-07 21:13:04 UTC, after which the test fails everywhere until the image no longer installs git from Debian 11 at runtime.
+
+Merging with the pipeline red, since a `RUNNER_IMAGES_VERSION` bump cannot affect this.
+
+--- files: .gitlab/ci/_common.gitlab-ci.yml
+
+=================== PR 3674   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3674
+--- [title_description] 0-625
+Title: Update git to 2.38.1 and git-lfs to 3.2.0 to address CVE-2022-29187
+
+Description:
+## What does this MR do?
+* Upgrades `git` from version `2.30.2` to `2.38.1`
+* Upgrade `git-lfs` from version `2.13.3` to `3.2.0`
+
+## Why was this MR needed?
+Some of our security scans highlighted these two packages as having vulnerabilities, which necessitates an upgrade.
+
+## What's the best way to test this MR?
+If the CI pipeline continues to pass I think we're good.
+
+## What are the relevant issue numbers?
+close https://gitlab.com/gitlab-org/gitlab-runner/-/issues/29360 https://gitlab.com/gitlab-org/gitlab-runner/-/issues/29357
+
+--- [commits] 626-880
+Commit messages:
+Update git to 2.38.1 to address CVE-2022-29187
+
+See: https://gitlab.com/gitlab-org/gitlab-runner/-/issues/29360
+
+Update git-lfs to 3.2.0
+
+git-lfs triggers some vuln scans (see
+https://gitlab.com/gitlab-org/gitlab-runner/-/issues/29357).
+
+--- [review_thread] 6520-6746
+Review thread on .gitlab/ci/test.gitlab-ci.yml:
+@ratchade: Good catch :thumbsup_tone5:
+@avonbertoldi: The tarball folder structure changed from the previous version. It used to be flat, but now has a `git-lfs-VERSION` folder.
+
+--- [review_thread] 6747-7473
+Review thread on dockerfiles/runner-helper/Dockerfile.x86_64_servercore:
+@avonbertoldi: @ratchade does this seem OK? When I test this on a local vm running windows, the `Move-Item` line fails because `${Env:GIT_LFS_VERSION}` expands to an empty string. But it works (locally) if I remove the `Env:` (i.e. `GIT_LFS_VERSION` is expanded correctly). But removing the `Env:` does not work here (in the CI pipeline). Maybe it's down to a different version of `powershell` in the CI environment vs my VM.
+@ratchade: I just tried it too on my side with `Powershell 5.1.20348.859` and `7.2.2` and it is also failing on my side without the `Env` part. Maybe a different version as you said.
+
+At least it is functional in the pipeline.
+
+--- [conversation] 7474-7550
+Comment by @ratchade:
+Thank you @avonbertoldi for the change. LGTM :rocket:
+
+--- [conversation] 7551-7699
+Comment by @pedropombeiro:
+@avonbertoldi it seems that some [jobs are failing](https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/3221269627#L145).
+
+--- [conversation] 7700-7765
+Comment by @avonbertoldi:
+Yep, windows stuff, I'm working on it.
+
+--- [conversation] 7766-7915
+Comment by @ratchade:
+LGTM :rocket: once again.
+
+Adding to the merge train. I updated the MR description so that the issues are closed at the merge.
+
+--- files: .gitlab/ci/_common.gitlab-ci.yml, .gitlab/ci/test.gitlab-ci.yml, ci/release_docker_images, dockerfiles/ci/install_git_lfs, dockerfiles/runner-helper/Dockerfile.x86_64_servercore
+
+=================== PR 1212   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1212
+--- [title_description] 0-634
+Title: Add `build_simple' to `help' make target
+
+Description:
+## What does this MR do?
+Just adds text to the output of `make help`
+
+## Why was this MR needed?
+Because it took me a long time to figure out the thing that should be most basic -- how to just build the damn thing.
+
+## Are there points in the code the reviewer needs to double check?
+Not unless there are other targets that should be documented.
+
+## Does this MR meet the acceptance criteria?
+
+- [ ] Documentation created/updated
+- [ ] Added tests for this feature/bug
+- [ ] In case of conflicts with `master` - branch was rebased
+
+## What are the relevant issue numbers?
+
+--- [commits] 635-1036
+Commit messages:
+Add `build_simple' to `help' make target
+
+When I needed to fix a bug and quickly build and test it I was
+confounded by the build apparently detecting my supported qemu targets
+and launching docker containers to build for all archs, but failing,
+thus leaving me stuck and unable to test my fix.  If build_simple were
+documented in `make help' I would have found my answer much sooner.
+
+--- [review_thread] 1363-1656
+Review thread on Makefile:
+@sxuereb: I believe this should fall under the `Development commands` section and not under the deployment section, since for deploying we do want to cross-compile to multi os/archs
+@dansan: Oh yes, I agree.  I didn't look too closely and just put it under `build`.
+
+--- [conversation] 1657-1782
+Comment by @rpaik:
+@dansan thanks for your contribution!
+
+cc/ @steveazz can you help with the review when you have a chance?
+
+--- [conversation] 1783-1930
+Comment by @sxuereb:
+Thanks @dansan for the improvement, small detail we missed! I left 1 question/suggestion for you tell me what you think :bow:
+
+--- [conversation] 1931-2009
+Comment by @sxuereb:
+Thanks for that @dansan merge when pipeline succeed set!
+
+--- [conversation] 2010-2123
+Comment by @dansan:
+Good, that'll make it easier for the next person who's trying to figure out how to build it.
+
+--- [conversation] 2124-2374
+Comment by @sxuereb:
+@dansan are you able to retry the pipeline so that we can merge this? You might want to rebase with master because we had some flaky tests issues that were fixed in https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1214
+
+--- [conversation] 2375-2516
+Comment by @dansan:
+There ya go.  Honestly, I ignored the failure in the pipeline because we're only changing the comments in a Makefile. :)
+
+--- [conversation] 2517-2548
+Comment by @dansan:
+thank you!
+
+--- [conversation] 2549-2645
+Comment by @rpaik:
+@steveazz I went ahead and added `11.9` as the milestone.  Hope that's OK...
+
+--- [conversation] 2646-2775
+Comment by @sxuereb:
+Thanks @rpaik for keeping a close eye on that, I need to take note to add them myself, before I merge :bow:
+
+--- files: Makefile
+
+=================== PR 2765   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2765
+--- [title_description] 0-1271
+Title: Update trace limit wording
+
+Description:
+## What does this MR do?
+
+1. Changes the visualization of `job output limit exceeded` from being error-like (red color) to being warning-like (yellow color).
+1. Adds a clear information that the limit exceeding doesn't stop job execution but just collection of output.
+
+**Before**
+
+![Screenshot_2021-02-19_test___1224____Jobs___Administrator_test-ci](/uploads/d8bcf5dcc99d6dba9075fa622dcb1ef0/Screenshot_2021-02-19_test___1224____Jobs___Administrator_test-ci.png)
+
+**After**
+
+![Screenshot_2021-02-19_test___1225____Jobs___Administrator_test-ci](/uploads/e806821ced66d4eec14efddd8b6dd651/Screenshot_2021-02-19_test___1225____Jobs___Administrator_test-ci.png)
+
+## Why was this MR needed?
+
+Current visualization of the job output limiting is confusing to the users. It looks like an error, while the job is still executed and may even properly succeed. For new GitLab CI/CD users it may be also unknown that when such warning is printed, the job is still being executed (they may not notice the `running` status icon). Therefore the visualization and wording of the limiting warning was changed to make it more clear to the user.
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+Fixes #27601
+
+--- [commits] 1272-1405
+Commit messages:
+Color the log exceeded limit as a warning, not error
+
+Make it clear that job is running after log limit is exceeded
+
+--- [conversation] 4208-4394
+Comment by @tmaczukin:
+@steveazz Would you mind to do a maintainer review? It already got first review round in context of !2758 before I've extracted it to a separate MR :slight_smile:
+
+--- [conversation] 4395-4806
+Comment by @sxuereb:
+LGTM from an implementation perspective! 
+
+I would like to see if we should involve @sselhorn or @rayana for the copy update since they are better then us from a UX/technical writing perspective :bow: Does the new [wording](https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2765#what-does-this-mr-do) from the description above make sense to you or should we improve it somehow?
+
+--- [conversation] 4807-4932
+Comment by @rayana:
+@steveazz I defer to @sselhorn 's input here since this is ~"UI text".
+
+Unassigning myself from this MR.
+
+--- [conversation] 4933-5036
+Comment by @sselhorn:
+@steveazz @tmaczukin The wording looks OK to me. Thanks for asking.  :smile_cat:
+
+--- [conversation] 5037-5105
+Comment by @tmaczukin:
+Thank you both for the input! :slight_smile:
+
+--- [conversation] 5106-5199
+Comment by @tmaczukin:
+@steveazz I think we have green light for merging this :slight_smile:
+
+--- [conversation] 5200-5474
+Comment by @sxuereb:
+I kept getting the spinning "Checking pipeline status" so couldn't merge. I'm rerunning the pipeline then added it to the merge train
+
+![Screenshot_2021-02-24_at_08.15.03](/uploads/4916daf691cee52571bbcc52fd1f1d42/Screenshot_2021-02-24_at_08.15.03.png)
+
+--- files: common/buildtest/job_output_limit.go, helpers/trace/buffer.go, helpers/trace/buffer_test.go, network/trace_test.go
+
+=================== PR 4524   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4524
+--- [title_description] 0-841
+Title: Avoid SIGTERM propagation to processes on Windows OS
+
+Description:
+## What does this MR do?
+
+In https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4446, we add a new way to force the termination of PIDs within a container for ~"executor::docker". The implementation was running this command on both `Windows` and `Linux` containers even though the script is not `windows` compatible.
+
+The execution was not also taking in account the case when the `build` container has already exited before the `execScriptOnContainer` is ran.
+
+## Why was this MR needed?
+
+With this MR, the `execScriptOnContainer` is only run for `linux` container and the error are logged only when the error returned is nor `errdefs.IsConflict` or `docker.IsErrNotFound `
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+--- [commits] 842-1037
+Commit messages:
+Send SIGTERM to all processes only for linux like OS
+
+Silence error when container not found and in state change
+
+Rename ContainerSigTermScript to ContainerSigTermScriptForLinux
+
+--- [review_thread] 4668-4819
+Review thread on executors/docker/docker.go:
+@ajwalker: ```suggestion:
+		if err != nil && !errdefs.IsConflict(err) && !docker.IsErrNotFound(err) {
+```
+
+--- [review_thread] 4820-5211
+Review thread on executors/docker/docker.go:
+@avonbertoldi: For a future MR, but maybe we can try using ChatGPT to convert the bash script that sends `SIGTERM` to all procs in the container to powershell. Then at this point in the code we can `switch` on the `shell` and specify the right script.
+
+Minimizing my exposure to windows is the most worthwhile use-case of ChatGPT I can think of.
+
+--- [conversation] 5212-5248
+Comment by @ratchade:
+/cc @ajwalker
+
+--- [conversation] 5249-5565
+Comment by @avonbertoldi:
+@ratchade should we rename https://gitlab.com/gitlab-org/gitlab-runner/-/blob/main/shells/bash.go?ref_type=heads#L44 to `LinuxContainerSigTermScript` or `ContainerSigTermScriptLinux` or some such? I probably should have done this originally, knowing the script was bash and linux specific.
+
+--- [conversation] 5566-5647
+Comment by @ratchade:
+Taken care of. Thank you for the suggestion :slight_smile:
+
+--- files: executors/docker/docker.go, shells/bash.go
+
+=================== PR 1447   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1447
+--- [title_description] 0-773
+Title: Fix concurrent updates
+
+Description:
+## What does this MR do?
+In some cases, if `PatchTrace` takes ages,
+we might send `PUT` with `success` status.
+
+As a `touchRunning` we should only send `running` state.
+The final state should be sent only as a last, last, last
+request of `finish()`.
+
+This makes it explicit when we touch, and when we push a status update.
+
+## Why was this MR needed?
+
+## Are there points in the code the reviewer needs to double check?
+
+## Does this MR meet the acceptance criteria?
+
+- [ ] Documentation created/updated
+- [ ] Added tests for this feature/bug
+- [ ] In case of conflicts with `master` - branch was rebased
+
+## What are the relevant issue numbers?
+
+closes https://gitlab.com/gitlab-org/gitlab-ce/issues/63972
+
+--- [commits] 774-1094
+Commit messages:
+Fix concurrent updates
+
+In some cases if PatchTrace takes ages,
+we might send `PUT` with `success` status.
+
+As a `touchJob` we should only send `running` state.
+The final state should be send only as a last, last, last
+request of `finish()`.
+
+closes https://gitlab.com/gitlab-org/gitlab-ce/issues/63972
+
+--- [review_thread] 3783-4537
+Review thread on network/trace.go:
+@tmaczukin: @ayufan Should we send `FailureReason` when `common.Running` is sent? Shouldn't touch just let know that the job is still running, without any other details?
+@sxuereb: @tmaczukin I don't think this matters, looking at the [api endpoint](https://gitlab.com/gitlab-org/gitlab-ce/blob/db639e090cee596dd08791938d59ccec5f168fb9/lib/api/runner.rb#L156-163) we ignore the failure reason from the body on `running`.
+@ayufan: This is mistake.
+@tmaczukin: If we ignore it, then it's even more logical to not send this field. And removing this would preserve us from strange behaviors in case if something in the API endpoint would be changed by mistake (~regression s happen all the time in such big projects :wink:)
+
+--- [review_thread] 4538-4998
+Review thread on network/trace.go:
+@sxuereb: Both right now and in [11.10](https://gitlab.com/gitlab-org/gitlab-runner/blob/11-10-stable/network/trace.go#L220-225) we used to set `sentTime` should we add it again? Does it make a difference?
+@ayufan: `sendUpdate` is being used on `finish`, not on touch.
+@tmaczukin: Since in this case this will be the very last call, after which `clientJobTrace` handling loop will be terminated, I don't think it's required.
+
+--- [review_thread] 4999-5065
+Review thread on network/trace.go:
+@tmaczukin: `jub` -> `the job`
+
+--- [review_thread] 5066-10816
+Review thread on network/trace_test.go:
+@tmaczukin: I think we should call `b.finish()` here and update the assertions to see the last one sending the status change and failure reason.
+@sxuereb: @tmaczukin don't we have this in `TestJobIncrementalStatusRefresh`?  :thinking:
+@tmaczukin: In general: we do have. But I'm thinking here about covering the full scenario of the regression. And it was:
+
+- the job is running and patch is updated
+- frequent updates keep the job alive
+- job is finished/timeouted/canceled
+- final update doesn't happen, because the state is changed with intermediate update.
+
+In this test we're confirming now that during incremental updates there is a `running` state sent when needed. What we're missing in this scenario is to check that it behaves correctly when the job is finished.
+@sxuereb: @tmaczukin  This gets very complex very quickly (at least for me) I've spent a few hours yesterday trying to mimic the problem, but there a few problems:
+
+1. Even how the test is right now, just calling `b.Success()` it will [block](https://gitlab.com/gitlab-org/gitlab-runner/blob/e33efd07cc56cb090cd75d4b9d59162cdda81e12/network/trace.go#L133), because we would need to call [`watch`](https://gitlab.com/gitlab-org/gitlab-runner/blob/e33efd07cc56cb090cd75d4b9d59162cdda81e12/network/trace.go#L220-235)
+1. We can call watch like `TestJobIncrementalStatusRefresh` is doing, but we have to mimic the situation where we update the state to `Success` *after* we call [`b.Success`](https://gitlab.com/gitlab-org/gitlab-runner/blob/e33efd07cc56cb090cd75d4b9d59162cdda81e12/network/trace.go#L45-48) since [`finish`](https://gitlab.com/gitlab-org/gitlab-runner/blob/e33efd07cc56cb090cd75d4b9d59162cdda81e12/network/trace.go#L131-136) would not be called, and there is no way we can ho [...]
+--- [conversation] 10817-11155
+Comment by @sxuereb:
+It seems like we only used to send an update when the state was running in < 11.10 according to https://gitlab.com/gitlab-org/gitlab-runner/blob/11-10-stable/network/trace.go#L121-128 during the incremental update. 
+
+That being said I think it's better to send touch request all the time, it seems to be more robust.
+
+--- [conversation] 11156-11683
+Comment by @sxuereb:
+Sorry it took so long to finish up the test, I was trying to mimic the whole problem described in https://gitlab.com/gitlab-org/gitlab-ce/issues/63972 but it turned out to be very flaky and fairly complex since there is a lot of moving parts. I think testing that `incrementalUpdate` should always send the `running` state is enough for a test and it's clear what the indented behavior is. @ayufan when you are done taking a look at this to send it over @tmaczukin if you don't have any more improvements.
+
+--- [conversation] 11684-11743
+Comment by @tmaczukin:
+@steveazz Two comments from my side
+
+--- [conversation] 11744-11823
+Comment by @sxuereb:
+LGTM, I'll leave it up to @tmaczukin for the final review
+
+--- [conversation] 11824-12005
+Comment by @tmaczukin:
+Looks good also to me.
+
+Thanks @ayufan and @steveazz for tracking and fixing this problem. I'm going to merge this and release patches 11.10, 11.11 and 12.0.
+
+--- [conversation] 12006-12091
+Comment by @tmaczukin:
+Picked into `11-11-stable`. Will be released with `v11.11.4`.
+
+--- [conversation] 12092-12175
+Comment by @tmaczukin:
+Picked into `12-0-stable`. Will be released with `v12.0.2`.
+
+--- [conversation] 12176-12540
+Comment by @tmaczukin:
+@ayufan Should we really patch 11.10.x? Reading again the comments in gitlab-ce#63972 it looks like the 11.10.x version is working. Also the conflict at cherry-picking shows quite big change in the code, that I don't think we have the buggy code there.
+
+If no, then I will just remove the ~"Pick into 11.10" label without picking the patch.
+
+--- [conversation] 12541-12850
+Comment by @sxuereb:
+I think it's not needed for %11.10, since it is [correct](https://gitlab.com/gitlab-org/gitlab-runner/blob/11-10-stable/network/trace.go#L121-128) and it was introduced in 11.11 https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1292. I think removing ~"Pick into 11.10" is safe.
+
+--- [conversation] 12851-12880
+Comment by @tmaczukin:
+Done.
+
+--- files: network/trace.go, network/trace_test.go
+
+=================== PR 6958   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6958
+--- [title_description] 0-1496
+Title: Classify invalid docker container-create requests as ConfigurationError
+
+Description:
+## What does this MR do?
+
+When the Docker daemon rejects a container-create request with HTTP 400
+(`errdefs.InvalidArgument`) — typically a malformed environment variable
+exported by the job's own shell profile:
+
+```
+prepare environment: Error response from daemon: invalid environment variable:
+=/builds/<project>.tmp
+```
+
+`createContainer` returned the error untagged, so `setTraceStatus` defaulted it
+to `runner_system_failure` and it counted against the runner's infra SLI.
+
+This MR classifies container-create 400s as `runner_configuration_error` (maps to
+`script_failure`). Daemon `5xx` and connectivity errors are left unchanged.
+
+## Why was this MR needed?
+
+A 400 means the request was malformed — a job-config problem, not a platform
+failure. `runner_system_failure` is what operators page on, so one misconfigured
+project can push a shared shard past its error SLO on its own.
+
+`400` → configuration mirrors the secret-resolution fix in !6904. `5xx` stays
+`runner_system_failure`: unlike an opt-in service like Vault, the Docker daemon is
+the runner's own execution substrate, so a daemon-side failure is a genuine system
+failure.
+
+## Why was this MR needed?
+
+## What's the best way to test this MR?
+
+## What are the relevant issue numbers?
+
+- https://gitlab.com/gitlab-org/gitlab-runner/-/work_items/39535+.
+- same pattern as https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6904
+
+--- [commits] 1497-2705
+Commit messages:
+Classify invalid docker container-create requests as ConfigurationError
+
+When the Docker daemon rejects a container-create request with HTTP 400
+(errdefs.InvalidArgument) — for example a malformed environment variable
+exported by the job's own shell profile:
+
+    prepare environment: Error response from daemon: invalid environment
+    variable: =/builds/<project>.tmp
+
+the docker executor returned the error untagged, so it fell through
+setTraceStatus to RunnerSystemFailure and counted against the runner's
+infra SLI. A 400 from the daemon means the create request was malformed,
+which is a user-configuration problem, not a runner failure.
+
+Classify container-create InvalidArgument errors (both the build/helper
+container and service containers) as ConfigurationError, which maps to
+script_failure on GitLab. This mirrors the secret-resolution classification
+in https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/6904.
+
+Daemon 5xx and connectivity errors are left unchanged and keep
+RunnerSystemFailure: unlike an opt-in external service, the Docker daemon is
+the runner's own execution substrate, so a daemon-side failure is a genuine
+system failure that belongs in the SLI.
+
+--- [review_thread] 6165-6215
+Review thread on common/build.go:
+@takax: Updated
+
+--- [review_thread] 6216-6304
+Review thread on executors/docker/docker.go:
+@takax: Nice find :thumbsup: Updated this.
+
+--- [conversation] 6305-8621
+Comment by @duo-fix-ci-cd-pipeline-gitlab-org:
+Pipeline https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2663894761 could not be fixed in this session. The `danger-review` job failed because commit `0621317268130bbb6bedde926d26efb796b61011` contains a short reference (e.g. `!123`, `#123`) in its message — please amend the commit to use full URLs instead, then force-push the branch.
+
+<details>
+<summary>Analysis details</summary>
+
+**Failing job:** `danger-review` — https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/15260086307
+
+**Error reported by Danger (`commit_messages` rule):**
+> `0621317268130bbb6bedde926d26efb796b61011`: Use full URLs instead of short references (`gitlab-org/gitlab#123`, `!123`, or `%12.3`), as short references are displayed as plain text outside of GitLab. For more information, take a look at our [Commit message guidelines](https://docs.gitlab.com/ee/development/contributing/merge_request_workflow.html#commit-messages-guidelines).
+
+There is also a non-blocking warning:
+> The commit body should not contain more than 72 characters per line.
+
+**Root cause:**
+The commit message for `0621317268130bbb6bedde926d26efb796b61011` uses a short-form GitLab reference (e.g. `!123`, `#123`, or `%12.3`) rather than a full URL. This is unrelated to the code changes in `executors/docker/docker.go`.
+
+**Steps to fix:**
+
+1. Identify the short reference(s) in the commit message:
+   ```
+   git show --format="%B" 0621317268130bbb6bedde926d26efb796b61011
+   ```
+
+2. Reword the commit to replace short references with full URLs. For example:
+   - `!123` → `https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/123`
+   - `#123` → `https://gitlab.com/gitlab-org/gitlab-runner/-/issues/123`
+
+3. Also ensure no line in the commit body exceeds 72 characters.
+
+4. Amend o [...]
+--- [conversation] 8622-10678
+Comment by @duo-fix-ci-cd-pipeline-gitlab-org:
+Pipeline https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2663983304 could not be fixed automatically. Two unrelated failures were found: an OOMKill on a Kubernetes job (transient — retry recommended) and a Danger commit message linting error that requires amending a commit to replace short references with full URLs.
+
+<details>
+<summary>Analysis details</summary>
+
+### Job 1: `integration kubernetes exec legacy` — OOMKilled (transient)
+
+**Error:** `ERROR: Job failed: Error in container helper: exit code: 137, reason: 'OOMKilled'`
+
+The Kubernetes helper container was killed by the Linux OOM killer during the `get_sources` phase. This is unrelated to the MR's code changes and is a transient infrastructure resource limit failure.
+
+**Recommended action:** Retry the job. No code changes are needed.
+
+---
+
+### Job 2: `danger-review` — Commit message linting failure
+
+**Error:** `ERROR: Job failed: step "concrete": exec: step script: exit code 1`
+
+Danger flagged commit `90023933bee2083fd837740087c6af31f41c4204` for the following violations:
+
+1. **❌ Error (blocking):** The commit message contains a short reference (e.g. `!NNN`, `#NNN`, or `%12.3`). These must be replaced with full GitLab URLs, as short references render as plain text outside of GitLab.
+   - Example fix: replace `!123` with `https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/123`
+2. **⚠️ Warning (non-blocking):** One or more lines in the commit body exceed 72 characters.
+
+**Recommended action:** Amend the commit message and force-push:
+
+```bash
+git rebase -i 90023933bee2083fd837740087c6af31f41c4204~1
+# Mark the commit as 'reword', save, then update the message to use full URLs
+git push --force-with-lease
+```
+
+This cannot be resolved via a code suggesti [...]
+--- [conversation] 10679-12731
+Comment by @duo-fix-ci-cd-pipeline-gitlab-org:
+Pipeline https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2663983304 could not be fixed in session. The `danger-review` job failed because commit `90023933` contains a short GitLab reference (e.g. `!NNN`, `#NNN`, or `%X.Y`) instead of a full URL, and one or more commit body lines exceed 72 characters. Please amend the commit message and force-push to re-trigger the pipeline.
+
+<details>
+<summary>Analysis details</summary>
+
+**Failing job:** [`danger-review`](https://gitlab.com/gitlab-org/gitlab-runner/-/jobs/15263014971)
+
+**Errors reported by Danger:**
+```
+Errors:
+- [ ] 90023933bee2083fd837740087c6af31f41c4204: Use full URLs instead of short references
+      (`gitlab-org/gitlab#123`, `!123`, or `%12.3`), as short references are displayed as
+      plain text outside of GitLab.
+
+Warnings:
+- [ ] 90023933bee2083fd837740087c6af31f41c4204: The commit body should not contain more
+      than 72 characters per line.
+```
+
+**Root cause:**
+The `commit_messages` Danger rule (from `gitlab-dangerfiles`) requires that any cross-references in commit messages use full URLs rather than short GitLab references. Commit `90023933bee2083fd837740087c6af31f41c4204` violates this rule and also has at least one body line longer than 72 characters.
+
+**Steps to fix:**
+
+1. Amend the commit message to replace any short references with full URLs:
+   - `!NNN` → `https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/NNN`
+   - `#NNN` → `https://gitlab.com/gitlab-org/gitlab-runner/-/issues/NNN`
+   - `%X.Y` → `https://gitlab.com/gitlab-org/gitlab-runner/-/milestones/...`
+
+2. Wrap all lines in the commit body to ≤ 72 characters.
+
+3. Amend and force-push:
+   ```bash
+   git commit --amend
+   git push --force-with-lease
+   ```
+
+This will re-trigger the [...]
+--- [conversation] 12732-12904
+Comment by @takax:
+@avonbertoldi Could you please review this MR? This is a follow-up MR to https://gitlab.com/gitlab-org/gitlab-runner/-/work_items/39535#note_3538282633.
+
+--- files: executors/docker/docker.go, executors/docker/docker_test.go
+
+=================== PR 438   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/438
+--- [title_description] 0-627
+Title: Add '--run-untagged=false' cli option for runners
+
+Description:
+> This is a general Merge Request template. Consider to choose a template
+> from the list above if it will match your case more.
+
+Provides support in the runner to register with api parameter 'run_untagged=false' by omitting the boolean cli flag `--run-untagged`;
+`false` has also been made the default for the case when a tag list is specified, so that a runner that registers with a tag list will automatically
+send `run_untagged=false` in the registration request, unless the `--run-untagged` boolean was specified.
+
+Implements support for #1732
+
+--- [commits] 628-792
+Commit messages:
+add 'run-untagged' flag with default of 'true'
+
+and env var: REGISTER_RUN_UNTAGGED
+
+apply review suggestions
+
+change run-untagged default to false
+
+--- [review_thread] 6460-6603
+Review thread on common/network.go:
+@tmaczukin: Remove the `omitempty`. With it here the `run_untagged=false` will be not send with JSON data.
+
+--- [review_thread] 6604-6893
+Review thread on network/gitlab.go:
+@tmaczukin: No need to do that, since you've already added `RunUntagged: runUntagged` to the request data. After adding a fix mentioned here: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/merge_requests/438/diffs#note_21273382 it will be enough.
+
+--- [review_thread] 6894-6964
+Review thread on network/gitlab_test.go:
+@tmaczukin: :+1: for this :)
+
+--- [review_thread] 6965-7141
+Review thread on commands/register.go:
+@tmaczukin: No need for having this. Whether you're setting this option by command line flag or by the prompt you know about it's value.
+
+--- [review_thread] 7142-8233
+Review thread on commands/register.go:
+@tmaczukin: I'm not sure if this should be prompted. I would probably add only the command line option, but maybe there are arguments for adding a prompted question about this. But in that case the question should be updated with something like `[true/false]` at the end. Currently it is written in a form that may suggest you to write `yes`, which will be parsed by `strconv.ParseBool()` to `false`.
+@tmaczukin: And generally the whole part between line 150 and 155 should be done **only** if `s.TagList` is empty. According to [`Ci::Runner` validation rules](https://gitlab.com/gitlab-org/gitlab-ce/blob/v8.15.0/app/models/ci/runner.rb#L127) `run_untagged` can be set to false only if the runners is tagged.
+
+I would suggest to change this to something like:
+
+```go
+if s.TagList == "" {
+	s.RunUntagged = true
+} else {
+	runUntagged, err := strconv.ParseBool(s.ask("run-untagged", "Whether to run untagged builds:", true))
+	if err != nil {
+		log.Panicf("Failed to parse option 'run-untagged': %v", err)
+	} else {
+		s.RunUntagged = runUntagged
+	}
+}
+```
+
+--- [review_thread] 8234-8689
+Review thread on commands/register.go:
+@tmaczukin: Please remove this. Since `RunUntagged` is a `bool` then it doesn't take any argument. The only way to set this to false with a command line is to **not use the `--run-untagged` flag and add any tags. With this `RunUntagged: true` even if you will not use the flag, e.g. `gitlab-runner register --url URL -r REGISTRATION_TOKEN --name test-runner --tag-list test`, the `run_untagged` will be set to true.
+
+--- [conversation] 8690-8743
+Comment by @glensc:
+does it add env support as well?
+
+--- [conversation] 8744-8995
+Comment by @stephen.cooke.psycle:
+I am very keen on have this option available from the CLI or the flag just matching the API call, run_untagged=false.  The later makes more sense to me as it is just transfering the command from one place to another.
+
+--- [conversation] 8996-9188
+Comment by @matt-deboer:
+@stephen.cooke.psycle Ok; updated back to `--run-untagged`, with a default value of `true` to match legacy behavior.
+@glensc : Env variable is `REGISTER_RUN_UNTAGGED`
+
+--- [conversation] 9189-9321
+Comment by @tmaczukin:
+@matt-deboer Thanks for this contribution! I will review this a little later, but generally it looks good :)
+
+--- [conversation] 9322-9385
+Comment by @tmaczukin:
+@matt-deboer I've left some comments :)
+
+--- [conversation] 9386-9435
+Comment by @matt-deboer:
+@tmaczukin thanks; done
+
+--- [conversation] 9436-9945
+Comment by @stephen.cooke.psycle:
+```
+According to Ci::Runner validation rules run_untagged can be set to false only if the runners is tagged. 
+```
+
+I would say that it is very possible  that you would want the ability to register a new runner in so that it is not excepting new jobs. ( like pushing the disabled button) . What I have to do at the moment is login to the GUI and push disable or use the api via curl.
+
+Having a blank tag list and still wanting it disabled is still a requirement. please
+
+--- [conversation] 9946-11003
+Comment by @tmaczukin:
+@stephen.cooke.psycle 
+
+> I would say that it is very possible that you would want the ability to register a new runner in so that it is not excepting new jobs. ( like pushing the disabled button) 
+
+What you're writing about here is not the `run_untagged` setting but `active` setting. I don't know your case but in some cases (especially when Runner is registered against only one GitLab installation or project) you need only not to start Runner's process. Until Runner will start asking about jobs it will be marked as _unactive_ in GitLab.
+
+For cases where Runner handles many different projects or GitLab installations and the process must be started, but you still need to have a new one paused on GitLab side, we should add another improvement that will set `active: false` attribute for a registered Runner on GitLab's side. But this would need first an update in GitLab CI API in here https://gitlab.com/gitlab-org/gitlab-ce/blob/v8.15.0/lib/ci/api/runners.rb#L32.
+
+Could you open a new issue with such improvement proposal?
+
+--- [conversation] 11004-11543
+Comment by @matt-deboer:
+The reason for setting this to 'true' is to maintain the legacy behavior, where it was true by default before the flag existed.
+
+The way you set it false on the command line is exactly `--run-untagged=false`, or by setting the environment variable `REGISTER_RUN_UNTAGGED=false`; I've tested and confirmed both work as expected.
+
+That being said, I'm happy to change the default to false (which I like better) if you're ok with this changing the default behavior for people who don't specify a value for this flag.
+
+--- [conversation] 11544-11595
+Comment by @matt-deboer:
+ok; default is now `true`
+
+--- [conversation] 11596-11657
+Comment by @tmaczukin:
+@matt-deboer Thanks for your work! :)
+
+--- files: commands/register.go, common/mock_Network.go, common/network.go, network/gitlab.go, network/gitlab_test.go
+
+=================== PR 5859   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5859
+--- [title_description] 0-1145
+Title: Add Kubernetes context support for executor
+
+Description:
+## What does this MR do?
+
+- Add ContextName field to KubernetesConfig to specify kubectl context
+- Allow using kubectl context when host is not specified
+- Update documentation to describe the new context option
+- Enables easier connection to specific Kubernetes clusters from kubectl config
+
+This allows users to specify a Kubernetes context name instead of
+providing explicit host/cert configuration, making it easier to work
+with multiple clusters configured via kubectl.
+
+## Why was this MR needed?
+
+The Kubernetes executor contains a footgun: If no `host` is specified, it will try to guess the kube config. This can result in accidentally sending local test workloads to a production cluster.
+
+## What's the best way to test this MR?
+
+I tested it locally:
+
+```
+[[runners]]
+  name = "GDK local runner"
+  url = "http://127.0.0.1:3000"
+  executor = "kubernetes"
+  [runners.kubernetes]
+    namespace = "default"
+    ...
+    context = "rancher-desktop"
+```
+
+## What are the relevant issue numbers?
+
+- https://gitlab.com/gitlab-com/gl-infra/production-engineering/-/issues/27694+
+
+--- [commits] 1146-1990
+Commit messages:
+Add Kubernetes context support for executor
+
+- Add ContextName field to KubernetesConfig to specify kubectl context
+- Allow using kubectl context when host is not specified
+- Update documentation to describe the new context option
+- Enables easier connection to specific Kubernetes clusters from kubectl config
+
+This allows users to specify a Kubernetes context name instead of
+providing explicit host/cert configuration, making it easier to work
+with multiple clusters configured via kubectl.
+
+Fix tests for kubeConfigProvider signature change
+
+- Update test kubeConfigProvider functions to accept KubernetesConfig parameter
+- Matches the updated function signature in util.go
+
+Apply 3 suggestion(s) to 1 file(s)
+
+Co-authored-by: Roshni Sarangadharan <rsarangadharan@gitlab.com>
+
+Rename ContextName to Context for consistency
+
+--- [review_thread] 9729-9963
+Review thread on docs/executors/kubernetes/_index.md:
+@rsarangadharan: ```suggestion:-0+0
+| `context`   | Optional Kubernetes context name to use from your `kubectl` configuration. Use this option when you don't specify `host`. |
+```
+
+--- [review_thread] 9964-10142
+Review thread on docs/executors/kubernetes/_index.md:
+@rsarangadharan: ```suggestion:-0+0
+or use `context` to reference a specific context from your `kubectl` configuration.
+```
+
+--- [review_thread] 10143-10382
+Review thread on docs/executors/kubernetes/_index.md:
+@rsarangadharan: ```suggestion:-0+0
+| `context`                                      | Kubernetes context name to use from `kubectl` configuration (when `host` is not specified). |
+```
+
+--- [review_thread] 10383-10709
+Review thread on common/config.go:
+@joe-shaw: For consistency, should the `toml...` tag name the field `context_name`?
+
+It looks like all other options, at least in this struct, are the field name directly `snake_case`d.
+@igorwwwwwwwwwwwwwwwwwwww: @joe-shaw I did it the other way round: Renamed to `Context` for consistency.
+
+--- [conversation] 10710-11089
+Comment by @tmaczukin:
+@igorwwwwwwwwwwwwwwwwwwww That looks okay. I've triggered the UBI test again to make sure the pipeline is green.
+
+@avonbertoldi Is this something you could take a look at? My experience with Kubernetes Executor code is a little rusty and I want to make sure these changes don't have any unexpected side effects that are clear but I'm not aware off :smile:
+
+--- [conversation] 11090-11208
+Comment by @tmaczukin:
+@rsarangadharan Would you mind checking and approving the documentation update? :slight_smile:
+
+--- [conversation] 11209-11310
+Comment by @rsarangadharan:
+Thanks @igorwwwwwwwwwwwwwwwwwwww! Some minor doc related comments. :bow:
+
+--- [conversation] 11311-11385
+Comment by @igorwwwwwwwwwwwwwwwwwwww:
+@rsarangadharan Thanks, applied! :)
+
+--- [conversation] 11386-11476
+Comment by @rsarangadharan:
+@igorwwwwwwwwwwwwwwwwwwww Thanks! Approved :white_check_mark:
+
+--- [conversation] 11477-11628
+Comment by @joe-shaw:
+A minor comment here just about naming consistency.
+
+Otherwise I've looked at the implementation and can't see any other issues.
+
+--- files: commands/multi.go, common/config.go, docs/executors/kubernetes/_index.md, executors/kubernetes/util.go, executors/kubernetes/util_test.go
+
+=================== PR 1512   https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/1512
+--- [title_description] 0-377
+Title: Remove need for externally configured variable
+
+Description:
+## What does this MR do?
+
+Folks building runner from forks would have docs lint job fail because they hadn't configured
+`$DOCS_GITLAB_REPO_SUFFIX`.
+
+We could've documented that it was required, but there doesn't seem to be any reason not to declare it 
+within the pipeline configuration.
+
+CC @axil @tmaczukin
+
+--- [commits] 378-442
+Commit messages:
+Remove need for externally configured variable
+
+--- [conversation] 713-826
+Comment by @axil:
+Actually, that's a nice idea specifying this in `.gitlab-ci.yml` instead of a secret variable.
+
+--- [conversation] 827-1007
+Comment by @tmaczukin:
+@eread You should have name the branch as `docs/...`, `docs-...` or `...-docs` - now we need to wait for the full pipeline to be finished :stuck_out_tongue:
+
+--- [conversation] 1008-1126
+Comment by @tmaczukin:
+LGTM. Let's approve and merge this and remove the secret variable from the project afterwards.
+
+--- [conversation] 1127-1258
+Comment by @mpcref:
+You might want to add that to the instructions for contributors as well. Would have saved me some time! :wink:
+
+--- [conversation] 1259-1340
+Comment by @eread:
+Hahaha. I deliberately *didn't* do that for a `yml` change :)
+
+--- [conversation] 1341-1550
+Comment by @eread:
+It's my Friday afternoon. If no one else has done it, I'll do it my Monday morning.
+
+Not tempting fate changing CI config this close to the weekend :)
+
+@axil might do it his Friday morning.
+
+--- [conversation] 1551-1594
+Comment by @axil:
+Secret variable removed!
+
+--- [conversation] 1595-1679
+Comment by @eread:
+It builds! https://gitlab.com/gitlab-org/gitlab-runner/pipelines
+
+--- [conversation] 1680-1805
+Comment by @eread:
+BTW, @mpcref is this too hidden away? https://docs.gitlab.com/ee/development/documentation/#branch-naming
+
+--- [conversation] 1806-1946
+Comment by @mpcref:
+If like me you're coming from the "Edit this page" button at the bottom of the page you want to contribute to then yes.
+
+--- [conversation] 1947-2065
+Comment by @eread:
+Raised https://gitlab.com/gitlab-org/gitlab-docs/merge_requests/508 to try and address that a bit.
+
+--- files: .gitlab-ci.yml

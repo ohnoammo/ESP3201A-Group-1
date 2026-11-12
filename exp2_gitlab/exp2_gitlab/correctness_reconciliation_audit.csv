@@ -1,0 +1,7 @@
+﻿action,blind_id,question_id,old_label,new_label,detail
+james_no_label_filled,S005,q4085,-,correct,"Alyssa is the reference rater. Same question, gold and model answer as S004; kept as the other arm's answer."
+james_no_label_filled,S009,q6045,-,correct,Alyssa is the reference rater.
+label_overwritten,S010,q5089,wrong,partial,Alyssa is the reference rater.
+james_no_label_filled,S011,q5089,-,partial,Alyssa is the reference rater.
+james_no_label_filled,S015,q5540,-,correct,Alyssa is the reference rater.
+resolved_no_reason,,nr188,,,"Full MR read (description, 4 commits, all 16 notes), not just one isolated note. Resolved (James, 6 Nov): stays no_reason / unanswerable. The 94% comment came well after the MR opened and explains why the feature is useful in hindsight, not the problem that prompted adding it. The opening description states only the feature. The model's answer using the 94% figure is unsupported. Both people's ok is unchanged."

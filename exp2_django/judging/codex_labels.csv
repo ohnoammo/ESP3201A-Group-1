@@ -1,0 +1,971 @@
+blind_id,label,note
+J0001,correct,States the opposite SQLite version conditions
+J0002,correct,Explains field remains useful for users
+J0003,correct,Identifies the proposed validation as breaking
+J0004,correct,Identifies deconstruct omission and loss during cloning
+J0005,correct,Matches shared connection and thread-safe counter updates
+J0006,wrong,Attributes removal to a NameError rather than negligible micro-optimization
+J0007,wrong,Invents test failure visibility rather than backporting
+J0008,partial,Mentions development-time error but misses that no working tag was protected
+J0009,correct,Explains None may be stored and needs distinction from absence
+J0010,correct,Includes micro-optimization and negligible performance rationale
+J0011,wrong,Claims inability to run Oracle rather than existing suitable flag
+J0012,correct,States old MariaDB syntax causes crashes
+J0013,correct,States positional arguments should still work during deprecation
+J0014,correct,States non-Node tags already crash during compilation
+J0015,correct,Matches compatibility concern and existing customization
+J0016,correct,Matches shared connection and thread-safe counter updates
+J0017,correct,Identifies backwards compatibility for direct construction
+J0018,correct,Matches unconditional setup before test environment and customization rationale
+J0019,partial,Notes shallow-copy failure but misses ErrorList losing error_class
+J0020,correct,States old MariaDB syntax causes crashes
+J0021,correct,States that existing names were poor and proposed names clearer
+J0022,partial,Notes use elsewhere and separate scope but omits bulk-insert-only limit change
+J0023,correct,Explains browsers ignore the header without required prefix flags
+J0024,wrong,Claims default port permits binding rather than preserving compatibility
+J0025,partial,States faster but omits that join converts generators to lists anyway
+J0026,correct,Matches redirecting output from the real run_tests call
+J0027,correct,States uncertainty that the new format would land in Python 3.11
+J0028,correct,Matches thread-safe counter updates on shared connections
+J0029,correct,States eager compilation is faster and gives the benchmark comparison
+J0030,correct,States manager use is undocumented
+J0031,partial,Identifies invalid-name handling but omits the untested unexpected failure detail
+J0032,partial,Matches integer formatting but omits Python 2 division rationale
+J0033,correct,Matches rendering rather than form behavior
+J0034,partial,Notes existing bottom padding but omits Delete being the last button
+J0035,correct,Matches rendering rather than form behavior
+J0036,correct,States the discoverability rationale
+J0037,correct,Explains browsers ignore the header when the required secure flag is absent
+J0038,partial,States disabling GC slowed Windows CI but omits reduced work and swap concern
+J0039,correct,States positional arguments should continue working during deprecation
+J0040,correct,Matches declared aliases and future errors from accessing other connections
+J0041,partial,Identifies a longstanding bug but omits invalid-name case and missing test
+J0042,correct,Matches internal list conversion and speed advantage
+J0043,wrong,Claims test-order visibility rather than backporting
+J0044,correct,Explains browsers ignore the header without required prefix flags
+J0045,wrong,Attributes the default to binding port zero rather than compatibility
+J0046,correct,Matches future added connections causing errors if iterated
+J0047,correct,States GitHub Actions ran faster and increased sensitivity to missing waits
+J0048,correct,Matches internal list conversion and faster list input
+J0049,wrong,Offers customization and accessibility rather than avoiding an empty nav
+J0050,correct,Matches positional compatibility during the deprecation period
+J0051,wrong,Claims syntax support was dropped rather than query crashes
+J0052,partial,Notes existing bottom padding but omits Delete being last
+J0053,correct,Distinguishes base64 request fields from uploaded files
+J0054,correct,Matches internal conversion and reduced generator overhead
+J0055,correct,Explains regex cannot predict all expressions and repr is clear enough
+J0056,correct,States discoverability rationale
+J0057,correct,Matches compatibility concern and existing customization
+J0058,partial,Matches bound-method cache miss but adds an unsupported weakref reason
+J0059,correct,Matches avoiding errors from undeclared database connections
+J0060,partial,Matches integer formatting but omits the Python 2 division rationale
+J0061,partial,Notes separate PR and broader use but omits bulk-only limit change
+J0062,correct,Matches failures from iterating connections beyond declared aliases
+J0063,correct,Matches unconditional setup before test setup and customization rationale
+J0064,wrong,Names asyncio as replacement instead of aiosmtpd
+J0065,correct,Includes Windows concern and easy web search rationale
+J0066,correct,Matches compatibility concern and customization option
+J0067,partial,Says manager is disallowed but misses that the use case is undocumented
+J0068,correct,States discoverability rationale
+J0069,correct,Matches missing __getattr__ fallback and LazySettings override
+J0070,correct,Matches rendering rather than form behavior
+J0071,partial,Notes separate PR but omits the bulk-only limit and wider use details
+J0072,correct,States discoverability rationale
+J0073,correct,Matches redirecting output from the real run_tests call
+J0074,correct,Matches redirecting real test output during deprecation test
+J0075,wrong,Claims syntax support was dropped and workaround unnecessary
+J0076,correct,States uncertainty that the format would land in Python 3.11
+J0077,correct,States opposite SQLite version conditions
+J0078,correct,Matches compatibility for direct construction
+J0079,wrong,Claims customization rather than preventing an empty nav
+J0080,correct,Matches eager compilation being faster with benchmark evidence
+J0081,partial,Notes poor names but omits that the existing assignment was intentional
+J0082,correct,Matches Webpack’s default comment lacking trailing space
+J0083,partial,Matches bound-method cache misses but adds an unsupported unhashable-type reason
+J0084,correct,Matches adding sync tests first to check the approach made sense
+J0085,partial,Matches removed title rationale but omits ellipsis failure with flex
+J0086,partial,States deprecation and aiosmtpd but adds asyncio as replacement
+J0087,correct,Matches preserving positional arguments during deprecation
+J0088,partial,Matches Python 3 true division but omits integer formatting rationale
+J0089,partial,Matches integer formatting but omits Python 2 division rationale
+J0090,correct,Explains None can be stored and sentinel distinguishes cache miss
+J0091,correct,Matches faster eager compilation with timing comparison
+J0092,partial,Notes wider use and careful separate PR but omits bulk-only limit change
+J0093,wrong,Claims the warning is raised though the test ignores the deprecation warning
+J0094,correct,Matches deprecation and aiosmtpd replacement
+J0095,correct,Matches writing sync tests first to check the async approach
+J0096,partial,Includes bound methods but gives unsupported additional reasons
+J0097,correct,Matches faster GitHub Actions and increased sensitivity to missing waits
+J0098,correct,Matches shared-thread use and need for safe counter updates
+J0099,correct,Matches redirecting real run_tests output during the deprecation test
+J0100,wrong,Offers weakref and signal issues without the bound-method reason
+J0101,correct,States positional arguments still work during deprecation
+J0102,partial,Describes manager distinction but misses that the use case is undocumented
+J0103,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0104,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0105,partial,Notes separate PR but overgeneralizes when the compound limit stops applying
+J0106,correct,Matches replacing backslash-S with a narrower character set
+J0107,correct,Matches discoverability and rejection of third-party-tool rationale
+J0108,correct,Matches separate and more complicated issue needing its own PR
+J0109,correct,Matches Windows slowdown and reducing GC work while limiting swap growth
+J0110,partial,Notes existing bottom padding but omits Delete being last
+J0111,correct,Matches eager compilation being faster than lazy helper
+J0112,correct,Matches redirecting real run_tests output during the deprecation test
+J0113,correct,Matches discoverability and rejection of third-party-tool rationale
+J0114,wrong,Claims sync tests validate both client modes rather than checking the async approach
+J0115,wrong,Directly contradicts the stated reason about third-party tools
+J0116,correct,Matches deconstruct omission and loss during cloning
+J0117,correct,Matches redirecting real run_tests output during the deprecation test
+J0118,partial,Explains internal conversion but omits the speed benefit and adds implementation detail
+J0119,correct,Explains browsers ignore the header without the required secure flag
+J0120,correct,States uncertainty over whether the format would land in Python 3.11
+J0121,partial,Notes warning but omits integer placeholders and Python 2 division rationale
+J0122,correct,States positional arguments continue working during deprecation
+J0123,correct,Explains None may be stored and sentinel distinguishes a miss
+J0124,partial,Explains using declared aliases but omits future errors from extra connections
+J0125,correct,Matches faster eager compilation over lazy helper
+J0126,correct,Matches deconstruct omission and loss during cloning
+J0127,correct,Identifies invalid layer names and lack of a test
+J0128,wrong,Attributes removal to NameError cleanup rather than negligible micro-optimization
+J0129,correct,Matches deconstruct omission and loss during cloning
+J0130,partial,Notes existing bottom padding but omits Delete being last
+J0131,correct,Matches unconditional setup before test setup and customization concern
+J0132,wrong,Attributes removal to a NameError rather than the stated performance reason
+J0133,wrong,Describes the type restriction but misses that manager use is undocumented
+J0134,partial,Matches ordering and unconditional setup but omits customization rationale
+J0135,correct,Matches ErrorList copy losing error_class through UserList behavior
+J0136,correct,Matches waiting for another possibly broken use case to be reported
+J0137,correct,Matches faster CI and greater sensitivity to missing waits
+J0138,correct,Explains browsers ignore the header without secure flag
+J0139,wrong,Claims accessibility landmark rather than avoiding an empty nav
+J0140,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0141,correct,Matches narrowing backslash-S without introducing backtracking
+J0142,partial,Notes poor names but omits that the existing assignment was intentional
+J0143,correct,Matches the bulk-only limit change and wider use needing a separate PR
+J0144,correct,Matches avoiding errors when iterating beyond declared databases
+J0145,correct,Explains join’s internal list conversion and performance benefit
+J0146,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0147,wrong,Offers test-order visibility rather than backporting rationale
+J0148,partial,Notes the move to Python 3.11 but omits uncertainty about landing
+J0149,correct,States field remains useful to users
+J0150,correct,Matches supported-versions policy disqualifying backport
+J0151,correct,Identifies the proposed validation as breaking
+J0152,wrong,Claims query efficiency rather than crashes from old syntax
+J0153,wrong,Invents sync-regression coverage rather than checking approach while debugging async
+J0154,correct,Matches replacing backslash-S with a narrower character set
+J0155,partial,Notes existing bottom padding but omits Delete being last
+J0156,correct,Distinguishes base64 field values from uploaded files
+J0157,correct,Matches micro-optimization and negligible performance difference
+J0158,correct,Matches faster eager compilation than lazy instantiation
+J0159,correct,Matches Windows slowdown and avoiding unnecessary GC and swap growth
+J0160,correct,Matches easy web search for removing stale pyc files
+J0161,correct,Matches internal list conversion and faster list input
+J0162,correct,Matches faster GitHub Actions and greater sensitivity to missing waits
+J0163,correct,Matches Webpack’s default comment without trailing space
+J0164,wrong,Attributes default port to binding port zero rather than compatibility
+J0165,correct,Identifies the proposed validation as breaking
+J0166,correct,Matches that manager use is undocumented
+J0167,correct,Matches narrowing backslash-S without introducing backtracking
+J0168,partial,Matches easy web search but omits Windows users
+J0169,correct,Matches faster GitHub Actions and greater sensitivity to missing waits
+J0170,partial,States the crash reason but adds unsupported claim that syntax support was dropped
+J0171,wrong,Claims inconsistency and gathering input rather than avoiding breaking users
+J0172,partial,Identifies a layer lookup bug but omits invalid-name case and missing test
+J0173,correct,Matches narrowing backslash-S without introducing backtracking
+J0174,partial,Identifies longstanding breakage but omits invalid-name case and missing test
+J0175,wrong,Claims sync regression coverage rather than checking approach while debugging async
+J0176,wrong,Claims Oracle limitations rather than that the test passed without the patch
+J0177,correct,Matches invalid-name failure and need for proper handling
+J0178,partial,Notes memory and performance but misses Windows slowdown from disabling GC
+J0179,correct,Matches reducing unnecessary GC while preventing swap growth after Windows slowdown
+J0180,partial,Includes negligible performance reason but adds unsupported NameError rationale
+J0181,correct,Explains None may be stored and sentinel distinguishes absence
+J0182,correct,Matches missing fallback and LazySettings subclass __getattr__
+J0183,wrong,Claims Oracle execution problems rather than an existing suitable flag
+J0184,correct,Matches redirecting real run_tests output during deprecation testing
+J0185,correct,Matches narrowing backslash-S without new backtracking
+J0186,partial,States repr is clear but omits complex expression coverage and copy-paste rationale
+J0187,partial,Notes existing bottom padding but omits Delete being last
+J0188,correct,Distinguishes base64 request fields from uploaded files
+J0189,correct,States opposite SQLite version conditions
+J0190,correct,Matches avoiding breakage and allowing user-specific behavior
+J0191,partial,Notes poor names but omits that the existing assignment was intentional
+J0192,wrong,Claims Node.render documentation rationale instead of existing compile-time crash
+J0193,correct,States the new flag requires SQLite versions below 3.30
+J0194,correct,Includes Windows concern and easy web search rationale
+J0195,wrong,Claims alias order ensured correct behavior rather than separate issue scope
+J0196,correct,Matches missing __getattr__ call and LazySettings override
+J0197,partial,Notes separate PR but omits bulk-only limit and wider-use reasons
+J0198,partial,Matches regex limits but omits that warning need not be copy-pasteable
+J0199,correct,Matches faster eager compilation than lazy instantiation
+J0200,wrong,Claims non-working code and PR uncertainty rather than test passing without patch
+J0201,partial,Includes compatibility but adds an unsupported port-customization rationale
+J0202,correct,Matches missing __getattr__ fallback and LazySettings override
+J0203,correct,Matches uncertainty that the moved format would land in Python 3.11
+J0204,correct,Explains None may be stored and sentinel separates it from a miss
+J0205,partial,Identifies invalid-layer breakage but omits missing test and unexpected behavior details
+J0206,correct,Distinguishes ordinary request fields from uploaded files
+J0207,correct,Distinguishes base64 request fields from uploaded files
+J0208,correct,States manager use is undocumented
+J0209,partial,Notes clarity but omits that the existing assignment was intentional
+J0210,correct,States the new and existing flags use opposite version conditions
+J0211,wrong,Offers migration connection behavior rather than separate issue scope
+J0212,correct,States opposite SQLite version conditions
+J0213,correct,Explains browsers ignore the header without the required secure flag
+J0214,correct,Matches rendering rather than form behavior
+J0215,correct,Matches Webpack’s default comment without trailing space
+J0216,correct,States positional arguments should continue working during deprecation
+J0217,correct,States discoverability rationale
+J0218,partial,States repr is clear but omits expression complexity and non-copy-paste need
+J0219,correct,Matches positional compatibility during deprecation
+J0220,correct,Matches rendering in admin rather than form behavior
+J0221,wrong,Claims Oracle usage and support priorities rather than an existing feature flag
+J0222,correct,Matches faster eager compilation than lazy helper instantiation
+J0223,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0224,correct,Matches shared connection and thread-safe counter updates
+J0225,correct,States old syntax causes MariaDB query crashes
+J0226,correct,Matches avoiding issues when extra database aliases are configured
+J0227,correct,Explains browsers ignore the header without the required secure flag
+J0228,partial,Matches unconditional setup ordering but omits customization rationale
+J0229,partial,Matches unconditional setup ordering but omits customization rationale
+J0230,correct,States manager use is undocumented
+J0231,wrong,Attributes default port to binding port zero rather than compatibility
+J0232,wrong,Claims accessibility rather than avoiding an empty navigation element
+J0233,correct,Identifies the proposed validation as breaking
+J0234,wrong,Attributes removal to NameError cleanup rather than negligible optimization
+J0235,partial,Notes existing bottom padding but omits Delete being last
+J0236,correct,Matches removed title and flex layout preventing ellipsis
+J0237,wrong,Claims sync and async coverage rather than checking the approach while debugging
+J0238,wrong,Attributes removal to NameError cleanup rather than negligible optimization
+J0239,wrong,Claims a Mock iteration error rather than the test passing without patch
+J0240,partial,Matches easy search but omits Windows users
+J0241,correct,Matches unconditional setup before test environment and customization rationale
+J0242,correct,Explains opposite SQLite version conditions
+J0243,correct,Matches rendering rather than form behavior
+J0244,correct,Matches deprecation and aiosmtpd replacement
+J0245,correct,Matches faster eager compilation than lazy helper use
+J0246,wrong,Reverses rationale by claiming GC ran too infrequently and caused extra work
+J0247,correct,Explains None can be stored and sentinel distinguishes a miss
+J0248,correct,Matches deprecation and aiosmtpd replacement
+J0249,correct,Distinguishes base64 request fields from uploaded files
+J0250,partial,States names were clearer but omits that the existing assignment was intentional
+J0251,wrong,Claims changes were unnecessary rather than backward-incompatible
+J0252,correct,Matches compatibility concern and customization option
+J0253,correct,Matches missing deconstruct field and loss during cloning
+J0254,correct,Matches missing deconstruct field and loss during cloning
+J0255,wrong,Invents migration-generation concerns rather than undocumented manager use
+J0256,correct,Matches uncertainty that the format would land in Python 3.11
+J0257,correct,Matches faster eager compilation than lazy helper instantiation
+J0258,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0259,partial,States repr is clearer but omits expression complexity and copy-paste rationale
+J0260,wrong,Claims test visibility rather than backporting
+J0261,wrong,Claims Oracle support moved to another PR rather than an existing suitable flag
+J0262,partial,Matches integer formatting but omits Python 2 division rationale
+J0263,partial,Identifies invalid-layer breakage but omits missing test and unexpected behavior
+J0264,wrong,Claims test visibility rather than backporting
+J0265,partial,States repr is readable but adds unsupported malformed-input rationale
+J0266,correct,Matches useful field-specific attributes such as required status
+J0267,correct,Matches rendering rather than form behavior
+J0268,wrong,Claims accessibility landmark rather than avoiding empty navigation
+J0269,correct,Matches avoiding issues when additional connections are added
+J0270,wrong,Describes the type restriction but misses undocumented manager use
+J0271,partial,Identifies longstanding breakage but omits invalid-name case and missing test
+J0272,partial,Matches negligible performance and simplification but adds NameError rationale
+J0273,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0274,correct,Matches internal list conversion and faster list input
+J0275,wrong,Claims test visibility rather than backporting
+J0276,correct,Matches uncertainty over whether the format would land in Python 3.11
+J0277,correct,Matches admin template rendering rather than form functionality
+J0278,partial,Notes warning but omits integer formatting and Python 2 division reasons
+J0279,correct,Matches deconstruct omission and loss during cloning
+J0280,correct,Matches Windows slowdown and avoiding GC work and swap growth
+J0281,correct,Matches admin-template rendering rather than form behavior
+J0282,correct,Matches deprecation and aiosmtpd replacement
+J0283,correct,Matches writing sync tests first to check the async approach
+J0284,correct,Matches eager compilation being faster with benchmark timing
+J0285,correct,Matches Webpack’s default comment without trailing space
+J0286,partial,Notes separate PR but omits the limit change and wider use rationale
+J0287,correct,Matches backwards compatibility for direct construction
+J0288,wrong,Claims the message should be copyable despite gold saying it need not be
+J0289,correct,Explains browsers ignore the header without required secure flag
+J0290,correct,Matches unconditional setup ordering and customization rationale
+J0291,wrong,Claims syntax was dropped and optimized plans rather than query crashes
+J0292,correct,Identifies the proposed validation as breaking
+J0293,partial,Matches slow indexing and C-level work but omits the author’s uncertainty
+J0294,correct,Explains the new and existing flags use opposite conditions
+J0295,correct,Matches redirecting output from the real run_tests call
+J0296,partial,Mentions bound methods but gives other unsupported cache reasons
+J0297,partial,Matches complex expressions and repr clarity but adds unsupported crash rationale
+J0298,correct,Matches slow indexing and more work at C level
+J0299,wrong,Claims feature status rather than supported-versions policy
+J0300,correct,Matches redirecting real test output during deprecation test
+J0301,correct,Matches missing __getattr__ handling on LazySettings
+J0302,partial,Matches reducing GC work and swap growth but omits Windows slowdown
+J0303,correct,Distinguishes base64 request fields from uploaded files
+J0304,wrong,Describes block contents but misses hiding breadcrumbs without empty nav
+J0305,wrong,Claims connection patching rationale rather than separate issue scope
+J0306,correct,Matches micro-optimization with negligible impact and simpler implementation
+J0307,partial,Identifies longstanding breakage but omits invalid-name case and missing test
+J0308,wrong,Claims test visibility rather than backporting
+J0309,correct,Matches deconstruct omission and loss during cloning
+J0310,correct,Matches compatibility for direct construction
+J0311,partial,Includes crashes but adds unsupported performance and syntax-drop reasons
+J0312,partial,States deprecation and aiosmtpd but adds asyncio as replacement
+J0313,partial,Matches C-level work but omits the author’s uncertainty
+J0314,correct,Matches deconstruct omission and loss during cloning
+J0315,partial,States clarity but omits that the existing assignment was intentional
+J0316,correct,Matches uncertainty over whether the format would land in Python 3.11
+J0317,correct,Matches compatibility concern and customization option
+J0318,correct,Matches redirecting real run_tests output during deprecation testing
+J0319,partial,Matches C-level work but adds unsupported low-level explanation and certainty
+J0320,partial,Notes poor names but omits that the existing assignment was intentional
+J0321,correct,Matches discoverability and rejection of third-party-tool rationale
+J0322,partial,States deprecation and aiosmtpd but adds asyncio as replacement
+J0323,correct,Matches backwards compatibility for direct construction
+J0324,correct,Matches avoiding assumptions and extra-database errors
+J0325,correct,Distinguishes base64 request fields from uploaded files
+J0326,correct,Matches micro-optimization and negligible performance difference
+J0327,partial,Notes missing __getattr__ behavior but omits the LazySettings override and adds another cause
+J0328,correct,Matches deconstruct omission and loss during cloning
+J0329,correct,Matches backward-compatibility risk for overriding operations
+J0330,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0331,partial,Notes existing bottom padding but omits Delete being last
+J0332,correct,Matches integer formatting and Python 3 true division
+J0333,correct,States non-Node tags already crash during compilation
+J0334,correct,Matches ErrorList copy losing error_class through UserList behavior
+J0335,correct,Matches discoverability and rejection of third-party-tool rationale
+J0336,correct,Matches supported-versions policy disqualifying backport
+J0337,correct,Explains None may be stored and sentinel distinguishes a miss
+J0338,correct,States positional arguments remain usable during deprecation
+J0339,correct,Matches Windows slowdown and reducing GC work while limiting swap growth
+J0340,wrong,Claims inconsistency and gathering input rather than avoiding breakage
+J0341,correct,Explains None may be stored and sentinel separates miss from value
+J0342,correct,Distinguishes base64 request fields from uploaded files
+J0343,wrong,Claims test visibility rather than backporting
+J0344,correct,Matches Windows slowdown and reducing unnecessary GC work
+J0345,correct,States discoverability rationale
+J0346,partial,Matches breakage concern but omits existing customization option
+J0347,correct,Explains None may be stored and sentinel distinguishes a miss
+J0348,wrong,Describes label rendering rather than user usefulness
+J0349,partial,Matches slow indexing and C-level work but omits uncertainty
+J0350,partial,Matches easy web search but omits Windows users
+J0351,correct,Matches avoiding assumptions and errors from extra connections
+J0352,partial,Matches C-level work but adds unsupported low-level detail and certainty
+J0353,correct,Matches backward-compatibility risk for overriding operations
+J0354,partial,States repr clarity but omits expression variety and copy-paste rationale
+J0355,correct,Matches unconditional ordering and customization rationale
+J0356,correct,States old syntax causes MariaDB query crashes
+J0357,correct,Matches faster eager compilation than lazy helper
+J0358,correct,Matches narrowing backslash-S without introducing backtracking
+J0359,partial,Matches setup ordering and customization but adds unsupported claim about runtests
+J0360,correct,Matches Windows slowdown and reducing GC work and swap growth
+J0361,correct,Matches backward-compatibility risk for overriding operations
+J0362,wrong,Describes the type restriction but misses that manager use is undocumented
+J0363,correct,Distinguishes base64 request fields from uploaded files
+J0364,wrong,Claims behavior is safe despite gold saying non-Node tags already crash
+J0365,partial,States repr readability but omits expression variety and copy-paste rationale
+J0366,partial,Notes poor names but omits that the existing assignment was intentional
+J0367,partial,Matches removed title but omits ellipsis failure with flex
+J0368,correct,Matches uncertainty that the format would land in Python 3.11
+J0369,correct,Identifies the proposed validation as breaking
+J0370,correct,Matches redirecting real test output during deprecation testing
+J0371,correct,Matches discoverability and rejection of third-party-tool rationale
+J0372,correct,Matches backward-compatibility risk for overridden operations
+J0373,partial,Matches C-level work but states the author’s uncertain explanation as certain
+J0374,correct,Matches faster eager compilation than lazy helper
+J0375,correct,Identifies the proposed validation as breaking
+J0376,partial,Matches integer formatting and warning but omits Python 2 division rationale
+J0377,partial,Matches bound-method cache issue but adds unsupported weak-reference reason
+J0378,correct,Matches internal list conversion and faster list input
+J0379,correct,Matches narrowing backslash-S without new backtracking
+J0380,correct,Matches deconstruct omission and loss during cloning
+J0381,wrong,Offers weak-reference issues without the bound-method cache miss reason
+J0382,correct,Matches ErrorList copy losing error_class through UserList behavior
+J0383,correct,Matches redirecting real run_tests output during deprecation testing
+J0384,wrong,Claims a test failure despite gold noting there was no test case
+J0385,correct,Matches narrowing backslash-S without new backtracking
+J0386,correct,Matches shared-thread use and need for thread-safe counter updates
+J0387,wrong,Claims sync regression coverage rather than checking the async approach
+J0388,partial,Matches reducing GC work and swap protection but omits Windows slowdown
+J0389,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0390,correct,Matches ErrorList copy losing error_class through UserList behavior
+J0391,correct,Matches Windows slowdown and reducing GC while limiting swap growth
+J0392,correct,Matches speed benefit and internal generator-to-list conversion
+J0393,partial,States deprecation but misidentifies asyncio as replacement
+J0394,correct,Matches concurrent counter changes requiring thread safety
+J0395,correct,Matches hiding breadcrumbs without an empty nav
+J0396,correct,States discoverability rationale
+J0397,correct,Explains browsers ignore the header without the secure flag
+J0398,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0399,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0400,correct,Identifies the proposed validation as breaking
+J0401,partial,Matches unconditional ordering but omits process_setup customization rationale
+J0402,correct,Matches Webpack’s default comment without trailing space
+J0403,correct,Matches shared connection and thread-safe counter updates
+J0404,partial,Matches breakage concern but omits existing customization option
+J0405,correct,Distinguishes base64 request fields from uploaded files
+J0406,correct,Explains browsers ignore the header without the required secure flag
+J0407,correct,Matches uncertainty over whether the format would land in Python 3.11
+J0408,wrong,Claims bug-fix status and low impact rather than existing compile-time crash
+J0409,wrong,Names asyncio rather than aiosmtpd as replacement
+J0410,partial,States speed benefit but omits join’s internal list conversion
+J0411,partial,Notes existing bottom padding but omits Delete being last
+J0412,partial,Notes poor names but omits that the existing assignment was intentional
+J0413,correct,Matches uncertainty over whether the format would land in Python 3.11
+J0414,correct,Matches compatibility for direct construction over signature tidiness
+J0415,partial,States deprecation but misidentifies asyncio as the replacement
+J0416,partial,Matches slow indexing and C-level processing but overstates certainty
+J0417,correct,States positional arguments remain usable during deprecation
+J0418,correct,Matches uncertainty over whether the format would land in Python 3.11
+J0419,partial,Matches checking the async approach but omits writing tests first and uncertainty
+J0420,correct,Matches integer formatting and Python 2 versus Python 3 division rationale
+J0421,correct,Matches faster eager compilation than lazy helper
+J0422,correct,Matches bulk-only limit change and wider use needing separate PR
+J0423,partial,Connects rendering to admin views but omits that the form is not the issue
+J0424,correct,Explains None may be stored and sentinel distinguishes cache misses
+J0425,wrong,Describes type restriction but misses undocumented manager use
+J0426,correct,States positional arguments remain usable during deprecation
+J0427,partial,Notes existing bottom padding but omits Delete being last
+J0428,wrong,Claims Oracle support trouble and low usage rather than existing flag
+J0429,partial,Matches easy web search but omits Windows users
+J0430,correct,Matches positional arguments continuing to work
+J0431,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0432,wrong,Claims inability to run Oracle rather than existing suitable flag
+J0433,partial,Includes old-syntax crashes but adds unsupported data-loss rationale
+J0434,correct,Matches missing __getattr__ call and LazySettings override
+J0435,wrong,Claims syntax support dropped rather than query crashes
+J0436,correct,Explains browsers ignore the header without the secure flag
+J0437,wrong,Claims inability to run Oracle rather than existing suitable flag
+J0438,correct,States non-Node tags already crash during compilation
+J0439,correct,Explains browsers ignore the header without the required secure flag
+J0440,correct,Matches uncertainty that the format would land in Python 3.11
+J0441,wrong,Offers weak-reference and signal issues without the bound-method cache reason
+J0442,wrong,Claims test pattern and visibility rather than backporting
+J0443,correct,Matches deconstruct omission and loss during cloning
+J0444,correct,Matches internal conversion and performance benefit
+J0445,correct,Distinguishes request fields from uploaded files
+J0446,correct,Identifies the proposed validation as breaking
+J0447,wrong,Offers DEBUG-dependent signal behavior without the bound-method cache reason
+J0448,correct,Distinguishes base64 request fields from uploaded files
+J0449,correct,Matches expression complexity and repr clarity over regex
+J0450,partial,Matches repr clarity and regex limits but omits copy-paste rationale
+J0451,correct,Matches regex limits and that the message need not be copyable
+J0452,partial,Matches C-level work but adds unsupported low-level detail and certainty
+J0453,wrong,Claims binding port zero rather than compatibility
+J0454,correct,Explains browsers ignore the header without secure flag
+J0455,wrong,Claims Oracle constraint support rather than test passing without patch
+J0456,correct,Matches hiding breadcrumbs without an empty nav
+J0457,correct,Matches avoiding assumptions and future errors from extra databases
+J0458,correct,Matches micro-optimization and negligible performance difference
+J0459,partial,Matches breakage concern but omits existing customization option
+J0460,correct,Matches Webpack’s default comment without trailing space
+J0461,correct,Matches redirecting real run_tests output during deprecation testing
+J0462,wrong,Attributes default port to binding port zero rather than compatibility
+J0463,correct,Identifies the proposed validation as breaking
+J0464,correct,Matches backward-compatibility risk for overridden operations
+J0465,correct,Matches the need for thread-safe counter alterations
+J0466,partial,Identifies longstanding breakage but omits invalid-name case and missing test
+J0467,correct,Matches internal list conversion and faster list input
+J0468,correct,Distinguishes base64 request fields from uploaded files
+J0469,correct,Matches integer formatting and Python 3 true division
+J0470,wrong,Claims Oracle support difficulty and low usage rather than existing flag
+J0471,wrong,Names asyncio rather than aiosmtpd as replacement
+J0472,partial,Matches avoiding breakage but omits existing customization option
+J0473,partial,Describes recursion but misses the __getattr__ fallback and LazySettings override
+J0474,correct,Matches compatibility risk for overriding migration operations
+J0475,wrong,Claims test-pattern rationale rather than backporting
+J0476,correct,Matches compatibility concern and customization option
+J0477,correct,Identifies the proposed validation as breaking
+J0478,correct,Matches internal list conversion and speed benefit
+J0479,partial,Notes loss during cloning but omits the missing deconstruct attribute
+J0480,wrong,Claims GC frequency sped tests up rather than Windows slowdown
+J0481,correct,Matches declared aliases and preventing access errors for undeclared connections
+J0482,partial,States deprecation but misidentifies asyncio as the replacement
+J0483,correct,Matches shared connection and thread-safe counter alterations
+J0484,correct,Matches narrowing backslash-S without introducing backtracking
+J0485,correct,States field is useful to template authors
+J0486,correct,Explains opposite SQLite version conditions
+J0487,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0488,wrong,Claims test visibility rather than backporting
+J0489,correct,Matches thread-safe counter alterations
+J0490,partial,Matches easy web search but omits Windows users
+J0491,partial,Notes existing bottom padding but omits Delete being last
+J0492,wrong,Claims regression coverage rather than checking the async approach
+J0493,correct,Matches avoiding assumptions and future errors from extra databases
+J0494,wrong,Claims accessibility landmark rather than preventing empty navigation
+J0495,partial,Matches integer formatting but omits Python 2 division rationale
+J0496,correct,Identifies the proposed validation as breaking
+J0497,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0498,correct,Matches compatibility concern and customization option
+J0499,correct,Matches narrowing backslash-S without new backtracking
+J0500,correct,States discoverability rationale
+J0501,wrong,Describes block contents but misses hiding breadcrumbs without empty navigation
+J0502,correct,Matches writing sync tests first to check the async approach
+J0503,partial,Matches C-level work but adds unsupported low-level detail and certainty
+J0504,partial,Matches bound-method cache misses but adds weak-reference and signal reasons
+J0505,correct,Matches backward-compatibility risk for overridden operations
+J0506,correct,Matches separate PR with wider use and bulk-only limit change
+J0507,correct,Explains None can be stored and sentinel distinguishes cache misses
+J0508,partial,Includes old-syntax crashes but adds unsupported syntax-drop rationale
+J0509,correct,States discoverability rationale
+J0510,partial,Identifies admin-template location but omits rendering rather than form rationale
+J0511,correct,Matches thread-safety needs from concurrent counter updates
+J0512,correct,States positional arguments continue working during deprecation
+J0513,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0514,correct,States old syntax causes MariaDB query crashes
+J0515,correct,Matches shared-thread use and safe counter updates
+J0516,correct,Matches uncertainty that the format would land in Python 3.11
+J0517,partial,Notes existing bottom padding but omits Delete being last
+J0518,partial,Identifies LazySettings recursion but misstates the __getattribute__ and __getattr__ interaction
+J0519,correct,Matches micro-optimization and negligible performance difference
+J0520,correct,States field remains useful for labels and field-specific information
+J0521,partial,Notes separate PR but omits bulk-only limit and wider-use rationale
+J0522,correct,Matches field usefulness for conditional label classes
+J0523,correct,Matches ErrorList copy losing error_class through UserList behavior
+J0524,correct,Matches deconstruct omission and loss during cloning
+J0525,correct,Matches wider use and the limit change requiring separate work
+J0526,correct,Identifies the proposed validation as breaking
+J0527,correct,Explains browsers ignore the header without the required secure flag
+J0528,correct,Distinguishes base64 request fields from uploaded files
+J0529,correct,Matches compatibility for direct construction
+J0530,partial,Mentions bound methods but adds unsupported cache behavior reasons
+J0531,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0532,correct,Matches faster eager compilation with benchmark evidence
+J0533,partial,Includes bound-method issue but adds unsupported weak-reference reason
+J0534,partial,Matches C-level processing but omits the author’s uncertainty
+J0535,wrong,Claims accessibility landmark rather than avoiding empty navigation
+J0536,correct,Matches avoiding assumptions and future errors from extra databases
+J0537,correct,Matches compatibility concern and customization option
+J0538,correct,Matches writing sync tests first to check the async approach
+J0539,correct,Matches compatibility concern and customization option
+J0540,correct,Matches usefulness for field-specific template behavior
+J0541,correct,Matches shared-thread use and safe counter updates
+J0542,wrong,Claims accessibility landmark rather than hiding breadcrumbs without empty nav
+J0543,partial,States repr readability and regex limits but omits expression variety and copy-paste rationale
+J0544,wrong,Attributes acceptance to Chromium whitespace rather than Webpack’s default output
+J0545,correct,Matches micro-optimization and negligible performance difference
+J0546,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0547,partial,Notes separate PR but omits bulk-only limit and wider-use reasons
+J0548,partial,Identifies admin-template location but omits rendering rather than form rationale
+J0549,correct,Matches uncertainty over whether the format would land in Python 3.11
+J0550,correct,Matches uncertainty that the format would land in Python 3.11
+J0551,correct,Matches narrowing backslash-S without new backtracking
+J0552,correct,Matches integer formatting and Python division rationale
+J0553,wrong,Claims test setup issue rather than separate issue scope
+J0554,correct,Matches faster eager compilation than lazy helper
+J0555,correct,Matches waiting for another possibly broken use case to be reported
+J0556,partial,Notes separate PR and scope but omits the bulk-only limit and wider use
+J0557,correct,States the new flag requires SQLite below 3.30
+J0558,correct,Distinguishes base64 field from file uploads
+J0559,correct,Matches avoiding assumptions and errors from extra databases
+J0560,correct,Explains the new and existing flags use opposite conditions
+J0561,partial,Notes poor names but omits that the existing assignment was intentional
+J0562,partial,Matches reducing GC frequency but omits Windows slowdown and adds unsupported cycle detail
+J0563,partial,Matches performance and simplification but adds unsupported NameError rationale
+J0564,correct,Matches deconstruct omission and loss during cloning
+J0565,partial,Identifies longstanding breakage but omits invalid-name case and missing test
+J0566,partial,Matches micro-optimization but adds unsupported unreachable-check rationale
+J0567,partial,Matches unconditional ordering but omits customization rationale
+J0568,partial,Notes existing bottom padding but omits Delete being last
+J0569,correct,Matches supported-versions policy disqualifying backport
+J0570,partial,Matches removed title but omits flex layout breaking ellipsis
+J0571,correct,Explains browsers ignore the header without secure flag
+J0572,correct,Matches discoverability and rejection of third-party-tool rationale
+J0573,correct,Matches positional compatibility with warning ignored
+J0574,correct,Identifies the proposed validation as breaking
+J0575,wrong,Offers weak-reference and signal issues without bound-method cache reason
+J0576,partial,Matches Python 3 true division but omits integer formatting rationale
+J0577,correct,Matches unconditional setup and customization rationale
+J0578,wrong,Names asyncio rather than aiosmtpd as replacement
+J0579,correct,Explains the opposite SQLite version conditions
+J0580,correct,Identifies the proposed validation as breaking
+J0581,correct,Explains None may be stored and sentinel separates it from cache miss
+J0582,wrong,Claims test-pattern consistency rather than backporting
+J0583,correct,Matches shared connection and safe counter updates
+J0584,partial,States deprecation and aiosmtpd but adds asyncio as replacement
+J0585,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0586,correct,Matches supported-versions policy disqualifying backport
+J0587,correct,Matches waiting for another possibly broken use case to be reported
+J0588,wrong,Claims the issue is in auth rather than admin template rendering
+J0589,wrong,Claims test-pattern consistency rather than backporting
+J0590,wrong,Claims Oracle limitations rather than test passing without patch
+J0591,correct,Matches separate and more complicated issue needing its own PR
+J0592,partial,Matches UserList error-class loss but adds unsupported copying detail
+J0593,partial,Matches slow indexing and C-level work but omits uncertainty
+J0594,partial,States repr clarity but omits expression variety and copy-paste rationale
+J0595,partial,Notes existing bottom padding but omits Delete being last
+J0596,correct,Matches waiting for another possibly broken use case to be reported
+J0597,correct,Explains the opposite SQLite version conditions
+J0598,partial,Identifies missing attribute fallback but omits LazySettings __getattr__ override
+J0599,partial,Mentions bound methods but adds unsupported unhashable-type reason
+J0600,wrong,Claims test visibility rather than backporting
+J0601,correct,Explains browsers ignore the header without the secure flag
+J0602,partial,States deprecation and aiosmtpd but adds asyncio as replacement
+J0603,correct,Matches rendering in admin rather than form behavior
+J0604,correct,Explains None may be stored and sentinel distinguishes cache misses
+J0605,wrong,Claims syntax support was dropped and workaround unnecessary rather than crashes
+J0606,correct,Matches field usefulness for practical template use
+J0607,partial,Matches C-level work but adds unsupported low-level detail and certainty
+J0608,correct,States field properties remain useful to templates
+J0609,correct,Matches rendering rather than form behavior
+J0610,partial,Includes checking the approach but adds unsupported sync-regression coverage
+J0611,partial,Mentions bound methods but adds unsupported weak-reference and signal reasons
+J0612,partial,Notes existing bottom padding but omits Delete being last
+J0613,partial,Matches slow indexing and C-level work but adds unsupported low-level detail and certainty
+J0614,partial,Matches flex layout breaking ellipsis but omits removed title fallback
+J0615,correct,Explains None can be stored and sentinel distinguishes a miss
+J0616,partial,Notes poor names but omits that the existing assignment was intentional
+J0617,partial,Mentions Windows and easy search but does not say command would not help Windows users
+J0618,wrong,Claims test visibility rather than backporting
+J0619,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0620,correct,Explains None may be stored and sentinel distinguishes cache miss
+J0621,correct,Matches integer formatting and Python 3 true division
+J0622,partial,Notes existing bottom padding but omits Delete being last
+J0623,partial,Matches setup ordering and customization but omits unconditional requirement
+J0624,wrong,Claims accessibility landmark rather than hiding breadcrumbs without empty nav
+J0625,correct,Matches redirecting real run_tests output during deprecation test
+J0626,partial,Mentions Windows and easy search but does not say command would not help Windows users
+J0627,correct,Matches declared aliases and preventing errors from extra connections
+J0628,correct,Explains opposite SQLite version conditions
+J0629,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0630,partial,Includes bound-method issue but adds unsupported weak-reference and signal reasons
+J0631,partial,Matches easy web search but omits Windows users
+J0632,correct,Explains None may be stored and sentinel distinguishes cache misses
+J0633,correct,Matches integer formatting and Python 2 versus Python 3 division rationale
+J0634,correct,States opposite SQLite version conditions
+J0635,partial,Matches C-level processing but adds unsupported low-level detail and certainty
+J0636,correct,Matches Webpack’s default comment without trailing space
+J0637,wrong,Claims accessibility landmark rather than avoiding empty navigation
+J0638,correct,States positional arguments continue working during deprecation
+J0639,partial,Matches C-level processing but adds unsupported details and certainty
+J0640,correct,Matches UserList behavior losing the ErrorList error class
+J0641,correct,Matches backward-compatibility risk for overridden migration operations
+J0642,correct,Matches the need for thread-safe counter alterations
+J0643,partial,Notes existing tests but omits that this test passed without the patch
+J0644,wrong,Claims test visibility rather than backporting
+J0645,partial,Matches Windows slowdown but adds platform-performance claim and omits swap rationale
+J0646,correct,Matches Webpack’s default comment without trailing space
+J0647,partial,Notes separate PR but omits the limit change and wider use
+J0648,partial,States speed benefit but omits join’s internal list conversion
+J0649,correct,Matches redirecting real run_tests output during deprecation test
+J0650,correct,Matches UserList behavior losing ErrorList error_class
+J0651,partial,Matches unconditional setup ordering but omits customization rationale
+J0652,correct,States opposite SQLite version conditions
+J0653,partial,Includes crashes but adds unsupported syntax-drop and performance context
+J0654,correct,Matches invalid-name breakage and lack of an existing test
+J0655,correct,Matches faster GitHub Actions and sensitivity to missing waits
+J0656,correct,Matches Webpack’s default comment without trailing space
+J0657,wrong,Does not give the gold reason and concludes it was not stated
+J0658,wrong,Does not give the gold reason and concludes it was not stated
+J0659,wrong,Only says the reason was not found
+
+J0660,correct,Identifies ErrorList deriving from UserList and losing error_class when copied.
+J0661,partial,Mentions a separate PR but omits the different bulk-only limit and other uses.
+J0662,correct,Matches Webpack's default source map comment with no trailing space.
+J0663,correct,Matches the reviewer's view that the old names were poor.
+J0664,wrong,Gives database migration ordering as the reason instead of avoiding undeclared connections.
+J0665,correct,States that MariaDB crashes on certain queries using the old syntax.
+J0666,wrong,Gives test failure ordering rather than the backport reason.
+J0667,wrong,Discusses tabs and Chromium parsing rather than Webpack's missing trailing space.
+J0668,correct,Matches the Python 3.10 deprecation and recommended aiosmtpd replacement.
+J0669,partial,Recognizes deprecation but misses that the test proves positional arguments still work.
+J0670,correct,Matches that the tests use request fields rather than uploaded files.
+J0671,partial,Mentions setup ordering but omits that process_setup is for user customization.
+J0672,correct,Matches that the tests cover base64 strings in fields rather than files.
+J0673,wrong,Gives test failure ordering rather than the backport reason.
+J0674,correct,Explains that browsers ignore the header unless the secure flag is present.
+J0675,partial,Mentions a separate PR but omits why batch sizing needs separate consideration.
+J0676,correct,Matches the Python 3.10 deprecation and recommended aiosmtpd replacement.
+J0677,correct,Matches the supported versions policy as the reason the patch no longer qualified.
+J0678,partial,Recognizes the version-condition mismatch but assigns the older-version condition to the existing flag.
+J0679,partial,Gets that an integer is expected but misses the percent-d placeholder and Python 3 division rationale.
+J0680,correct,Matches thread safety for the counter accessed by multiple threads.
+J0681,correct,Covers customization and the unconditional setup ordering.
+J0682,partial,Says it was a separate PR but omits the reason that the function is used elsewhere.
+J0683,correct,Includes the removed title attribute and the failure of ellipsis with flex layout.
+J0684,correct,Matches the C-level work in chain.from_iterable and the slower row indexing.
+J0685,wrong,Attributes the breakage to falsey __getattr__ results rather than missing delegation.
+J0686,wrong,Gives test failure ordering instead of the backport reason.
+J0687,partial,Notes LazySettings __getattr__ but contradicts the quote by saying __getattribute__ called it.
+J0688,wrong,Suggests they wanted consistent values rather than avoiding a breaking change.
+J0689,partial,Identifies integer formatting but misses the Python 2 versus Python 3 division explanation.
+J0690,correct,Matches that the tests were written first to check the approach while investigating the async bug.
+J0691,correct,Matches the C-level work in chain.from_iterable as the observed speed reason.
+J0692,partial,Mentions the removed title attribute but omits that ellipsis no longer works with flex.
+J0693,correct,Matches the lower overhead of eager regex compilation.
+J0694,correct,Explains that browsers ignore the header if the secure flag is absent.
+J0695,correct,Matches the supported versions policy as the reason the patch no longer qualified.
+J0696,correct,Explains that join materializes generators and is slightly faster with a list.
+J0697,correct,States that MariaDB crashes on certain queries using the old syntax.
+J0698,correct,Matches discoverability and rules out satisfying a third-party advisor.
+J0699,correct,Explains that browsers ignore the header if the secure flag is absent.
+J0700,partial,Mentions the speed benefit but omits that join converts the generator to a list anyway.
+J0701,wrong,Gives weakref behavior rather than the cache miss for frequently used bound methods.
+J0702,wrong,Gives port binding behavior rather than backward compatibility with direct callers.
+J0703,wrong,Gives a desire to investigate inconsistency rather than the risk of breaking existing code.
+J0704,correct,Matches that the tests cover base64 strings in fields rather than files.
+J0705,correct,Matches negligible micro-optimization benefit and simpler code after removal.
+J0706,partial,Mentions the existing padding but omits that Delete is always the last button.
+J0707,correct,Matches that users may find the field useful in templates.
+J0708,correct,Matches uncertainty about whether the format would land in Python 3.11.
+J0709,partial,Mentions the existing padding but omits that Delete is always the last button.
+J0710,correct,Explains that None can be stored and must be distinguished from a missing key.
+J0711,correct,Matches discoverability as the reason for adding the file.
+J0712,wrong,Gives a NameError as the reason instead of negligible micro-optimization value.
+J0713,partial,Mentions the removed title attribute but omits that ellipsis no longer works with flex.
+J0714,correct,Matches thread safety for the counter accessed by multiple threads.
+J0715,partial,Recognizes the condition mismatch but assigns the new flag condition to the existing flag.
+J0716,correct,Matches faster GitHub Actions runs making tests more sensitive to missing waits.
+J0717,partial,Mentions the move to Python 3.11 but misses uncertainty about whether it would land there.
+J0718,correct,Matches the lower overhead of eager regex compilation.
+J0719,wrong,Gives weakref behavior rather than the cache miss for frequently used bound methods.
+J0720,partial,Recognizes the condition mismatch but assigns the new flag condition to the existing flag.
+J0721,wrong,Gives weakref behavior rather than the cache miss for frequently used bound methods.
+J0722,partial,Covers unconditional setup ordering but omits that process_setup is for customization.
+J0723,partial,Mentions the existing padding but omits that Delete is always the last button.
+J0724,partial,Mentions negligible performance benefit but omits the micro-optimization and simplification details.
+J0725,correct,Matches writing the sync tests first to check the approach while investigating the async bug.
+J0726,partial,Mentions the speed benefit but omits that join converts the generator to a list anyway.
+J0727,correct,Matches the supported versions policy as the reason the patch no longer qualified.
+J0728,correct,Matches the Python 3.10 deprecation and recommended aiosmtpd replacement.
+J0729,correct,Matches faster GitHub Actions runs making tests more sensitive to missing waits.
+J0730,correct,Matches discoverability and rules out satisfying a third-party advisor.
+J0731,correct,Matches that validating through get_prep_value would be a breaking change.
+J0732,wrong,Explains an accessibility landmark rather than hiding breadcrumbs without an empty nav.
+J0733,wrong,Gives a select_related rationale instead of the undocumented manager use case.
+J0734,correct,Explains that join converts input to a list and is slightly faster with a list.
+J0735,partial,Identifies the UserList subclass but misses that copy loses error_class.
+J0736,correct,Matches that ellipsis fails with flex layout so wrapping was the best option.
+J0737,correct,Matches that validating through get_prep_value would be a breaking change.
+J0738,partial,Mentions the Windows slowdown but omits why less frequent GC helps manage memory and swap.
+J0739,correct,Matches that invalid template tags already crash during node compilation.
+J0740,correct,Matches redirecting output from the real run_tests call during the warning test.
+J0741,wrong,Gives cross-mode behavior coverage rather than checking the approach while hunting the async bug.
+J0742,partial,Explains documenting current behavior but omits the risk of breaking existing code.
+J0743,correct,Matches redirecting output from the real run_tests call during the warning test.
+J0744,correct,Matches the supported versions policy as the reason the patch no longer qualified.
+J0745,correct,Explains that None can be stored and is not always a cache miss.
+J0746,correct,Matches faster GitHub Actions runs making tests more sensitive to missing waits.
+J0747,correct,Matches that invalid template tags already crash during node compilation.
+J0748,correct,Matches that invalid template tags already crash during node compilation.
+J0749,wrong,Adds an unsupported NameError cause contrary to the micro-optimization reason in the quote.
+J0750,partial,Mentions bound methods but omits that most calls come from them and the cache would never hit.
+J0751,correct,Matches that validation would change behavior and break existing code.
+J0752,correct,Explains that None can be stored and is not always a cache miss.
+J0753,correct,Matches reducing unnecessary GC while preventing memory from growing into swap.
+J0754,correct,Matches that validating through get_prep_value would be a breaking change.
+J0755,correct,Matches the lower overhead of eager regex compilation.
+J0756,correct,Matches discoverability and rules out satisfying a third-party advisor.
+J0757,partial,Mentions the move to Python 3.11 but misses uncertainty about whether it would land there.
+J0758,correct,Matches the Windows slowdown and the memory benefit of running GC less often.
+J0759,correct,Matches the C-level work in chain.from_iterable as the observed speed reason.
+J0760,wrong,Gives migration ordering as the reason instead of avoiding undeclared connections.
+J0761,correct,Matches the C-level work in chain.from_iterable as the observed speed reason.
+J0762,correct,Explains that browsers ignore the header if the secure flag is absent.
+J0763,wrong,Gives a select_related rationale instead of the undocumented manager use case.
+J0764,partial,Mentions the existing padding but omits that Delete is always the last button.
+J0765,correct,Matches redirecting output from the real run_tests call during the warning test.
+J0766,correct,Matches that users may find the field useful in templates.
+J0767,wrong,Explains accessibility rather than hiding breadcrumbs without an empty nav.
+J0768,correct,Matches that the new flag requires the opposite version condition from the existing flag.
+J0769,correct,Covers customization and the unconditional setup ordering.
+J0770,correct,Matches the lower overhead of eager regex compilation.
+J0771,correct,Explains that bulk_batch_size is used elsewhere and needs a separate PR.
+J0772,wrong,Gives port binding behavior rather than backward compatibility with direct callers.
+J0773,correct,Matches the Python 3.10 deprecation and recommended aiosmtpd replacement.
+J0774,wrong,Gives test failure ordering rather than the backport reason.
+J0775,correct,Matches backward compatibility for non-Django code constructing the thread directly.
+J0776,partial,Identifies integer formatting but misses the percent-d placeholder and Python 3 division rationale.
+J0777,correct,States that MariaDB crashes on certain queries using the old syntax.
+J0778,correct,Matches thread safety for counter updates in multithreaded use.
+J0779,correct,Matches the missing __getattr__ fallback in LazyObject subclasses.
+J0780,correct,Explains that None can be stored and must be distinguished from a missing key.
+J0781,correct,Matches that the tests cover base64 strings in fields rather than files.
+J0782,correct,Matches faster GitHub Actions runs making tests more sensitive to missing waits.
+J0783,correct,States that MariaDB crashes on certain queries using the old syntax.
+J0784,wrong,Explains adding a navigation landmark rather than hiding breadcrumbs without an empty nav.
+J0785,partial,Reports test failures but misses that ErrorList copy lost error_class.
+J0786,wrong,Explains accessibility rather than hiding breadcrumbs without an empty nav.
+J0787,correct,Matches the deliberate assignment and poor variable names.
+J0788,partial,Explains documenting current values but omits the risk of breaking existing code.
+J0789,correct,Matches uncertainty about whether the format would land in Python 3.11.
+J0790,correct,Matches the Windows slowdown and the memory benefit of running GC less often.
+J0791,correct,Matches that invalid template tags already crash during node compilation.
+J0792,correct,Identifies ErrorList deriving from UserList and losing error_class when copied.
+J0793,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0794,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0795,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0796,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0797,partial,Identifies invalid layer lookup but invents a test failure; the quote says there was no test case.
+J0798,wrong,"Gives a different or conflicting explanation; the gold reason is: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0799,correct,"Matches the gold reason: It would not help Windows users, and it is easy to search the web for how to delete pyc files."
+J0800,partial,Mentions copy problems but misses that ErrorList inherits UserList and its copy() lost error_class.
+J0801,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0802,correct,Matches the gold reason: Because passing a manager is an undocumented use case.
+J0803,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0804,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0805,correct,"Matches the gold reason: Because the bug concerns how the template renders, not the form itself."
+J0806,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0807,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0808,partial,"Attributes the sync tests to general coverage; the quote says they were first written while debugging to check the approach, and their necessity was uncertain."
+J0809,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0810,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0811,correct,"Matches the gold reason: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0812,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0813,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0814,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0815,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0816,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0817,correct,"Matches the gold reason: It would not help Windows users, and it is easy to search the web for how to delete pyc files."
+J0818,wrong,"Gives a different or conflicting explanation; the gold reason is: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0819,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0820,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0821,correct,"Matches the gold reason: To make the Code of Conduct easier to discover, not to satisfy third-party tools such as Snyk Advisor."
+J0822,correct,"Matches the gold reason: It would not help Windows users, and it is easy to search the web for how to delete pyc files."
+J0823,partial,Mentions copy problems but misses that ErrorList inherits UserList and its copy() lost error_class.
+J0824,partial,"Notes the limit no longer applies to bulk inserts, but misses that bulk_batch_size() is used elsewhere and needs separate review."
+J0825,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0826,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0827,wrong,Gives a different or conflicting explanation; the gold reason is: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0828,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0829,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0830,correct,Matches the gold reason: Because passing a manager is an undocumented use case.
+J0831,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0832,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0833,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0834,correct,"Matches the gold reason: Because the bug concerns how the template renders, not the form itself."
+J0835,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0836,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0837,wrong,Gives a different or conflicting explanation; the gold reason is: Because passing a manager is an undocumented use case.
+J0838,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0839,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0840,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0841,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0842,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0843,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0844,partial,"Says the change was deferred, but misses why: the limit changes only for bulk inserts while bulk_batch_size() has other uses."
+J0845,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0846,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0847,correct,"Matches the gold reason: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0848,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0849,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0850,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0851,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0852,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0853,wrong,Gives a different or conflicting explanation; the gold reason is: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0854,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0855,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0856,partial,"Attributes the sync tests to general coverage; the quote says they were first written while debugging to check the approach, and their necessity was uncertain."
+J0857,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0858,wrong,"Gives a different or conflicting explanation; the gold reason is: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0859,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0860,correct,"Matches the gold reason: To make the Code of Conduct easier to discover, not to satisfy third-party tools such as Snyk Advisor."
+J0861,partial,"Cites Python 3 true division, but misses the integer formatting placeholders and the likely Python 2 reason for the old float conversion."
+J0862,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0863,correct,"Matches the gold reason: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0864,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0865,wrong,"Gives a different or conflicting explanation; the gold reason is: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0866,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0867,correct,"Matches the gold reason: That is a separate and harder problem that needs its own ticket and PR; this PR should focus on ticket 29052, for which preserving alias order with default first is enough."
+J0868,partial,Mentions broken layer lookup but misses the untested invalid-name case and adds an unsupported history.
+J0869,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0870,partial,"Says repr() is clearer, but misses the key concern that regex cannot anticipate all wrapped expression types."
+J0871,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0872,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0873,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0874,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0875,correct,"Matches the gold reason: They wrote them first while hunting the async bug, to check that their approach made sense, and were unsure whether they were needed."
+J0876,correct,"Matches the gold reason: The title attribute that showed full choices had been removed in another commit, and ellipsis no longer works with the flex layout, so wrapping was the best option for now."
+J0877,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0878,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0879,wrong,Gives a different or conflicting explanation; the gold reason is: Because passing a manager is an undocumented use case.
+J0880,wrong,"Gives a different or conflicting explanation; the gold reason is: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0881,partial,"Says the change was deferred, but misses why: the limit changes only for bulk inserts while bulk_batch_size() has other uses."
+J0882,correct,"Matches the gold reason: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0883,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0884,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0885,correct,"Matches the gold reason: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0886,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0887,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0888,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0889,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0890,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0891,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0892,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0893,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0894,correct,"Matches the gold reason: It fills %d placeholders, and the float conversion was probably only there to force true division on Python 2; Python 3 always does true division."
+J0895,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0896,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0897,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0898,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0899,correct,Matches the gold reason: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0900,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0901,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0902,partial,"Says the change was deferred, but misses why: the limit changes only for bulk inserts while bulk_batch_size() has other uses."
+J0903,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0904,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0905,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0906,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0907,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0908,wrong,"Gives a different or conflicting explanation; the gold reason is: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0909,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0910,correct,"Matches the gold reason: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0911,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0912,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0913,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0914,correct,Matches the gold reason: Looking up a layer by an invalid name had no test and did not behave as expected (it raised a GDALException about an invalid pointer).
+J0915,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0916,correct,"Matches the gold reason: That is a separate and harder problem that needs its own ticket and PR; this PR should focus on ticket 29052, for which preserving alias order with default first is enough."
+J0917,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0918,correct,"Matches the gold reason: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0919,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0920,wrong,Gives a different or conflicting explanation; the gold reason is: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0921,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0922,correct,"Matches the gold reason: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0923,correct,"Matches the gold reason: ErrorList subclasses UserList, so its copy() lost error_class."
+J0924,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0925,wrong,Gives a different or conflicting explanation; the gold reason is: Because Webpack by default writes CSS source map comments such as /*# sourceMappingURL=main.css.map*/ without a trailing space.
+J0926,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0927,correct,Matches the gold reason: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0928,correct,Matches the gold reason: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0929,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0930,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0931,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0932,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0933,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0934,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0935,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0936,correct,"Matches the gold reason: ErrorList subclasses UserList, so its copy() lost error_class."
+J0937,wrong,Gives a different or conflicting explanation; the gold reason is: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0938,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0939,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0940,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0941,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0942,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0943,partial,"Cites Python 3 true division, but misses the integer formatting placeholders and the likely Python 2 reason for the old float conversion."
+J0944,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0945,partial,Includes the ease of searching online but omits that a shell command would not help Windows users.
+J0946,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0947,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0948,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0949,partial,"Cites Python 3 true division, but misses the integer formatting placeholders and the likely Python 2 reason for the old float conversion."
+J0950,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0951,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0952,correct,Matches the gold reason: Because Webpack by default writes CSS source map comments such as /*# sourceMappingURL=main.css.map*/ without a trailing space.
+J0953,wrong,Gives a different or conflicting explanation; the gold reason is: It was not a regression test because it passed without the patch; checking the number of constraints in the existing schema test was enough.
+J0954,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0955,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0956,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0957,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0958,correct,Matches the gold reason: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0959,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0960,correct,"Matches the gold reason: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0961,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0962,correct,"Matches the gold reason: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0963,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0964,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0965,correct,"Matches the gold reason: To make the Code of Conduct easier to discover, not to satisfy third-party tools such as Snyk Advisor."
+J0966,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0967,partial,Captures discoverability but omits that the file was not added to satisfy a third-party advisor.
+J0968,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0969,partial,Mentions broken layer lookup but misses the untested invalid-name case and adds an unsupported history.

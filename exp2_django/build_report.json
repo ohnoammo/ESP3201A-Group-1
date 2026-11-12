@@ -1,0 +1,146 @@
+{
+ "git_commit": "4a8782f-dirty",
+ "counts": {
+  "answerable": 60,
+  "no_reason": 10,
+  "removed": 5
+ },
+ "splits": {
+  "dev/answerable": 10,
+  "test/answerable": 50,
+  "dev/no_reason": 5,
+  "test/no_reason": 5,
+  "test/removed": 5
+ },
+ "dropped": [],
+ "quote_elsewhere": {
+  "q14896": [
+   15183
+  ]
+ },
+ "removed_answer_still_retrievable": {},
+ "copy_flagged": [],
+ "copy_run_distribution": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  5,
+  5
+ ],
+ "no_gold_chunk": [],
+ "source_parts": {
+  "description": 19,
+  "review_thread": 16,
+  "comment": 25,
+  "commit": 0
+ },
+ "removed_excludes": {
+  "rm13671": [
+   13671,
+   10558
+  ],
+  "rm16129": [
+   16129,
+   16128
+  ],
+  "rm9789": [
+   9789,
+   9718
+  ],
+  "rm11459": [
+   11459,
+   7561
+  ],
+  "rm12342": [
+   12342,
+   12247
+  ]
+ },
+ "review_priority": [
+  "nr10042",
+  "nr10075",
+  "nr10453",
+  "nr10782",
+  "nr11371",
+  "nr12736",
+  "nr13883",
+  "nr14500",
+  "nr16062",
+  "nr9172",
+  "q11863",
+  "q13671",
+  "q13680",
+  "q14349",
+  "q14727",
+  "q7927",
+  "q8596",
+  "q8930",
+  "q9540",
+  "q9617"
+ ]
+}

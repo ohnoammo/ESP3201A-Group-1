@@ -1,0 +1,163 @@
+{
+ "F0 overlap-cited, S0 not": [
+  {
+   "id": "q10972",
+   "S0": "wrong chunk, same PR",
+   "gold_in_context": true
+  },
+  {
+   "id": "q11377",
+   "S0": "abstained",
+   "gold_in_context": true
+  },
+  {
+   "id": "q11863",
+   "S0": "abstained",
+   "gold_in_context": false
+  },
+  {
+   "id": "q11996",
+   "S0": "wrong chunk, other PR only",
+   "gold_in_context": true
+  },
+  {
+   "id": "q12342",
+   "S0": "wrong chunk, same PR",
+   "gold_in_context": false
+  },
+  {
+   "id": "q13671",
+   "S0": "wrong chunk, same PR",
+   "gold_in_context": true
+  },
+  {
+   "id": "q14028",
+   "S0": "abstained",
+   "gold_in_context": false
+  },
+  {
+   "id": "q14647",
+   "S0": "wrong chunk, same PR",
+   "gold_in_context": true
+  },
+  {
+   "id": "q14748",
+   "S0": "wrong chunk, same PR",
+   "gold_in_context": true
+  },
+  {
+   "id": "q16559",
+   "S0": "abstained",
+   "gold_in_context": true
+  },
+  {
+   "id": "q16966",
+   "S0": "abstained",
+   "gold_in_context": true
+  },
+  {
+   "id": "q16982",
+   "S0": "abstained",
+   "gold_in_context": true
+  },
+  {
+   "id": "q9006",
+   "S0": "abstained",
+   "gold_in_context": true
+  },
+  {
+   "id": "q9789",
+   "S0": "abstained",
+   "gold_in_context": true
+  }
+ ],
+ "S0 overlap-cited, F0 not": [
+  {
+   "id": "q10097",
+   "F0": "abstained",
+   "gold_in_context": false
+  },
+  {
+   "id": "q16343",
+   "F0": "wrong chunk, same PR",
+   "gold_in_context": true
+  },
+  {
+   "id": "q8534",
+   "F0": "abstained",
+   "gold_in_context": true
+  }
+ ],
+ "S-0.25 overlap-cited, S0-G not": [
+  {
+   "id": "q11996",
+   "chunk": "PR11996-c5",
+   "how": "retrieved",
+   "retrieval_rank": 9,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "wrong chunk, same PR"
+  },
+  {
+   "id": "q12441",
+   "chunk": "PR12441-c6",
+   "how": "retrieved",
+   "retrieval_rank": 3,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "abstained"
+  },
+  {
+   "id": "q13945",
+   "chunk": "PR13945-c3",
+   "how": "retrieved",
+   "retrieval_rank": 1,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "wrong chunk, other PR only"
+  },
+  {
+   "id": "q14503",
+   "chunk": "PR14503-c6",
+   "how": "retrieved",
+   "retrieval_rank": 2,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "abstained"
+  },
+  {
+   "id": "q14903",
+   "chunk": "PR14903-c10",
+   "how": "retrieved",
+   "retrieval_rank": 3,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "abstained"
+  },
+  {
+   "id": "q15354",
+   "chunk": "PR15354-c7",
+   "how": "retrieved",
+   "retrieval_rank": 3,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "abstained"
+  },
+  {
+   "id": "q9789",
+   "chunk": "PR9789-c14",
+   "how": "retrieved",
+   "retrieval_rank": 1,
+   "link_from": null,
+   "link_types": [],
+   "in_S0-G_context": true,
+   "S0-G": "abstained"
+  }
+ ]
+}

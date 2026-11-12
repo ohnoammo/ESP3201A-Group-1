@@ -1,0 +1,278 @@
+{
+ "shuffle_seed": 330452136,
+ "results": [
+  "results/gen_pilot_4b.jsonl"
+ ],
+ "key": {
+  "B001": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q12259",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B002": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q14727",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B003": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q7927",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B004": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q14349",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B005": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10042",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B006": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10042",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B007": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q11283",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B008": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr11371",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B009": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q10082",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B010": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q9617",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B011": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q13658",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B012": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q13680",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B013": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr12338",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B014": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10042",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B015": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q11283",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B016": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q8930",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B017": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q13658",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B018": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q14727",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B019": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q14349",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B020": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr12338",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B021": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q10082",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B022": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q13658",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B023": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q8930",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B024": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q8930",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B025": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr11371",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B026": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q10082",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B027": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q13680",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B028": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10075",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B029": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q9617",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B030": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q12259",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B031": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10075",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B032": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q13680",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B033": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q7927",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B034": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10075",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B035": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q7927",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B036": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10782",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B037": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr12338",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B038": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q14349",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B039": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q9617",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B040": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q12259",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B041": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr11371",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B042": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10782",
+   "condition": "oracle:c",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B043": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q14727",
+   "condition": "oracle:b",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B044": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "nr10782",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  },
+  "B045": {
+   "file": "results/gen_pilot_4b.jsonl",
+   "id": "q11283",
+   "condition": "none:a",
+   "model": "qwen3:4b-instruct-2507-q4_K_M"
+  }
+ }
+}

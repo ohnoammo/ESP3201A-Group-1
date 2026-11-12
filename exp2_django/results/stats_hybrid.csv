@@ -1,0 +1,17 @@
+model,prompt,outcome,H0,F0,b_only_H0,c_only_F0,p,min_p,p_holm,family,git_commit
+4b-instruct,v2,answered /50,43,37,7,1,0.0703,0.0078,0.75,hybrid 16,494aae4
+4b-instruct,v2,overlap-cited /50,37,33,7,3,0.3438,0.002,1.0,hybrid 16,494aae4
+4b-instruct,v2,unanswerable answered /17,8,7,1,0,1.0,1.0,1.0,hybrid 16,494aae4
+4b-instruct,v2,strict correct /50,32,21,13,2,0.0074,0.0001,0.1182,hybrid 16,494aae4
+4b-instruct,v3,answered /50,43,35,10,2,0.0386,0.0005,0.54,hybrid 16,494aae4
+4b-instruct,v3,overlap-cited /50,36,31,10,5,0.3018,0.0001,1.0,hybrid 16,494aae4
+4b-instruct,v3,unanswerable answered /17,2,3,1,2,1.0,0.25,1.0,hybrid 16,494aae4
+4b-instruct,v3,strict correct /50,27,23,9,5,0.424,0.0001,1.0,hybrid 16,494aae4
+8b,v2,answered /50,46,44,2,0,0.5,0.5,1.0,hybrid 16,494aae4
+8b,v2,overlap-cited /50,37,36,6,5,1.0,0.001,1.0,hybrid 16,494aae4
+8b,v2,unanswerable answered /17,12,13,0,1,1.0,1.0,1.0,hybrid 16,494aae4
+8b,v2,strict correct /50,31,23,10,2,0.0386,0.0005,0.54,hybrid 16,494aae4
+8b,v3,answered /50,45,40,5,0,0.0625,0.0625,0.75,hybrid 16,494aae4
+8b,v3,overlap-cited /50,39,32,9,2,0.0654,0.001,0.75,hybrid 16,494aae4
+8b,v3,unanswerable answered /17,11,13,0,2,0.5,0.5,1.0,hybrid 16,494aae4
+8b,v3,strict correct /50,29,21,9,1,0.0215,0.002,0.3223,hybrid 16,494aae4

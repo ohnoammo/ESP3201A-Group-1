@@ -1,0 +1,5 @@
+model,prompt,outcome,H0,F0,b_only_H0,c_only_F0,p_unadjusted,label,git_commit
+4b-instruct,v2,lenient correct /50,40,32,9,1,0.0215,"sensitivity, not in the family",494aae4
+4b-instruct,v3,lenient correct /50,38,31,9,2,0.0654,"sensitivity, not in the family",494aae4
+8b,v2,lenient correct /50,40,37,4,1,0.375,"sensitivity, not in the family",494aae4
+8b,v3,lenient correct /50,37,34,5,2,0.4531,"sensitivity, not in the family",494aae4

@@ -1,0 +1,85 @@
+arm,id,type,first200
+F0,rm3846,removed,The Windows integration test failure checks now run on MR pipelines because the `.check windows test failures` job was updated to extend `.merge_request_pipelines` instead of `.merge_request_pipelines
+F0,nr3177,no_reason,"Because the build process installs .deb files but only removes those that match the target architecture, leaving the others in /tmp as they are not used by the final image. [PR3177-c0]"
+F0,nr1781,no_reason,"Because having editors like `vim` and `nano` in a container is unnecessary, and removing them aligns with Docker best practices for minimal images. [PR1781-c0]"
+F0,nr3805,no_reason,"Because the glrt- runner token is intended to be used exclusively for authentication and not for registration with server-side configuration options, which would conflict with the server's expected be"
+F0,nr4460,no_reason,"TestGetServiceArguments breaks on current systemd-based Linux machines because the test includes a ""--syslog"" flag that is not appropriate for systemd-based systems, and the test fails when run on suc"
+P0,rm584,removed,"The question **""Why must an empty metrics server address not be given the default 9252 port?""** appears to be based on a misunderstanding or misstatement of the actual configuration behavior.
+
+Let’s c"
+P0,rm3960,removed,"The provided text does **not** indicate that `clear-docker-cache` now sets an older Docker API version.
+
+In fact, the information in the review threads shows the **opposite**:
+
+- The script checks for"
+P0,rm2971,removed,"The shell integration tests echo named variables instead of calling `env` or `set` for **specific, practical reasons related to testing and shell behavior**, not because it's a fundamental design choi"
+P0,rm3119,removed,"The Kubernetes executor **does not** force UTF-8 output for PowerShell. Instead, the behavior described in your question stems from a **misunderstanding or misattribution** of what actually happens in"
+P0,rm3846,removed,The Windows integration test failure checks now run on MR pipelines because of a change in the CI configuration that **removed the restriction** of running these jobs only on the `master` branch and i
+P0,nr3177,no_reason,"The `.deb` files for other architectures were left in `/tmp` by the Ubuntu runner image's build **because the build process downloads and installs `.deb` packages for all supported architectures**, bu"
+P0,nr1781,no_reason,"The `apt-get upgrade` command was removed from the Ubuntu-based GitLab Runner Dockerfile because it was considered **superfluous and unnecessary** in a containerized environment.
+
+### Why was it remov"
+P0,nr3805,no_reason,"The `register` command should reject server-side options (like tags, paused status, protected status, etc.) when given alongside a `glrt-` runner token because **such a token is intended solely for au"
+P0,nr5841,no_reason,"The AWS Secrets Manager integration tests rely on a **mock server** to simulate the real AWS Secrets Manager service during testing. Here's why this approach is used:
+
+### 1. **Isolation and Control**"
+P0,nr3147,no_reason,"Based on the provided GitLab Runner merge requests, the text does **not** explain why a namespace applies to env entries only when the name starts with `@`.
+
+The description of PR3147-c0 states:
+
+> Al"
+P0,nr4460,no_reason,"Based on the provided GitLab Runner merge request (PR4460-c0), **TestGetServiceArguments breaks on current systemd-based Linux machines because it incorrectly includes the `--syslog` flag in its expec"
+P0,nr1372,no_reason,"Based on the provided text, **gitlab-runner exec does not send refspec information because it does not use the GitLab API to fetch job details like refspecs.**
+
+The text explicitly states this reasoni"
+P0,nr4102,no_reason,"Based on the provided text, **the artifacts uploader's retry backoff does NOT top out at 5 seconds.**
+
+The text actually shows the opposite: the backoff is *exponential*, meaning it grows over time.
+
+"
+CB,rm584,removed,"The question appears to be about **GitLab Runner** and the **metrics server**, but there's a potential misunderstanding in the phrasing.
+
+Let’s clarify and answer it properly:
+
+---
+
+### ❓ Why must an "
+CB,rm2555,removed,"The Windows Vagrant base box is held at version **2020.04.15** primarily because that version represents a **stable, well-tested, and widely supported** release of Windows Server that was compatible w"
+CB,rm3960,removed,"The question *""Why does clear-docker-cache now set an older Docker API version?""* appears to refer to a specific behavior in a GitLab CI/CD pipeline or a script (like `clear-docker-cache`) that intera"
+CB,rm3265,removed,"Great question — let's clarify what's actually happening with `git submodule init` and `git submodule sync`, and why the order matters.
+
+### Short Answer:
+**`git submodule init` is not typically run *"
+CB,rm2971,removed,The question about why shell integration tests in GitLab Runner echo named variables instead of calling `env` or `set` likely stems from a misunderstanding or confusion about how shell environments an
+CB,rm2968,removed,The `skip-changelog` label was added to the changelog generator's configuration to allow certain projects or commits to be excluded from the changelog generation process. This means that when a projec
+CB,rm3119,removed,"As of now, there is **no official documentation or public announcement** from GitLab indicating that the **Kubernetes executor forces UTF-8 output for PowerShell**.
+
+In fact, this specific behavior — "
+CB,rm3846,removed,"As of now, there is no official public documentation or announcement from GitLab indicating that **Windows integration test failure checks are now running on MR (Merge Request) pipelines** by default "
+CB,rm4142,removed,"The question ""Why is GOMAXPROCS now derived from the container's CPU limit?"" appears to be based on a misunderstanding or misstatement of how GitLab Runner or Go runtime settings work.
+
+Let’s clarify:"
+CB,rm7008,removed,"The message for a successful Docker network disconnect was not actually lowered from a warning — there is no official or documented change in GitLab Runner that alters the severity (e.g., from warning"
+CB,nr3177,no_reason,"The presence of `.deb` files for other architectures in `/tmp` during a build using an Ubuntu GitLab Runner image is typically **not intentional** and usually stems from one of the following reasons:
+"
+CB,nr1781,no_reason,"The `apt-get upgrade` command was typically **removed or avoided** in Ubuntu-based GitLab Runner Docker images (or in general Dockerfiles for Ubuntu-based images) for the following key reasons:
+
+### 1"
+CB,nr3805,no_reason,The `glrt-runner` (GitLab Runner) token is designed to authenticate and authorize a runner to communicate with a GitLab instance. It is meant to be used **on the runner side** to register or authentic
+CB,nr5841,no_reason,"The AWS Secrets Manager integration tests rely on a mock server to **isolate the test environment**, **ensure reliability**, and **avoid dependency on real AWS infrastructure**.
+
+Here’s why a mock ser"
+CB,nr3147,no_reason,"Great question!
+
+In GitLab CI/CD, **namespaces** are used to organize and group runners, and they can also be used to manage **environment variables** (env entries) in a project's CI/CD configuration."
+CB,nr4460,no_reason,"The issue you're referring to — **""TestGetServiceArguments breaks on current systemd-based Linux machines""** — likely stems from changes in how systemd handles service arguments and configuration, esp"
+CB,nr1372,no_reason,"Great question — the behavior you're asking about relates to how GitLab Runner interacts with GitLab's CI/CD pipeline and the underlying Git operations.
+
+### Short Answer:
+**GitLab Runner does not sen"
+CB,nr4102,no_reason,The artifacts uploader in GitLab Runner uses a retry backoff strategy to handle transient failures when uploading artifacts to the GitLab server. The backoff mechanism typically follows an exponential
+F0_rerun,rm3846,removed,The Windows integration test failure checks now run on MR pipelines because the `.check windows test failures` job was updated to extend `.merge_request_pipelines` instead of `.merge_request_pipelines
+F0_rerun,nr3177,no_reason,"Because the build process installs .deb files but only removes those that match the target architecture, leaving the others in /tmp as they are not used by the final image. [PR3177-c0]"
+F0_rerun,nr1781,no_reason,"Because having editors like `vim` and `nano` in a container is unnecessary, and removing them aligns with Docker best practices for minimal images. [PR1781-c0]"
+F0_rerun,nr3805,no_reason,"Because the glrt- runner token is intended to be used exclusively for authentication and not for registration with server-side configuration options, which would conflict with the server's expected be"
+F0_rerun,nr4460,no_reason,"TestGetServiceArguments breaks on current systemd-based Linux machines because the test includes a ""--syslog"" flag that is not appropriate for systemd-based systems, and the test fails when run on suc"

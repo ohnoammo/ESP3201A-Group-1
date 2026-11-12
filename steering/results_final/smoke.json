@@ -1,0 +1,45 @@
+{
+ "layer": 20,
+ "prompts": [
+  "main:q1383",
+  "main:rm3265"
+ ],
+ "checks": {
+  "response mask matches the chat template ['Not found in']": true,
+  "response mask matches the chat template ['Because of a']": true,
+  "greedy output identical twice [main:q1383]": true,
+  "greedy output identical twice [main:rm3265]": true,
+  "hook changes the output": true,
+  "no hook left on any layer after steering": true,
+  "removing the hook restores the unsteered output [main:q1383]": true,
+  "removing the hook restores the unsteered output [main:rm3265]": true,
+  "a zero vector through the hook gives the unsteered output": true,
+  "prefill: position before the last is untouched": true,
+  "prefill: last prompt position is changed": true
+ },
+ "random_vector_norm": 239.85665893554688,
+ "seconds_per_answer": [
+  5.89,
+  6.14
+ ],
+ "new_tokens": [
+  92,
+  71
+ ],
+ "peak_vram_gib": 8.23,
+ "estimated_main_hours": 8.9,
+ "run": {
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "dtype": "bfloat16",
+  "device": "cuda",
+  "torch": "2.14.0+cu130",
+  "transformers": "5.14.1",
+  "code_sha": "95974b01ac79",
+  "git": {
+   "head": "dd8f532",
+   "n_uncommitted": 5
+  },
+  "gpu": "NVIDIA GeForce RTX 5070"
+ }
+}

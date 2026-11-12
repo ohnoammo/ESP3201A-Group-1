@@ -1,0 +1,69 @@
+{
+ "git_commit": "0907083-dirty",
+ "cases": {
+  "rm13671": {
+   "pr": 13671,
+   "ops": [
+    "cut_body (228 chars)",
+    "cut_commit (338 chars)"
+   ],
+   "doc_chars_before": 14465,
+   "doc_chars_after": 13899,
+   "quote_verbatim_left": false,
+   "quote_6grams_left": 0,
+   "quote_6grams_before": 9,
+   "flag": "docs/topics/cache.txt diff still shows the removed line \"won't be able to distinguish between your stored None value and a cache miss\" (diffs are not edited)"
+  },
+  "rm16129": {
+   "pr": 16129,
+   "ops": [
+    "drop_issue",
+    "cut_issue (76 chars)"
+   ],
+   "doc_chars_before": 7756,
+   "doc_chars_after": 7107,
+   "quote_verbatim_left": false,
+   "quote_6grams_left": 0,
+   "quote_6grams_before": 39,
+   "flag": ""
+  },
+  "rm9789": {
+   "pr": 9789,
+   "ops": [
+    "drop_review"
+   ],
+   "doc_chars_before": 6115,
+   "doc_chars_after": 5870,
+   "quote_verbatim_left": false,
+   "quote_6grams_left": 0,
+   "quote_6grams_before": 10,
+   "flag": ""
+  },
+  "rm11459": {
+   "pr": 11459,
+   "ops": [
+    "cut_body (305 chars)",
+    "cut_commit (297 chars)"
+   ],
+   "doc_chars_before": 12067,
+   "doc_chars_after": 11465,
+   "quote_verbatim_left": false,
+   "quote_6grams_left": 0,
+   "quote_6grams_before": 47,
+   "flag": ""
+  },
+  "rm12342": {
+   "pr": 12342,
+   "ops": [
+    "drop_issue",
+    "cut_body (122 chars)"
+   ],
+   "doc_chars_before": 15405,
+   "doc_chars_after": 14754,
+   "quote_verbatim_left": false,
+   "quote_6grams_left": 0,
+   "quote_6grams_before": 25,
+   "flag": "weaker hints remain: description 'makes it easier to add an additional database in the future'; felixxm 'remove assumption that connections contains only default and other'"
+  }
+ }
+}

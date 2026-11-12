@@ -1,0 +1,36 @@
+
+===== preflight  2026-11-08 21:36:15  code 95974b01ac79  args {'command': 'preflight', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+python 3.11.0 on Windows-10-10.0.26200-SP0; code sha 95974b01ac79
+repo C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy
+out  C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\out
+  ok    exp2_gitlab_scale.py  22480d32b4fa7461
+  ok    relations.py  f0d493c193f42a98
+  ok    chunking.py  e2e50c476141a3ed
+  ok    exp1_common.py  700c9b395afbf9ce
+  ok    pr_document.py  f945bd644161b3e8
+  ok    github_prs.py  dd36e25cfe0d73c2
+  ok    swebench_loader.py  b252aad2fb4666c8
+  ok    sparse_retrieval.py  be18398a91c5749c
+  ok    dense_retrieval.py  0a7c8f9647719a3c
+  ok    exp2_gitlab_A2000/questions.jsonl  352a1d5a3fc9662c
+  ok    exp2_gitlab_A2000/candidates_fixed_s512_o77.jsonl  9032d4cccd0c6e03
+  ok    exp2_gitlab_A2000/gen_F0.jsonl  7f62bb24e7468c3b
+  ok    chunks/swe_fixed_s512_o77_2231docs_111084af.json  85da0baacf11e223
+  ok    prs/gitlab-org_gitlab-runner/_pool_A2000.json  f8c16a310bdea0a0
+  ok    prs/gitlab-org_gitlab-runner/<pool MR files, combined>  f373ce3e4913d7e3
+  git HEAD dd8f532, 2 uncommitted path(s)
+  torch 2.14.0+cu130 (CUDA build 13.0), transformers 5.14.1, numpy 2.4.6
+  GPU NVIDIA GeForce RTX 5070, compute capability 12.0, torch arch list ['sm_75', 'sm_80', 'sm_86', 'sm_90', 'sm_100', 'sm_120']
+  bf16 matmul on the GPU: ok
+  VRAM free 10.7 of 11.9 GiB
+  disk free at C:\Users\kwekt\.cache\huggingface: 137 GiB
+  downloading / checking Qwen/Qwen3-4B-Instruct-2507 (about 8 GB the first time) ...
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py:142: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\kwekt\.cache\huggingface\hub\models--Qwen--Qwen3-4B-Instruct-2507. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Fetching 10 files:  10%|█         | 1/10 [00:00<00:02,  3.67it/s]Fetching 10 files:  40%|████      | 4/10 [00:00<00:00, 11.38it/s]Fetching 10 files:  60%|██████    | 6/10 [00:00<00:00,  8.54it/s]Fetching 10 files:  70%|███████   | 7/10 [00:20<00:00,  8.54it/s]Fetching 10 files:  80%|████████  | 8/10 [03:41<01:24, 42.36s/it]Fetching 10 files:  90%|█████████ | 9/10 [08:26<01:34, 94.61s/it]Fetching 10 files: 100%|██████████| 10/10 [09:16<00:00, 84.04s/it]Fetching 10 files: 100%|██████████| 10/10 [09:16<00:00, 55.61s/it]
+  model Qwen/Qwen3-4B-Instruct-2507 revision cdbee75f17c01a7cc42f958dc650907174af0554 -> out/model_revision.json
+  WARN  the repo has uncommitted changes: commit before the run (the runbook does this)
+
+PREFLIGHT OK

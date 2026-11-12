@@ -1,0 +1,21 @@
+family,scoring,x,y,outcome,n,count_x,count_y,b_only_x,c_only_y,p,holm,excluded
+primary (Holm over 4),lenient,F0,P0,unanswerable_answered,18,5,13,0,8,0.0078125,0.0234375,
+primary (Holm over 4),lenient,F0,P0,answerable_answered,52,43,47,1,5,0.21875,0.21875,
+primary (Holm over 4),lenient,F0,CB,unanswerable_answered,18,5,18,0,13,0.000244140625,0.0009765625,
+primary (Holm over 4),lenient,F0,CB,answerable_answered,52,43,51,1,9,0.021484375,0.04296875,
+secondary (Holm over 4),strict,F0,P0,unanswerable_answered,18,5,18,0,13,0.000244140625,0.0009765625,
+secondary (Holm over 4),strict,F0,P0,answerable_answered,52,43,52,0,9,0.00390625,0.0078125,
+secondary (Holm over 4),strict,F0,CB,unanswerable_answered,18,5,18,0,13,0.000244140625,0.0009765625,
+secondary (Holm over 4),strict,F0,CB,answerable_answered,52,43,52,0,9,0.00390625,0.0078125,
+"sensitivity: excl. nr3177, nr4460 (Holm over 4)",lenient,F0,P0,unanswerable_answered,16,3,11,0,8,0.0078125,0.0234375,"nr3177,nr4460"
+"sensitivity: excl. nr3177, nr4460 (Holm over 4)",lenient,F0,P0,answerable_answered,52,43,47,1,5,0.21875,0.21875,"nr3177,nr4460"
+"sensitivity: excl. nr3177, nr4460 (Holm over 4)",lenient,F0,CB,unanswerable_answered,16,3,16,0,13,0.000244140625,0.0009765625,"nr3177,nr4460"
+"sensitivity: excl. nr3177, nr4460 (Holm over 4)",lenient,F0,CB,answerable_answered,52,43,51,1,9,0.021484375,0.04296875,"nr3177,nr4460"
+sensitivity: broad refusal regex (Holm over 4),broad,F0,P0,unanswerable_answered,18,5,12,0,7,0.015625,0.046875,
+sensitivity: broad refusal regex (Holm over 4),broad,F0,P0,answerable_answered,52,42,44,3,5,0.7265625,0.7265625,
+sensitivity: broad refusal regex (Holm over 4),broad,F0,CB,unanswerable_answered,18,5,17,0,12,0.00048828125,0.001953125,
+sensitivity: broad refusal regex (Holm over 4),broad,F0,CB,answerable_answered,52,42,47,4,9,0.266845703125,0.53369140625,
+sensitivity: F0_rerun in place of F0 (unadjusted),lenient,F0_rerun,P0,unanswerable_answered,18,5,13,0,8,0.0078125,,
+sensitivity: F0_rerun in place of F0 (unadjusted),lenient,F0_rerun,P0,answerable_answered,52,43,47,1,5,0.21875,,
+sensitivity: F0_rerun in place of F0 (unadjusted),lenient,F0_rerun,CB,unanswerable_answered,18,5,18,0,13,0.000244140625,,
+sensitivity: F0_rerun in place of F0 (unadjusted),lenient,F0_rerun,CB,answerable_answered,52,43,51,1,9,0.021484375,,

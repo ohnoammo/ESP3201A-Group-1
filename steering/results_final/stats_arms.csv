@@ -1,0 +1,5 @@
+arm,unans_answered_of_18,answered_of_52,overlap_cited_of_52,contain_cited_of_52,refused_with_span_in_context,hedged_of_70,degenerate_of_70,empty_of_70,n_steered_questions
+baseline,7,48,45,45,0,0,0,0,0
+steered 40:60,7,48,45,45,0,0,0,0,0
+steered 50:50,5,44,37,37,1,0,0,4,14
+steered 60:40,6,43,17,17,4,0,1,1,56

@@ -1,0 +1,19 @@
+{
+ "n": 26,
+ "agree": 26,
+ "kappa_3class": 1.0,
+ "disagreements": [],
+ "label_counts_alyssa": {
+  "wrong": 0,
+  "partial": 3,
+  "correct": 23
+ },
+ "label_counts_james": {
+  "wrong": 0,
+  "partial": 3,
+  "correct": 23
+ },
+ "drift_F0_n": 10,
+ "drift_F0_agree": 10,
+ "drift_F0_changes": []
+}

@@ -1,0 +1,421 @@
+{
+ "rule": "Exp 2 shortlist.py thresholds; fixed SHA-256 order (seed 42); docs = doc/",
+ "funnel": [
+  {
+   "step": "in pool",
+   "n": 300
+  },
+  {
+   "step": "merged",
+   "n": 300
+  },
+  {
+   "step": "not docs-only",
+   "n": 217
+  },
+  {
+   "step": "description >= 40 words",
+   "n": 138
+  },
+  {
+   "step": ">= 2 review threads or >= 4 threads + comments",
+   "n": 84
+  },
+  {
+   "step": "document <= 4000 tokens",
+   "n": 39
+  }
+ ],
+ "shortlist": [
+  {
+   "n": 6374,
+   "title": "Avoid interpolation without defined job inputs",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 149,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 2787
+  },
+  {
+   "n": 1188,
+   "title": "Split `make docker` for GitLab Runner Helper",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 197,
+   "threads": 1,
+   "conv": 7,
+   "doc_tokens": 2921
+  },
+  {
+   "n": 6045,
+   "title": "Rename GITLAB_TOKEN to GITLAB_TEST_TOKEN in test utilities",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 43,
+   "threads": 0,
+   "conv": 14,
+   "doc_tokens": 749
+  },
+  {
+   "n": 5540,
+   "title": "Add support for uid:gid format for Kubernetes executor options",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 187,
+   "threads": 2,
+   "conv": 4,
+   "doc_tokens": 2965
+  },
+  {
+   "n": 456,
+   "title": "Reduce size of gitlab-runner-helper images",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 93,
+   "threads": 0,
+   "conv": 23,
+   "doc_tokens": 2088
+  },
+  {
+   "n": 2462,
+   "title": "Detach runtime state/metric from CI_JOB_STATUS",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 65,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 800
+  },
+  {
+   "n": 3868,
+   "title": "Improve Docker Machine executor finish message",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 48,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 565
+  },
+  {
+   "n": 2977,
+   "title": "Move build log's ANSI Reset to before newline to fix test output\u00a0",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 144,
+   "threads": 2,
+   "conv": 7,
+   "doc_tokens": 1385
+  },
+  {
+   "n": 188,
+   "title": "Allow experimentally to specify GIT_DEPTH",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 58,
+   "threads": 0,
+   "conv": 16,
+   "doc_tokens": 2493
+  },
+  {
+   "n": 5089,
+   "title": "Improve helpers/cli/FixHOME",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 103,
+   "threads": 3,
+   "conv": 4,
+   "doc_tokens": 3522
+  },
+  {
+   "n": 4085,
+   "title": "Variable expansion implementation in cache policy field",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 46,
+   "threads": 2,
+   "conv": 22,
+   "doc_tokens": 3448
+  },
+  {
+   "n": 5997,
+   "title": "Recursively set up Git submodules credentials",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 80,
+   "threads": 2,
+   "conv": 2,
+   "doc_tokens": 2424
+  },
+  {
+   "n": 5982,
+   "title": "Allow overriding git credentials in shell integration tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 127,
+   "threads": 3,
+   "conv": 1,
+   "doc_tokens": 1219
+  },
+  {
+   "n": 7461,
+   "title": "Add code owners for the translation MR template",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 67,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 667
+  },
+  {
+   "n": 6015,
+   "title": "Fix connector interface not being exposed for docker+machine and docker-autoscaler executors",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 64,
+   "threads": 3,
+   "conv": 3,
+   "doc_tokens": 2845
+  },
+  {
+   "n": 4980,
+   "title": "Prevent script dump on job cancellation through UI",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 251,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 1555
+  },
+  {
+   "n": 5608,
+   "title": "Limit Unit test job to only MR pipelines for forks",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 87,
+   "threads": 3,
+   "conv": 3,
+   "doc_tokens": 807
+  },
+  {
+   "n": 1301,
+   "title": "Refactor TestDefaultVariables test",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 67,
+   "threads": 2,
+   "conv": 6,
+   "doc_tokens": 881
+  },
+  {
+   "n": 5609,
+   "title": "Improve runner_name metric label coverage",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 63,
+   "threads": 2,
+   "conv": 7,
+   "doc_tokens": 3344
+  },
+  {
+   "n": 2114,
+   "title": "Dockerfiles restructuring",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 97,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 3089
+  },
+  {
+   "n": 7093,
+   "title": "[FixPipeline] https://gitlab.com/gitlab-org/gitlab-runner/-/pipelines/2720670918",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 159,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 1127
+  },
+  {
+   "n": 1060,
+   "title": "Generate junit report file for tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 76,
+   "threads": 3,
+   "conv": 8,
+   "doc_tokens": 2184
+  },
+  {
+   "n": 5988,
+   "title": "Warn users about legacy /ci URL suffix in runner configuration",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 135,
+   "threads": 5,
+   "conv": 6,
+   "doc_tokens": 1887
+  },
+  {
+   "n": 6791,
+   "title": "Docker+machine: cap finalizeRemoval retries",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 265,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 3654
+  },
+  {
+   "n": 3988,
+   "title": "Use Ruby 3.2.1-based docs Docker images",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 161,
+   "threads": 0,
+   "conv": 9,
+   "doc_tokens": 2676
+  },
+  {
+   "n": 3309,
+   "title": "DeviceCgroupRules for Docker Executors",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 70,
+   "threads": 2,
+   "conv": 14,
+   "doc_tokens": 1525
+  },
+  {
+   "n": 2281,
+   "title": "Add openssh-client to Docker images",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 65,
+   "threads": 1,
+   "conv": 5,
+   "doc_tokens": 1008
+  },
+  {
+   "n": 5354,
+   "title": "Fix step-runner inject container run",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 91,
+   "threads": 5,
+   "conv": 2,
+   "doc_tokens": 1514
+  },
+  {
+   "n": 5355,
+   "title": "Fix inconsistent arguments when creating a service in tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 174,
+   "threads": 2,
+   "conv": 8,
+   "doc_tokens": 3132
+  },
+  {
+   "n": 7284,
+   "title": "Bump base images to 0.0.50 for the FIPS TLS 1.3 fix (19-1-stable)",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 195,
+   "threads": 2,
+   "conv": 1,
+   "doc_tokens": 1758
+  },
+  {
+   "n": 3674,
+   "title": "Update git to 2.38.1 and git-lfs to 3.2.0 to address CVE-2022-29187",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 44,
+   "threads": 2,
+   "conv": 4,
+   "doc_tokens": 1678
+  },
+  {
+   "n": 1212,
+   "title": "Add `build_simple' to `help' make target",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 44,
+   "threads": 1,
+   "conv": 9,
+   "doc_tokens": 626
+  },
+  {
+   "n": 2765,
+   "title": "Update trace limit wording",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 120,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 1395
+  },
+  {
+   "n": 4524,
+   "title": "Avoid SIGTERM propagation to processes on Windows OS",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 86,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 1438
+  },
+  {
+   "n": 1447,
+   "title": "Fix concurrent updates",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 53,
+   "threads": 4,
+   "conv": 10,
+   "doc_tokens": 3210
+  },
+  {
+   "n": 6958,
+   "title": "Classify invalid docker container-create requests as ConfigurationError",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 152,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 3133
+  },
+  {
+   "n": 438,
+   "title": "Add '--run-untagged=false' cli option for runners",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 87,
+   "threads": 6,
+   "conv": 11,
+   "doc_tokens": 2911
+  },
+  {
+   "n": 5859,
+   "title": "Add Kubernetes context support for executor",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 125,
+   "threads": 4,
+   "conv": 6,
+   "doc_tokens": 2423
+  },
+  {
+   "n": 1512,
+   "title": "Remove need for externally configured variable",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 42,
+   "threads": 0,
+   "conv": 11,
+   "doc_tokens": 491
+  }
+ ]
+}

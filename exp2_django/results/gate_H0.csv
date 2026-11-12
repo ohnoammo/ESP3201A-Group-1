@@ -1,0 +1,9 @@
+model,arm,prompt,answerable_answered,unanswerable_answered,answerable_kept_minicheck,correct_kept_minicheck,wrong_kept_minicheck,overlap_cited_kept_minicheck,unanswerable_kept_minicheck,answerable_kept_hhem,correct_kept_hhem,wrong_kept_hhem,overlap_cited_kept_hhem,unanswerable_kept_hhem,correct_ungated,wrong_ungated,git_commit
+4b-instruct,F0,v2,37,7,15,9,2,14,6,18,12,1,17,5,21,5,c2e811c
+4b-instruct,F0,v3,35,3,19,12,3,19,2,24,16,3,24,1,23,4,c2e811c
+8b,F0,v2,44,13,24,13,3,20,9,28,18,2,24,2,23,7,c2e811c
+8b,F0,v3,40,13,29,16,3,24,7,30,18,4,24,7,21,6,c2e811c
+4b-instruct,H0,v2,43,8,18,14,1,17,6,26,22,1,24,4,32,3,c2e811c
+4b-instruct,H0,v3,43,2,22,16,1,20,0,27,17,3,23,1,27,5,c2e811c
+8b,H0,v2,46,12,24,17,2,21,5,24,17,2,22,4,31,6,c2e811c
+8b,H0,v3,45,11,30,20,4,26,6,27,20,3,25,6,29,8,c2e811c

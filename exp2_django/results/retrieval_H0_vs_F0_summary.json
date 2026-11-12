@@ -1,0 +1,40 @@
+{
+ "n_answerable": 50,
+ "gold_pr_top5": {
+  "F0": 43,
+  "H0": 47
+ },
+ "span_in_ctx": {
+  "F0": 42,
+  "H0": 43
+ },
+ "top5_lost": [],
+ "top5_gained": [
+  "q10097",
+  "q12664",
+  "q13507",
+  "q9006"
+ ],
+ "span_lost": [
+  "q16824",
+  "q16982"
+ ],
+ "span_gained": [
+  "q12664",
+  "q13507",
+  "q9725"
+ ],
+ "identical_contexts_of67": {
+  "4b-instruct/v2": 0,
+  "4b-instruct/v3": 0,
+  "8b/v2": 0,
+  "8b/v3": 0
+ },
+ "identical_context_ids": {
+  "4b-instruct/v2": [],
+  "4b-instruct/v3": [],
+  "8b/v2": [],
+  "8b/v3": []
+ },
+ "git_commit": "de77536"
+}

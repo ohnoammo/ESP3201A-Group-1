@@ -1,0 +1,5 @@
+arm,outcome,n,no_gate,gate,b_only_no_gate,c_only_gate,p,label,holm_reference
+F0,unanswerable_answered,18,5,2,3,0,0.25,exploratory,0.5
+F0,answerable_answered,52,43,42,1,0,1.0,exploratory,1
+P0,unanswerable_answered,18,13,0,13,0,0.000244140625,exploratory,0.000732421875
+P0,answerable_answered,52,47,4,43,0,2.2737367544323206e-13,exploratory,9.094947017729282e-13

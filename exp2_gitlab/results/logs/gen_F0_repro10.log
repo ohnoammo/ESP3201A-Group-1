@@ -1,0 +1,13 @@
+2026-11-11 22:28:16 gen_F0_repro10: loading chunks and rebuilding F0 contexts ...
+2026-11-11 22:28:24 gen_F0_repro10: 10 of 10 questions to generate -> exp2_gitlab_A2000\gen_F0_repro10.jsonl (commit da8e9d8, Ollama 0.40.4, digest 0edcdef34593)
+2026-11-11 22:28:32   F0_repro10q1063     in=3116 out=56 9s 'To prevent the script from exiting prematurely when grep finds no matc'
+2026-11-11 22:28:37   F0_repro10q106      in=3053 out=43 4s 'To allow runners to adjust the Git client configuration (e.g., setting'
+2026-11-11 22:28:41   F0_repro10nr3177    in=3346 out=44 4s 'Because the build process installs .deb files but only removes those t'
+2026-11-11 22:28:46   F0_repro10nr1781    in=3133 out=40 4s 'Because having editors like `vim` and `nano` in a container is unneces'
+2026-11-11 22:28:50   F0_repro10nr3805    in=2971 out=48 4s 'Because the glrt- runner token is intended to be used exclusively for '
+2026-11-11 22:28:53   F0_repro10nr5841    in=3093 out=8 3s 'Not found in the provided PRs'
+2026-11-11 22:28:57   F0_repro10nr3147    in=2934 out=8 3s 'Not found in the provided PRs'
+2026-11-11 22:29:02   F0_repro10nr4460    in=3009 out=58 5s 'TestGetServiceArguments breaks on current systemd-based Linux machines'
+2026-11-11 22:29:05   F0_repro10nr1372    in=3518 out=8 4s 'Not found in the provided PRs'
+2026-11-11 22:29:08   F0_repro10nr4102    in=3478 out=8 3s 'Not found in the provided PRs'
+2026-11-11 22:29:08 gen_F0_repro10: DONE, 10 rows in exp2_gitlab_A2000\gen_F0_repro10.jsonl

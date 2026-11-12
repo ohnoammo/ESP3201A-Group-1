@@ -1,0 +1,10 @@
+Checking the scaled questions (question_check_sheet.csv); save your copy under a new name
+
+Fill `check` with exactly one of: ok / fix / drop, and say why in `note` if it is not ok.
+- answerable: the quotes state the reason the question asks for, and the gold answer matches them.
+- no_reason: the document states no reason for what the question asks.
+- removed: as answerable; the model will not be shown this MR.
+Judge on what the model can see. Bot notes are not in its documents, but the MR link shows them, so a reason
+that only a bot states (for example GitLabDuo or Danger) does not count.
+A reason must date from the change. A later note reviving the thread does not count as the reason.
+The question must ask for what the gold answer gives: why, not how.

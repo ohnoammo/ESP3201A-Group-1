@@ -1,0 +1,242 @@
+{
+ "gold_pr_lengths_exp1_units": {
+  "60 questions (rows)": {
+   "n": 60,
+   "median": 1370.0,
+   "p90": 3271,
+   "max": 3784,
+   "over_512": 52,
+   "over_2560": 17
+  },
+  "distinct gold PRs": {
+   "n": 55,
+   "median": 1297,
+   "p90": 3271,
+   "max": 3784,
+   "over_512": 47,
+   "over_2560": 14
+  },
+  "50 answerable": {
+   "n": 50,
+   "median": 1476.5,
+   "p90": 3271,
+   "max": 3784,
+   "over_512": 47,
+   "over_2560": 14
+  }
+ },
+ "fit": {
+  "fixed": {
+   "answerable_50": {
+    "prs_packed_median": 3.0,
+    "prs_packed_range": [
+     1,
+     6
+    ],
+    "gold": {
+     "whole": 27,
+     "truncated_rank1": 8,
+     "skipped": 13,
+     "not_retrieved": 2
+    },
+    "gold_span_in_context_W": 32,
+    "gold_pr_rank_among_ranked_prs": {
+     "1": 34,
+     "2-3": 8,
+     ">10": 2,
+     "4-10": 4
+    },
+    "frozen_span_in_context": {
+     "F0": 42
+    }
+   },
+   "no_reason_test_5": {
+    "whole": 5,
+    "truncated_rank1": 0,
+    "skipped": 0,
+    "not_retrieved": 0
+   },
+   "removed_5": {
+    "prs_packed_median": 1,
+    "gold_packed": 0
+   }
+  },
+  "structural": {
+   "answerable_50": {
+    "prs_packed_median": 3.0,
+    "prs_packed_range": [
+     1,
+     7
+    ],
+    "gold": {
+     "whole": 31,
+     "truncated_rank1": 7,
+     "skipped": 10,
+     "not_retrieved": 2
+    },
+    "gold_span_in_context_W": 34,
+    "gold_pr_rank_among_ranked_prs": {
+     "1": 37,
+     "2-3": 8,
+     "4-10": 2,
+     ">10": 1
+    },
+    "frozen_span_in_context": {
+     "S0": 43,
+     "S0-G": 43,
+     "S-0.25": 44
+    }
+   },
+   "no_reason_test_5": {
+    "whole": 5,
+    "truncated_rank1": 0,
+    "skipped": 0,
+    "not_retrieved": 0
+   },
+   "removed_5": {
+    "prs_packed_median": 2,
+    "gold_packed": 0
+   }
+  }
+ },
+ "max_context_qwen_tokens": {
+  "tokens": 3481,
+  "id": "q14142",
+  "chunking": "fixed",
+  "prompt": "v3",
+  "exp1_units": 2533,
+  "n_prs": 4
+ },
+ "num_ctx": 8192,
+ "tokenizer": "Qwen/Qwen3-Embedding-0.6B",
+ "tokenizer_check_vs_ollama": [
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-fixed-0-score:c",
+   "ours": 2967,
+   "ollama": 2967,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-fixed-0-score:c3",
+   "ours": 3045,
+   "ollama": 3045,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-struct-0-score:c",
+   "ours": 3184,
+   "ollama": 3184,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-struct-0-score:c3",
+   "ours": 3262,
+   "ollama": 3262,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-struct-0-grouped:c",
+   "ours": 3184,
+   "ollama": 3184,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-struct-0-grouped:c3",
+   "ours": 3262,
+   "ollama": 3262,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-struct-0.25-grouped:c",
+   "ours": 3222,
+   "ollama": 3222,
+   "diff": 0
+  },
+  {
+   "model": "4b-instruct",
+   "id": "q14503",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "ours": 3300,
+   "ollama": 3300,
+   "diff": 0
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-fixed-0-score:c",
+   "ours": 2967,
+   "ollama": 2975,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-fixed-0-score:c3",
+   "ours": 3045,
+   "ollama": 3053,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-struct-0-score:c",
+   "ours": 3184,
+   "ollama": 3192,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-struct-0-score:c3",
+   "ours": 3262,
+   "ollama": 3270,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-struct-0-grouped:c",
+   "ours": 3184,
+   "ollama": 3192,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-struct-0-grouped:c3",
+   "ours": 3262,
+   "ollama": 3270,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-struct-0.25-grouped:c",
+   "ours": 3222,
+   "ollama": 3230,
+   "diff": 8
+  },
+  {
+   "model": "8b",
+   "id": "q14503",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "ours": 3300,
+   "ollama": 3308,
+   "diff": 8
+  }
+ ]
+}

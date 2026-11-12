@@ -1,0 +1,5 @@
+model,arm,prompt,answered,correct,partial,wrong,strict_of50,lenient_of50,correct_of_answered,git_commit
+4b-instruct,W-F,v2,32,22,5,5,22,27,22/32,74bf409
+4b-instruct,W-F,v3,28,19,5,4,19,24,19/28,74bf409
+8b,W-F,v2,38,19,11,8,19,30,19/38,74bf409
+8b,W-F,v3,35,19,9,7,19,28,19/35,74bf409

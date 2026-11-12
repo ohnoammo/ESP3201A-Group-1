@@ -1,0 +1,10 @@
+### SYSTEM
+You are an assistant that answers questions about pull requests in the Django project.
+### USER
+Use the following excerpts from Django pull requests to answer the question.
+
+{context}
+
+Question: {question}
+
+Answer in at most three sentences.

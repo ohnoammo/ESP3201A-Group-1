@@ -1,0 +1,23 @@
+Scaled Exp 1, pool A2000, per-query results generated at db14bf1, tests run at aacbfcd. Rule: tuning_rule_exp1_scale.md.
+
+PRIMARY: python exp1_gitlab_stats.py --pool A2000 --exclude-pilot A270
+gold_in_budget    167 -> 155 of 201; lost 12, gained 0         p 0.0005  Holm 0.0020
+budget_recall     0.453 -> 0.480; up 57, down 35               p 0.1653  Holm 0.1653
+budget_precision  0.072 -> 0.088; up 97, down 57               p 0.0108  Holm 0.0216
+budget_f1         0.089 -> 0.110; up 95, down 59               p 0.0012  Holm 0.0036
+Wilcoxon sensitivity:
+gold_in_budget    p 0.0005  Holm 0.0020
+budget_recall     p 0.0218  Holm 0.0218
+budget_precision  p 0.0011  Holm 0.0032
+budget_f1         p 0.0011  Holm 0.0032
+
+SENSITIVITY: python exp1_gitlab_stats.py --pool A2000
+gold_in_budget    191 -> 177 of 231; lost 14, gained 0         p 0.0001  Holm 0.0005
+budget_recall     0.430 -> 0.463; up 68, down 40               p 0.0571  Holm 0.0571
+budget_precision  0.072 -> 0.088; up 112, down 64              p 0.0067  Holm 0.0134
+budget_f1         0.086 -> 0.108; up 110, down 66              p 0.0004  Holm 0.0012
+Wilcoxon sensitivity:
+gold_in_budget    p 0.0001  Holm 0.0005
+budget_recall     p 0.0028  Holm 0.0028
+budget_precision  p 0.0003  Holm 0.0006
+budget_f1         p 0.0001  Holm 0.0005

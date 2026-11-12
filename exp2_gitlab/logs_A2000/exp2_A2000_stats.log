@@ -1,0 +1,5 @@
+{'outcome': 'strict_correct', 'n': 52, 'F0': 33, 'C1': 32, 'only_F0': 5, 'only_C1': 4, 'p': 1.0, 'holm': 1, 'family': 'primary', 'git_commit': 'cc0bd30'}
+{'outcome': 'answered', 'n': 52, 'F0': 43, 'C1': 44, 'only_F0': 0, 'only_C1': 1, 'p': 1.0, 'holm': 1, 'family': 'same Holm family', 'git_commit': 'cc0bd30'}
+{'outcome': 'unanswerable_answered', 'n': 18, 'F0': 5, 'C1': 3, 'only_F0': 2, 'only_C1': 0, 'p': 0.5, 'holm': 1, 'family': 'same Holm family', 'git_commit': 'cc0bd30'}
+{'outcome': 'lenient_correct', 'n': 52, 'F0': 40, 'C1': 41, 'only_F0': 1, 'only_C1': 2, 'p': 1.0, 'holm': '', 'family': 'sensitivity, unadjusted', 'git_commit': 'cc0bd30'}
+James vs Codex on 20 rows, before resolving: 10 equal, kappa 0.177

@@ -1,0 +1,471 @@
+{
+ "typical_residual_norm": {
+  "14": 40.09363359175388,
+  "20": 59.675020973637416,
+  "25": 127.6501944439966
+ },
+ "vectors": [
+  {
+   "ratio": "40:60",
+   "fold": 0,
+   "layer": 14,
+   "n_pairs": 120,
+   "norm": 3.485645822142466,
+   "norm_over_typical_residual": 0.08693763846984835,
+   "cos_refusal_vs_grounding_part": -0.8957286400888357
+  },
+  {
+   "ratio": "40:60",
+   "fold": 0,
+   "layer": 20,
+   "n_pairs": 120,
+   "norm": 6.851290224280817,
+   "norm_over_typical_residual": 0.11481001786840604,
+   "cos_refusal_vs_grounding_part": -0.8650131684151563
+  },
+  {
+   "ratio": "40:60",
+   "fold": 0,
+   "layer": 25,
+   "n_pairs": 120,
+   "norm": 19.073408912333523,
+   "norm_over_typical_residual": 0.14941934867715,
+   "cos_refusal_vs_grounding_part": -0.7714881888141193
+  },
+  {
+   "ratio": "50:50",
+   "fold": 0,
+   "layer": 14,
+   "n_pairs": 102,
+   "norm": 5.308474577559882,
+   "norm_over_typical_residual": 0.13240193272608958,
+   "cos_refusal_vs_grounding_part": -0.9043084487333706
+  },
+  {
+   "ratio": "50:50",
+   "fold": 0,
+   "layer": 20,
+   "n_pairs": 102,
+   "norm": 9.686879609401128,
+   "norm_over_typical_residual": 0.16232720912960372,
+   "cos_refusal_vs_grounding_part": -0.872426483969681
+  },
+  {
+   "ratio": "50:50",
+   "fold": 0,
+   "layer": 25,
+   "n_pairs": 102,
+   "norm": 25.531357105222494,
+   "norm_over_typical_residual": 0.20001032678742806,
+   "cos_refusal_vs_grounding_part": -0.7845061535612216
+  },
+  {
+   "ratio": "60:40",
+   "fold": 0,
+   "layer": 14,
+   "n_pairs": 85,
+   "norm": 7.969319883813484,
+   "norm_over_typical_residual": 0.19876771372132623,
+   "cos_refusal_vs_grounding_part": -0.8917258802486339
+  },
+  {
+   "ratio": "60:40",
+   "fold": 0,
+   "layer": 20,
+   "n_pairs": 85,
+   "norm": 14.169167770184627,
+   "norm_over_typical_residual": 0.23743884022167547,
+   "cos_refusal_vs_grounding_part": -0.8585403904734342
+  },
+  {
+   "ratio": "60:40",
+   "fold": 0,
+   "layer": 25,
+   "n_pairs": 85,
+   "norm": 34.58844295265289,
+   "norm_over_typical_residual": 0.2709627126171572,
+   "cos_refusal_vs_grounding_part": -0.7752357696900465
+  },
+  {
+   "ratio": "40:60",
+   "fold": 1,
+   "layer": 14,
+   "n_pairs": 120,
+   "norm": 3.4297708309993706,
+   "norm_over_typical_residual": 0.08554402591499656,
+   "cos_refusal_vs_grounding_part": -0.9006744044683257
+  },
+  {
+   "ratio": "40:60",
+   "fold": 1,
+   "layer": 20,
+   "n_pairs": 120,
+   "norm": 6.693269325080516,
+   "norm_over_typical_residual": 0.11216199367633899,
+   "cos_refusal_vs_grounding_part": -0.8720182221421241
+  },
+  {
+   "ratio": "40:60",
+   "fold": 1,
+   "layer": 25,
+   "n_pairs": 120,
+   "norm": 18.209797319869736,
+   "norm_over_typical_residual": 0.1426538940985228,
+   "cos_refusal_vs_grounding_part": -0.7928025805929078
+  },
+  {
+   "ratio": "50:50",
+   "fold": 1,
+   "layer": 14,
+   "n_pairs": 102,
+   "norm": 5.326970364161351,
+   "norm_over_typical_residual": 0.13286324752708265,
+   "cos_refusal_vs_grounding_part": -0.9018258679160586
+  },
+  {
+   "ratio": "50:50",
+   "fold": 1,
+   "layer": 20,
+   "n_pairs": 102,
+   "norm": 9.69394647823596,
+   "norm_over_typical_residual": 0.1624456316909959,
+   "cos_refusal_vs_grounding_part": -0.8699388390051528
+  },
+  {
+   "ratio": "50:50",
+   "fold": 1,
+   "layer": 25,
+   "n_pairs": 102,
+   "norm": 25.294482783895223,
+   "norm_over_typical_residual": 0.1981546749229008,
+   "cos_refusal_vs_grounding_part": -0.7874811319183183
+  },
+  {
+   "ratio": "60:40",
+   "fold": 1,
+   "layer": 14,
+   "n_pairs": 85,
+   "norm": 7.984212142035998,
+   "norm_over_typical_residual": 0.19913915070242283,
+   "cos_refusal_vs_grounding_part": -0.8905362932843799
+  },
+  {
+   "ratio": "60:40",
+   "fold": 1,
+   "layer": 20,
+   "n_pairs": 85,
+   "norm": 14.17113441371414,
+   "norm_over_typical_residual": 0.23747179611339408,
+   "cos_refusal_vs_grounding_part": -0.8551685980835068
+  },
+  {
+   "ratio": "60:40",
+   "fold": 1,
+   "layer": 25,
+   "n_pairs": 85,
+   "norm": 34.2056265888261,
+   "norm_over_typical_residual": 0.2679637640805395,
+   "cos_refusal_vs_grounding_part": -0.7815515407304904
+  },
+  {
+   "ratio": "40:60",
+   "fold": 2,
+   "layer": 14,
+   "n_pairs": 125,
+   "norm": 3.3006076190679323,
+   "norm_over_typical_residual": 0.08232248672384669,
+   "cos_refusal_vs_grounding_part": -0.9081915712602446
+  },
+  {
+   "ratio": "40:60",
+   "fold": 2,
+   "layer": 20,
+   "n_pairs": 125,
+   "norm": 6.472246330385775,
+   "norm_over_typical_residual": 0.10845821626514407,
+   "cos_refusal_vs_grounding_part": -0.879005134272222
+  },
+  {
+   "ratio": "40:60",
+   "fold": 2,
+   "layer": 25,
+   "n_pairs": 125,
+   "norm": 17.677699051099356,
+   "norm_over_typical_residual": 0.13848548471154123,
+   "cos_refusal_vs_grounding_part": -0.8029677453565307
+  },
+  {
+   "ratio": "50:50",
+   "fold": 2,
+   "layer": 14,
+   "n_pairs": 104,
+   "norm": 5.3918403786040585,
+   "norm_over_typical_residual": 0.1344812104960476,
+   "cos_refusal_vs_grounding_part": -0.9062193644764588
+  },
+  {
+   "ratio": "50:50",
+   "fold": 2,
+   "layer": 20,
+   "n_pairs": 104,
+   "norm": 9.747560428322664,
+   "norm_over_typical_residual": 0.1633440637185337,
+   "cos_refusal_vs_grounding_part": -0.873448008422325
+  },
+  {
+   "ratio": "50:50",
+   "fold": 2,
+   "layer": 25,
+   "n_pairs": 104,
+   "norm": 25.310346191578034,
+   "norm_over_typical_residual": 0.19827894741423469,
+   "cos_refusal_vs_grounding_part": -0.7888261756035286
+  },
+  {
+   "ratio": "60:40",
+   "fold": 2,
+   "layer": 14,
+   "n_pairs": 85,
+   "norm": 7.971622353671873,
+   "norm_over_typical_residual": 0.19882514103963403,
+   "cos_refusal_vs_grounding_part": -0.9022266588297948
+  },
+  {
+   "ratio": "60:40",
+   "fold": 2,
+   "layer": 20,
+   "n_pairs": 85,
+   "norm": 14.092911683269945,
+   "norm_over_typical_residual": 0.2361609841661515,
+   "cos_refusal_vs_grounding_part": -0.8663921647970441
+  },
+  {
+   "ratio": "60:40",
+   "fold": 2,
+   "layer": 25,
+   "n_pairs": 85,
+   "norm": 33.88298494553495,
+   "norm_over_typical_residual": 0.2654362188253484,
+   "cos_refusal_vs_grounding_part": -0.7918926599887588
+  },
+  {
+   "ratio": "40:60",
+   "fold": 3,
+   "layer": 14,
+   "n_pairs": 125,
+   "norm": 3.420809010641073,
+   "norm_over_typical_residual": 0.08532050363588488,
+   "cos_refusal_vs_grounding_part": -0.8986480497520374
+  },
+  {
+   "ratio": "40:60",
+   "fold": 3,
+   "layer": 20,
+   "n_pairs": 125,
+   "norm": 6.643631993866969,
+   "norm_over_typical_residual": 0.11133019956209016,
+   "cos_refusal_vs_grounding_part": -0.8718714349388066
+  },
+  {
+   "ratio": "40:60",
+   "fold": 3,
+   "layer": 25,
+   "n_pairs": 125,
+   "norm": 18.29437903730926,
+   "norm_over_typical_residual": 0.14331649957129888,
+   "cos_refusal_vs_grounding_part": -0.7894223700142217
+  },
+  {
+   "ratio": "50:50",
+   "fold": 3,
+   "layer": 14,
+   "n_pairs": 106,
+   "norm": 5.370896089502968,
+   "norm_over_typical_residual": 0.13395882608673335,
+   "cos_refusal_vs_grounding_part": -0.8957623973991823
+  },
+  {
+   "ratio": "50:50",
+   "fold": 3,
+   "layer": 20,
+   "n_pairs": 106,
+   "norm": 9.668841122305672,
+   "norm_over_typical_residual": 0.1620249304407797,
+   "cos_refusal_vs_grounding_part": -0.8674943075674417
+  },
+  {
+   "ratio": "50:50",
+   "fold": 3,
+   "layer": 25,
+   "n_pairs": 106,
+   "norm": 25.497545182874017,
+   "norm_over_typical_residual": 0.1997454472665174,
+   "cos_refusal_vs_grounding_part": -0.7778947218427922
+  },
+  {
+   "ratio": "60:40",
+   "fold": 3,
+   "layer": 14,
+   "n_pairs": 85,
+   "norm": 7.98717617903912,
+   "norm_over_typical_residual": 0.19921307857419676,
+   "cos_refusal_vs_grounding_part": -0.8802706776997933
+  },
+  {
+   "ratio": "60:40",
+   "fold": 3,
+   "layer": 20,
+   "n_pairs": 85,
+   "norm": 14.084565312114421,
+   "norm_over_typical_residual": 0.2360211204339006,
+   "cos_refusal_vs_grounding_part": -0.8495626066721155
+  },
+  {
+   "ratio": "60:40",
+   "fold": 3,
+   "layer": 25,
+   "n_pairs": 85,
+   "norm": 34.375281231542516,
+   "norm_over_typical_residual": 0.2692928231035624,
+   "cos_refusal_vs_grounding_part": -0.7649845405279313
+  },
+  {
+   "ratio": "40:60",
+   "fold": 4,
+   "layer": 14,
+   "n_pairs": 125,
+   "norm": 3.3944020654451785,
+   "norm_over_typical_residual": 0.08466187175769747,
+   "cos_refusal_vs_grounding_part": -0.901366105849993
+  },
+  {
+   "ratio": "40:60",
+   "fold": 4,
+   "layer": 20,
+   "n_pairs": 125,
+   "norm": 6.671736227886734,
+   "norm_over_typical_residual": 0.11180115430263696,
+   "cos_refusal_vs_grounding_part": -0.8728647576304116
+  },
+  {
+   "ratio": "40:60",
+   "fold": 4,
+   "layer": 25,
+   "n_pairs": 125,
+   "norm": 18.261662300288883,
+   "norm_over_typical_residual": 0.14306019963252575,
+   "cos_refusal_vs_grounding_part": -0.7908061448167004
+  },
+  {
+   "ratio": "50:50",
+   "fold": 4,
+   "layer": 14,
+   "n_pairs": 106,
+   "norm": 5.317249715899413,
+   "norm_over_typical_residual": 0.13262079885403602,
+   "cos_refusal_vs_grounding_part": -0.9048406612178155
+  },
+  {
+   "ratio": "50:50",
+   "fold": 4,
+   "layer": 20,
+   "n_pairs": 106,
+   "norm": 9.684165863057864,
+   "norm_over_typical_residual": 0.16228173371461452,
+   "cos_refusal_vs_grounding_part": -0.8727114109119274
+  },
+  {
+   "ratio": "50:50",
+   "fold": 4,
+   "layer": 25,
+   "n_pairs": 106,
+   "norm": 25.413583854991508,
+   "norm_over_typical_residual": 0.19908770186904098,
+   "cos_refusal_vs_grounding_part": -0.7843642700420022
+  },
+  {
+   "ratio": "60:40",
+   "fold": 4,
+   "layer": 14,
+   "n_pairs": 85,
+   "norm": 7.99451048517894,
+   "norm_over_typical_residual": 0.199396008019168,
+   "cos_refusal_vs_grounding_part": -0.8940239987506533
+  },
+  {
+   "ratio": "60:40",
+   "fold": 4,
+   "layer": 20,
+   "n_pairs": 85,
+   "norm": 14.1747865599979,
+   "norm_over_typical_residual": 0.23753299669990705,
+   "cos_refusal_vs_grounding_part": -0.862047660927498
+  },
+  {
+   "ratio": "60:40",
+   "fold": 4,
+   "layer": 25,
+   "n_pairs": 85,
+   "norm": 34.27026119031007,
+   "norm_over_typical_residual": 0.2684701056632179,
+   "cos_refusal_vs_grounding_part": -0.7807900930707702
+  }
+ ],
+ "note": "typical_residual_norm = mean over all pair passes of the mean per-token L2 norm of the layer output at response positions",
+ "fold_stability": [
+  {
+   "ratio": "40:60",
+   "layer": 14,
+   "min_cos_between_folds": 0.9925676584243774,
+   "mean_cos": 0.9937857270240784
+  },
+  {
+   "ratio": "40:60",
+   "layer": 20,
+   "min_cos_between_folds": 0.9927312135696411,
+   "mean_cos": 0.9940007746219635
+  },
+  {
+   "ratio": "40:60",
+   "layer": 25,
+   "min_cos_between_folds": 0.9951878190040588,
+   "mean_cos": 0.9959504723548889
+  },
+  {
+   "ratio": "50:50",
+   "layer": 14,
+   "min_cos_between_folds": 0.9955621957778931,
+   "mean_cos": 0.9965177714824677
+  },
+  {
+   "ratio": "50:50",
+   "layer": 20,
+   "min_cos_between_folds": 0.9949890375137329,
+   "mean_cos": 0.9962994515895843
+  },
+  {
+   "ratio": "50:50",
+   "layer": 25,
+   "min_cos_between_folds": 0.9964973330497742,
+   "mean_cos": 0.9974080085754394
+  },
+  {
+   "ratio": "60:40",
+   "layer": 14,
+   "min_cos_between_folds": 0.9975495338439941,
+   "mean_cos": 0.9978342950344086
+  },
+  {
+   "ratio": "60:40",
+   "layer": 20,
+   "min_cos_between_folds": 0.9973424673080444,
+   "mean_cos": 0.9977694869041442
+  },
+  {
+   "ratio": "60:40",
+   "layer": 25,
+   "min_cos_between_folds": 0.997673749923706,
+   "mean_cos": 0.9981513619422913
+  }
+ ]
+}

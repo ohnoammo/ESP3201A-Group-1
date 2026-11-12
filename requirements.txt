@@ -1,0 +1,33 @@
+# Merged from exp1_retrieval/requirements.txt (pins kept as they were) and the imports of the other parts.
+# Unpinned packages had no pinned version in any existing file; the versions used for Exp 2 are recorded
+# in exp2_django/results/run_provenance.md (e.g. transformers 5.14.1, torch 2.14.0+cu130, numpy 2.4.6, scipy 1.17.1).
+# Python 3.12 recommended for Exp 1 (environment.yml); Exp 2 ran on Python 3.11.
+# For an NVIDIA GPU install a CUDA build of torch (see exp1_retrieval/environment.yml).
+
+# Experiment 1 (retrieval)
+qdrant-client==1.19.1
+fastembed==0.9.0
+nltk==3.10.3
+numpy==2.4.4
+requests>=2.31
+datasets>=2.19
+rank-bm25==0.2.2
+torch
+transformers>=4.51.0
+sentence-transformers>=3.0
+
+# Experiment 2, gate, steering, statistics
+scipy
+huggingface_hub
+tqdm
+matplotlib
+openpyxl
+
+# demo app (app/)
+fastapi
+uvicorn
+pydantic
+pywebview
+
+# optional: LoRA fit check only (exp2_django/ft_fit_check.py)
+# peft

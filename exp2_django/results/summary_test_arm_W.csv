@@ -1,0 +1,5 @@
+model,arm,prompt,answered,gold_pr_cited,span_in_ctx,abstained_with_span,hedged_answerable,empty_answers,cross_pr_borrowing,invalid_citation_rows,unanswerable_answered_of17,unanswerable_answered_of15,hedged_unanswerable,rank1_truncated_rows,mean_prs_in_ctx,max_prompt_eval_count,possibly_truncated,ollama,git_commit,gpu
+4b-instruct,W-F,v2,32,31,32,3,0,0,1,0,5,5,1,18,3.18,3403,0,0.40.4,8d15adb,"NVIDIA GeForce RTX 5070, 616.56"
+4b-instruct,W-F,v3,28,27,32,5,0,0,1,0,2,2,0,18,3.18,3481,0,0.40.4,8d15adb,"NVIDIA GeForce RTX 5070, 616.56"
+8b,W-F,v2,38,35,32,0,0,0,3,0,13,11,1,18,3.18,3411,0,0.40.4,8d15adb,"NVIDIA GeForce RTX 5070, 616.56"
+8b,W-F,v3,35,32,32,2,0,0,3,0,13,11,0,18,3.18,3489,0,0.40.4,8d15adb,"NVIDIA GeForce RTX 5070, 616.56"

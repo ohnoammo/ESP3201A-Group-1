@@ -1,0 +1,10 @@
+ratio,outcome,n,baseline,steered,only_baseline,only_steered,p,p_holm
+40:60,unanswerable answered (primary),18,7,7,0,0,1.0,1.0
+40:60,answered,52,48,48,0,0,1.0,1.0
+40:60,overlap-cited,52,45,45,0,0,1.0,1.0
+50:50,unanswerable answered (primary),18,7,5,2,0,0.5,1.0
+50:50,answered,52,48,44,4,0,0.125,0.75
+50:50,overlap-cited,52,45,37,8,0,0.0078125,0.0625
+60:40,unanswerable answered (primary),18,7,6,1,0,1.0,1.0
+60:40,answered,52,48,43,5,0,0.0625,0.4375
+60:40,overlap-cited,52,45,17,28,0,7.450580596923828e-09,6.705522537231445e-08

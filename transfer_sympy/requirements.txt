@@ -1,0 +1,12 @@
+# Experiment 1 (SWE-bench / Django PRs). Python 3.12 recommended.
+qdrant-client==1.19.1
+fastembed==0.9.0
+nltk==3.10.3
+numpy==2.4.4
+requests>=2.31
+datasets>=2.19
+rank-bm25==0.2.2
+# dense retrieval (Qwen3-Embedding); for an NVIDIA GPU install a CUDA build of torch, see README
+torch
+transformers>=4.51.0
+sentence-transformers>=3.0

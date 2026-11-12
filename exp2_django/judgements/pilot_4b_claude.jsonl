@@ -1,0 +1,46 @@
+{"file": "results/gen_pilot_4b.jsonl", "judge": "Claude (Opus 5.5), by reading each response against the gold answer + quote", "labels": "answerable: correct | partial | incorrect ; no_reason: abstained | fabricated | non_answer", "note": "Pilot only. James to spot-check; not blind to condition."}
+{"id": "nr10042", "condition": "none:a", "label": "fabricated", "why": "invents 'reduce clutter' rationale"}
+{"id": "nr10042", "condition": "oracle:b", "label": "fabricated", "why": "invents rationale, appeals to 'Django design principle'"}
+{"id": "nr10042", "condition": "oracle:c", "label": "fabricated", "why": "invents rationale and claims it is 'reflected in the commit message' with a citation; the commit message states no reason"}
+{"id": "nr10075", "condition": "none:a", "label": "fabricated", "why": "plausible Unicode rationale, not in PR"}
+{"id": "nr10075", "condition": "oracle:b", "label": "fabricated", "why": "plausible Unicode rationale, not in PR"}
+{"id": "nr10075", "condition": "oracle:c", "label": "fabricated", "why": "same rationale with a citation to PR10075-c0, which states no reason"}
+{"id": "nr10782", "condition": "none:a", "label": "fabricated", "why": "invents PRAGMA/bug-fix rationale"}
+{"id": "nr10782", "condition": "oracle:b", "label": "fabricated", "why": "claims old versions 'no longer secure'"}
+{"id": "nr10782", "condition": "oracle:c", "label": "non_answer", "why": "circular: 'raised the minimum because it dropped support'; cites docs; does not abstain"}
+{"id": "nr11371", "condition": "none:a", "label": "fabricated", "why": "invents portability rationale"}
+{"id": "nr11371", "condition": "oracle:b", "label": "fabricated", "why": "invents rationale, hedged with 'likely'"}
+{"id": "nr11371", "condition": "oracle:c", "label": "abstained", "why": "exact abstention string"}
+{"id": "nr12338", "condition": "none:a", "label": "fabricated", "why": "misreads the question as a no-op typo"}
+{"id": "nr12338", "condition": "oracle:b", "label": "fabricated", "why": "general-knowledge answer with the callable logic garbled; not from the PR"}
+{"id": "nr12338", "condition": "oracle:c", "label": "fabricated", "why": "garbled general-knowledge answer with a citation; PR states no reason"}
+{"id": "q10082", "condition": "none:a", "label": "incorrect", "why": "says usability/convenience"}
+{"id": "q10082", "condition": "oracle:b", "label": "partial", "why": "leads with backward compatibility; mentions exploit prevention only vaguely"}
+{"id": "q10082", "condition": "oracle:c", "label": "correct", "why": "string allowed_hosts could be exploited by returning True"}
+{"id": "q11283", "condition": "none:a", "label": "incorrect", "why": "generic, not the stated reasons"}
+{"id": "q11283", "condition": "oracle:b", "label": "partial", "why": "keeps existing permissions + audit; misses 'refusing is not friendlier / both known cases'"}
+{"id": "q11283", "condition": "oracle:c", "label": "partial", "why": "audit advice and no blocking; adds unsupported claim about reverse rollback"}
+{"id": "q12259", "condition": "none:a", "label": "incorrect", "why": "backward-compatibility rationale"}
+{"id": "q12259", "condition": "oracle:b", "label": "correct", "why": "untested filter + OrderableAggMixin case"}
+{"id": "q12259", "condition": "oracle:c", "label": "correct", "why": "untested filter + OrderableAggMixin case"}
+{"id": "q13658", "condition": "none:a", "label": "incorrect", "why": "documentation rationale"}
+{"id": "q13658", "condition": "oracle:b", "label": "correct", "why": "assert expected value, not just no crash"}
+{"id": "q13658", "condition": "oracle:c", "label": "correct", "why": "assert expected value, not just no crash"}
+{"id": "q13680", "condition": "none:a", "label": "incorrect", "why": "generic type-safety rationale"}
+{"id": "q13680", "condition": "oracle:b", "label": "correct", "why": "psycopg2 would quote list contents"}
+{"id": "q13680", "condition": "oracle:c", "label": "correct", "why": "psycopg2 would quote identifiers in a list"}
+{"id": "q14349", "condition": "none:a", "label": "incorrect", "why": "denies the premise"}
+{"id": "q14349", "condition": "oracle:b", "label": "correct", "why": "urllib strips newlines/tabs; validator checks cleaned URL"}
+{"id": "q14349", "condition": "oracle:c", "label": "correct", "why": "urllib strips newlines/tabs; validator checks cleaned URL"}
+{"id": "q14727", "condition": "none:a", "label": "incorrect", "why": "generic"}
+{"id": "q14727", "condition": "oracle:b", "label": "partial", "why": "root cause fixed at source; misses 'other scenarios already had sufficient messages'"}
+{"id": "q14727", "condition": "oracle:c", "label": "partial", "why": "root cause fixed at source; misses 'other scenarios already had sufficient messages'"}
+{"id": "q7927", "condition": "none:a", "label": "partial", "why": "'efficient, readable' - plausible general knowledge, no benchmark"}
+{"id": "q7927", "condition": "oracle:b", "label": "correct", "why": "faster + idiomatic, benchmarks"}
+{"id": "q7927", "condition": "oracle:c", "label": "correct", "why": "faster + idiomatic, benchmarks"}
+{"id": "q8930", "condition": "none:a", "label": "incorrect", "why": "serialisation rationale"}
+{"id": "q8930", "condition": "oracle:b", "label": "correct", "why": "shared mutable default"}
+{"id": "q8930", "condition": "oracle:c", "label": "correct", "why": "shared mutable default"}
+{"id": "q9617", "condition": "none:a", "label": "incorrect", "why": "generic string/bytes rationale, misses str(b'foo') storage"}
+{"id": "q9617", "condition": "oracle:b", "label": "correct", "why": "to_python str() stores \"b'foo'\""}
+{"id": "q9617", "condition": "oracle:c", "label": "correct", "why": "to_python str() stores \"b'foo'\""}

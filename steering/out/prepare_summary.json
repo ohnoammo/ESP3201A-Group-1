@@ -1,0 +1,169 @@
+{
+ "contexts_equal_gen_F0": true,
+ "n_main": 70,
+ "n_twin": 52,
+ "answerable_span_in_context_any": 47,
+ "answerable_span_in_context_all": 46,
+ "twin_exclusions_beyond_own_mr": {},
+ "fold_sizes": {
+  "0": {
+   "total": 14,
+   "answerable_span": 10,
+   "answerable_nospan": 1,
+   "no_reason": 1,
+   "removed": 2
+  },
+  "1": {
+   "total": 14,
+   "answerable_span": 10,
+   "answerable_nospan": 1,
+   "no_reason": 1,
+   "removed": 2
+  },
+  "2": {
+   "total": 14,
+   "answerable_span": 9,
+   "answerable_nospan": 1,
+   "no_reason": 2,
+   "removed": 2
+  },
+  "3": {
+   "total": 14,
+   "answerable_span": 9,
+   "answerable_nospan": 1,
+   "no_reason": 2,
+   "removed": 2
+  },
+  "4": {
+   "total": 14,
+   "answerable_span": 9,
+   "answerable_nospan": 1,
+   "no_reason": 2,
+   "removed": 2
+  }
+ },
+ "pairs": {
+  "grounding/g_nf/not_found_sentence": 47,
+  "grounding/g_what/what_as_why_title": 47,
+  "refusal/twin/gold_answer_top_twin_chunk": 49,
+  "refusal/unans/stored_F0_answer": 3,
+  "refusal/unans/what_as_why_title": 13
+ },
+ "pairs_by_family": {
+  "refusal": 65,
+  "grounding": 94
+ },
+ "dropped_after_human_check": {
+  "unans:nr3177": "the commit message explains why the other-architecture .deb files were left; the stored F0 answer is grounded, so the no_reason label is doubtful",
+  "unans:nr4460": "the diff shows the test expects --syslog, which systemd does not add; the stored F0 answer is grounded, so the no_reason label is doubtful",
+  "twin:q3239": "reason still in the twin context: sibling MR 3408 says the doc edit is 'to test if it works'",
+  "twin:q1189": "reason still in the twin context: MR 3143's diff keeps the old comment 'Starting from Mojave ntpdate was removed' above the check",
+  "twin:q1754": "reason still in the twin context: an MR 620 comment says the job fails in a fork when pushing the image to the registry"
+ },
+ "ratio_subset_sizes": {
+  "0": {
+   "40:60": [
+    48,
+    72
+   ],
+   "50:50": [
+    51,
+    51
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "1": {
+   "40:60": [
+    48,
+    72
+   ],
+   "50:50": [
+    51,
+    51
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "2": {
+   "40:60": [
+    50,
+    75
+   ],
+   "50:50": [
+    52,
+    52
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "3": {
+   "40:60": [
+    50,
+    75
+   ],
+   "50:50": [
+    53,
+    53
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "4": {
+   "40:60": [
+    50,
+    75
+   ],
+   "50:50": [
+    53,
+    53
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  }
+ },
+ "inner_sizes": {
+  "0": [
+   15,
+   14
+  ],
+  "1": [
+   15,
+   14
+  ],
+  "2": [
+   14,
+   14
+  ],
+  "3": [
+   14,
+   14
+  ],
+  "4": [
+   14,
+   14
+  ]
+ },
+ "flags": {
+  "title_states_reason": 1,
+  "title_overlaps_gold_reason": 4,
+  "stored_answer_cites_own_mr": 2,
+  "answer_words_in_twin_context": 2,
+  "span_partly_in_context": 2
+ },
+ "n_flagged_pairs": 11,
+ "what_as_why_template": "Because the merge request \"{title}\" made this change. [{cite}]",
+ "chunk_set": "111084af",
+ "prompt_sha1": "072bd24371",
+ "budget": 2560
+}

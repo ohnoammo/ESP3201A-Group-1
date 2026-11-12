@@ -1,0 +1,12 @@
+Labelling the SymPy correctness sheet (same rules as Exp 2's judging/codex_instructions.md)
+
+Each row is one model answer to a "why" question about a SymPy pull request. You see the question,
+the gold answer, the gold quotes (verbatim PR text that states the reason) and the model answer.
+The arm (F0 / S0-G) is hidden and citation ids were removed. Do not open exp2_sympy/keys/.
+
+Fill `label` with exactly one of: correct / partial / wrong, and give a one-line `reason`.
+- correct: states the reason the gold quotes support (paraphrase is fine; extra details are fine
+  only if they do not contradict the PR).
+- partial: gets part of the reason, or is in the right area but misses the key point.
+- wrong: a different or invented reason, or contradicts the gold.
+Judge against the gold quotes, not against general knowledge. Do not change any other column.

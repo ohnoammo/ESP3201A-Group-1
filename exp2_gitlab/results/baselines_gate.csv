@@ -1,0 +1,5 @@
+arm,scoring,unanswerable_answered_before,unanswerable_answered_after,answerable_answered_before,answerable_answered_after,answered_no_valid_cited_premise,correct_before_provisional,correct_after_provisional,answered_answerable_without_label
+F0,lenient,5,2,43,42,0,33,32,0
+F0,strict,5,2,43,42,0,33,32,0
+P0,lenient,13,0,47,4,46,,,
+P0,strict,18,0,52,5,53,,,

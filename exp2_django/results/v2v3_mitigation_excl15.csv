@@ -1,0 +1,9 @@
+model,arm,unanswerable_answered_v2,unanswerable_answered_v3,unanswerable_answered_b,unanswerable_answered_c,unanswerable_answered_p,overlap_cited_v2,overlap_cited_v3,overlap_cited_b,overlap_cited_c,overlap_cited_p
+4b-instruct,F0,5,2,3,0,0.25,33,31,4,2,0.6875
+4b-instruct,S0,5,3,2,0,0.5,23,20,7,4,0.5488
+4b-instruct,S0-G,4,2,2,0,0.5,25,25,3,3,1.0
+4b-instruct,S-0.25,5,3,2,0,0.5,28,32,2,6,0.2891
+8b,F0,11,11,0,0,1.0,36,32,5,1,0.2188
+8b,S0,11,9,2,0,0.5,30,24,7,1,0.0703
+8b,S0-G,10,9,1,0,1.0,31,27,7,3,0.3438
+8b,S-0.25,12,11,1,0,1.0,29,27,5,3,0.7266

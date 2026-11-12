@@ -1,0 +1,25 @@
+
+===== smoke  2026-11-08 21:46:11  code 95974b01ac79  args {'command': 'smoke', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+loading Qwen/Qwen3-4B-Instruct-2507 rev cdbee75f17c01a7cc42f958dc650907174af0554 as bfloat16 on cuda ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9481.24it/s]
+  loaded in 6s; 36 decoder layers, hidden 2560
+  ok    response mask matches the chat template ['Not found in'] 
+  ok    response mask matches the chat template ['Because of a'] 
+  main:q1383: 3075 prompt tokens, 92 new, 5.89s: 'To make the build log nicer by improving readability and layout, specifically by removing '
+  ok    greedy output identical twice [main:q1383] 
+  main:rm3265: 3070 prompt tokens, 71 new, 6.14s: 'The change was made because the initial submodule update may fail due to expired credentia'
+  ok    greedy output identical twice [main:rm3265] 
+  steered main:q1383: ' nothing nothing nothing nothing nothing nothing nothing nothing nothing nothing nothing n'
+  steered main:rm3265: ' nothing (nothing? nothing? nothing? nothing? nothing? nothing? nothing? nothing? nothing?'
+  ok    hook changes the output (2/2 prompts changed)
+  ok    no hook left on any layer after steering 
+  ok    removing the hook restores the unsteered output [main:q1383] 
+  ok    removing the hook restores the unsteered output [main:rm3265] 
+  ok    a zero vector through the hook gives the unsteered output 
+  ok    prefill: position before the last is untouched 
+  ok    prefill: last prompt position is changed 
+  peak VRAM 8.23 GiB
+  about 6.0s per answer -> main stage roughly 8.9 h (longer if steering makes long or looping answers)
+
+SMOKE OK

@@ -1,0 +1,3 @@
+arm,n_answerable,span_in_context,answered,n_unanswerable,unanswerable_answered,unanswerable_ids,overlap_cited,cross_pr_borrowing,correct_lower,partial_lower,wrong_lower,correct_upper,partial_upper,wrong_upper,model,ollama,gpu
+F0,15,12,10,7,4,rm14446 nr18354 nr13406 nr23239,10,0,9,1,0,9,1,0,qwen3:4b-instruct-2507-q4_K_M,0.40.4,"NVIDIA GeForce RTX 3050 Ti Laptop GPU, 610.60"
+S0-G,15,13,14,7,5,rm14446 rm13803 nr18354 nr13406 nr23239,10,3,8,5,1,12,1,1,qwen3:4b-instruct-2507-q4_K_M,0.40.4,"NVIDIA GeForce RTX 3050 Ti Laptop GPU, 610.60"

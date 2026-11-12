@@ -1,0 +1,13 @@
+project,condition,n,hit5,mrr5
+Django,"fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75",181,0.829,0.738
+Django,fixed_s512_o77|dense|alpha=0,181,0.978,0.937
+Django,"fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75",181,0.961,0.876
+Django,"struct_c256|bm25|alpha=0|k1=1.2,b=0.75",181,0.762,0.633
+Django,struct_c256|dense|alpha=0,181,0.972,0.909
+Django,"struct_c256|hybrid|alpha=0|k1=1.2,b=0.75",181,0.934,0.815
+SymPy,"fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75",75,0.720,0.637
+SymPy,fixed_s512_o77|dense|alpha=0,75,0.960,0.886
+SymPy,"fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75",75,0.907,0.802
+SymPy,"struct_c256|bm25|alpha=0|k1=1.2,b=0.75",75,0.760,0.626
+SymPy,struct_c256|dense|alpha=0,75,0.920,0.779
+SymPy,"struct_c256|hybrid|alpha=0|k1=1.2,b=0.75",75,0.907,0.721

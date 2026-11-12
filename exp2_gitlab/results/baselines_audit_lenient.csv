@@ -1,0 +1,31 @@
+arm,id,type,matched,first200
+P0,q2606,answerable,no information,"Based on the provided GitLab Runner merge request (PR) history, **there is no information explaining why a job's log now shows feature flags at its start.**
+
+The provided text only documents changes t"
+P0,q3137,answerable,does not contain,"Based on the provided text, **there is no explanation or discussion about why every numbered list item in CONTRIBUTING.md should start with ""1."" instead of counting up.**
+
+The text contains numerous r"
+P0,q3958,answerable,does not provide,"The runner-helper Alpine images install packages from an alternate repository **because the default Alpine Linux package repository does not provide the latest, secure versions of critical application"
+P0,q1583,answerable,does not mention,"Based on the provided text, **there is no explanation or discussion about why `ConfigExecOutput` was moved out to its own package.**
+
+The text only shows that `ConfigExecOutput` was *added* to the `ex"
+P0,rm2555,removed,no mention,"Based on the provided information, **there is no mention of the Windows Vagrant base box being held at version 2020.04.15.**
+
+The text only discusses the *base image* used, which is `StefanScherer/win"
+P0,rm3265,removed,no mention,"The question **""Why is git submodule init now run ahead of git submodule sync?""** is asking about a change in the order of Git submodule commands (`init` before `sync`), and the provided context does "
+P0,rm2968,removed,does not mention,"The provided text does not mention or explain the purpose of a `skip-changelog` label in the changelog generator's configuration.
+
+Therefore, based on the information given, **the reason for adding a "
+P0,rm4142,removed,does not contain,"The provided text does not contain any information about **why GOMAXPROCS is now derived from the container's CPU limit**.
+
+While the text discusses:
+- Docker CPU resource constraints and defaults (e."
+P0,rm7008,removed,does not mention,"The provided text does not mention or explain why the message for a successful Docker network disconnect was lowered from a warning.
+
+The content focuses on **why** the ID-based network disconnect was"
+P0,q6848,answerable,no mention,"The provided text does **not** explain why signals like `SIGUSR1` or `SIGHUP` count as success in the `script_legacy` step.
+
+### Why?
+
+- The content you've shared is focused on **GitLab Runner's syste"
+CB,q3246,answerable,does not provide,"As of now, there is **no official option** in the `gitlab-runner exec` command (or in the GitLab Runner itself) that allows users to **name the CI/CD configuration file** directly via the runner execu"

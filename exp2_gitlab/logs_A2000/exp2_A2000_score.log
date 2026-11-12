@@ -1,0 +1,5 @@
+arm | n_answerable | span_in_context | answered | abstained_with_span | overlap_cited | contain_cited | cite_precision | empty_answers | hedged | cross_pr_borrowing | n_unanswerable | unanswerable_answered | no_reason_answered | removed_answered
+F0 | 51 | 46 | 42 | 5 | 39 | 39 | 0.93 | 0 | 0 | 1 | 19 | 6 | 5 | 1
+C1 | 51 | 44 | 43 | 5 | 37 | 37 | 0.84 | 0 | 0 | 3 | 19 | 4 | 4 | 0
+
+85 answers to label -> exp2_gitlab_A2000\correctness_sheet.csv; rules in exp2_gitlab_A2000/LABELLING.txt. Do not open exp2_gitlab_A2000/keys/ before labelling.

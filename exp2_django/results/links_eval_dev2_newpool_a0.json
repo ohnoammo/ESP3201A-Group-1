@@ -1,0 +1,39 @@
+{
+ "split": "dev2",
+ "budget": 2560,
+ "packer": "exp1",
+ "links": "exp2",
+ "tokenizer": "Exp 1 chunking.count_tokens (regex \\w+|[^\\w\\s]) on rendered chunk text",
+ "git_commit": "0907083-dirty",
+ "note": "reporting only; alpha is tuned on the dev set, never on test",
+ "arms": {
+  "fixed_s512_o77|a=0": {
+   "answerable_n": 40,
+   "any_cov": 0.725,
+   "all_cov": 0.7,
+   "gold_pr_in_ctx": 0.875,
+   "headroom": 6,
+   "mean_chunks": 6.756,
+   "mean_linked": 0.0,
+   "mean_tokens": 2526.956,
+   "mean_qwen_tokens": 2745.067,
+   "mean_prs": 4.956,
+   "removed_quote_covered": 0,
+   "removed_excluded_leak": 0
+  },
+  "struct_c256|a=0": {
+   "answerable_n": 40,
+   "any_cov": 0.85,
+   "all_cov": 0.85,
+   "gold_pr_in_ctx": 1.0,
+   "headroom": 6,
+   "mean_chunks": 29.6,
+   "mean_linked": 0.0,
+   "mean_tokens": 2554.311,
+   "mean_qwen_tokens": 2785.978,
+   "mean_prs": 17.133,
+   "removed_quote_covered": 0,
+   "removed_excluded_leak": 0
+  }
+ }
+}

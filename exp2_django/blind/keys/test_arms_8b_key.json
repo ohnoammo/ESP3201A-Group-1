@@ -1,0 +1,3320 @@
+{
+ "shuffle_seed": 3690810919,
+ "results": [
+  "results/gen_test_arms_8b.jsonl"
+ ],
+ "key": {
+  "B001": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B002": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B003": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B004": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B005": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B006": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B007": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B008": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B009": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B010": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B011": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B012": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B013": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B014": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B015": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B016": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B017": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B018": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B019": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B020": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B021": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B022": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B023": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B024": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B025": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B026": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B027": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B028": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B029": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B030": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B031": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B032": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B033": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B034": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B035": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B036": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B037": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B038": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B039": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B040": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B041": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B042": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B043": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B044": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B045": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B046": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B047": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B048": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B049": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B050": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B051": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B052": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B053": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B054": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B055": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B056": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B057": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B058": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B059": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B060": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B061": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B062": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B063": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B064": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B065": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B066": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B067": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B068": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B069": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B070": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B071": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B072": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B073": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B074": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B075": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B076": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B077": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B078": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B079": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B080": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B081": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B082": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B083": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B084": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B085": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B086": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B087": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B088": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B089": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B090": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B091": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B092": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B093": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B094": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B095": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B096": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B097": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B098": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B099": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B100": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B101": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B102": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B103": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B104": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B105": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B106": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B107": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B108": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B109": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B110": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B111": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B112": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B113": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B114": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B115": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B116": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B117": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B118": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B119": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B120": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B121": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B122": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B123": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B124": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B125": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B126": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B127": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B128": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B129": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B130": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B131": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B132": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B133": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B134": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B135": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B136": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B137": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B138": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B139": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B140": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B141": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B142": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B143": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B144": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B145": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B146": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B147": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B148": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B149": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B150": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B151": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B152": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B153": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B154": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B155": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B156": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B157": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B158": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B159": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B160": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B161": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B162": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B163": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B164": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B165": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B166": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B167": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B168": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B169": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B170": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B171": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B172": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B173": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B174": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B175": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B176": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B177": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B178": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B179": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B180": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B181": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B182": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B183": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B184": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B185": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B186": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B187": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B188": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B189": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B190": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B191": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B192": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B193": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B194": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B195": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B196": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B197": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B198": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B199": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B200": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B201": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B202": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B203": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B204": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B205": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B206": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B207": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B208": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B209": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B210": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B211": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B212": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B213": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B214": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B215": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B216": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B217": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B218": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B219": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B220": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B221": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B222": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B223": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B224": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B225": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B226": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B227": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B228": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B229": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B230": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B231": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B232": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B233": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B234": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B235": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B236": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B237": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B238": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B239": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B240": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B241": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B242": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B243": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B244": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B245": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B246": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B247": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B248": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B249": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B250": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B251": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B252": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B253": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B254": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B255": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B256": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B257": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B258": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B259": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B260": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B261": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B262": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B263": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B264": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B265": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B266": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B267": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B268": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B269": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B270": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B271": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B272": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B273": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B274": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B275": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B276": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B277": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B278": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B279": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B280": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B281": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B282": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B283": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B284": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B285": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B286": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B287": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B288": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B289": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B290": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B291": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B292": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B293": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B294": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B295": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B296": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B297": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B298": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B299": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B300": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B301": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B302": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B303": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B304": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B305": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B306": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B307": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B308": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B309": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B310": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B311": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B312": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B313": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B314": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B315": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B316": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B317": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B318": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B319": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B320": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B321": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B322": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B323": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B324": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B325": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B326": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B327": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B328": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B329": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B330": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B331": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr9172",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B332": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B333": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B334": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B335": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B336": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B337": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B338": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B339": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B340": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B341": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B342": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B343": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B344": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B345": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B346": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B347": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B348": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B349": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B350": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B351": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B352": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B353": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B354": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13151",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B355": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B356": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B357": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B358": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B359": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B360": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B361": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B362": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B363": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B364": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B365": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B366": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B367": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B368": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B369": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15251",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B370": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B371": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B372": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B373": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B374": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B375": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B376": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B377": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B378": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B379": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B380": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B381": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B382": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B383": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B384": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B385": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B386": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B387": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B388": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B389": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B390": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B391": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B392": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B393": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B394": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B395": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B396": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B397": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B398": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15705",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B399": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B400": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B401": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B402": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B403": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16947",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B404": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B405": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B406": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15435",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B407": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B408": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B409": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B410": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14748",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B411": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B412": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13507",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B413": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B414": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B415": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14624",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B416": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B417": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B418": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B419": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B420": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B421": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B422": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B423": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B424": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B425": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15828",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B426": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B427": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B428": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B429": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B430": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B431": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B432": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B433": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B434": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B435": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B436": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B437": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8934",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B438": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B439": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B440": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16559",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B441": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B442": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B443": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14903",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B444": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B445": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B446": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B447": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B448": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B449": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B450": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B451": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B452": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B453": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B454": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B455": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B456": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B457": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16966",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B458": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B459": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9725",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B460": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B461": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B462": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B463": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B464": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B465": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B466": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16106",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B467": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B468": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B469": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B470": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B471": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B472": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B473": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B474": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B475": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B476": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12664",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B477": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14896",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B478": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B479": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B480": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr13883",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B481": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15475",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B482": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk16129",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B483": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9006",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B484": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B485": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B486": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B487": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk12342",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B488": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm11459",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B489": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B490": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14028",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B491": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B492": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B493": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10097",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B494": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13945",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B495": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15966",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B496": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr16062",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B497": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B498": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B499": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B500": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B501": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10453",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B502": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B503": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13749",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B504": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B505": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B506": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8534",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B507": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10972",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B508": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9789",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B509": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B510": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q10177",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B511": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B512": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B513": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14503",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B514": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B515": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11996",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B516": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14142",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B517": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10075",
+   "condition": "pack-struct-0-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B518": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B519": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm16129",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B520": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14989",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B521": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B522": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B523": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm9789",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B524": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B525": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13148",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B526": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q13671",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B527": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q14647",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B528": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm12342",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B529": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16824",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B530": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk11459",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B531": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11377",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B532": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr11371",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B533": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16244",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B534": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr14500",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B535": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10782",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B536": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B537": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q8596",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B538": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15354",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B539": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q9540",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B540": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rk9789",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B541": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15056",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B542": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16982",
+   "condition": "pack-fixed-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B543": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "rm13671",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B544": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr12736",
+   "condition": "pack-struct-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B545": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q15057",
+   "condition": "pack-struct-0-score:c3",
+   "model": "qwen3:8b"
+  },
+  "B546": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11863",
+   "condition": "pack-struct-0-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B547": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16343",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B548": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "nr10042",
+   "condition": "pack-struct-0.25-grouped:c3",
+   "model": "qwen3:8b"
+  },
+  "B549": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12441",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B550": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q11459",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  },
+  "B551": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q16129",
+   "condition": "pack-fixed-0-score:c",
+   "model": "qwen3:8b"
+  },
+  "B552": {
+   "file": "results/gen_test_arms_8b.jsonl",
+   "id": "q12342",
+   "condition": "pack-struct-0.25-grouped:c",
+   "model": "qwen3:8b"
+  }
+ }
+}

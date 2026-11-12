@@ -1,0 +1,17 @@
+model,prompt,arm,T1_answered,T1_overlap_cited,T2_answered,T2_overlap_cited,T3_answered,T3_overlap_cited
+4b-instruct,v2,F0,11,10,12,10,14,13
+4b-instruct,v2,S0,14,10,11,6,14,7
+4b-instruct,v2,S0-G,12,9,12,10,14,6
+4b-instruct,v2,S-0.25,15,11,14,13,13,4
+4b-instruct,v3,F0,10,10,11,9,14,12
+4b-instruct,v3,S0,13,10,9,6,10,4
+4b-instruct,v3,S0-G,12,10,10,9,12,6
+4b-instruct,v3,S-0.25,14,12,14,13,13,7
+8b,v2,F0,14,11,15,12,15,13
+8b,v2,S0,17,14,15,8,15,8
+8b,v2,S0-G,17,13,15,13,15,5
+8b,v2,S-0.25,17,9,16,13,15,7
+8b,v3,F0,13,11,15,11,12,10
+8b,v3,S0,17,11,14,7,14,6
+8b,v3,S0-G,17,12,13,9,14,6
+8b,v3,S-0.25,17,10,14,10,15,7

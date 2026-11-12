@@ -1,0 +1,8 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+33 rows to score (unanswerable)
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|##########| 560/560 [00:00<?, ?it/s]
+[transformers] The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints with different values, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning.
+[transformers] You are using a model of type `HHEMv2Config` to instantiate a model of type `HHEMv2`. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+Loading weights:   0%|          | 0/113 [00:00<?, ?it/s]Loading weights: 100%|##########| 113/113 [00:00<00:00, 5084.06it/s]
+  0%|          | 0/33 [00:00<?, ?it/s][transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (522 > 512). Running this sequence through the model will result in indexing errors
+ 24%|##4       | 8/33 [00:11<00:36,  1.45s/it] 45%|####5     | 15/33 [00:23<00:29,  1.62s/it] 73%|#######2  | 24/33 [00:33<00:12,  1.37s/it] 73%|#######2  | 24/33 [00:44<00:12,  1.37s/it] 79%|#######8  | 26/33 [01:34<00:37,  5.35s/it]100%|##########| 33/33 [01:43<00:00,  3.14s/it]

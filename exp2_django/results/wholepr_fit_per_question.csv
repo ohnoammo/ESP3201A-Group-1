@@ -1,0 +1,135 @@
+chunking,id,type,split,gold_pr,gold_tokens,gold_rank_pr,n_ranked_prs,n_packed,packed_tokens,gold_status,gold_span_in_context,qwen_tokens_v2,qwen_tokens_v3,packed
+fixed,q14503,answerable,test,14503,1618,1,71,4,2382,whole,True,2804,2882,14503:w 9206:w 10628:w 9343:w
+fixed,q14624,answerable,test,14624,738,1,69,4,2549,whole,True,3220,3298,14624:w 15949:w 16738:w 16964:w
+fixed,q16343,answerable,test,16343,3671,1,53,1,2560,truncated_rank1,False,3045,3123,16343:t
+fixed,q13148,answerable,test,13148,3781,1,62,1,2560,truncated_rank1,False,2642,2720,13148:t
+fixed,q16947,answerable,test,16947,890,1,60,3,2537,whole,True,3154,3232,16947:w 13035:w 14266:w
+fixed,q16982,answerable,test,16982,1045,2,45,1,2560,skipped,False,2581,2659,16942:t
+fixed,q13749,answerable,test,13749,1158,1,63,4,2390,whole,True,2786,2864,13749:w 8778:w 8750:w 9565:w
+fixed,q10972,answerable,test,10972,3784,1,56,1,2560,truncated_rank1,False,3049,3127,10972:t
+fixed,q8596,answerable,test,8596,806,1,69,4,2549,whole,True,3038,3116,8596:w 13356:w 9747:w 9336:w
+fixed,q16966,answerable,test,16966,3190,1,64,1,2560,truncated_rank1,True,3018,3096,16966:t
+fixed,q14647,answerable,test,14647,3195,1,59,1,2560,truncated_rank1,True,2663,2741,14647:t
+fixed,q15056,answerable,test,15056,720,1,84,5,2550,whole,True,3121,3199,15056:w 15475:w 8624:w 8866:w 15836:w
+fixed,q15435,answerable,test,15435,1775,1,68,4,2481,whole,True,3240,3318,15435:w 16441:w 11068:w 16433:w
+fixed,q15475,answerable,test,15475,954,1,61,3,2507,whole,True,3040,3118,15475:w 16780:w 9066:w
+fixed,q15057,answerable,test,15057,371,1,83,4,2544,whole,True,2741,2819,15057:w 10914:w 16404:w 11627:w
+fixed,q8934,answerable,test,8934,756,1,59,4,2362,whole,True,2672,2750,8934:w 8867:w 8835:w 8935:w
+fixed,q13945,answerable,test,13945,676,1,47,5,2559,whole,True,3006,3084,13945:w 13940:w 16844:w 13229:w 9565:w
+fixed,q8534,answerable,test,8534,1518,1,56,4,2480,whole,True,2832,2910,8534:w 12099:w 8088:w 7595:w
+fixed,q14903,answerable,test,14903,1305,1,44,3,2550,whole,True,2935,3013,14903:w 10317:w 15934:w
+fixed,q10097,answerable,test,10097,1064,23,61,4,2499,skipped,False,3093,3171,12184:w 12629:w 9481:w 13005:w
+fixed,q11377,answerable,test,11377,1255,2,78,1,2560,skipped,False,2560,2638,14019:t
+fixed,q10177,answerable,test,10177,992,,54,1,2560,not_retrieved,False,3211,3289,16417:t
+fixed,q9006,answerable,test,9006,3498,7,75,1,2560,skipped,False,3035,3113,16084:t
+fixed,q13151,answerable,test,13151,2617,1,58,1,2560,truncated_rank1,True,3092,3170,13151:t
+fixed,q12664,answerable,test,12664,2887,7,46,3,2455,skipped,False,2911,2989,10086:w 14109:w 10903:w
+fixed,q15828,answerable,test,15828,2233,4,43,1,2560,skipped,False,2955,3033,16560:t
+fixed,q15705,answerable,test,15705,524,1,65,6,2446,whole,True,2946,3024,15705:w 12965:w 16809:w 16071:w 14648:w 11746:w
+fixed,q9540,answerable,test,9540,689,1,40,4,2353,whole,True,2630,2708,9540:w 11132:w 13288:w 11779:w
+fixed,q14028,answerable,test,14028,1435,1,65,4,2547,whole,True,2988,3066,14028:w 14335:w 9047:w 14003:w
+fixed,q14748,answerable,test,14748,1737,1,58,3,2550,whole,True,2947,3025,14748:w 13794:w 16433:w
+fixed,q11996,answerable,test,11996,3075,1,46,1,2560,truncated_rank1,True,1876,1954,11996:t
+fixed,q12342,answerable,test,12342,3271,2,46,1,2560,skipped,False,2918,2996,13507:t
+fixed,q11863,answerable,test,11863,3232,3,59,6,2416,skipped,False,2790,2868,13346:w 13427:w 15083:w 16774:w 7853:w 16691:w
+fixed,q14896,answerable,test,14896,966,,42,1,2560,not_retrieved,False,2804,2882,15812:t
+fixed,q9789,answerable,test,9789,1297,3,57,3,2361,skipped,False,2759,2837,10053:w 9718:w 16389:w
+fixed,q16824,answerable,test,16824,1665,2,65,4,2528,skipped,False,2956,3034,7890:w 10782:w 10008:w 16841:w
+fixed,q16559,answerable,test,16559,2245,1,48,2,2471,whole,True,2871,2949,16559:w 13229:w
+fixed,q9725,answerable,test,9725,796,19,57,2,2537,skipped,False,2820,2898,14110:w 16071:w
+fixed,q13671,answerable,test,13671,3497,1,28,1,2560,truncated_rank1,True,2780,2858,13671:t
+fixed,q14142,answerable,test,14142,1798,1,44,4,2533,whole,True,3403,3481,14142:w 13751:w 15599:w 8112:w
+fixed,q15251,answerable,test,15251,463,1,67,4,2559,whole,True,3097,3175,15251:w 10306:w 17083:w 16071:w
+fixed,q16244,answerable,test,16244,495,1,60,4,2419,whole,True,3106,3184,16244:w 10715:w 13368:w 10794:w
+fixed,q15354,answerable,test,15354,1036,1,45,4,2420,whole,True,2916,2994,15354:w 11951:w 11857:w 8109:w
+fixed,q16129,answerable,test,16129,1724,1,31,3,2553,whole,True,3247,3325,16129:w 15852:w 13726:w
+fixed,q11459,answerable,test,11459,2933,2,52,6,2509,skipped,False,3099,3177,7561:w 15863:w 16485:w 11206:w 10125:w 13778:w
+fixed,q16106,answerable,test,16106,1026,1,53,6,2456,whole,True,2753,2831,16106:w 16165:w 13538:w 7608:w 10399:w 14950:w
+fixed,q13507,answerable,test,13507,2599,10,58,3,2137,skipped,False,2703,2781,12754:w 10903:w 8252:w
+fixed,q12441,answerable,test,12441,893,2,62,3,2438,whole,True,2777,2855,11880:w 12441:w 8708:w
+fixed,q15966,answerable,test,15966,2184,1,53,2,2415,whole,True,3133,3211,15966:w 7608:w
+fixed,q14989,answerable,test,14989,2201,1,44,2,2437,whole,True,2955,3033,14989:w 16554:w
+fixed,nr14500,no_reason,test,14500,406,1,42,2,2426,whole,,2887,2965,14500:w 13890:w
+fixed,nr12736,no_reason,test,12736,245,1,53,3,2530,whole,,3076,3154,12736:w 10779:w 10903:w
+fixed,nr10453,no_reason,test,10453,246,1,46,3,2425,whole,,2891,2969,10453:w 13890:w 12797:w
+fixed,nr9172,no_reason,test,9172,352,1,50,5,2428,whole,,3043,3121,9172:w 16601:w 10085:w 10511:w 11746:w
+fixed,nr13883,no_reason,test,13883,326,1,60,3,2446,whole,,2704,2782,13883:w 10339:w 15979:w
+fixed,rm13671,removed,test,13671,3497,,31,4,2429,not_retrieved,,2678,2756,9652:w 13325:w 16260:w 14287:w
+fixed,rm16129,removed,test,16129,1724,,29,1,2560,not_retrieved,,3046,3124,12646:t
+fixed,rm9789,removed,test,9789,1297,,58,3,2519,not_retrieved,,3032,3110,10053:w 12754:w 14513:w
+fixed,rm11459,removed,test,11459,2933,,56,1,2560,not_retrieved,,3176,3254,16463:t
+fixed,rm12342,removed,test,12342,3271,,49,1,2560,not_retrieved,,2918,2996,13507:t
+fixed,nr11371,no_reason,dev,11371,86,1,65,6,2392,whole,,2813,2891,11371:w 15046:w 8228:w 11174:w 16351:w 16385:w
+fixed,nr10075,no_reason,dev,10075,319,1,65,7,2546,whole,,2803,2881,10075:w 9041:w 15437:w 11640:w 8444:w 8154:w 13229:w
+fixed,nr16062,no_reason,dev,16062,74,1,76,7,2549,whole,,3039,3117,16062:w 16068:w 14090:w 14118:w 15913:w 16404:w 11425:w
+fixed,nr10042,no_reason,dev,10042,404,1,69,6,2454,whole,,3059,3137,10042:w 9890:w 14493:w 8939:w 9020:w 11425:w
+fixed,nr10782,no_reason,dev,10782,378,1,62,6,2547,whole,,3000,3078,10782:w 13821:w 13725:w 11174:w 11371:w 16648:w
+fixed,rk16129,removed_kept,test,16129,1558,1,30,4,2546,whole,,3331,3409,16129:w 15852:w 13726:w 14041:w
+fixed,rk9789,removed_kept,test,9789,1237,2,58,3,2439,whole,,2834,2912,10053:w 9789:w 16080:w
+structural,q14503,answerable,test,14503,1618,1,62,3,2434,whole,True,2772,2850,14503:w 11624:w 16065:w
+structural,q14624,answerable,test,14624,738,1,56,3,2500,whole,True,2973,3051,14624:w 15949:w 15441:w
+structural,q16343,answerable,test,16343,3671,1,37,1,2560,truncated_rank1,False,3045,3123,16343:t
+structural,q13148,answerable,test,13148,3781,1,58,1,2560,truncated_rank1,False,2642,2720,13148:t
+structural,q16947,answerable,test,16947,890,1,64,5,2545,whole,True,3017,3095,16947:w 13035:w 10967:w 9115:w 8774:w
+structural,q16982,answerable,test,16982,1045,1,40,3,2235,whole,True,2604,2682,16982:w 10282:w 15465:w
+structural,q13749,answerable,test,13749,1158,1,44,2,2533,whole,True,2822,2900,13749:w 13346:w
+structural,q10972,answerable,test,10972,3784,1,57,1,2560,truncated_rank1,False,3049,3127,10972:t
+structural,q8596,answerable,test,8596,806,1,63,2,2495,whole,True,3070,3148,8596:w 16661:w
+structural,q16966,answerable,test,16966,3190,1,39,1,2560,truncated_rank1,True,3018,3096,16966:t
+structural,q14647,answerable,test,14647,3195,2,44,3,2406,skipped,False,2732,2810,12169:w 16610:w 15599:w
+structural,q15056,answerable,test,15056,720,3,73,3,2495,skipped,False,3105,3183,16780:w 15475:w 13167:w
+structural,q15435,answerable,test,15435,1775,1,50,2,2426,whole,True,3076,3154,15435:w 13794:w
+structural,q15475,answerable,test,15475,954,1,52,3,2515,whole,True,3155,3233,15475:w 16780:w 16582:w
+structural,q15057,answerable,test,15057,371,1,78,5,2531,whole,True,2911,2989,15057:w 14090:w 10184:w 9886:w 15894:w
+structural,q8934,answerable,test,8934,756,1,55,4,2362,whole,True,2672,2750,8934:w 8835:w 8935:w 8867:w
+structural,q13945,answerable,test,13945,676,1,48,5,2555,whole,True,2989,3067,13945:w 13940:w 16844:w 13386:w 9954:w
+structural,q8534,answerable,test,8534,1518,1,36,3,2511,whole,True,2750,2828,8534:w 12099:w 14146:w
+structural,q14903,answerable,test,14903,1305,1,38,5,2407,whole,True,2690,2768,14903:w 11730:w 11880:w 12065:w 10344:w
+structural,q10097,answerable,test,10097,1064,1,65,5,2494,whole,True,2987,3065,10097:w 15807:w 12629:w 12565:w 12363:w
+structural,q11377,answerable,test,11377,1255,4,61,1,2560,skipped,False,2560,2638,14019:t
+structural,q10177,answerable,test,10177,992,,51,1,2560,not_retrieved,False,2680,2758,12617:t
+structural,q9006,answerable,test,9006,3498,1,80,1,2560,truncated_rank1,False,3155,3233,9006:t
+structural,q13151,answerable,test,13151,2617,1,51,1,2560,truncated_rank1,True,3092,3170,13151:t
+structural,q12664,answerable,test,12664,2887,15,42,3,2462,skipped,False,3015,3093,10086:w 10063:w 11846:w
+structural,q15828,answerable,test,15828,2233,1,35,2,2360,whole,True,2834,2912,15828:w 10344:w
+structural,q15705,answerable,test,15705,524,1,58,4,2457,whole,True,2574,2652,15705:w 8735:w 12965:w 15386:w
+structural,q9540,answerable,test,9540,689,1,31,4,2353,whole,True,2630,2708,9540:w 11132:w 13288:w 11779:w
+structural,q14028,answerable,test,14028,1435,5,68,3,2518,skipped,False,2704,2782,14456:w 8161:w 15148:w
+structural,q14748,answerable,test,14748,1737,1,51,2,2559,whole,True,2981,3059,14748:w 16527:w
+structural,q11996,answerable,test,11996,3075,1,51,1,2560,truncated_rank1,True,1876,1954,11996:t
+structural,q12342,answerable,test,12342,3271,2,39,1,2560,skipped,False,2918,2996,13507:t
+structural,q11863,answerable,test,11863,3232,2,37,4,2363,skipped,False,2655,2733,13346:w 15883:w 15083:w 16774:w
+structural,q14896,answerable,test,14896,966,,37,3,2488,not_retrieved,False,2950,3028,11527:w 11299:w 11765:w
+structural,q9789,answerable,test,9789,1297,1,51,3,2421,whole,True,2858,2936,9789:w 10053:w 11141:w
+structural,q16824,answerable,test,16824,1665,1,50,3,2206,whole,True,2547,2625,16824:w 10782:w 16841:w
+structural,q16559,answerable,test,16559,2245,1,42,3,2539,whole,True,2947,3025,16559:w 13229:w 14193:w
+structural,q9725,answerable,test,9725,796,1,66,4,2494,whole,True,2890,2968,9725:w 10740:w 12543:w 15386:w
+structural,q13671,answerable,test,13671,3497,2,27,4,2524,skipped,False,3107,3185,10558:w 16386:w 13753:w 13089:w
+structural,q14142,answerable,test,14142,1798,1,42,3,2412,whole,True,3231,3309,14142:w 13751:w 15848:w
+structural,q15251,answerable,test,15251,463,1,55,7,2533,whole,True,3250,3328,15251:w 15359:w 7680:w 10095:w 13517:w 17083:w 13274:w
+structural,q16244,answerable,test,16244,495,1,56,4,2366,whole,True,3008,3086,16244:w 10715:w 8258:w 10794:w
+structural,q15354,answerable,test,15354,1036,1,39,3,2520,whole,True,2974,3052,15354:w 11951:w 14007:w
+structural,q16129,answerable,test,16129,1724,1,19,3,2422,whole,True,3120,3198,16129:w 15852:w 15599:w
+structural,q11459,answerable,test,11459,2933,2,36,7,2495,skipped,False,3302,3380,7561:w 15863:w 16485:w 10125:w 14492:w 16601:w 16691:w
+structural,q16106,answerable,test,16106,1026,1,39,6,2497,whole,True,2584,2662,16106:w 13538:w 14950:w 16165:w 16152:w 15187:w
+structural,q13507,answerable,test,13507,2599,2,50,1,2560,skipped,False,2808,2886,15812:t
+structural,q12441,answerable,test,12441,893,2,56,4,2521,whole,True,2893,2971,11880:w 12441:w 11372:w 15467:w
+structural,q15966,answerable,test,15966,2184,1,45,2,2415,whole,True,3133,3211,15966:w 7608:w
+structural,q14989,answerable,test,14989,2201,1,29,2,2269,whole,True,2747,2825,14989:w 14193:w
+structural,nr14500,no_reason,test,14500,406,1,26,2,2426,whole,,2887,2965,14500:w 13890:w
+structural,nr12736,no_reason,test,12736,245,1,54,3,2477,whole,,2886,2964,12736:w 12708:w 11299:w
+structural,nr10453,no_reason,test,10453,246,1,38,3,2425,whole,,2891,2969,10453:w 13890:w 12797:w
+structural,nr9172,no_reason,test,9172,352,1,45,6,2510,whole,,3254,3332,9172:w 10085:w 16601:w 13760:w 11746:w 7917:w
+structural,nr13883,no_reason,test,13883,326,1,55,3,2445,whole,,2681,2759,13883:w 10339:w 9096:w
+structural,rm13671,removed,test,13671,3497,,31,2,2517,not_retrieved,,2672,2750,16386:w 11829:w
+structural,rm16129,removed,test,16129,1724,,23,1,2560,not_retrieved,,3046,3124,12646:t
+structural,rm9789,removed,test,9789,1297,,60,4,2446,not_retrieved,,3029,3107,10053:w 13820:w 11141:w 13996:w
+structural,rm11459,removed,test,11459,2933,,37,7,2396,not_retrieved,,3186,3264,15863:w 16485:w 10125:w 14492:w 9468:w 7917:w 16691:w
+structural,rm12342,removed,test,12342,3271,,42,1,2560,not_retrieved,,2918,2996,13507:t
+structural,nr11371,no_reason,dev,11371,86,2,48,4,2438,whole,,2879,2957,11174:w 11371:w 12002:w 14530:w
+structural,nr10075,no_reason,dev,10075,319,1,51,4,2499,whole,,2864,2942,10075:w 8524:w 15873:w 15437:w
+structural,nr16062,no_reason,dev,16062,74,1,60,6,2358,whole,,2958,3036,16062:w 16068:w 14118:w 16058:w 14090:w 14715:w
+structural,nr10042,no_reason,dev,10042,404,1,46,4,2431,whole,,2885,2963,10042:w 9890:w 10048:w 16646:w
+structural,nr10782,no_reason,dev,10782,378,1,53,5,2554,whole,,3045,3123,10782:w 13821:w 13725:w 16586:w 12621:w
+structural,rk16129,removed_kept,test,16129,1558,1,22,3,2256,whole,,2961,3039,16129:w 15852:w 15599:w
+structural,rk9789,removed_kept,test,9789,1237,1,58,4,2505,whole,,2987,3065,9789:w 10053:w 11141:w 11160:w

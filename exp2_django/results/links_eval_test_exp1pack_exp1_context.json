@@ -1,0 +1,67 @@
+{
+ "split": "test",
+ "budget": 2560,
+ "packer": "exp1",
+ "links": "exp1_context",
+ "tokenizer": "Exp 1 chunking.count_tokens (regex \\w+|[^\\w\\s]) on rendered chunk text",
+ "git_commit": "3e4c4b8-dirty",
+ "note": "reporting only; alpha is tuned on the dev set, never on test",
+ "arms": {
+  "struct_c256|a=0": {
+   "answerable_n": 50,
+   "any_cov": 0.86,
+   "all_cov": 0.84,
+   "gold_pr_in_ctx": 0.96,
+   "headroom": 5,
+   "mean_chunks": 29.517,
+   "mean_linked": 0.0,
+   "mean_tokens": 2554.8,
+   "mean_qwen_tokens": 2790.867,
+   "mean_prs": 15.8,
+   "removed_quote_covered": 0,
+   "removed_excluded_leak": 0
+  },
+  "struct_c256|a=0.25": {
+   "answerable_n": 50,
+   "any_cov": 0.86,
+   "all_cov": 0.84,
+   "gold_pr_in_ctx": 0.96,
+   "headroom": 5,
+   "mean_chunks": 29.583,
+   "mean_linked": 1.083,
+   "mean_tokens": 2555.083,
+   "mean_qwen_tokens": 2797.183,
+   "mean_prs": 15.2,
+   "removed_quote_covered": 0,
+   "removed_excluded_leak": 0
+  },
+  "struct_c256|a=0.5": {
+   "answerable_n": 50,
+   "any_cov": 0.86,
+   "all_cov": 0.84,
+   "gold_pr_in_ctx": 0.96,
+   "headroom": 5,
+   "mean_chunks": 30.117,
+   "mean_linked": 2.683,
+   "mean_tokens": 2555.583,
+   "mean_qwen_tokens": 2793.3,
+   "mean_prs": 14.883,
+   "removed_quote_covered": 0,
+   "removed_excluded_leak": 0
+  },
+  "struct_c256|a=1": {
+   "answerable_n": 50,
+   "any_cov": 0.86,
+   "all_cov": 0.84,
+   "gold_pr_in_ctx": 0.96,
+   "headroom": 5,
+   "mean_chunks": 30.933,
+   "mean_linked": 5.8,
+   "mean_tokens": 2556.483,
+   "mean_qwen_tokens": 2793.867,
+   "mean_prs": 14.417,
+   "removed_quote_covered": 0,
+   "removed_excluded_leak": 0
+  }
+ }
+}

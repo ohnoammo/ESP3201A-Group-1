@@ -1,0 +1,9 @@
+split,group,n,answered_strict,answered_lenient,overlap_cited,correct_provisional,partial_provisional,wrong_provisional,answered_unlabelled,ids
+span_in_context,in context,47,42,42,40,33,7,2,0,
+span_in_context,not in context,5,1,1,0,0,0,1,0,q2606 q3137 q1189 q1583 q6848
+gold_rank,top 5,51,43,43,40,33,7,3,0,
+gold_rank,lower or absent,1,0,0,0,0,0,0,0,q3137
+gold_rank_fine,rank 1,44,39,39,37,30,7,2,0,
+gold_rank_fine,rank 2-5,7,4,4,3,3,0,1,0,
+gold_rank_fine,lower or absent,1,0,0,0,0,0,0,0,q3137
+all,all answerables,52,43,43,40,33,7,3,0,

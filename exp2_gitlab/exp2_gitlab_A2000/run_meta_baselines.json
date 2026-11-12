@@ -1,0 +1,125 @@
+{
+ "rule": "tuning_rule_baselines.md",
+ "created": "2026-11-11 22:23:15",
+ "updated": "2026-11-11 22:23:15",
+ "git_commit_at_meta": "f33ead5",
+ "ollama_version_api": "0.40.4",
+ "ollama_version_cli": "ollama version is 0.40.4",
+ "model": "qwen3:4b-instruct-2507-q4_K_M",
+ "model_digest": "0edcdef34593",
+ "ollama_show": {
+  "parameters": "repeat_penalty                 1\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.7\ntop_k                          20\ntop_p                          0.8",
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "4.0B",
+   "quantization_level": "Q4_K_M"
+  },
+  "modified_at": "2026-10-15T05:12:26.5251291+08:00",
+  "capabilities": [
+   "tools",
+   "thinking",
+   "completion"
+  ]
+ },
+ "f0_reference": {
+  "ollama_version": "0.40.4",
+  "model_digest": "0edcdef34593",
+  "source": "all 70 rows of exp2_gitlab_A2000/gen_F0.jsonl agree"
+ },
+ "matches_f0": {
+  "ollama_version": true,
+  "model_digest": true
+ },
+ "request": {
+  "endpoint": "/api/chat",
+  "think": false,
+  "stream": false,
+  "options": {
+   "temperature": 0,
+   "seed": 42,
+   "num_ctx": 8192,
+   "num_predict": 512
+  },
+  "timeout_s": 900,
+  "source": "exp2_gitlab_scale.cmd_generate + gen_F0.jsonl options"
+ },
+ "prompts": {
+  "P0": {
+   "system": "You are a helpful assistant. Use the following context from GitLab Runner merge requests to answer the question.",
+   "system_sha1": "74880d5f88",
+   "user": "{context}\n\nQuestion: {question}",
+   "context": "F0's chunks (exp2_gitlab_scale.pack, asserted equal), exp2_gitlab_scale.format_context"
+  },
+  "CB": {
+   "system": "You are a helpful assistant. Answer the question about the GitLab Runner project.",
+   "system_sha1": "a61187ec8b",
+   "user": "Question: {question}",
+   "context": null
+  },
+  "F0": {
+   "prompt_sha1": "072bd24371",
+   "based_on": "Exp 2 prompt v3 (c3, sha1 759a5e1219), 'Django' -> 'GitLab Runner'"
+  }
+ },
+ "machine": {
+  "host": "TX_PC",
+  "os": "Windows-10-10.0.26200-SP0",
+  "gpu": "NVIDIA GeForce RTX 5070, 616.56"
+ },
+ "python": "3.11.0",
+ "jobs": {
+  "gen_F0_repro10": [
+   {
+    "start": "2026-11-11 22:28:24",
+    "git_commit": "da8e9d8",
+    "ollama_version": "0.40.4",
+    "model_digest": "0edcdef34593",
+    "n_todo": 10,
+    "n_total": 10,
+    "end": "2026-11-11 22:29:08",
+    "n_rows_after": 10
+   }
+  ],
+  "gen_P0": [
+   {
+    "start": "2026-11-11 22:29:50",
+    "git_commit": "79688e3",
+    "ollama_version": "0.40.4",
+    "model_digest": "0edcdef34593",
+    "n_todo": 70,
+    "n_total": 70,
+    "end": "2026-11-11 22:38:29",
+    "n_rows_after": 70
+   }
+  ],
+  "gen_CB": [
+   {
+    "start": "2026-11-11 22:40:12",
+    "git_commit": "8668f0e",
+    "ollama_version": "0.40.4",
+    "model_digest": "0edcdef34593",
+    "n_todo": 70,
+    "n_total": 70,
+    "end": "2026-11-11 22:47:57",
+    "n_rows_after": 70
+   }
+  ],
+  "gen_F0_rerun": [
+   {
+    "start": "2026-11-11 23:46:57",
+    "git_commit": "f0cf8e5",
+    "ollama_version": "0.40.4",
+    "model_digest": "0edcdef34593",
+    "n_todo": 70,
+    "n_total": 70,
+    "end": "2026-11-11 23:50:19",
+    "n_rows_after": 70
+   }
+  ]
+ }
+}

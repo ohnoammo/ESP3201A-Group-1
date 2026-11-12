@@ -1,0 +1,71 @@
+{
+ "tests": {
+  "reason_quote_in_other_mr": "twin and removed pairs: a gold quote shares >= 8 consecutive words (or all of a quote of >= 5 words) with a context chunk from another MR",
+  "similar_question_mr_in_context": "twin pairs: another of the 70 questions' MR is in the twin context and the two gold answers have content-word Jaccard >= 0.3",
+  "answer_words_in_twin_context": "twin pairs: >= 80% of the gold answer's content words occur somewhere in the twin context (weak, lexical)",
+  "title_states_reason": "WHAT-as-WHY pairs: the MR title contains a reason marker (because, so that, to avoid, to prevent, to allow, to support, to enable, to ensure, due to, since...)",
+  "title_overlaps_gold_reason": "WHAT-as-WHY pairs: the title shares >= 2 content words with the gold answer that do not occur in the question (topic words removed)",
+  "rejected_is_hedged": "stored-F0 rejections that contain 'Not found' plus other text",
+  "stored_answer_cites_own_mr": "stored-F0 rejections that cite the question's own MR",
+  "cited_chunk_overlaps_only": "grounding pairs whose cited gold chunk only overlaps (does not contain) a quote",
+  "span_partly_in_context": "grounding pairs where span_in_context.any is true but .all is false"
+ },
+ "flags": [
+  {
+   "pair_id": "unans:rm3265",
+   "flag": "title_states_reason",
+   "detail": "the MR title contains a reason marker: 'Init submodules prior to sync to ensure submodules remote URL configuration is properly synchronized'"
+  },
+  {
+   "pair_id": "unans:rm4142",
+   "flag": "title_overlaps_gold_reason",
+   "detail": "the title shares 2 content words with the gold answer that are not in the question ['quotas', 'set']: 'Automatically set GOMAXPROCS based on CPU Quotas'"
+  },
+  {
+   "pair_id": "unans:nr1781",
+   "flag": "stored_answer_cites_own_mr",
+   "detail": "the stored F0 answer cites the question's own MR: the no-reason label rests on a human judgement that this text is not the reason"
+  },
+  {
+   "pair_id": "unans:nr3805",
+   "flag": "stored_answer_cites_own_mr",
+   "detail": "the stored F0 answer cites the question's own MR: the no-reason label rests on a human judgement that this text is not the reason"
+  },
+  {
+   "pair_id": "twin:q589",
+   "flag": "answer_words_in_twin_context",
+   "detail": "8/10 of the gold answer's content words occur in the twin context (weak signal)"
+  },
+  {
+   "pair_id": "twin:q3246",
+   "flag": "answer_words_in_twin_context",
+   "detail": "9/11 of the gold answer's content words occur in the twin context (weak signal)"
+  },
+  {
+   "pair_id": "g_nf:q7533",
+   "flag": "span_partly_in_context",
+   "detail": "only some of the gold quotes are fully inside the context"
+  },
+  {
+   "pair_id": "g_what:q7533",
+   "flag": "span_partly_in_context",
+   "detail": "only some of the gold quotes are fully inside the context"
+  },
+  {
+   "pair_id": "g_what:q2211",
+   "flag": "title_overlaps_gold_reason",
+   "detail": "the title shares 2 content words with the gold answer that are not in the question ['redundant', 'tests']: 'Remove redundant docker executor integration tests'"
+  },
+  {
+   "pair_id": "g_what:q3831",
+   "flag": "title_overlaps_gold_reason",
+   "detail": "the title shares 3 content words with the gold answer that are not in the question ['output', 'progress', 'unwanted']: 'Powershell: fix unwanted progress streams leaking to output'"
+  },
+  {
+   "pair_id": "g_what:q6695",
+   "flag": "title_overlaps_gold_reason",
+   "detail": "the title shares 2 content words with the gold answer that are not in the question ['lazy', 'partial']: 'Pass proactiveAuth to git checkout for partial-clone lazy fetches'"
+  }
+ ],
+ "note": "Flags are automatic and informational; no flagged pair is removed or edited (pairs are built by script only)."
+}

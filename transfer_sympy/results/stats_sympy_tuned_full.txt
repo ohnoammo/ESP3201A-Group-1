@@ -1,0 +1,122 @@
+=== results/swe_exp1_sympy_tuned_per_query.csv (query set: full) ===
+condition                                             n   Hit@5           95% CI   MRR@5           95% CI
+fixed_s137_o0|bm25|alpha=0|k1=1.2,b=0.75             75   0.760  [0.667, 0.853]   0.607  [0.517, 0.701]
+fixed_s137_o0|dense|alpha=0                          75   0.920  [0.853, 0.973]   0.794  [0.710, 0.869]
+fixed_s137_o0|dense|alpha=1                          75   0.920  [0.853, 0.973]   0.794  [0.710, 0.869]
+fixed_s137_o0|hybrid|alpha=0.5|k1=1.2,b=0.75         75   0.907  [0.840, 0.973]   0.760  [0.682, 0.842]
+fixed_s137_o0|hybrid|alpha=0|k1=1.2,b=0.75           75   0.907  [0.840, 0.973]   0.760  [0.682, 0.842]
+fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75            75   0.720  [0.627, 0.813]   0.637  [0.538, 0.732]
+fixed_s512_o77|dense|alpha=0                         75   0.960  [0.907, 1.000]   0.886  [0.822, 0.942]
+fixed_s512_o77|dense|alpha=1                         75   0.960  [0.907, 1.000]   0.886  [0.822, 0.942]
+fixed_s512_o77|hybrid|alpha=0.5|k1=1.2,b=0.75        75   0.907  [0.840, 0.973]   0.802  [0.726, 0.877]
+fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75          75   0.907  [0.840, 0.973]   0.802  [0.726, 0.877]
+struct_c256|bm25|alpha=0|k1=1.2,b=0.75               75   0.760  [0.667, 0.853]   0.626  [0.528, 0.721]
+struct_c256|dense|alpha=0                            75   0.920  [0.853, 0.973]   0.779  [0.700, 0.851]
+struct_c256|dense|alpha=0.5                          75   0.920  [0.853, 0.973]   0.779  [0.700, 0.851]
+struct_c256|hybrid|alpha=0|k1=1.2,b=0.75             75   0.907  [0.840, 0.973]   0.721  [0.643, 0.805]
+
+=== Retrievers compared within each chunking (same relation factor) ===
+  struct_c256|bm25|alpha=0|k1=1.2,b=0.75  vs  struct_c256|dense|alpha=0  (n=75)
+    Hit@5 0.760 vs 0.920: McNemar p=0.004 (2 only-A, 14 only-B) -> significant
+    MRR@5 0.626 vs 0.779: diff 95% CI [-0.252, -0.063], permutation p=0.003 -> significant
+    budget line recall 0.367 vs 0.486 (n=75): diff 95% CI [-0.198, -0.045], permutation p=0.004 -> significant
+  struct_c256|bm25|alpha=0|k1=1.2,b=0.75  vs  struct_c256|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.760 vs 0.907: McNemar p=0.003 (1 only-A, 12 only-B) -> significant
+    MRR@5 0.626 vs 0.721: diff 95% CI [-0.168, -0.028], permutation p=0.010 -> significant
+    budget line recall 0.367 vs 0.469 (n=75): diff 95% CI [-0.161, -0.040], permutation p=0.002 -> significant
+  struct_c256|dense|alpha=0  vs  struct_c256|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.920 vs 0.907: McNemar p=1.000 (3 only-A, 2 only-B) -> not significant
+    MRR@5 0.779 vs 0.721: diff 95% CI [-0.012, +0.127], permutation p=0.111 -> not significant
+    budget line recall 0.486 vs 0.469 (n=75): diff 95% CI [-0.031, +0.065], permutation p=0.495 -> not significant
+  fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75  vs  fixed_s512_o77|dense|alpha=0  (n=75)
+    Hit@5 0.720 vs 0.960: McNemar p=0.000 (0 only-A, 18 only-B) -> significant
+    MRR@5 0.637 vs 0.886: diff 95% CI [-0.339, -0.162], permutation p=0.000 -> significant
+    budget line recall 0.575 vs 0.781 (n=75): diff 95% CI [-0.309, -0.107], permutation p=0.000 -> significant
+  fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75  vs  fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.720 vs 0.907: McNemar p=0.000 (0 only-A, 14 only-B) -> significant
+    MRR@5 0.637 vs 0.802: diff 95% CI [-0.234, -0.100], permutation p=0.000 -> significant
+    budget line recall 0.575 vs 0.739 (n=75): diff 95% CI [-0.252, -0.084], permutation p=0.000 -> significant
+  fixed_s512_o77|dense|alpha=0  vs  fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.960 vs 0.907: McNemar p=0.125 (4 only-A, 0 only-B) -> not significant
+    MRR@5 0.886 vs 0.802: diff 95% CI [+0.028, +0.143], permutation p=0.007 -> significant
+    budget line recall 0.781 vs 0.739 (n=75): diff 95% CI [-0.026, +0.114], permutation p=0.267 -> not significant
+  fixed_s137_o0|bm25|alpha=0|k1=1.2,b=0.75  vs  fixed_s137_o0|dense|alpha=0  (n=75)
+    Hit@5 0.760 vs 0.920: McNemar p=0.004 (2 only-A, 14 only-B) -> significant
+    MRR@5 0.607 vs 0.794: diff 95% CI [-0.292, -0.081], permutation p=0.001 -> significant
+    budget line recall 0.398 vs 0.544 (n=75): diff 95% CI [-0.215, -0.077], permutation p=0.000 -> significant
+  fixed_s137_o0|bm25|alpha=0|k1=1.2,b=0.75  vs  fixed_s137_o0|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.760 vs 0.907: McNemar p=0.001 (0 only-A, 11 only-B) -> significant
+    MRR@5 0.607 vs 0.760: diff 95% CI [-0.222, -0.089], permutation p=0.000 -> significant
+    budget line recall 0.398 vs 0.523 (n=75): diff 95% CI [-0.184, -0.070], permutation p=0.000 -> significant
+  fixed_s137_o0|dense|alpha=0  vs  fixed_s137_o0|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.920 vs 0.907: McNemar p=1.000 (5 only-A, 4 only-B) -> not significant
+    MRR@5 0.794 vs 0.760: diff 95% CI [-0.048, +0.106], permutation p=0.423 -> not significant
+    budget line recall 0.544 vs 0.523 (n=75): diff 95% CI [-0.017, +0.060], permutation p=0.302 -> not significant
+
+=== Relation factor: links (alpha > 0) vs no links (alpha 0), same chunking + retriever ===
+  struct_c256|dense|alpha=0.5  vs  struct_c256|dense|alpha=0  (n=75)
+    Hit@5 0.920 vs 0.920: McNemar p=1.000 (0 only-A, 0 only-B) -> not significant
+    MRR@5 0.779 vs 0.779: diff 95% CI [+0.000, +0.000], permutation p=1.000 -> not significant
+    budget line recall 0.786 vs 0.486 (n=75): diff 95% CI [+0.203, +0.396], permutation p=0.000 -> significant
+  fixed_s512_o77|dense|alpha=1  vs  fixed_s512_o77|dense|alpha=0  (n=75)
+    Hit@5 0.960 vs 0.960: McNemar p=1.000 (0 only-A, 0 only-B) -> not significant
+    MRR@5 0.886 vs 0.886: diff 95% CI [+0.000, +0.000], permutation p=1.000 -> not significant
+    budget line recall 0.836 vs 0.781 (n=75): diff 95% CI [-0.015, +0.124], permutation p=0.136 -> not significant
+  fixed_s512_o77|hybrid|alpha=0.5|k1=1.2,b=0.75  vs  fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.907 vs 0.907: McNemar p=1.000 (0 only-A, 0 only-B) -> not significant
+    MRR@5 0.802 vs 0.802: diff 95% CI [+0.000, +0.000], permutation p=1.000 -> not significant
+    budget line recall 0.755 vs 0.739 (n=75): diff 95% CI [-0.037, +0.068], permutation p=0.557 -> not significant
+  fixed_s137_o0|dense|alpha=1  vs  fixed_s137_o0|dense|alpha=0  (n=75)
+    Hit@5 0.920 vs 0.920: McNemar p=1.000 (0 only-A, 0 only-B) -> not significant
+    MRR@5 0.794 vs 0.794: diff 95% CI [+0.000, +0.000], permutation p=1.000 -> not significant
+    budget line recall 0.701 vs 0.544 (n=75): diff 95% CI [+0.096, +0.216], permutation p=0.000 -> significant
+  fixed_s137_o0|hybrid|alpha=0.5|k1=1.2,b=0.75  vs  fixed_s137_o0|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.907 vs 0.907: McNemar p=1.000 (0 only-A, 0 only-B) -> not significant
+    MRR@5 0.760 vs 0.760: diff 95% CI [+0.000, +0.000], permutation p=1.000 -> not significant
+    budget line recall 0.676 vs 0.523 (n=75): diff 95% CI [+0.095, +0.210], permutation p=0.000 -> significant
+
+=== Chunkings compared within each retriever ===
+  fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75  vs  struct_c256|bm25|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.720 vs 0.760: McNemar p=0.375 (1 only-A, 4 only-B) -> not significant
+    MRR@5 0.637 vs 0.626: diff 95% CI [-0.050, +0.072], permutation p=0.763 -> not significant
+    budget line recall 0.575 vs 0.367 (n=75): diff 95% CI [+0.121, +0.296], permutation p=0.000 -> significant
+  fixed_s512_o77|dense|alpha=0  vs  struct_c256|dense|alpha=0  (n=75)
+    Hit@5 0.960 vs 0.920: McNemar p=0.250 (3 only-A, 0 only-B) -> not significant
+    MRR@5 0.886 vs 0.779: diff 95% CI [+0.042, +0.171], permutation p=0.001 -> significant
+    budget line recall 0.781 vs 0.486 (n=75): diff 95% CI [+0.212, +0.372], permutation p=0.000 -> significant
+  fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75  vs  struct_c256|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.907 vs 0.907: McNemar p=1.000 (2 only-A, 2 only-B) -> not significant
+    MRR@5 0.802 vs 0.721: diff 95% CI [+0.021, +0.144], permutation p=0.011 -> significant
+    budget line recall 0.739 vs 0.469 (n=75): diff 95% CI [+0.192, +0.352], permutation p=0.000 -> significant
+  fixed_s137_o0|bm25|alpha=0|k1=1.2,b=0.75  vs  struct_c256|bm25|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.760 vs 0.760: McNemar p=1.000 (2 only-A, 2 only-B) -> not significant
+    MRR@5 0.607 vs 0.626: diff 95% CI [-0.058, +0.017], permutation p=0.334 -> not significant
+    budget line recall 0.398 vs 0.367 (n=75): diff 95% CI [-0.014, +0.080], permutation p=0.206 -> not significant
+  fixed_s137_o0|bm25|alpha=0|k1=1.2,b=0.75  vs  fixed_s512_o77|bm25|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.760 vs 0.720: McNemar p=0.250 (3 only-A, 0 only-B) -> not significant
+    MRR@5 0.607 vs 0.637: diff 95% CI [-0.079, +0.018], permutation p=0.247 -> not significant
+    budget line recall 0.398 vs 0.575 (n=75): diff 95% CI [-0.251, -0.103], permutation p=0.000 -> significant
+  fixed_s137_o0|dense|alpha=0  vs  struct_c256|dense|alpha=0  (n=75)
+    Hit@5 0.920 vs 0.920: McNemar p=1.000 (1 only-A, 1 only-B) -> not significant
+    MRR@5 0.794 vs 0.779: diff 95% CI [-0.046, +0.072], permutation p=0.625 -> not significant
+    budget line recall 0.544 vs 0.486 (n=75): diff 95% CI [-0.002, +0.117], permutation p=0.069 -> not significant
+  fixed_s137_o0|dense|alpha=0  vs  fixed_s512_o77|dense|alpha=0  (n=75)
+    Hit@5 0.920 vs 0.960: McNemar p=0.250 (0 only-A, 3 only-B) -> not significant
+    MRR@5 0.794 vs 0.886: diff 95% CI [-0.158, -0.031], permutation p=0.006 -> significant
+    budget line recall 0.544 vs 0.781 (n=75): diff 95% CI [-0.297, -0.173], permutation p=0.000 -> significant
+  fixed_s137_o0|dense|alpha=1  vs  fixed_s512_o77|dense|alpha=1  (n=75)
+    Hit@5 0.920 vs 0.960: McNemar p=0.250 (0 only-A, 3 only-B) -> not significant
+    MRR@5 0.794 vs 0.886: diff 95% CI [-0.158, -0.031], permutation p=0.006 -> significant
+    budget line recall 0.701 vs 0.836 (n=75): diff 95% CI [-0.208, -0.069], permutation p=0.000 -> significant
+  fixed_s137_o0|hybrid|alpha=0|k1=1.2,b=0.75  vs  struct_c256|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.907 vs 0.907: McNemar p=1.000 (2 only-A, 2 only-B) -> not significant
+    MRR@5 0.760 vs 0.721: diff 95% CI [-0.009, +0.093], permutation p=0.138 -> not significant
+    budget line recall 0.523 vs 0.469 (n=75): diff 95% CI [-0.010, +0.115], permutation p=0.096 -> not significant
+  fixed_s137_o0|hybrid|alpha=0|k1=1.2,b=0.75  vs  fixed_s512_o77|hybrid|alpha=0|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.907 vs 0.907: McNemar p=1.000 (3 only-A, 3 only-B) -> not significant
+    MRR@5 0.760 vs 0.802: diff 95% CI [-0.092, +0.007], permutation p=0.120 -> not significant
+    budget line recall 0.523 vs 0.739 (n=75): diff 95% CI [-0.284, -0.147], permutation p=0.000 -> significant
+  fixed_s137_o0|hybrid|alpha=0.5|k1=1.2,b=0.75  vs  fixed_s512_o77|hybrid|alpha=0.5|k1=1.2,b=0.75  (n=75)
+    Hit@5 0.907 vs 0.907: McNemar p=1.000 (3 only-A, 3 only-B) -> not significant
+    MRR@5 0.760 vs 0.802: diff 95% CI [-0.092, +0.007], permutation p=0.120 -> not significant
+    budget line recall 0.676 vs 0.755 (n=75): diff 95% CI [-0.144, -0.012], permutation p=0.031 -> significant

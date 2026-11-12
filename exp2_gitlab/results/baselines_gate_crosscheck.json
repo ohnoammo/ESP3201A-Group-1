@@ -1,0 +1,12 @@
+{
+ "stored_rows": 48,
+ "compared": 48,
+ "gate_decision_mismatches": [],
+ "max_abs_score_diff": 0.0,
+ "label_mapping": {
+  "f0_labels_found": 43,
+  "problems": [],
+  "sheet_rows": 87,
+  "rows_recomputed": 87
+ }
+}

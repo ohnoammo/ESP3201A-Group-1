@@ -1,0 +1,22 @@
+# caches (regenerate: see each folder's README)
+emb_cache/
+prs/
+chunks/
+qdrant*/
+__pycache__/
+*.pyc
+steering/out/acts/
+
+# local feedback log of the demo app (human review only, never committed)
+**/feedback/*.jsonl
+
+# secrets
+.env
+.env.*
+
+# archives
+*.zip
+*.7z
+
+# not pushed
+ESP3201A_submission_archive/

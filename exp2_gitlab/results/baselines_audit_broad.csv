@@ -1,0 +1,21 @@
+arm,id,type,matched,first200
+F0,q1754,answerable,don't have access,"When a fork tries to run these jobs, it leads to a failure because they don't have access to the container registry when the job tries to push the images. [PR1754-c0]"
+P0,q2737,answerable,does not include,"The runner's CA chain code checks that a PKCS7 payload holds certificates before using it **to prevent crashes and ensure robustness when dealing with malformed or incomplete certificate data**.
+
+Here"
+P0,q1754,answerable,do not have access,"The image build jobs are limited to the main repository because **forks of the repository do not have access to the container registry** where the images are pushed.
+
+When a fork attempts to run these"
+P0,q4275,answerable,no details,"The default issue templates for GitLab Runner were made simpler because, during a weekly bug cleaning effort, it was observed that some users were not using the issue templates effectively. Examples o"
+P0,rm584,removed,don’t provide,"The question **""Why must an empty metrics server address not be given the default 9252 port?""** appears to be based on a misunderstanding or misstatement of the actual configuration behavior.
+
+Let’s c"
+CB,q3408,answerable,don't have access,"The question ""Why did the change updating the docs lint-markdown image also include a small documentation edit?"" appears to refer to a specific GitLab CI/CD pipeline or commit in a repository where a "
+CB,q6672,answerable,do not run contain,"The concept of ""image pull secrets"" being added to the Kubernetes autoscaler's pause pods is **not a standard or documented practice** in the official Kubernetes ecosystem or in widely used Kubernetes"
+CB,q4206,answerable,do not include,"The question ""Why is git-lfs compiled from source in the runner's ubi-fips image?"" touches on a specific configuration detail in a GitLab CI/CD pipeline, particularly when using a custom or minimal im"
+CB,q4145,answerable,do not include,The `ConfigExecTimeout` field being marked with `omitempty` in a custom GitLab Runner executor configuration is a Go language feature that controls how the field is serialized when marshaling JSON (or
+CB,rm3265,removed,can't find,"Great question — let's clarify what's actually happening with `git submodule init` and `git submodule sync`, and why the order matters.
+
+### Short Answer:
+**`git submodule init` is not typically run *"
+F0_rerun,q1754,answerable,don't have access,"When a fork tries to run these jobs, it leads to a failure because they don't have access to the container registry when the job tries to push the images. [PR1754-c0]"

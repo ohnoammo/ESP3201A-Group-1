@@ -1,0 +1,17 @@
+model,arm,prompt,n,answered,correct,partial,wrong,strict,lenient,correct_of_answered,overlap_cited,correct_of_overlap_cited,labels_sha256_12,git_commit
+4b-instruct,F0,v2,50,37,21,11,5,0.42,0.64,0.57,33,20,f47f947285e2,31ba8fd-dirty
+4b-instruct,F0,v3,50,35,23,8,4,0.46,0.62,0.66,31,21,f47f947285e2,31ba8fd-dirty
+4b-instruct,S-0.25,v2,50,42,29,9,4,0.58,0.76,0.69,28,22,f47f947285e2,31ba8fd-dirty
+4b-instruct,S-0.25,v3,50,41,30,6,5,0.6,0.72,0.73,32,25,f47f947285e2,31ba8fd-dirty
+4b-instruct,S0,v2,50,39,20,12,7,0.4,0.64,0.51,23,14,f47f947285e2,31ba8fd-dirty
+4b-instruct,S0,v3,50,32,19,10,3,0.38,0.58,0.59,20,12,f47f947285e2,31ba8fd-dirty
+4b-instruct,S0-G,v2,50,38,23,10,5,0.46,0.66,0.61,25,17,f47f947285e2,31ba8fd-dirty
+4b-instruct,S0-G,v3,50,34,25,5,4,0.5,0.6,0.74,25,20,f47f947285e2,31ba8fd-dirty
+8b,F0,v2,50,44,23,14,7,0.46,0.74,0.52,36,20,f47f947285e2,31ba8fd-dirty
+8b,F0,v3,50,40,21,13,6,0.42,0.68,0.53,32,18,f47f947285e2,31ba8fd-dirty
+8b,S-0.25,v2,50,48,27,13,8,0.54,0.8,0.56,29,20,f47f947285e2,31ba8fd-dirty
+8b,S-0.25,v3,50,46,26,12,8,0.52,0.76,0.57,27,18,f47f947285e2,31ba8fd-dirty
+8b,S0,v2,50,47,22,17,8,0.44,0.78,0.47,30,18,f47f947285e2,31ba8fd-dirty
+8b,S0,v3,50,45,23,14,8,0.46,0.74,0.51,24,17,f47f947285e2,31ba8fd-dirty
+8b,S0-G,v2,50,47,27,10,10,0.54,0.74,0.57,31,22,f47f947285e2,31ba8fd-dirty
+8b,S0-G,v3,50,44,23,12,9,0.46,0.7,0.52,27,16,f47f947285e2,31ba8fd-dirty

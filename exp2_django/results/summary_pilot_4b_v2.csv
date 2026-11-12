@@ -1,0 +1,7 @@
+condition,type,n,answered,abstained_exact,abstained_any,any_citation,cited_correctly,cite_precision,invalid_cites,possibly_truncated,n_judged,model,git_commit
+none:a,answerable,10,10,0,0,0,0,0.0,0,0,0,qwen3:4b-instruct-2507-q4_K_M,72cc7ff
+none:a,no_reason,5,5,0,0,0,0,0.0,0,0,0,qwen3:4b-instruct-2507-q4_K_M,72cc7ff
+oracle:b,answerable,10,10,0,0,0,0,0.0,0,0,0,qwen3:4b-instruct-2507-q4_K_M,72cc7ff
+oracle:b,no_reason,5,5,0,0,0,0,0.0,0,0,0,qwen3:4b-instruct-2507-q4_K_M,72cc7ff
+oracle:c,answerable,10,10,0,0,10,9,0.9,0,0,0,qwen3:4b-instruct-2507-q4_K_M,72cc7ff
+oracle:c,no_reason,5,4,0,1,4,0,0.0,0,0,0,qwen3:4b-instruct-2507-q4_K_M,72cc7ff

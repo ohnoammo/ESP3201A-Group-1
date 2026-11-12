@@ -1,0 +1,71 @@
+{
+ "rule": "tuning_rule_dev2.md",
+ "source": "results/links_eval_dev2_exp1pack_exp2.json",
+ "git_commit_of_eval": "43558b7-dirty",
+ "chosen": {
+  "fixed_s512_o77": 0.0,
+  "struct_c256": 0.25
+ },
+ "table": {
+  "fixed_s512_o77": [
+   {
+    "alpha": 0.0,
+    "any_span": 0.725,
+    "gold_pr_in_budget": 0.875,
+    "linked": 0.0,
+    "eligible": true
+   },
+   {
+    "alpha": 0.25,
+    "any_span": 0.8,
+    "gold_pr_in_budget": 0.85,
+    "linked": 1.067,
+    "eligible": false
+   },
+   {
+    "alpha": 0.5,
+    "any_span": 0.8,
+    "gold_pr_in_budget": 0.85,
+    "linked": 2.133,
+    "eligible": false
+   },
+   {
+    "alpha": 1.0,
+    "any_span": 0.8,
+    "gold_pr_in_budget": 0.85,
+    "linked": 3.422,
+    "eligible": false
+   }
+  ],
+  "struct_c256": [
+   {
+    "alpha": 0.0,
+    "any_span": 0.85,
+    "gold_pr_in_budget": 1.0,
+    "linked": 0.0,
+    "eligible": true
+   },
+   {
+    "alpha": 0.25,
+    "any_span": 0.9,
+    "gold_pr_in_budget": 1.0,
+    "linked": 5.067,
+    "eligible": true
+   },
+   {
+    "alpha": 0.5,
+    "any_span": 0.9,
+    "gold_pr_in_budget": 1.0,
+    "linked": 9.533,
+    "eligible": true
+   },
+   {
+    "alpha": 1.0,
+    "any_span": 0.9,
+    "gold_pr_in_budget": 0.95,
+    "linked": 15.6,
+    "eligible": false
+   }
+  ]
+ }
+}

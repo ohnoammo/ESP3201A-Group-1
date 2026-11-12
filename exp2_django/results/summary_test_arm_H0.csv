@@ -1,0 +1,5 @@
+model,arm,prompt,span_in_ctx,answered,abstained_with_span,overlap_cited,contain_cited_of49,q14748_overlap_cited,cite_precision,empty_answers,cross_pr_borrowing,no_reason_test_abstained,no_reason_test_empty,no_reason_dev_abstained,no_reason_dev_empty,removed_wholePR_abstained,removed_wholePR_answer_cites,rk16129_abstained,rk16129_answer_cites,rk9789_abstained,rk9789_answer_cites,unanswerable_answered_of17,unanswerable_answered_of15,no_reason_test_abstained_excl_clued,mean_prs_in_ctx,mean_linked,mean_ctx_tokens,n_calls,ollama,git_commit
+qwen3:4b-instruct-2507-q4_K_M,H0,v2,43,43,2,37,34,1,0.88,0,0,1/5,0,2/5,0,5/5,,0/1,rk16129->,1/1,,8,6,1/3,4.5,0.0,2527,67,0.40.4,84e316c
+qwen3:4b-instruct-2507-q4_K_M,H0,v3,43,43,3,36,33,1,0.84,0,1,4/5,0,3/5,1,5/5,,1/1,,1/1,,2,1,3/3,4.5,0.0,2527,67,0.40.4,84e316c
+qwen3:8b,H0,v2,43,46,0,37,34,1,0.8,0,0,1/5,0,0/5,0,3/5,rm16129->12646; rm12342->13507,0/1,rk16129->16129,1/1,,12,11,0/3,4.5,0.0,2527,67,0.40.4,84e316c
+qwen3:8b,H0,v3,43,45,1,39,36,1,0.87,0,0,1/5,0,0/5,0,4/5,rm16129->12646,0/1,rk16129->12646,1/1,,11,10,0/3,4.5,0.0,2527,67,0.40.4,84e316c

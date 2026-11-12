@@ -1,0 +1,6 @@
+out/acts/
+out/**/*.tmp
+out/**/*.tmp.npz
+tests/cpu_out/real/
+tests/cpu_out/fake/
+__pycache__/

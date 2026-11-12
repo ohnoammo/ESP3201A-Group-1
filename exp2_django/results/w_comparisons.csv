@@ -1,0 +1,25 @@
+model,prompt,comparison,role,outcome,W_count,other_count,b_only_W,c_only_other,p_unadjusted,label,git_commit
+4b-instruct,v2,W-F vs F0,"same ranking, packing only (primary exploratory)",strict correct /50,22,21,8,7,1.0,exploratory,74bf409
+4b-instruct,v2,W-F vs F0,"same ranking, packing only (primary exploratory)",answered /50,32,37,2,7,0.1797,exploratory,74bf409
+4b-instruct,v2,W-F vs F0,"same ranking, packing only (primary exploratory)",unanswerable answered /17,5,7,1,3,0.625,exploratory,74bf409
+4b-instruct,v2,W-F vs S-0.25,ranking and packing differ (descriptive context),strict correct /50,22,29,6,13,0.1671,exploratory,74bf409
+4b-instruct,v2,W-F vs S-0.25,ranking and packing differ (descriptive context),answered /50,32,42,2,12,0.0129,exploratory,74bf409
+4b-instruct,v2,W-F vs S-0.25,ranking and packing differ (descriptive context),unanswerable answered /17,5,7,2,4,0.6875,exploratory,74bf409
+4b-instruct,v3,W-F vs F0,"same ranking, packing only (primary exploratory)",strict correct /50,19,23,7,11,0.4807,exploratory,74bf409
+4b-instruct,v3,W-F vs F0,"same ranking, packing only (primary exploratory)",answered /50,28,35,4,11,0.1185,exploratory,74bf409
+4b-instruct,v3,W-F vs F0,"same ranking, packing only (primary exploratory)",unanswerable answered /17,2,3,1,2,1.0,exploratory,74bf409
+4b-instruct,v3,W-F vs S-0.25,ranking and packing differ (descriptive context),strict correct /50,19,30,3,14,0.0127,exploratory,74bf409
+4b-instruct,v3,W-F vs S-0.25,ranking and packing differ (descriptive context),answered /50,28,41,2,15,0.0023,exploratory,74bf409
+4b-instruct,v3,W-F vs S-0.25,ranking and packing differ (descriptive context),unanswerable answered /17,2,5,1,4,0.375,exploratory,74bf409
+8b,v2,W-F vs F0,"same ranking, packing only (primary exploratory)",strict correct /50,19,23,6,10,0.4545,exploratory,74bf409
+8b,v2,W-F vs F0,"same ranking, packing only (primary exploratory)",answered /50,38,44,1,7,0.0703,exploratory,74bf409
+8b,v2,W-F vs F0,"same ranking, packing only (primary exploratory)",unanswerable answered /17,13,13,1,1,1.0,exploratory,74bf409
+8b,v2,W-F vs S-0.25,ranking and packing differ (descriptive context),strict correct /50,19,27,6,14,0.1153,exploratory,74bf409
+8b,v2,W-F vs S-0.25,ranking and packing differ (descriptive context),answered /50,38,48,0,10,0.002,exploratory,74bf409
+8b,v2,W-F vs S-0.25,ranking and packing differ (descriptive context),unanswerable answered /17,13,14,1,2,1.0,exploratory,74bf409
+8b,v3,W-F vs F0,"same ranking, packing only (primary exploratory)",strict correct /50,19,21,5,7,0.7744,exploratory,74bf409
+8b,v3,W-F vs F0,"same ranking, packing only (primary exploratory)",answered /50,35,40,2,7,0.1797,exploratory,74bf409
+8b,v3,W-F vs F0,"same ranking, packing only (primary exploratory)",unanswerable answered /17,13,13,0,0,1.0,exploratory,74bf409
+8b,v3,W-F vs S-0.25,ranking and packing differ (descriptive context),strict correct /50,19,26,5,12,0.1435,exploratory,74bf409
+8b,v3,W-F vs S-0.25,ranking and packing differ (descriptive context),answered /50,35,46,2,13,0.0074,exploratory,74bf409
+8b,v3,W-F vs S-0.25,ranking and packing differ (descriptive context),unanswerable answered /17,13,13,1,1,1.0,exploratory,74bf409

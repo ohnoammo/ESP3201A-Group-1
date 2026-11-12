@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PR Explainer</title>
+  <link rel="stylesheet" href="/static/styles.css?v=17">
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- ---------- sidebar ---------- -->
+    <aside class="sidebar" id="sidebar">
+      <div class="side-head">
+        <div class="brand"><span class="logo" aria-hidden="true">◆</span> PR Explainer</div>
+        <button type="button" class="ghost-btn" id="collapse" title="Hide sidebar" aria-label="Hide sidebar">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 5h16v14H4zM9 5v14"/></svg>
+        </button>
+      </div>
+      <button type="button" class="new-chat" id="newChat">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
+        New chat
+      </button>
+
+      <div class="side-section">Chats</div>
+      <ol class="conv-list" id="convList"></ol>
+
+      <div class="side-section">Repositories</div>
+      <ul class="repo-list" id="repoList"></ul>
+
+      <div class="side-card" id="localCard">
+        <div class="side-card-row"><span class="dot" id="localDot"></span><strong id="localTitle">Runs locally</strong></div>
+        <p id="localText">Checking Ollama…</p>
+        <p class="muted" id="idxText">Index: –</p>
+      </div>
+    </aside>
+
+    <!-- ---------- main ---------- -->
+    <section class="main">
+      <header class="main-head">
+        <div class="head-left">
+          <button type="button" class="ghost-btn" id="expand" title="Show sidebar" aria-label="Show sidebar" hidden>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 5h16v14H4zM9 5v14"/></svg>
+          </button>
+          <label class="pill-select" title="Answering model (Ollama)">
+            <select id="model" aria-label="Model"></select>
+          </label>
+          <label class="pill-select repo-pill" title="Repository for this chat">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M4 4a2 2 0 0 1 2-2h12v16H6a1 1 0 0 0 0 2h12v2H6a3 3 0 0 1-3-3zm2 0v12.2A3 3 0 0 1 6 16h10V4z"/></svg>
+            <select id="repoSel" aria-label="Repository for this chat"></select>
+          </label>
+        </div>
+        <div class="head-right">
+          <div class="aa-wrap">
+            <button type="button" class="pill-btn aa-btn" id="aaBtn" aria-haspopup="true" aria-expanded="false"
+                    aria-controls="aaPop" title="Text size">Aa</button>
+            <div class="aa-pop" id="aaPop" role="dialog" aria-label="Text size" hidden>
+              <div class="lbl">Text size</div>
+              <div class="row">
+                <button type="button" class="aa-step" id="aaDown" aria-label="Smaller text">A−</button>
+                <span class="aa-val" id="aaVal" aria-live="polite">100%</span>
+                <button type="button" class="aa-step big" id="aaUp" aria-label="Larger text">A+</button>
+              </div>
+              <div class="row"><span class="lbl">All text in the app</span>
+                <button type="button" class="aa-reset" id="aaReset">Reset</button></div>
+            </div>
+          </div>
+          <button type="button" class="pill-btn" id="gear" aria-expanded="false" aria-controls="drawer" title="Configuration">
+            <span class="btn-label">Configuration</span>
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M19.14 12.94a7.1 7.1 0 0 0 0-1.88l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7 7 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54a7 7 0 0 0-1.62.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58a7.1 7.1 0 0 0 0 1.88l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.22.39.3.6.22l2.39-.96c.5.38 1.04.7 1.62.94l.36 2.54c.04.24.25.42.5.42h3.84c.25 0 .46-.18.5-.42l.36-2.54a7 7 0 0 0 1.62-.94l2.39.96c.22.08.47 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg>
+          </button>
+          <button type="button" class="pill-btn" id="exportBtn" title="Download this chat as Markdown">
+            Export
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 3 7 8h4v7h2V8h4zM5 19h14v2H5z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="banner" id="banner" hidden></div>
+
+      <div class="chat" id="chat">
+        <div class="hero" id="hero">
+          <div class="orb" aria-hidden="true"></div>
+          <h2>Why was this code changed?</h2>
+          <p>Ask about a change in <strong id="heroRepo">django/django</strong>. Answers cite the pull-request
+             excerpts they used, and say <em>not found</em> instead of guessing.</p>
+          <p class="muted repo-note" id="repoNote" hidden></p>
+        </div>
+        <ol class="log" id="log" aria-live="polite"></ol>
+      </div>
+
+      <div class="composer-area">
+        <form class="composer" id="askForm" autocomplete="off">
+          <div class="quote-row" id="quoteRow" hidden>
+            <div class="quote-text" id="quoteText"></div>
+            <button type="button" class="ghost-btn" id="quoteClear" aria-label="Remove quote">✕</button>
+          </div>
+          <div class="code-row" id="codeRow" hidden>
+            <textarea id="code" rows="3" spellcheck="false"
+              placeholder="Code, a file path or a function name"></textarea>
+          </div>
+          <div class="input-row">
+            <span class="spark" aria-hidden="true">✦</span>
+            <textarea id="question" rows="1" placeholder="Ask why something changed…"></textarea>
+          </div>
+          <div class="tool-row">
+            <button type="button" class="tool" id="codeToggle" aria-pressed="false" title="Add code, a file path or a function name">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="m8.6 16.6-4.6-4.6 4.6-4.6L7.2 6 1.2 12l6 6zm6.8 0 4.6-4.6-4.6-4.6L16.8 6l6 6-6 6z"/></svg>
+              Add code
+            </button>
+            <span class="tool-sep" aria-hidden="true"></span>
+            <button type="button" class="tool" id="settingsTool" title="Configuration">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M3 17v2h6v-2zm0-12v2h10V5zm10 16v-2h8v-2h-8v-2h-2v6zM7 9v2H3v2h4v2h2V9zm14 4v-2H11v2zm-6-4h2V7h4V5h-4V3h-2z"/></svg>
+              Settings
+            </button>
+            <span class="setup-text" id="setupText"></span>
+            <button type="submit" class="send-btn" id="askBtn" title="Send (Enter)" aria-label="Send">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 4 4 12l1.4 1.4L11 7.8V20h2V7.8l5.6 5.6L20 12z"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ---------- PR viewer (whole pull request, read-only) ---------- -->
+    <aside class="viewer" id="viewer" aria-label="Pull request viewer" hidden>
+      <div class="viewer-resize" id="viewerResize" role="separator" aria-orientation="vertical" tabindex="0"
+           aria-label="Resize the pull request panel" title="Drag to resize (double-click to reset)"></div>
+      <div class="viewer-head">
+        <div class="viewer-tabs" id="viewerTabs" role="tablist"></div>
+        <button type="button" class="ghost-btn" id="closeViewer" aria-label="Close pull request viewer">✕</button>
+      </div>
+      <div class="viewer-title">
+        <div><span class="src-id" id="viewerNum"></span> <span id="viewerTitle"></span></div>
+        <p class="viewer-note" id="viewerNote" hidden></p>
+        <div class="viewer-meta">
+          <span class="legend"><span class="sw sw-ex"></span>Given to the model</span>
+          <span class="legend" id="citedLegend"><mark>Cited</mark></span>
+          <a id="viewerLink" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="viewer-body" id="viewerBody"></div>
+    </aside>
+  </div>
+
+  <!-- ---------- configuration drawer ---------- -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Configuration" hidden>
+    <div class="drawer-head">
+      <h2>Configuration</h2>
+      <button type="button" class="ghost-btn" id="closeDrawer" aria-label="Close configuration">✕</button>
+    </div>
+    <p class="muted note" id="finalNote" hidden></p>
+
+    <fieldset class="settings">
+      <legend>Answering</legend>
+      <div class="seg" role="radiogroup" aria-label="Grounding mode" id="modeSeg">
+        <button type="button" data-v="strict" class="on">Strict grounding</button>
+        <button type="button" data-v="standard" title="Prompt b: baseline, not part of the Exp 2 test runs">Standard (baseline)</button>
+      </div>
+      <label class="check"><input type="checkbox" id="compare"> Compare standard vs strict</label>
+      <label class="check" title="Exp 2 faithfulness gate (MiniCheck, cited min, threshold 0.5). Experimental: not hallucination protection."><input type="checkbox" id="gate"> Experimental support check</label>
+      <p class="gate-note muted" id="gateNote">Holds back strict answers whose cited excerpts don't clearly support them. Experimental, and not hallucination protection.</p>
+    </fieldset>
+
+    <fieldset class="settings">
+      <legend>Retrieval <span class="muted">(Experiment 1)</span></legend>
+      <div class="seg" role="radiogroup" aria-label="Retriever" id="retrSeg">
+        <button type="button" data-v="bm25">BM25</button>
+        <button type="button" data-v="dense" class="on">Dense</button>
+        <button type="button" data-v="hybrid">Hybrid</button>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Chunking" id="chunkSeg">
+        <button type="button" data-v="structural" class="on">Structural</button>
+        <button type="button" data-v="fixed">Fixed 512</button>
+      </div>
+      <label class="check"><input type="checkbox" id="links" checked> Relation links (locked α)</label>
+      <label class="row-label" for="pool">PR pool</label>
+      <select id="pool"></select>
+    </fieldset>
+
+    <button type="button" class="danger-link" id="clearHistory">Delete all chats</button>
+  </aside>
+
+  <button type="button" class="quote-btn" id="quoteBtn" hidden>Quote</button>
+
+  <script src="/static/app.js?v=20"></script>
+</body>
+</html>

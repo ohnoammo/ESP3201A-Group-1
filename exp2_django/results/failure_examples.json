@@ -1,0 +1,287 @@
+{
+ "table": [
+  {
+   "category": "retrieval miss",
+   "source": "rule-selected",
+   "n_candidates": 15,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "4b-instruct",
+    "arm": "S-0.25",
+    "prompt": "v2",
+    "id": "q10177",
+    "type": "answerable",
+    "split": "test",
+    "answerable": true,
+    "pr": 10177,
+    "answered": true,
+    "abstained": false,
+    "gold_pr_in_ctx": false,
+    "span_in_ctx": false,
+    "n_cites": 1,
+    "n_gold_cites": 0,
+    "cited_prs": [
+     16417
+    ],
+    "same_ticket_cited": [],
+    "words": 52,
+    "label": "wrong",
+    "response": "The author abandoned the plan to send a separate PR adding a new database feature flag for Oracle because it was deemed troublesome to implement and verify, and the team concluded that leaving out Oracle support for new features like this was acceptable given that only 2% of survey respondents use Oracle. [PR16417-c89]"
+   },
+   "candidate_ids": [
+    "q10177",
+    "q14896",
+    "q9725"
+   ],
+   "count": "15 / 44 answerable rows with gold PR not in context",
+   "count_other_side": "abstained 29 / 44 answerable rows with gold PR not in context"
+  },
+  {
+   "category": "wrong chunk",
+   "source": "rule-selected",
+   "n_candidates": 56,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "4b-instruct",
+    "arm": "F0",
+    "prompt": "v2",
+    "id": "q14503",
+    "type": "answerable",
+    "split": "test",
+    "answerable": true,
+    "pr": 14503,
+    "answered": true,
+    "abstained": false,
+    "gold_pr_in_ctx": true,
+    "span_in_ctx": true,
+    "n_cites": 1,
+    "n_gold_cites": 0,
+    "cited_prs": [
+     14503
+    ],
+    "same_ticket_cited": [],
+    "words": 64,
+    "label": "wrong",
+    "response": "The core reviewer did not think a release note was needed because the change only removes a check that was already implicitly handled by the template system, and the documentation already states that `Node.render()` must return a string. This implies that the behavior was already well-defined and safe, so no additional release note was required to inform users about potential breaking changes. [PR14503-c0]"
+   },
+   "candidate_ids": [
+    "q11996",
+    "q12664",
+    "q13148",
+    "q13151",
+    "q13507",
+    "q13749",
+    "q14028",
+    "q14142",
+    "q14503",
+    "q14989",
+    "q15056",
+    "q16106",
+    "q16343",
+    "q16559",
+    "q8534",
+    "q9725"
+   ],
+   "count": "56 / 644 answered answerable rows with gold PR in context"
+  },
+  {
+   "category": "same-ticket",
+   "source": "rule-selected",
+   "n_candidates": 2,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "8b",
+    "arm": "S0",
+    "prompt": "v2",
+    "id": "q15435",
+    "type": "answerable",
+    "split": "test",
+    "answerable": true,
+    "pr": 15435,
+    "answered": true,
+    "abstained": false,
+    "gold_pr_in_ctx": true,
+    "span_in_ctx": true,
+    "n_cites": 1,
+    "n_gold_cites": 0,
+    "cited_prs": [
+     15423
+    ],
+    "same_ticket_cited": [
+     15423
+    ],
+    "words": 37,
+    "label": "partial",
+    "response": "The first version of the LazyObject recursion fix broke access to some settings because it prevented LazyObject from mimicking nonexistent attributes, which caused issues when trying to access attributes that did not exist on the wrapped object. [PR15423-c0]"
+   },
+   "candidate_ids": [
+    "q15435"
+   ],
+   "count": "2 / 800 answered rows (answerable + 17 unanswerable)"
+  },
+  {
+   "category": "invented reason",
+   "source": "Alyssa tag",
+   "n_candidates": 5,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "4b-instruct",
+    "sample_no": 5,
+    "id": "nr9172",
+    "arm": "F0",
+    "prompt": "v3",
+    "split": "test",
+    "tag": "invented — chunk never mentioned that it was changed to ensure data constituency or to match the expected behaviour of positive-only integer fields.",
+    "category": "invented reason"
+   },
+   "candidate_ids": [
+    "nr10075",
+    "nr13883",
+    "nr9172"
+   ],
+   "count": "5 rows in Alyssa's 10-row gate-pass sample (nr10075 is 5 of the 10); not countable by rule"
+  },
+  {
+   "category": "what-as-why",
+   "source": "Alyssa tag",
+   "n_candidates": 3,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "4b-instruct",
+    "sample_no": 2,
+    "id": "nr10042",
+    "arm": "F0",
+    "prompt": "v2",
+    "split": "dev",
+    "tag": "what-as-why — the change was \"Silenced post-process message\", no reason was given for the change in the PR.",
+    "category": "what-as-why"
+   },
+   "candidate_ids": [
+    "nr10042",
+    "nr10075",
+    "nr11371"
+   ],
+   "count": "3 rows in Alyssa's 10-row gate-pass sample (nr10075 is 5 of the 10); not countable by rule"
+  },
+  {
+   "category": "borrowing",
+   "source": "Alyssa tag",
+   "n_candidates": 2,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "4b-instruct",
+    "sample_no": 1,
+    "id": "nr10075",
+    "arm": "S0",
+    "prompt": "v3",
+    "split": "dev",
+    "tag": "borrowed — UnicodeDecodeError reason taken from PR 11640's commit message (a different change), not PR 10075",
+    "category": "borrowing"
+   },
+   "candidate_ids": [
+    "nr10075",
+    "nr16062"
+   ],
+   "count": "tagged 2 / 10 sample rows; by rule 60 / 798 answered rows with >= 1 citation cite no chunk of the question's PR"
+  },
+  {
+   "category": "bare citation",
+   "source": "rule-selected",
+   "n_candidates": 2,
+   "repeat_of_used_question": true,
+   "example": {
+    "model": "4b-instruct",
+    "arm": "S0",
+    "prompt": "v3",
+    "id": "nr9172",
+    "type": "no_reason",
+    "split": "test",
+    "answerable": false,
+    "pr": 9172,
+    "answered": false,
+    "abstained": false,
+    "gold_pr_in_ctx": true,
+    "span_in_ctx": false,
+    "n_cites": 1,
+    "n_gold_cites": 0,
+    "cited_prs": [
+     9172
+    ],
+    "same_ticket_cited": [],
+    "words": 0,
+    "label": null,
+    "response": "[PR9172-c0]"
+   },
+   "candidate_ids": [
+    "nr9172"
+   ],
+   "count": "2 / 1072 all rows"
+  },
+  {
+   "category": "over-abstention",
+   "source": "rule-selected",
+   "n_candidates": 70,
+   "repeat_of_used_question": false,
+   "example": {
+    "model": "4b-instruct",
+    "arm": "F0",
+    "prompt": "v2",
+    "id": "q12441",
+    "type": "answerable",
+    "split": "test",
+    "answerable": true,
+    "pr": 12441,
+    "answered": false,
+    "abstained": true,
+    "gold_pr_in_ctx": true,
+    "span_in_ctx": true,
+    "n_cites": 0,
+    "n_gold_cites": 0,
+    "cited_prs": [],
+    "same_ticket_cited": [],
+    "words": 6,
+    "label": null,
+    "response": "Not found in the provided PRs"
+   },
+   "candidate_ids": [
+    "q11377",
+    "q12441",
+    "q12664",
+    "q13507",
+    "q13945",
+    "q14503",
+    "q14647",
+    "q14903",
+    "q15354",
+    "q15435",
+    "q15475",
+    "q15705",
+    "q15828",
+    "q16559",
+    "q16824",
+    "q16966",
+    "q16982",
+    "q8534",
+    "q8596",
+    "q9006",
+    "q9725",
+    "q9789"
+   ],
+   "count": "70 / 688 answerable rows with answer span in context"
+  }
+ ],
+ "q16824_over_abstention_rows": 4,
+ "pr_with_ticket_mates_in_pool": [
+  8934,
+  9789,
+  11459,
+  12342,
+  13671,
+  14624,
+  14989,
+  15435,
+  16129,
+  16559
+ ],
+ "git_commit": "31ba8fd-dirty"
+}

@@ -1,0 +1,5 @@
+model,arm,prompt,n,minicheck_cited_min,minicheck_cited_mean,minicheck_cited_all_supported,hhem_cited_min,hhem_cited_mean,hhem_cited_all_supported,n_cited_scored,minicheck_full_min,minicheck_full_mean,minicheck_full_all_supported,hhem_full_min,hhem_full_mean,hhem_full_all_supported,n_full_scored,gap_minicheck,gap_hhem
+4b-instruct,W-F,v2,5,0.685,0.717,1.0,0.534,0.584,0.75,4,0.658,0.678,0.8,0.526,0.566,0.4,5,0,1
+4b-instruct,W-F,v3,2,0.762,0.831,1.0,0.277,0.43,0.0,2,0.762,0.831,1.0,0.475,0.512,0.5,2,0,0
+8b,W-F,v2,13,0.537,0.609,0.583,0.496,0.537,0.583,12,0.555,0.633,0.615,0.469,0.516,0.462,13,0,4
+8b,W-F,v3,13,0.552,0.602,0.615,0.505,0.543,0.538,13,0.6,0.64,0.615,0.501,0.522,0.538,13,0,4

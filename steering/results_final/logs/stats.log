@@ -1,0 +1,65 @@
+
+===== stats  2026-11-09 02:49:21  code 95974b01ac79  args {'command': 'stats', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+(no labels at C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\out\blind_sheet_labels.csv: correctness skipped)
+pipeline check (HF unsteered vs Ollama F0, answer vs refuse): 63 / 70 agree
+
+arm counts:
+  arm=baseline, unans_answered_of_18=7, answered_of_52=48, overlap_cited_of_52=45, contain_cited_of_52=45, refused_with_span_in_context=0, hedged_of_70=0, degenerate_of_70=0, empty_of_70=0, n_steered_questions=0
+  arm=steered 40:60, unans_answered_of_18=7, answered_of_52=48, overlap_cited_of_52=45, contain_cited_of_52=45, refused_with_span_in_context=0, hedged_of_70=0, degenerate_of_70=0, empty_of_70=0, n_steered_questions=0
+  arm=steered 50:50, unans_answered_of_18=5, answered_of_52=44, overlap_cited_of_52=37, contain_cited_of_52=37, refused_with_span_in_context=1, hedged_of_70=0, degenerate_of_70=0, empty_of_70=4, n_steered_questions=14
+  arm=steered 60:40, unans_answered_of_18=6, answered_of_52=43, overlap_cited_of_52=17, contain_cited_of_52=17, refused_with_span_in_context=4, hedged_of_70=0, degenerate_of_70=1, empty_of_70=1, n_steered_questions=56
+
+exact McNemar vs HF baseline, two-sided, one Holm family of 9:
+  40:60  unanswerable answered (primary)   n=18  base  7 steered  7 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  40:60  answered                          n=52  base 48 steered 48 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  40:60  overlap-cited                     n=52  base 45 steered 45 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  50:50  unanswerable answered (primary)   n=18  base  7 steered  5 only-base/only-steered 2/0  p=0.5000 holm=1.0000
+  50:50  answered                          n=52  base 48 steered 44 only-base/only-steered 4/0  p=0.1250 holm=0.7500
+  50:50  overlap-cited                     n=52  base 45 steered 37 only-base/only-steered 8/0  p=0.0078 holm=0.0625
+  60:40  unanswerable answered (primary)   n=18  base  7 steered  6 only-base/only-steered 1/0  p=1.0000 holm=1.0000
+  60:40  answered                          n=52  base 48 steered 43 only-base/only-steered 5/0  p=0.0625 holm=0.4375
+  60:40  overlap-cited                     n=52  base 45 steered 17 only-base/only-steered 28/0  p=0.0000 holm=0.0000
+STATS OK
+
+===== stats  2026-11-09 04:18:58  code 95974b01ac79  args {'command': 'stats', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+(no labels at C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\out\blind_sheet_labels.csv: correctness skipped)
+pipeline check (HF unsteered vs Ollama F0, answer vs refuse): 63 / 70 agree
+
+arm counts:
+  arm=baseline, unans_answered_of_18=7, answered_of_52=48, overlap_cited_of_52=45, contain_cited_of_52=45, refused_with_span_in_context=0, hedged_of_70=0, degenerate_of_70=0, empty_of_70=0, n_steered_questions=0
+  arm=steered 40:60, unans_answered_of_18=7, answered_of_52=48, overlap_cited_of_52=45, contain_cited_of_52=45, refused_with_span_in_context=0, hedged_of_70=0, degenerate_of_70=0, empty_of_70=0, n_steered_questions=0
+  arm=steered 50:50, unans_answered_of_18=5, answered_of_52=44, overlap_cited_of_52=37, contain_cited_of_52=37, refused_with_span_in_context=1, hedged_of_70=0, degenerate_of_70=0, empty_of_70=4, n_steered_questions=14
+  arm=steered 60:40, unans_answered_of_18=6, answered_of_52=43, overlap_cited_of_52=17, contain_cited_of_52=17, refused_with_span_in_context=4, hedged_of_70=0, degenerate_of_70=1, empty_of_70=1, n_steered_questions=56
+
+exact McNemar vs HF baseline, two-sided, one Holm family of 9:
+  40:60  unanswerable answered (primary)   n=18  base  7 steered  7 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  40:60  answered                          n=52  base 48 steered 48 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  40:60  overlap-cited                     n=52  base 45 steered 45 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  50:50  unanswerable answered (primary)   n=18  base  7 steered  5 only-base/only-steered 2/0  p=0.5000 holm=1.0000
+  50:50  answered                          n=52  base 48 steered 44 only-base/only-steered 4/0  p=0.1250 holm=0.7500
+  50:50  overlap-cited                     n=52  base 45 steered 37 only-base/only-steered 8/0  p=0.0078 holm=0.0625
+  60:40  unanswerable answered (primary)   n=18  base  7 steered  6 only-base/only-steered 1/0  p=1.0000 holm=1.0000
+  60:40  answered                          n=52  base 48 steered 43 only-base/only-steered 5/0  p=0.0625 holm=0.4375
+  60:40  overlap-cited                     n=52  base 45 steered 17 only-base/only-steered 28/0  p=0.0000 holm=0.0000
+STATS OK
+
+===== stats  2026-11-10 00:47:32  code 95974b01ac79  args {'command': 'stats', 'repo': '/tmp/claude-0/-home-claude/97b21b69-1b74-5f54-a7dd-7e70b88b1321/scratchpad/steer_test', 'out': '/tmp/claude-0/-home-claude/97b21b69-1b74-5f54-a7dd-7e70b88b1321/scratchpad/final/out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+pipeline check (HF unsteered vs Ollama F0, answer vs refuse): 63 / 70 agree
+
+arm counts:
+  arm=baseline, unans_answered_of_18=7, answered_of_52=48, overlap_cited_of_52=45, contain_cited_of_52=45, refused_with_span_in_context=0, hedged_of_70=0, degenerate_of_70=0, empty_of_70=0, n_steered_questions=0
+  arm=steered 40:60, unans_answered_of_18=7, answered_of_52=48, overlap_cited_of_52=45, contain_cited_of_52=45, refused_with_span_in_context=0, hedged_of_70=0, degenerate_of_70=0, empty_of_70=0, n_steered_questions=0
+  arm=steered 50:50, unans_answered_of_18=5, answered_of_52=44, overlap_cited_of_52=37, contain_cited_of_52=37, refused_with_span_in_context=1, hedged_of_70=0, degenerate_of_70=0, empty_of_70=4, n_steered_questions=14
+  arm=steered 60:40, unans_answered_of_18=6, answered_of_52=43, overlap_cited_of_52=17, contain_cited_of_52=17, refused_with_span_in_context=4, hedged_of_70=0, degenerate_of_70=1, empty_of_70=1, n_steered_questions=56
+
+exact McNemar vs HF baseline, two-sided, one Holm family of 9:
+  40:60  unanswerable answered (primary)   n=18  base  7 steered  7 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  40:60  answered                          n=52  base 48 steered 48 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  40:60  overlap-cited                     n=52  base 45 steered 45 only-base/only-steered 0/0  p=1.0000 holm=1.0000
+  50:50  unanswerable answered (primary)   n=18  base  7 steered  5 only-base/only-steered 2/0  p=0.5000 holm=1.0000
+  50:50  answered                          n=52  base 48 steered 44 only-base/only-steered 4/0  p=0.1250 holm=0.7500
+  50:50  overlap-cited                     n=52  base 45 steered 37 only-base/only-steered 8/0  p=0.0078 holm=0.0625
+  60:40  unanswerable answered (primary)   n=18  base  7 steered  6 only-base/only-steered 1/0  p=1.0000 holm=1.0000
+  60:40  answered                          n=52  base 48 steered 43 only-base/only-steered 5/0  p=0.0625 holm=0.4375
+  60:40  overlap-cited                     n=52  base 45 steered 17 only-base/only-steered 28/0  p=0.0000 holm=0.0000
+STATS OK

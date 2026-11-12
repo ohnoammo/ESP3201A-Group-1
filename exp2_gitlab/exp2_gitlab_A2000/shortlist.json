@@ -1,0 +1,1035 @@
+{
+ "rule": "Exp 2 shortlist.py thresholds, minus the pilot's shortlist; fixed SHA-256 order (seed 42); docs = docs/",
+ "funnel": [
+  {
+   "step": "in pool",
+   "n": 2231
+  },
+  {
+   "step": "merged",
+   "n": 2231
+  },
+  {
+   "step": "not docs-only",
+   "n": 1583
+  },
+  {
+   "step": "description >= 40 words",
+   "n": 1033
+  },
+  {
+   "step": ">= 2 review threads or >= 4 threads + comments",
+   "n": 596
+  },
+  {
+   "step": "document <= 4000 tokens",
+   "n": 320
+  },
+  {
+   "step": "not on the pilot's shortlist",
+   "n": 284
+  }
+ ],
+ "shortlist": [
+  {
+   "n": 3220,
+   "title": "Changed symbol in docs table",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 168,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 3430
+  },
+  {
+   "n": 7533,
+   "title": "Docker+machine: Add RemoveWithoutStop to skip docker-machine stop before rm",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 613,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 3240
+  },
+  {
+   "n": 1063,
+   "title": "Fix SC2155 where shellcheck warns about errors",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 43,
+   "threads": 5,
+   "conv": 6,
+   "doc_tokens": 1524
+  },
+  {
+   "n": 2606,
+   "title": "Display feature flags that are set to a non-default status",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 109,
+   "threads": 1,
+   "conv": 15,
+   "doc_tokens": 2548
+  },
+  {
+   "n": 2744,
+   "title": "Add supported failure reasons for build errors",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 123,
+   "threads": 6,
+   "conv": 12,
+   "doc_tokens": 2215
+  },
+  {
+   "n": 2379,
+   "title": "Fix Windows runner helper docker container",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 125,
+   "threads": 4,
+   "conv": 24,
+   "doc_tokens": 2731
+  },
+  {
+   "n": 3408,
+   "title": "Update lint-markdown image for docs",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 160,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 1345
+  },
+  {
+   "n": 1383,
+   "title": "Make git init to be quiet",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 64,
+   "threads": 1,
+   "conv": 5,
+   "doc_tokens": 935
+  },
+  {
+   "n": 3881,
+   "title": "Generate random system_id for run-single mode",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 99,
+   "threads": 1,
+   "conv": 12,
+   "doc_tokens": 996
+  },
+  {
+   "n": 535,
+   "title": "Fix regression introduced in the way how `exec` parses `.gitlab-ci.yml`",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 69,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 2022
+  },
+  {
+   "n": 3137,
+   "title": "Docs: Small edits to enhance readability",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 127,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 1364
+  },
+  {
+   "n": 6056,
+   "title": "Upgrade step-runner to version 0.24.0",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 128,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 2801
+  },
+  {
+   "n": 2682,
+   "title": "Make TestHelperImageRegistry not need real prebuilt images",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 65,
+   "threads": 1,
+   "conv": 6,
+   "doc_tokens": 667
+  },
+  {
+   "n": 1934,
+   "title": "Allow user to disable default population of home directory for runner user",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 110,
+   "threads": 4,
+   "conv": 3,
+   "doc_tokens": 1929
+  },
+  {
+   "n": 2737,
+   "title": "Fix panic when PKCS7-encoded payload has no certificate",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 212,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 1869
+  },
+  {
+   "n": 6672,
+   "title": "Kubernetes executor: add imagePullSecrets support for pause pods",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 149,
+   "threads": 1,
+   "conv": 8,
+   "doc_tokens": 2183
+  },
+  {
+   "n": 106,
+   "title": "Add options to runner configuration to specify commands executed before code clone and build",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 304,
+   "threads": 0,
+   "conv": 17,
+   "doc_tokens": 2190
+  },
+  {
+   "n": 7545,
+   "title": "Fail fast when the runtime cannot join the pod user namespace",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 67,
+   "threads": 2,
+   "conv": 2,
+   "doc_tokens": 1634
+  },
+  {
+   "n": 2913,
+   "title": "Add User config setting for docker executor",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 136,
+   "threads": 2,
+   "conv": 14,
+   "doc_tokens": 2396
+  },
+  {
+   "n": 3239,
+   "title": "Update lint-html image for docs",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 161,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 1377
+  },
+  {
+   "n": 4037,
+   "title": "Experiment: Add reviewer roulette",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 249,
+   "threads": 3,
+   "conv": 9,
+   "doc_tokens": 1296
+  },
+  {
+   "n": 7670,
+   "title": "Implement rumdl rules MD057, MD066, MD070, and MD075 in project docs",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 165,
+   "threads": 1,
+   "conv": 6,
+   "doc_tokens": 2879
+  },
+  {
+   "n": 779,
+   "title": "Use local GOPATH in Makefile",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 57,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 3325
+  },
+  {
+   "n": 2722,
+   "title": "Upgrade Docker version to 20.10.2",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 44,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 406
+  },
+  {
+   "n": 5065,
+   "title": "Add tests for service name empty",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 79,
+   "threads": 1,
+   "conv": 9,
+   "doc_tokens": 1313
+  },
+  {
+   "n": 4206,
+   "title": "Build git-lfs from source in runner ubi-fips image",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 461,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 2132
+  },
+  {
+   "n": 5692,
+   "title": "Add `-depth` option to `find -exec rm` invocations",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 78,
+   "threads": 1,
+   "conv": 6,
+   "doc_tokens": 908
+  },
+  {
+   "n": 1189,
+   "title": "Check either ntpdate command exists or not before trying to execute it",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 115,
+   "threads": 0,
+   "conv": 11,
+   "doc_tokens": 1653
+  },
+  {
+   "n": 589,
+   "title": "Fix VirtualBox and Parallels executors registration bugs",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 70,
+   "threads": 2,
+   "conv": 5,
+   "doc_tokens": 1612
+  },
+  {
+   "n": 7018,
+   "title": "Ensure ShortID starts with alphanumeric character for Kubernetes compatibility (closes #39456)",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 119,
+   "threads": 3,
+   "conv": 7,
+   "doc_tokens": 1924
+  },
+  {
+   "n": 3958,
+   "title": "Address vulnerability reports against runner-helper alpine images",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 131,
+   "threads": 3,
+   "conv": 2,
+   "doc_tokens": 1303
+  },
+  {
+   "n": 6333,
+   "title": "Restore environment variables to build container",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 129,
+   "threads": 7,
+   "conv": 9,
+   "doc_tokens": 3952
+  },
+  {
+   "n": 1583,
+   "title": "Extend custom executor config",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 79,
+   "threads": 4,
+   "conv": 6,
+   "doc_tokens": 3336
+  },
+  {
+   "n": 1754,
+   "title": "Only run image build jobs on main repo",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 42,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 469
+  },
+  {
+   "n": 5515,
+   "title": "Added safety checks for nil sessions and empty endpoints",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 45,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 1275
+  },
+  {
+   "n": 2211,
+   "title": "Remove redundant docker executor integration tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 44,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 982
+  },
+  {
+   "n": 2223,
+   "title": "Use newest helper image version in tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 49,
+   "threads": 22,
+   "conv": 19,
+   "doc_tokens": 3586
+  },
+  {
+   "n": 4275,
+   "title": "Simplify issue templates and add labels",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 63,
+   "threads": 7,
+   "conv": 10,
+   "doc_tokens": 2121
+  },
+  {
+   "n": 5745,
+   "title": "Enable image executor opts in the kubernetes executor",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 57,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 838
+  },
+  {
+   "n": 2227,
+   "title": "Fix missing build_script step for custom executor",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 68,
+   "threads": 4,
+   "conv": 7,
+   "doc_tokens": 2452
+  },
+  {
+   "n": 3246,
+   "title": "Add a flag to `gitlab-runner exec` to specify the CI/CD config file",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 55,
+   "threads": 1,
+   "conv": 14,
+   "doc_tokens": 1754
+  },
+  {
+   "n": 4967,
+   "title": "Docker integration test for MacAddress setting",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 74,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 2437
+  },
+  {
+   "n": 4379,
+   "title": "Manually refresh JobVariables prior to ConfigExec",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 244,
+   "threads": 0,
+   "conv": 22,
+   "doc_tokens": 2680
+  },
+  {
+   "n": 3528,
+   "title": "Push image on registry during release stage only when enabled",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 158,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 3541
+  },
+  {
+   "n": 2461,
+   "title": "Allow specifying `basefolder` when creating virtualbox VM",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 80,
+   "threads": 4,
+   "conv": 9,
+   "doc_tokens": 1714
+  },
+  {
+   "n": 4218,
+   "title": "Prune tags when fetching",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 59,
+   "threads": 0,
+   "conv": 32,
+   "doc_tokens": 3500
+  },
+  {
+   "n": 2003,
+   "title": "Minor rewording in PROCESS.md templates",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 53,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 1259
+  },
+  {
+   "n": 5846,
+   "title": "Add project name to build logging fields",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 74,
+   "threads": 2,
+   "conv": 17,
+   "doc_tokens": 2470
+  },
+  {
+   "n": 3831,
+   "title": "Powershell: fix unwanted progress streams leaking to output",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 51,
+   "threads": 0,
+   "conv": 9,
+   "doc_tokens": 1349
+  },
+  {
+   "n": 6695,
+   "title": "Pass proactiveAuth to git checkout for partial-clone lazy fetches",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 225,
+   "threads": 2,
+   "conv": 8,
+   "doc_tokens": 2200
+  },
+  {
+   "n": 1647,
+   "title": "Change config lock to create a separate lock file",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 139,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 714
+  },
+  {
+   "n": 4145,
+   "title": "Mark ConfigExecTimeout as optional",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 74,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 579
+  },
+  {
+   "n": 584,
+   "title": "Resolve \"GitLab Runner http endpoint should default to 9252\"",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 77,
+   "threads": 4,
+   "conv": 5,
+   "doc_tokens": 3259
+  },
+  {
+   "n": 2555,
+   "title": "Pin StefanScherer/windows_2019_docker box to 2020.04.15",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 129,
+   "threads": 1,
+   "conv": 4,
+   "doc_tokens": 929
+  },
+  {
+   "n": 3960,
+   "title": "Fix 'clear-docker-cache' script for Docker 23.0",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 80,
+   "threads": 1,
+   "conv": 9,
+   "doc_tokens": 2417
+  },
+  {
+   "n": 3265,
+   "title": "Init submodules prior to sync to ensure submodules remote URL configuration is properly synchronized",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 184,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 989
+  },
+  {
+   "n": 2971,
+   "title": "Only print necessary env vars in tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 113,
+   "threads": 5,
+   "conv": 9,
+   "doc_tokens": 1997
+  },
+  {
+   "n": 2968,
+   "title": "Update configuration of changelog generator",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 254,
+   "threads": 14,
+   "conv": 11,
+   "doc_tokens": 3557
+  },
+  {
+   "n": 3119,
+   "title": "Better support for Powershell on Kubernetes",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 137,
+   "threads": 2,
+   "conv": 5,
+   "doc_tokens": 3096
+  },
+  {
+   "n": 3846,
+   "title": "Fix windows integration tests failure check",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 90,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 934
+  },
+  {
+   "n": 4142,
+   "title": "Automatically set GOMAXPROCS based on CPU Quotas",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 135,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 1356
+  },
+  {
+   "n": 7008,
+   "title": "Log successful network disconnect at Info level",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 68,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 577
+  },
+  {
+   "n": 4580,
+   "title": "Add Apple Silicon support to Parallels Executor",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 63,
+   "threads": 1,
+   "conv": 7,
+   "doc_tokens": 2454
+  },
+  {
+   "n": 3177,
+   "title": "gitlab-runner Dockerfile: clear /tmp of ubuntu docker image",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 52,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 409
+  },
+  {
+   "n": 1781,
+   "title": "Remove superfluous packages from ubuntu based docker image",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 70,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 585
+  },
+  {
+   "n": 3805,
+   "title": "Prepare register command to fail if runner server-side configuration options are passed together with a new glrt- token",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 93,
+   "threads": 2,
+   "conv": 7,
+   "doc_tokens": 2540
+  },
+  {
+   "n": 5841,
+   "title": "Integration Tests for AWS Secrets Manager",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 52,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 3811
+  },
+  {
+   "n": 3147,
+   "title": "Update golang-cli-helpers library, support env namespaces",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 87,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 2382
+  },
+  {
+   "n": 4460,
+   "title": "Misc test fixes",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 79,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 2011
+  },
+  {
+   "n": 886,
+   "title": "Add new metrics related to jobs requesting and API usage",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 49,
+   "threads": 1,
+   "conv": 4,
+   "doc_tokens": 2426
+  },
+  {
+   "n": 3189,
+   "title": "Add all available unix OS build tags to unix targeted go files",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 111,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 1528
+  },
+  {
+   "n": 5497,
+   "title": "Add job to rebase branches on main",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 147,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 2219
+  },
+  {
+   "n": 3789,
+   "title": "Allow custom executor to specify the shell used",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 241,
+   "threads": 1,
+   "conv": 6,
+   "doc_tokens": 1122
+  },
+  {
+   "n": 6848,
+   "title": "Reclassify benign WaitDelay outcome in script_legacy step",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 117,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 2874
+  },
+  {
+   "n": 1372,
+   "title": "Remove deprecated clone/fetch command",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 58,
+   "threads": 1,
+   "conv": 5,
+   "doc_tokens": 3492
+  },
+  {
+   "n": 4102,
+   "title": "Make GitLab network client respect Retry-After header",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 261,
+   "threads": 2,
+   "conv": 2,
+   "doc_tokens": 2734
+  },
+  {
+   "n": 4504,
+   "title": "Add support for Windows 11 23H2",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 53,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 841
+  },
+  {
+   "n": 1427,
+   "title": "Add STOPSIGNAL to gitlab-runner docker images",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 79,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 668
+  },
+  {
+   "n": 4459,
+   "title": "Docker executor: Add configuration to include docker's `--group-add`",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 40,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 1080
+  },
+  {
+   "n": 5853,
+   "title": "Update GitLab Runner developer docs",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 61,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 1904
+  },
+  {
+   "n": 5765,
+   "title": "Parse the last line of stdout for UID/GID",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 143,
+   "threads": 3,
+   "conv": 1,
+   "doc_tokens": 1525
+  },
+  {
+   "n": 2657,
+   "title": "Add Docker integration tests for cache push for failed job",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 134,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 1550
+  },
+  {
+   "n": 2609,
+   "title": "Gracefully fail unexpected Stream() calls",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 122,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 2613
+  },
+  {
+   "n": 5918,
+   "title": "Add namespace support to GitLab Secrets Manager",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 115,
+   "threads": 2,
+   "conv": 11,
+   "doc_tokens": 2332
+  },
+  {
+   "n": 5685,
+   "title": "Add support for 503 http code when the GitLab instance is in maintenance mode",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 231,
+   "threads": 2,
+   "conv": 10,
+   "doc_tokens": 3356
+  },
+  {
+   "n": 2077,
+   "title": "Fix Docker Auth config to be platform agnostic",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 203,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 1333
+  },
+  {
+   "n": 7222,
+   "title": "Correct \"catched\" typo to \"caught\" in code comments",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 58,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 510
+  },
+  {
+   "n": 616,
+   "title": "Set timeouts for network.client",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 102,
+   "threads": 2,
+   "conv": 6,
+   "doc_tokens": 1608
+  },
+  {
+   "n": 2704,
+   "title": "Only allow failures with exit code 99 in Linux tests",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 138,
+   "threads": 2,
+   "conv": 16,
+   "doc_tokens": 2219
+  },
+  {
+   "n": 3025,
+   "title": "Add Evan and Marcel to docs CODEOWNERS",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 51,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 462
+  },
+  {
+   "n": 5655,
+   "title": "Fix kubernetes executor helper image override log",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 335,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 1660
+  },
+  {
+   "n": 1990,
+   "title": "Start watching container before starting",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 57,
+   "threads": 6,
+   "conv": 11,
+   "doc_tokens": 3223
+  },
+  {
+   "n": 2445,
+   "title": "Kubernetes tests simplify build creation",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 42,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 3664
+  },
+  {
+   "n": 5169,
+   "title": "Revert \"Merge branch 'avonbertoldi/git-lfs-is-bad' into 'main'\"",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 69,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 975
+  },
+  {
+   "n": 2573,
+   "title": "Use helper image to change K8s log dir permissions",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 379,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 1290
+  },
+  {
+   "n": 993,
+   "title": "Fix test failure detection",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 52,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 1785
+  },
+  {
+   "n": 1984,
+   "title": "Allow windows 1903 for Docker executor",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 82,
+   "threads": 2,
+   "conv": 6,
+   "doc_tokens": 1553
+  },
+  {
+   "n": 5080,
+   "title": "Disable interactive git credentials",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 129,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 1301
+  },
+  {
+   "n": 1174,
+   "title": "Split `make docker` for GitLab Runner Helper",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 178,
+   "threads": 1,
+   "conv": 8,
+   "doc_tokens": 3152
+  },
+  {
+   "n": 4064,
+   "title": "Unresolved secrets now return error by default",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 211,
+   "threads": 2,
+   "conv": 8,
+   "doc_tokens": 3001
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "n": 20,
+ "agree": 17,
+ "kappa_3class": 0.758,
+ "changes": [
+  {
+   "blind_id": "J0031",
+   "original": "partial",
+   "rejudged": "correct",
+   "original_note": "Identifies invalid-name handling but omits the untested unexpected failure detail",
+   "rejudged_note": "Identifies that invalid layer-name lookup did not work as expected."
+  },
+  {
+   "blind_id": "J0096",
+   "original": "partial",
+   "rejudged": "correct",
+   "original_note": "Includes bound methods but gives unsupported additional reasons",
+   "rejudged_note": "Includes the key reason that bound methods would miss the cache."
+  },
+  {
+   "blind_id": "J0433",
+   "original": "partial",
+   "rejudged": "correct",
+   "original_note": "Includes old-syntax crashes but adds unsupported data-loss rationale",
+   "rejudged_note": "States that MariaDB crashes on certain queries using the old syntax."
+  }
+ ],
+ "original_counts": {
+  "correct": 9,
+  "partial": 7,
+  "wrong": 4
+ },
+ "rejudged_counts": {
+  "correct": 12,
+  "partial": 4,
+  "wrong": 4
+ },
+ "codex_labels_w_sha256": "8097fcfc312f5b41f370fc96eae3d8d00cec9dacfb8bad61207a23476743f878",
+ "note": "drift labels are not used in any analysis; original labels unchanged"
+}

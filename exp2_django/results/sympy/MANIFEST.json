@@ -1,0 +1,19 @@
+{
+ "source_zip": "ESP3201A_SWE_exp1_sympy.zip",
+ "source_zip_sha256": "2af013a7e49e6a34c70eb4be87a7ba38e711fb8c65f3b8867580b82545d37937",
+ "django_stats": "ESP3201A_SWE_exp1_2510/ESP3201A_SWE_exp1/results/stats_test_poolA_full.txt",
+ "django_stats_sha256": "0ce3524978757daa458b0e1d1abb69d7a441d68adafef3f50a02e986e3185312",
+ "files": {
+  "exp2_sympy/questions.jsonl": "a29baf00a51e9c78a55754e43c8ab56de434314c3249a887747f375f113fa52b",
+  "exp2_sympy/gen_F0.jsonl": "7ba5083aaa13365723ff8ec24cb40154dc2b39efc17af92d3d5b971457c272d1",
+  "exp2_sympy/gen_S0-G.jsonl": "ee46fb5e79bfefc816718e3f12b4e8d4ec135e55e8ac86869f883ddb755ef9dd",
+  "exp2_sympy/summary.csv": "605938351e036e07fbb73a0eedfcacd2c59e12a8cc01c5b4236cd53c265822a0",
+  "exp2_sympy/report.csv": "6cdc44a14da6b297c9a13f492aa44eb151b7689512c9f82e4e85d9625a3d0499",
+  "exp2_sympy/correctness_sheet.csv": "0e51f3a880e1b7c5c957b3a58947f64ae026418488dd59fc05d0fd2b854b4e5d",
+  "exp2_sympy/keys/sheet_key.json": "2d589f635c3957b93cf447e586a0ba69d180410bc8908864e7470b6d79cd5cd0",
+  "exp2_sympy/LABELLING.txt": "2e792bee9606c3429668d37012258472f2bf5971b68f48807a26c8f68fbfaf07",
+  "exp2_sympy/LABEL_MERGE_RULE.txt": "56464c4b53136af95fc853def84a86acdf9b6af80eb463d4dd22ccbcc9f74c73",
+  "results/stats_sympy_full.txt": "0c01368b33645b45cf1813573f9ef322209566e190046fe1fa46e7fec4670107",
+  "START_HERE.md": "ab753d43376246769eced499a0e94a19b2cfd82aefa38a613a5a0ca1877c323e"
+ }
+}

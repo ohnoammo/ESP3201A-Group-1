@@ -1,0 +1,180 @@
+{
+ "git_commit": "3f5b369-dirty",
+ "k": 5,
+ "source": "exp1",
+ "exp1_retriever": {
+  "retriever": "Exp 1 retrieve.py FrozenRetriever (dense)",
+  "copy": "C:/Users/kwekt/ESP3201A_local/exp1_copy",
+  "chunk_set": "9cb76462",
+  "query_prompt": "Instruct: Given a question about why a change was made in a Django pull request, retrieve the pull request excerpts (description, commit messages, review comments or discussion) that state the reason\nQuery:",
+  "n_truncated_queries": 0
+ },
+ "config_sha1": "dd6534d3e6",
+ "query_instruction": "Given a question about why a change was made in a Django pull request, retrieve the pull request excerpts (description, commit messages, review comments or discussion) that state the reason",
+ "answerable_dev": {
+  "n": 10,
+  "chunk_hit@5": 0.8,
+  "overlap_hit@5": 0.8,
+  "pr_hit@5": 0.8,
+  "chunk_mrr@5": 0.62
+ },
+ "answerable_test": {
+  "n": 50,
+  "chunk_hit@5": 0.8,
+  "overlap_hit@5": 0.82,
+  "pr_hit@5": 0.86,
+  "chunk_mrr@5": 0.5643333333333334
+ },
+ "answerable_all": {
+  "n": 60,
+  "chunk_hit@5": 0.8,
+  "overlap_hit@5": 0.8166666666666667,
+  "pr_hit@5": 0.85,
+  "chunk_mrr@5": 0.5736111111111111
+ },
+ "no_reason_pr_hit@5": "10/10",
+ "removed": {
+  "rm13671": {
+   "excluded_leak": [],
+   "quote_in_context": false
+  },
+  "rm16129": {
+   "excluded_leak": [],
+   "quote_in_context": false
+  },
+  "rm9789": {
+   "excluded_leak": [],
+   "quote_in_context": false
+  },
+  "rm11459": {
+   "excluded_leak": [],
+   "quote_in_context": false
+  },
+  "rm12342": {
+   "excluded_leak": [],
+   "quote_in_context": false
+  }
+ },
+ "answerable_misses": {
+  "q14727": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    9505,
+    7878,
+    12793,
+    7878,
+    14503
+   ]
+  },
+  "q13658": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    9621,
+    16145,
+    12508,
+    10248,
+    10106
+   ]
+  },
+  "q10097": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    12184,
+    16421,
+    12629,
+    12351,
+    9481
+   ]
+  },
+  "q11377": {
+   "pr_hit": true,
+   "retrieved_prs": [
+    14019,
+    11377,
+    14624,
+    14047,
+    11129
+   ]
+  },
+  "q10177": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    16417,
+    16417,
+    7752,
+    7752,
+    8661
+   ]
+  },
+  "q9006": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    16084,
+    8119,
+    16054,
+    13297,
+    13303
+   ]
+  },
+  "q12664": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    10086,
+    15392,
+    14109,
+    12313,
+    10903
+   ]
+  },
+  "q11863": {
+   "pr_hit": true,
+   "retrieved_prs": [
+    13346,
+    13427,
+    11863,
+    11617,
+    15883
+   ]
+  },
+  "q14896": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    15812,
+    12131,
+    15812,
+    11687,
+    7673
+   ]
+  },
+  "q9725": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    14110,
+    10740,
+    12531,
+    10740,
+    12543
+   ]
+  },
+  "q16129": {
+   "pr_hit": true,
+   "retrieved_prs": [
+    16129,
+    16129,
+    12646,
+    12646,
+    12646
+   ]
+  },
+  "q13507": {
+   "pr_hit": false,
+   "retrieved_prs": [
+    12754,
+    10903,
+    15506,
+    9394,
+    14495
+   ]
+  }
+ }
+}

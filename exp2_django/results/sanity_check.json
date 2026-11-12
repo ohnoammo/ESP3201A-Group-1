@@ -1,0 +1,102 @@
+{
+ "git_commit": "457b200-dirty",
+ "checks": [
+  {
+   "check": "pool A is the new same-ticket-filtered pool",
+   "ok": true,
+   "detail": "2231 PRs, n_same_ticket=16"
+  },
+  {
+   "check": "question ids unique across test/dev/dev2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "no PR shared between test, dev and dev2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "no dev2 PR shares a Trac ticket with test material",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "check": "all question PRs in pool",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "all exclude_prs in pool",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every quote equals the PR text at its span",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "check": "every answerable has >= 1 supporting chunk (fixed)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "no copy flags",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "prompts a/b/c match FROZEN.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "Ollama options deterministic + num_ctx explicit",
+   "ok": true,
+   "detail": "{\"temperature\": 0, \"seed\": 42, \"num_ctx\": 8192, \"num_predict\": 512}"
+  },
+  {
+   "check": "Ollama version 0.40.4",
+   "ok": true,
+   "detail": "0.40.4"
+  },
+  {
+   "check": "retrieval: dense Qwen3-Embedding-0.6B, pinned revision, why-instruction",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "candidates fixed_s512_o77 on new-pool chunk set 311d0480",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "candidates struct_c256 on new-pool chunk set 0611be80",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "candidates_dev2 fixed_s512_o77 on new-pool chunk set 311d0480",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "candidates_dev2 struct_c256 on new-pool chunk set 0611be80",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "packing = Exp 1 relations.expand_and_pack (rank scoring)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "dev2 tuning rule file exists",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "passed": 19,
+ "total": 19
+}

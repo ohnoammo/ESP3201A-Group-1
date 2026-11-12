@@ -1,0 +1,15 @@
+scope,model,prompt,outcome,n,F0,H0,b_only_H0,c_only_F0,diff_questions,lower_limit_questions,upper_limit_questions,floor_questions,method,label,git_commit
+cell,4b-instruct,v2,unanswerable answered /17,17,7,8,1,0,1,-0.79,2.72,-7,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,4b-instruct,v2,answered wrong /50,50,5,3,1,3,-2,-7.05,2.51,-5,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,4b-instruct,v3,unanswerable answered /17,17,3,2,1,2,-1,-4.79,2.73,-3,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,4b-instruct,v3,answered wrong /50,50,4,5,3,2,1,-4.03,6.23,-4,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,8b,v2,unanswerable answered /17,17,13,12,0,1,-1,-3.33,1.19,-13,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,8b,v2,answered wrong /50,50,7,6,1,2,-1,-5.31,3.07,-7,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,8b,v3,unanswerable answered /17,17,13,11,0,2,-2,-4.7,0.66,-13,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+cell,8b,v3,answered wrong /50,50,6,8,3,1,2,-2.34,6.72,-6,Newcombe method 10,exploratory; no pass/fail margin,bfb5de3
+model,4b-instruct,pooled,unanswerable answered /17,17,,,,,0.0,-2.0,2.0,,"mean per cell; PR-family bootstrap, 1000 reps, seed 42, 15 families",exploratory; no pass/fail margin,bfb5de3
+model,8b,pooled,unanswerable answered /17,17,,,,,-1.5,-4.0,0.0,,"mean per cell; PR-family bootstrap, 1000 reps, seed 42, 15 families",exploratory; no pass/fail margin,bfb5de3
+all 4 cells,all,pooled,unanswerable answered /17,17,,,,,-0.75,-2.5,0.75,,"mean per cell; PR-family bootstrap, 1000 reps, seed 42, 15 families",exploratory; no pass/fail margin,bfb5de3
+model,4b-instruct,pooled,answered wrong /50,50,,,,,-0.5,-3.5,2.0,,"mean per cell; PR-family bootstrap, 1000 reps, seed 42, 50 families",exploratory; no pass/fail margin,bfb5de3
+model,8b,pooled,answered wrong /50,50,,,,,0.5,-2.0,3.0,,"mean per cell; PR-family bootstrap, 1000 reps, seed 42, 50 families",exploratory; no pass/fail margin,bfb5de3
+all 4 cells,all,pooled,answered wrong /50,50,,,,,0.0,-2.25,2.25,,"mean per cell; PR-family bootstrap, 1000 reps, seed 42, 50 families",exploratory; no pass/fail margin,bfb5de3

@@ -1,0 +1,9 @@
+model,arm,prompt,answered,correct,partial,wrong,strict_of50,lenient_of50,answered_wrong_of50,unanswerable_answered_of17,git_commit
+4b-instruct,H0,v2,43,32,8,3,32,40,3,8,494aae4
+4b-instruct,F0,v2,37,21,11,5,21,32,5,7,494aae4
+4b-instruct,H0,v3,43,27,11,5,27,38,5,2,494aae4
+4b-instruct,F0,v3,35,23,8,4,23,31,4,3,494aae4
+8b,H0,v2,46,31,9,6,31,40,6,12,494aae4
+8b,F0,v2,44,23,14,7,23,37,7,13,494aae4
+8b,H0,v3,45,29,8,8,29,37,8,11,494aae4
+8b,F0,v3,40,21,13,6,21,34,6,13,494aae4

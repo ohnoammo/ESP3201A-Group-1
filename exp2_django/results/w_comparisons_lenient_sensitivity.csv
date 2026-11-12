@@ -1,0 +1,5 @@
+model,prompt,comparison,outcome,W_count,other_count,b_only_W,c_only_other,p_unadjusted,label,git_commit
+4b-instruct,v2,W-F vs F0,lenient correct /50,27,32,3,8,0.2266,"sensitivity, added after the drift check; exploratory",74bf409
+4b-instruct,v3,W-F vs F0,lenient correct /50,24,31,4,11,0.1185,"sensitivity, added after the drift check; exploratory",74bf409
+8b,v2,W-F vs F0,lenient correct /50,30,37,3,10,0.0923,"sensitivity, added after the drift check; exploratory",74bf409
+8b,v3,W-F vs F0,lenient correct /50,28,34,3,9,0.146,"sensitivity, added after the drift check; exploratory",74bf409

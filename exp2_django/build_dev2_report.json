@@ -1,0 +1,28 @@
+{
+ "git_commit": "68dd98f-dirty",
+ "counts": {
+  "answerable": 40,
+  "no_reason": 5
+ },
+ "dropped": [],
+ "copy_flagged": [],
+ "source_part": {
+  "description": 6,
+  "review_thread": 23,
+  "comment": 11,
+  "commit": 0
+ },
+ "multi_span": {
+  "d16319": 2,
+  "d14155": 2,
+  "d13807": 2,
+  "d11333": 2,
+  "d13516": 2
+ },
+ "no_supporting_chunk": {
+  "fixed_s512_o77": [],
+  "struct_c256": []
+ },
+ "same_ticket_as_test": {},
+ "quote_elsewhere": {}
+}

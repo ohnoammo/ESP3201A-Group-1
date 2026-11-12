@@ -1,0 +1,20 @@
+SymPy correctness labels: how the two labellers' sheets were merged
+Decided: Thu 5 Nov 2026, 17:16 SGT, by Clifton, BEFORE exp2_sympy/keys/sheet_key.json was opened
+(no one had seen which arm wrote which answer).
+
+Labellers: Alyssa (correctness_sheet_alyssa.csv) and James (correctness_sheet_james.csv), blind,
+independently, rules in LABELLING.txt. Both sheets checked: all non-label cells identical to the
+generated sheet (24 rows).
+
+Agreement (24 answers):
+  3 labels (correct/partial/wrong): 20/24 agree (83%), Cohen's kappa 0.52
+  strict (correct vs not):          20/24 agree,       kappa 0.49
+  lenient (correct+partial vs wrong): 24/24 agree,     kappa 1.00
+  Both labellers: correct 19, partial 4, wrong 1 (same totals, different rows).
+  Disagreements: S002 (A correct / J partial), S004 (A partial / J correct),
+                 S016 (A partial / J correct), S021 (A correct / J partial).
+
+Rule: final label = the LOWER of the two labels (wrong < partial < correct), written to the
+`label` column of correctness_sheet.csv (the column exp2_sympy.py report reads).
+Sensitivity: the HIGHER label (`label_upper`), reported next to the main result.
+Lenient correct (correct + partial) is the same under both, since no disagreement involves "wrong".

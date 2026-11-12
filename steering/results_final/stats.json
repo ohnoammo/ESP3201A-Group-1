@@ -1,0 +1,680 @@
+{
+ "wording": "activation steering (no weights changed; not reinforcement learning, not fine-tuning)",
+ "pipeline_check_hf_vs_ollama_F0": {
+  "agree": 63,
+  "n": 70,
+  "kappa": 0.746,
+  "table": {
+   "ollama_answered/hf_answered": 48,
+   "ollama_not/hf_answered": 7,
+   "ollama_not/hf_not": 15
+  },
+  "ollama_unans_answered": 5,
+  "note": "Pipeline check only. The baseline for every test is the HF model unsteered, never Ollama."
+ },
+ "arms": [
+  {
+   "arm": "baseline",
+   "unans_answered_of_18": 7,
+   "answered_of_52": 48,
+   "overlap_cited_of_52": 45,
+   "contain_cited_of_52": 45,
+   "refused_with_span_in_context": 0,
+   "hedged_of_70": 0,
+   "degenerate_of_70": 0,
+   "empty_of_70": 0,
+   "n_steered_questions": 0
+  },
+  {
+   "arm": "steered 40:60",
+   "unans_answered_of_18": 7,
+   "answered_of_52": 48,
+   "overlap_cited_of_52": 45,
+   "contain_cited_of_52": 45,
+   "refused_with_span_in_context": 0,
+   "hedged_of_70": 0,
+   "degenerate_of_70": 0,
+   "empty_of_70": 0,
+   "n_steered_questions": 0
+  },
+  {
+   "arm": "steered 50:50",
+   "unans_answered_of_18": 5,
+   "answered_of_52": 44,
+   "overlap_cited_of_52": 37,
+   "contain_cited_of_52": 37,
+   "refused_with_span_in_context": 1,
+   "hedged_of_70": 0,
+   "degenerate_of_70": 0,
+   "empty_of_70": 4,
+   "n_steered_questions": 14
+  },
+  {
+   "arm": "steered 60:40",
+   "unans_answered_of_18": 6,
+   "answered_of_52": 43,
+   "overlap_cited_of_52": 17,
+   "contain_cited_of_52": 17,
+   "refused_with_span_in_context": 4,
+   "hedged_of_70": 0,
+   "degenerate_of_70": 1,
+   "empty_of_70": 1,
+   "n_steered_questions": 56
+  }
+ ],
+ "tests": [
+  {
+   "ratio": "40:60",
+   "outcome": "unanswerable answered (primary)",
+   "n": 18,
+   "baseline": 7,
+   "steered": 7,
+   "only_baseline": 0,
+   "only_steered": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "ratio": "40:60",
+   "outcome": "answered",
+   "n": 52,
+   "baseline": 48,
+   "steered": 48,
+   "only_baseline": 0,
+   "only_steered": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "ratio": "40:60",
+   "outcome": "overlap-cited",
+   "n": 52,
+   "baseline": 45,
+   "steered": 45,
+   "only_baseline": 0,
+   "only_steered": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "ratio": "50:50",
+   "outcome": "unanswerable answered (primary)",
+   "n": 18,
+   "baseline": 7,
+   "steered": 5,
+   "only_baseline": 2,
+   "only_steered": 0,
+   "p": 0.5,
+   "p_holm": 1.0
+  },
+  {
+   "ratio": "50:50",
+   "outcome": "answered",
+   "n": 52,
+   "baseline": 48,
+   "steered": 44,
+   "only_baseline": 4,
+   "only_steered": 0,
+   "p": 0.125,
+   "p_holm": 0.75
+  },
+  {
+   "ratio": "50:50",
+   "outcome": "overlap-cited",
+   "n": 52,
+   "baseline": 45,
+   "steered": 37,
+   "only_baseline": 8,
+   "only_steered": 0,
+   "p": 0.0078125,
+   "p_holm": 0.0625
+  },
+  {
+   "ratio": "60:40",
+   "outcome": "unanswerable answered (primary)",
+   "n": 18,
+   "baseline": 7,
+   "steered": 6,
+   "only_baseline": 1,
+   "only_steered": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "ratio": "60:40",
+   "outcome": "answered",
+   "n": 52,
+   "baseline": 48,
+   "steered": 43,
+   "only_baseline": 5,
+   "only_steered": 0,
+   "p": 0.0625,
+   "p_holm": 0.4375
+  },
+  {
+   "ratio": "60:40",
+   "outcome": "overlap-cited",
+   "n": 52,
+   "baseline": 45,
+   "steered": 17,
+   "only_baseline": 28,
+   "only_steered": 0,
+   "p": 7.450580596923828e-09,
+   "p_holm": 6.705522537231445e-08
+  }
+ ],
+ "selection": {
+  "40:60": {
+   "0": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.6666666666666666,
+    "unsteered_inner_J": 0.6666666666666666,
+    "all_dropped": false
+   },
+   "1": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.5333333333333333,
+    "unsteered_inner_J": 0.5333333333333333,
+    "all_dropped": false
+   },
+   "2": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.5714285714285714,
+    "unsteered_inner_J": 0.5714285714285714,
+    "all_dropped": false
+   },
+   "3": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.7142857142857143,
+    "unsteered_inner_J": 0.7142857142857143,
+    "all_dropped": false
+   },
+   "4": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.5714285714285714,
+    "unsteered_inner_J": 0.5714285714285714,
+    "all_dropped": false
+   }
+  },
+  "50:50": {
+   "0": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.6666666666666666,
+    "unsteered_inner_J": 0.6666666666666666,
+    "all_dropped": false
+   },
+   "1": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.5333333333333333,
+    "unsteered_inner_J": 0.5333333333333333,
+    "all_dropped": false
+   },
+   "2": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.5714285714285714,
+    "unsteered_inner_J": 0.5714285714285714,
+    "all_dropped": false
+   },
+   "3": {
+    "layer": 20,
+    "strength": 4.0,
+    "inner_J": 0.7857142857142857,
+    "unsteered_inner_J": 0.7142857142857143,
+    "all_dropped": false
+   },
+   "4": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.5714285714285714,
+    "unsteered_inner_J": 0.5714285714285714,
+    "all_dropped": false
+   }
+  },
+  "60:40": {
+   "0": {
+    "layer": 20,
+    "strength": 2.0,
+    "inner_J": 0.7285714285714285,
+    "unsteered_inner_J": 0.6666666666666666,
+    "all_dropped": false
+   },
+   "1": {
+    "layer": 20,
+    "strength": 4.0,
+    "inner_J": 0.6619047619047619,
+    "unsteered_inner_J": 0.5333333333333333,
+    "all_dropped": false
+   },
+   "2": {
+    "layer": 20,
+    "strength": 4.0,
+    "inner_J": 0.6428571428571429,
+    "unsteered_inner_J": 0.5714285714285714,
+    "all_dropped": false
+   },
+   "3": {
+    "layer": null,
+    "strength": 0.0,
+    "inner_J": 0.7142857142857143,
+    "unsteered_inner_J": 0.7142857142857143,
+    "all_dropped": false
+   },
+   "4": {
+    "layer": 20,
+    "strength": 2.0,
+    "inner_J": 0.6428571428571429,
+    "unsteered_inner_J": 0.5714285714285714,
+    "all_dropped": false
+   }
+  }
+ },
+ "correctness": {
+  "labels_file": "blind_sheet_labels.csv",
+  "rows": [
+   {
+    "kind": "strict (correct)",
+    "ratio": "40:60",
+    "n": 52,
+    "baseline": 39,
+    "steered": 39,
+    "only_baseline": 0,
+    "only_steered": 0,
+    "p_unadjusted": 1.0
+   },
+   {
+    "kind": "strict (correct)",
+    "ratio": "50:50",
+    "n": 52,
+    "baseline": 39,
+    "steered": 31,
+    "only_baseline": 8,
+    "only_steered": 0,
+    "p_unadjusted": 0.0078125
+   },
+   {
+    "kind": "strict (correct)",
+    "ratio": "60:40",
+    "n": 52,
+    "baseline": 39,
+    "steered": 12,
+    "only_baseline": 27,
+    "only_steered": 0,
+    "p_unadjusted": 1.4901161193847656e-08
+   },
+   {
+    "kind": "lenient (correct + partial)",
+    "ratio": "40:60",
+    "n": 52,
+    "baseline": 47,
+    "steered": 47,
+    "only_baseline": 0,
+    "only_steered": 0,
+    "p_unadjusted": 1.0
+   },
+   {
+    "kind": "lenient (correct + partial)",
+    "ratio": "50:50",
+    "n": 52,
+    "baseline": 47,
+    "steered": 38,
+    "only_baseline": 9,
+    "only_steered": 0,
+    "p_unadjusted": 0.00390625
+   },
+   {
+    "kind": "lenient (correct + partial)",
+    "ratio": "60:40",
+    "n": 52,
+    "baseline": 47,
+    "steered": 20,
+    "only_baseline": 27,
+    "only_steered": 0,
+    "p_unadjusted": 1.4901161193847656e-08
+   }
+  ],
+  "note": "secondary; exact McNemar, unadjusted"
+ },
+ "sweep": [
+  {
+   "ratio": "none",
+   "layer": null,
+   "strength": 0.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 14,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 14,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 14,
+   "strength": 2.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 14,
+   "strength": 4.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 20,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 20,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 20,
+   "strength": 2.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 20,
+   "strength": 4.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.8846153846153846,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 25,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 25,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 25,
+   "strength": 2.0,
+   "unans_refused_share": 0.5555555555555556,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "40:60",
+   "layer": 25,
+   "strength": 4.0,
+   "unans_refused_share": 0.5,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 14,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 14,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 14,
+   "strength": 2.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 14,
+   "strength": 4.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 2,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 20,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9038461538461539,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 20,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9038461538461539,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 20,
+   "strength": 2.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.8846153846153846,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 20,
+   "strength": 4.0,
+   "unans_refused_share": 0.8333333333333334,
+   "ans_answered_share": 0.6730769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 25,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 25,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 25,
+   "strength": 2.0,
+   "unans_refused_share": 0.5555555555555556,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "50:50",
+   "layer": 25,
+   "strength": 4.0,
+   "unans_refused_share": 0.5,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 4,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 14,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 14,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 14,
+   "strength": 2.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9038461538461539,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 14,
+   "strength": 4.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.5576923076923077,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 20,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9038461538461539,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 20,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.8846153846153846,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 20,
+   "strength": 2.0,
+   "unans_refused_share": 0.7222222222222222,
+   "ans_answered_share": 0.8269230769230769,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 20,
+   "strength": 4.0,
+   "unans_refused_share": 0.8333333333333334,
+   "ans_answered_share": 0.8269230769230769,
+   "degenerate": 1,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 25,
+   "strength": 0.5,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 25,
+   "strength": 1.0,
+   "unans_refused_share": 0.6111111111111112,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 0,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 25,
+   "strength": 2.0,
+   "unans_refused_share": 0.5555555555555556,
+   "ans_answered_share": 0.9230769230769231,
+   "degenerate": 1,
+   "n": 70
+  },
+  {
+   "ratio": "60:40",
+   "layer": 25,
+   "strength": 4.0,
+   "unans_refused_share": 0.0,
+   "ans_answered_share": 1.0,
+   "degenerate": 25,
+   "n": 70
+  }
+ ]
+}

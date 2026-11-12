@@ -1,0 +1,27 @@
+# Conda environment for Experiment 1 on SWE-bench (BM25 + dense + hybrid).
+#   conda env create -f environment.yml
+#   conda activate esp3201a
+#
+# GPU (NVIDIA) users: the pip "torch" below is the CPU build on Windows. After creating the env,
+# replace it with a CUDA build, e.g.
+#   pip install --force-reinstall torch --index-url https://download.pytorch.org/whl/cu128
+# (pick the CUDA version shown by `nvidia-smi`; see pytorch.org "Get Started").
+name: esp3201a
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      # same pins as requirements.txt (BM25 baseline)
+      - qdrant-client==1.19.1
+      - fastembed==0.9.0
+      - nltk==3.10.3
+      - numpy==2.4.4
+      - requests>=2.31
+      - datasets>=2.19
+      - rank-bm25==0.2.2
+      # dense retrieval (Qwen3-Embedding)
+      - torch
+      - transformers>=4.51.0
+      - sentence-transformers>=3.0

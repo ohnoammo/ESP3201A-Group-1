@@ -1,0 +1,198 @@
+blind_id,label,note
+J0145,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0218,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0225,correct,Matches the gold reason: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0235,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0253,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0258,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0260,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0267,correct,"Matches the gold reason: Because the bug concerns how the template renders, not the form itself."
+J0328,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0330,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0345,partial,Captures discoverability but omits that the file was not added to satisfy a third-party advisor.
+J0374,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0402,correct,Matches the gold reason: Because Webpack by default writes CSS source map comments such as /*# sourceMappingURL=main.css.map*/ without a trailing space.
+J0411,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0476,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0535,wrong,Gives a different or conflicting explanation; the gold reason is: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0570,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0609,correct,"Matches the gold reason: Because the bug concerns how the template renders, not the form itself."
+J0634,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0641,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0793,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0794,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0795,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0796,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0797,partial,Identifies invalid layer lookup but invents a test failure; the quote says there was no test case.
+J0798,wrong,"Gives a different or conflicting explanation; the gold reason is: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0799,correct,"Matches the gold reason: It would not help Windows users, and it is easy to search the web for how to delete pyc files."
+J0800,partial,Mentions copy problems but misses that ErrorList inherits UserList and its copy() lost error_class.
+J0801,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0802,correct,Matches the gold reason: Because passing a manager is an undocumented use case.
+J0803,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0804,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0805,correct,"Matches the gold reason: Because the bug concerns how the template renders, not the form itself."
+J0806,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0807,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0808,partial,"Attributes the sync tests to general coverage; the quote says they were first written while debugging to check the approach, and their necessity was uncertain."
+J0809,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0810,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0811,correct,"Matches the gold reason: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0812,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0813,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0814,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0815,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0816,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0817,correct,"Matches the gold reason: It would not help Windows users, and it is easy to search the web for how to delete pyc files."
+J0818,wrong,"Gives a different or conflicting explanation; the gold reason is: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0819,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0820,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0821,correct,"Matches the gold reason: To make the Code of Conduct easier to discover, not to satisfy third-party tools such as Snyk Advisor."
+J0822,correct,"Matches the gold reason: It would not help Windows users, and it is easy to search the web for how to delete pyc files."
+J0823,partial,Mentions copy problems but misses that ErrorList inherits UserList and its copy() lost error_class.
+J0824,partial,"Notes the limit no longer applies to bulk inserts, but misses that bulk_batch_size() is used elsewhere and needs separate review."
+J0825,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0826,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0827,wrong,Gives a different or conflicting explanation; the gold reason is: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0828,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0829,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0830,correct,Matches the gold reason: Because passing a manager is an undocumented use case.
+J0831,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0832,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0833,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0834,correct,"Matches the gold reason: Because the bug concerns how the template renders, not the form itself."
+J0835,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0836,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0837,wrong,Gives a different or conflicting explanation; the gold reason is: Because passing a manager is an undocumented use case.
+J0838,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0839,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0840,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0841,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0842,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0843,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0844,partial,"Says the change was deferred, but misses why: the limit changes only for bulk inserts while bulk_batch_size() has other uses."
+J0845,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0846,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0847,correct,"Matches the gold reason: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0848,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0849,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0850,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0851,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0852,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0853,wrong,Gives a different or conflicting explanation; the gold reason is: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0854,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0855,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0856,partial,"Attributes the sync tests to general coverage; the quote says they were first written while debugging to check the approach, and their necessity was uncertain."
+J0857,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0858,wrong,"Gives a different or conflicting explanation; the gold reason is: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0859,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0860,correct,"Matches the gold reason: To make the Code of Conduct easier to discover, not to satisfy third-party tools such as Snyk Advisor."
+J0861,partial,"Cites Python 3 true division, but misses the integer formatting placeholders and the likely Python 2 reason for the old float conversion."
+J0862,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0863,correct,"Matches the gold reason: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0864,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0865,wrong,"Gives a different or conflicting explanation; the gold reason is: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0866,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0867,correct,"Matches the gold reason: That is a separate and harder problem that needs its own ticket and PR; this PR should focus on ticket 29052, for which preserving alias order with default first is enough."
+J0868,partial,Mentions broken layer lookup but misses the untested invalid-name case and adds an unsupported history.
+J0869,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0870,partial,"Says repr() is clearer, but misses the key concern that regex cannot anticipate all wrapped expression types."
+J0871,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0872,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0873,correct,"Matches the gold reason: That was the author's first idea, but it would have been a backwards-incompatible (breaking) change."
+J0874,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0875,correct,"Matches the gold reason: They wrote them first while hunting the async bug, to check that their approach made sense, and were unsure whether they were needed."
+J0876,correct,"Matches the gold reason: The title attribute that showed full choices had been removed in another commit, and ellipsis no longer works with the flex layout, so wrapping was the best option for now."
+J0877,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0878,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0879,wrong,Gives a different or conflicting explanation; the gold reason is: Because passing a manager is an undocumented use case.
+J0880,wrong,"Gives a different or conflicting explanation; the gold reason is: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0881,partial,"Says the change was deferred, but misses why: the limit changes only for bulk inserts while bulk_batch_size() has other uses."
+J0882,correct,"Matches the gold reason: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0883,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0884,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0885,correct,"Matches the gold reason: It existed only as a micro-optimisation to skip building and returning key_transforms, and the speed difference is negligible, so removing it simplifies the code."
+J0886,correct,"Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+J0887,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0888,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0889,correct,"Matches the gold reason: Python's Steering Council moved the Enum repr change to 3.11, but it was unclear whether it would really land there, so the author avoided a PY311 flag and adopted the proposed format anyway because they liked it."
+J0890,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0891,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0892,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0893,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0894,correct,"Matches the gold reason: It fills %d placeholders, and the float conversion was probably only there to force true division on Python 2; Python 3 always does true division."
+J0895,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0896,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0897,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0898,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0899,correct,Matches the gold reason: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0900,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0901,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0902,partial,"Says the change was deferred, but misses why: the limit changes only for bulk inserts while bulk_batch_size() has other uses."
+J0903,correct,"Matches the gold reason: str.join() turns its input into a list anyway if it is not one already, so passing a list is slightly faster."
+J0904,correct,"Matches the gold reason: Because the connection is meant to be used from several threads, so updates to the counter have to be thread-safe."
+J0905,correct,"Matches the gold reason: Most browsers ignore a Set-Cookie header for such prefixed names unless it carries the flags each prefix requires, so the deletion would otherwise be ignored."
+J0906,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0907,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0908,wrong,"Gives a different or conflicting explanation; the gold reason is: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0909,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0910,correct,"Matches the gold reason: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0911,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0912,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0913,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0914,correct,Matches the gold reason: Looking up a layer by an invalid name had no test and did not behave as expected (it raised a GDALException about an invalid pointer).
+J0915,partial,"Mentions the removed title, but misses that ellipsis no longer works with the changelist flex layout."
+J0916,correct,"Matches the gold reason: That is a separate and harder problem that needs its own ticket and PR; this PR should focus on ticket 29052, for which preserving alias order with default first is enough."
+J0917,correct,"Matches the gold reason: Because None can be stored in the cache explicitly, so a None result does not reliably mean the key is absent."
+J0918,correct,"Matches the gold reason: Switching GC off caused a big slowdown on Windows CI (about 11 to 21 minutes), possibly through swapping; running it less often cuts unnecessary GC work while keeping memory from growing into swap."
+J0919,correct,"Matches the gold reason: Changing the default empty values would probably break someone's code, and anyone who needs different behaviour can already configure it."
+J0920,wrong,Gives a different or conflicting explanation; the gold reason is: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0921,partial,Identifies the chain.from_iterable() C-level approach but states the speed cause too confidently; the author said they could not say for sure.
+J0922,correct,"Matches the gold reason: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0923,correct,"Matches the gold reason: ErrorList subclasses UserList, so its copy() lost error_class."
+J0924,correct,"Matches the gold reason: The new __getattribute__ did not fall back to __getattr__, but LazySettings, a LazyObject subclass, defines its own __getattr__."
+J0925,wrong,Gives a different or conflicting explanation; the gold reason is: Because Webpack by default writes CSS source map comments such as /*# sourceMappingURL=main.css.map*/ without a trailing space.
+J0926,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0927,correct,Matches the gold reason: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0928,correct,Matches the gold reason: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0929,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0930,correct,"Matches the gold reason: The existing assignment was deliberate, but the names were poor, so num_deleted and num_deleted_per_model were proposed."
+J0931,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0932,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0933,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0934,correct,Matches the gold reason: Both modules were deprecated in Python 3.10; aiosmtpd is the recommended replacement.
+J0935,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0936,correct,"Matches the gold reason: ErrorList subclasses UserList, so its copy() lost error_class."
+J0937,wrong,Gives a different or conflicting explanation; the gold reason is: Because MariaDB crashes on certain queries that use the old syntax (as discovered in an earlier PR); newer MariaDB supports the subquery form instead.
+J0938,partial,States the setup ordering requirement but omits that process_setup() is for customization and users should not have to call django.setup() themselves.
+J0939,wrong,"Gives a different or conflicting explanation; the gold reason is: Registering a template tag that does not return a Node instance already does not work: it crashes when nodes are compiled (e.g. an AttributeError), so the removed check protected no working code."
+J0940,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0941,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0942,correct,"Matches the gold reason: violation_error_message was not included in BaseConstraint.deconstruct(), so it was dropped whenever the constraint was cloned."
+J0943,partial,"Cites Python 3 true division, but misses the integer formatting placeholders and the likely Python 2 reason for the old float conversion."
+J0944,correct,"Matches the gold reason: The two currently hold the same values, but if more databases are added to connections later, the tests only need the declared ones, and touching others would cause errors."
+J0945,partial,Includes the ease of searching online but omits that a shell command would not help Windows users.
+J0946,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0947,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0948,correct,Matches the gold reason: In case someone reported another broken use case that they had missed.
+J0949,partial,"Cites Python 3 true division, but misses the integer formatting placeholders and the likely Python 2 reason for the old float conversion."
+J0950,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0951,correct,"Matches the gold reason: GitHub Actions seems to run faster (78 tests in about 88 s versus about 256 s on Jenkins, possibly due to --parallel 2), which makes the tests more sensitive to missing waits."
+J0952,correct,Matches the gold reason: Because Webpack by default writes CSS source map comments such as /*# sourceMappingURL=main.css.map*/ without a trailing space.
+J0953,wrong,Gives a different or conflicting explanation; the gold reason is: It was not a regression test because it passed without the patch; checking the number of constraints in the existing schema test was enough.
+J0954,correct,"Matches the gold reason: The conditions point in opposite directions: the new flag must be true for SQLite older than 3.30, while the existing one is true for 3.30.0 and later."
+J0955,correct,"Matches the gold reason: To redirect the output of run_tests() in the deprecation-warning test, which must call a real, unmocked run_tests(). It was later replaced by overriding get_test_runner_kwargs() in a test-only runner."
+J0956,wrong,Gives a different or conflicting explanation; the gold reason is: Because the PR was meant to be backported; reordering this and other tests could happen in a separate cleanup.
+J0957,partial,Gets the bound-method cache limitation but adds an unsupported explanation involving unhashable methods.
+J0958,correct,Matches the gold reason: So that a page can hide the breadcrumbs without leaving an empty nav element behind.
+J0959,correct,"Matches the gold reason: That class tests uploaded files, whereas the new tests cover a base64-encoded value in an ordinary request field, not a file."
+J0960,correct,"Matches the gold reason: To stay backwards compatible with any non-Django code that constructs LiveServerThread directly, which mattered more than a tidier signature."
+J0961,correct,Matches the gold reason: Creating the SimpleLazyObject via _lazy_re_compile costs more than compiling the regex straight away (about 620 ns versus 277 ns).
+J0962,correct,"Matches the gold reason: Because users will find it useful, e.g. checking field.field.required to add a CSS class to the label."
+J0963,correct,Matches the gold reason: It could break compatibility with third-party migration operations that override these methods.
+J0964,correct,Matches the gold reason: It no longer qualified for a backport under Django's supported versions policy.
+J0965,correct,"Matches the gold reason: To make the Code of Conduct easier to discover, not to satisfy third-party tools such as Snyk Advisor."
+J0966,correct,Matches the gold reason: To show that passing positional arguments still works during the deprecation period (with the deprecation warning ignored).
+J0967,partial,Captures discoverability but omits that the file was not added to satisfy a third-party advisor.
+J0968,partial,Notes the existing bottom padding but misses that Delete is always the last button.
+J0969,partial,Mentions broken layer lookup but misses the untested invalid-name case and adds an unsupported history.

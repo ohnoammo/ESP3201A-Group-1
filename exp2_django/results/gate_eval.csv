@@ -1,0 +1,17 @@
+model,arm,prompt,threshold,answered_ungated,answered_gated,overlap_cited_ungated,overlap_cited_gated,unanswerable_answered_ungated_of17,unanswerable_answered_gated_of17
+4b-instruct,F0,v2,0.5,37,15,33,14,7,6
+4b-instruct,S0,v2,0.5,39,13,23,10,7,1
+4b-instruct,S0-G,v2,0.5,38,14,25,11,6,2
+4b-instruct,S-0.25,v2,0.5,42,16,28,12,7,2
+4b-instruct,F0,v3,0.5,35,19,31,19,3,2
+4b-instruct,S0,v3,0.5,32,15,20,12,4,1
+4b-instruct,S0-G,v3,0.5,34,18,25,16,2,0
+4b-instruct,S-0.25,v3,0.5,41,17,32,17,5,2
+8b,F0,v2,0.5,44,24,36,20,13,9
+8b,S0,v2,0.5,47,13,30,12,13,4
+8b,S0-G,v2,0.5,47,19,31,13,12,5
+8b,S-0.25,v2,0.5,48,20,29,11,14,6
+8b,F0,v3,0.5,40,29,32,24,13,7
+8b,S0,v3,0.5,45,20,24,11,11,6
+8b,S0-G,v3,0.5,44,24,27,13,11,5
+8b,S-0.25,v3,0.5,46,25,27,14,13,1

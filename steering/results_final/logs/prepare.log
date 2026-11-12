@@ -1,0 +1,141 @@
+
+===== prepare  2026-11-08 21:46:07  code 95974b01ac79  args {'command': 'prepare', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+[fixed_s512_o77] loaded 17636 chunks from chunks\swe_fixed_s512_o77_2231docs_111084af.json
+all 70 rebuilt main contexts equal gen_F0.jsonl (chunk ids, short ids, span flags)
+writing prepare outputs:
+  prompts.jsonl: identical to the existing copy (sha256 c6dc075a29ae)
+  folds.json: identical to the existing copy (sha256 f5549e2cb858)
+  inner_sets.json: identical to the existing copy (sha256 5cef8af17f1b)
+  pairs.jsonl: identical to the existing copy (sha256 6e692a7bb15c)
+  ratio_subsets.json: identical to the existing copy (sha256 955dee1d259e)
+  dropped_pairs.jsonl: identical to the existing copy (sha256 29a60574c3f2)
+  pair_flags.json: identical to the existing copy (sha256 11629612da40)
+  prepare_summary.json: identical to the existing copy (sha256 b1b2b06f0828)
+{
+ "answerable_span_in_context_any": 47,
+ "answerable_span_in_context_all": 46,
+ "fold_sizes": {
+  "0": {
+   "total": 14,
+   "answerable_span": 10,
+   "answerable_nospan": 1,
+   "no_reason": 1,
+   "removed": 2
+  },
+  "1": {
+   "total": 14,
+   "answerable_span": 10,
+   "answerable_nospan": 1,
+   "no_reason": 1,
+   "removed": 2
+  },
+  "2": {
+   "total": 14,
+   "answerable_span": 9,
+   "answerable_nospan": 1,
+   "no_reason": 2,
+   "removed": 2
+  },
+  "3": {
+   "total": 14,
+   "answerable_span": 9,
+   "answerable_nospan": 1,
+   "no_reason": 2,
+   "removed": 2
+  },
+  "4": {
+   "total": 14,
+   "answerable_span": 9,
+   "answerable_nospan": 1,
+   "no_reason": 2,
+   "removed": 2
+  }
+ },
+ "pairs": {
+  "grounding/g_nf/not_found_sentence": 47,
+  "grounding/g_what/what_as_why_title": 47,
+  "refusal/twin/gold_answer_top_twin_chunk": 49,
+  "refusal/unans/stored_F0_answer": 3,
+  "refusal/unans/what_as_why_title": 13
+ },
+ "ratio_subset_sizes": {
+  "0": {
+   "40:60": [
+    48,
+    72
+   ],
+   "50:50": [
+    51,
+    51
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "1": {
+   "40:60": [
+    48,
+    72
+   ],
+   "50:50": [
+    51,
+    51
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "2": {
+   "40:60": [
+    50,
+    75
+   ],
+   "50:50": [
+    52,
+    52
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "3": {
+   "40:60": [
+    50,
+    75
+   ],
+   "50:50": [
+    53,
+    53
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  },
+  "4": {
+   "40:60": [
+    50,
+    75
+   ],
+   "50:50": [
+    53,
+    53
+   ],
+   "60:40": [
+    51,
+    34
+   ]
+  }
+ },
+ "flags": {
+  "title_states_reason": 1,
+  "title_overlaps_gold_reason": 4,
+  "stored_answer_cites_own_mr": 2,
+  "answer_words_in_twin_context": 2,
+  "span_partly_in_context": 2
+ }
+}
+PREPARE OK

@@ -1,0 +1,9 @@
+kind,name,scoring,n,answered_strict,answered_lenient,correct,partial,wrong,not_answered,strict_correct,lenient_correct,labelled_lenient_refusals,F0_correct,other_correct,b_F0_only,c_other_only,p_exact_two_sided,adjustment
+arm,F0,,52,43,43,30,12,1,9,30,42,"correct 0, partial 0, wrong 0",,,,,,
+arm,P0,,52,52,47,30,17,5,0,30,47,"correct 1, partial 0, wrong 4",,,,,,
+arm,CB,,52,52,51,0,3,49,0,0,3,"correct 0, partial 0, wrong 1",,,,,,
+arm,F0_rerun,,52,43,43,30,12,1,9,30,42,"correct 0, partial 0, wrong 0",,,,,,
+mcnemar,F0 vs P0,strict,52,,,,,,,,,,30,30,4,4,1.0,none
+mcnemar,F0 vs P0,lenient,52,,,,,,,,,,42,47,1,6,0.125,none
+mcnemar,F0 vs CB,strict,52,,,,,,,,,,30,0,30,0,1.862645149230957e-09,none
+mcnemar,F0 vs CB,lenient,52,,,,,,,,,,42,3,40,1,3.8198777474462986e-11,none

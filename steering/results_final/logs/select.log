@@ -1,0 +1,308 @@
+
+===== select  2026-11-08 23:29:20  code 95974b01ac79  args {'command': 'select', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+select: 0 inner answers done, 5112 to generate
+loading Qwen/Qwen3-4B-Instruct-2507 rev cdbee75f17c01a7cc42f958dc650907174af0554 as bfloat16 on cuda ...
+Loading weights:   0%|                                                                         | 0/398 [00:00<?, ?it/s]Loading weights: 100%|█████████████████████████████████████████████████████████████| 398/398 [00:00<00:00, 8295.19it/s]
+  loaded in 6s; 36 decoder layers, hidden 2560
+  [25/5112]  inner|40:60|f0|L14|s0.5|q7545      ANSWER   79 tok  2.87s  'To prevent jobs from waiting indefinitely in `Pending` state'
+Traceback (most recent call last):
+  File "C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\codex_steer.py", line 1632, in main
+    COMMANDS[a.command](a)
+  File "C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\codex_steer.py", line 1153, in cmd_select
+    g = lm.generate(p["system"], p["user"], layer=L, vec=vecs[f"{ratio}|{k}|{L}"], strength=s, max_new=a.max_new)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\codex_steer.py", line 843, in generate
+    out = self.m.generate(input_ids=x, attention_mask=torch.ones_like(x), max_new_tokens=max_new,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\generation\utils.py", line 2681, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\generation\utils.py", line 2895, in _sample
+    outputs = model_forward(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\generic.py", line 911, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\qwen3\modeling_qwen3.py", line 492, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\generic.py", line 1040, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\output_capturing.py", line 262, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\qwen3\modeling_qwen3.py", line 424, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\qwen3\modeling_qwen3.py", line 318, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\qwen3\modeling_qwen3.py", line 274, in forward
+    self.config._attn_implementation, eager_attention_forward
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kwekt\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 461, in __getattribute__
+    def __getattribute__(self, key):
+    
+KeyboardInterrupt
+
+SELECT CRASHED; the log is C:\Users\kwekt\ESP3201A_local\gitlab_runner_copy\codex_steering\out\logs\select.log. Re-running the same command resumes.
+[0m
+===== select  2026-11-08 23:53:12  code 95974b01ac79  args {'command': 'select', 'repo': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy', 'out': 'C:\\Users\\kwekt\\ESP3201A_local\\gitlab_runner_copy\\codex_steering\\out', 'model': 'Qwen/Qwen3-4B-Instruct-2507', 'revision': None, 'dtype': 'bfloat16', 'device': None, 'layers': [14, 20, 25], 'prefer_layer': 20, 'ratios': ['40:60', '50:50', '60:40'], 'max_new': 512, 'labels': None, 'overwrite': False, 'cpu_ok': False, 'no_download': False}
+select: 36 inner answers done, 5076 to generate
+loading Qwen/Qwen3-4B-Instruct-2507 rev cdbee75f17c01a7cc42f958dc650907174af0554 as bfloat16 on cuda ...
+Loading weights:   0%|                                                                         | 0/398 [00:00<?, ?it/s]Loading weights: 100%|█████████████████████████████████████████████████████████████| 398/398 [00:00<00:00, 7713.79it/s]
+  loaded in 5s; 36 decoder layers, hidden 2560
+  [25/5076]  inner|40:60|f0|L14|s2.0|nr4460     ANSWER   71 tok  2.69s  'The test fails on modern Linux hosts with systemd because it'
+  [50/5076]  inner|40:60|f0|L14|s2.0|q2461      ANSWER   52 tok  2.05s  'To allow storing VMs across multiple SSDs to avoid bottlenec'
+  [75/5076]  inner|40:60|f0|L14|s4.0|q6695      ANSWER   93 tok   3.3s  'The checkout step was missing the `http.proactiveAuth=basic`'
+  [100/5076]  inner|40:60|f0|L20|s0.5|q4206      ANSWER   95 tok  3.26s  "Git-lfs is compiled from source in the runner's ubi-fips ima"
+  [125/5076]  inner|40:60|f0|L20|s1.0|q3831      ANSWER   61 tok   2.7s  'The runner went back to sending PowerShell its commands with'
+  [150/5076]  inner|40:60|f0|L20|s2.0|rm2971     REFUSE    8 tok  0.89s  'Not found in the provided PRs'
+  [175/5076]  inner|40:60|f0|L20|s4.0|rm3846     ANSWER   40 tok  1.74s  'The Windows integration test failure checks now run on MR pi'
+  [200/5076]  inner|40:60|f0|L25|s0.5|rm3960     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [225/5076]  inner|40:60|f0|L25|s0.5|q2003      ANSWER   34 tok  1.52s  'To make it more obvious to the recipient that the reply is b'
+  [250/5076]  inner|40:60|f0|L25|s1.0|q7545      ANSWER   69 tok  2.83s  'The runner fails fast when the runtime cannot join the pod u'
+  [275/5076]  inner|40:60|f0|L25|s2.0|q5065      ANSWER   44 tok  1.85s  'The test was added to verify the behavior when the service n'
+  [300/5076]  inner|40:60|f0|L25|s4.0|q6056      ANSWER   86 tok  2.94s  'The reason given is that using `vars` instead of `job.vars` '
+  [325/5076]  inner|40:60|f1|L14|s0.5|nr4102     REFUSE    8 tok  0.89s  'Not found in the provided PRs'
+  [350/5076]  inner|40:60|f1|L14|s1.0|rm3265     ANSWER   48 tok  1.89s  'The change was made because the initial submodule update may'
+  [375/5076]  inner|40:60|f1|L14|s2.0|rm2555     REFUSE    8 tok  0.77s  'Not found in the provided PRs'
+  [400/5076]  inner|40:60|f1|L14|s4.0|nr1372     REFUSE    8 tok  0.86s  'Not found in the provided PRs'
+  [425/5076]  inner|40:60|f1|L14|s4.0|q2461      ANSWER   56 tok  2.97s  'To allow splitting VMs across multiple SSDs to avoid bottlen'
+  [450/5076]  inner|40:60|f1|L20|s0.5|q7545      ANSWER   80 tok   2.9s  'To prevent jobs from waiting indefinitely in a `Pending` sta'
+  [475/5076]  inner|40:60|f1|L20|s1.0|q3528      ANSWER   45 tok  1.86s  'The release stage now checks whether pushing is enabled for '
+  [500/5076]  inner|40:60|f1|L20|s2.0|rm2968     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [525/5076]  inner|40:60|f1|L20|s4.0|nr3805     EMPTY    10 tok   0.9s  '[PR3805-c0]'
+  [550/5076]  inner|40:60|f1|L25|s0.5|nr1781     ANSWER   35 tok  2.09s  'To reduce the size of the image and align with Docker best p'
+  [575/5076]  inner|40:60|f1|L25|s1.0|nr5841     REFUSE    8 tok  0.75s  'Not found in the provided PRs'
+  [600/5076]  inner|40:60|f1|L25|s1.0|q5853      ANSWER   32 tok  1.46s  'GitLab developers switched from asdf to mise because the org'
+  [625/5076]  inner|40:60|f1|L25|s2.0|q5846      ANSWER   74 tok   2.7s  'To improve debugging and observability, the logs now include'
+  [650/5076]  inner|40:60|f1|L25|s4.0|q2211      ANSWER   57 tok  2.29s  'The tests `TestDockerCommandBuildFail` and `TestDockerComman'
+  [675/5076]  inner|40:60|f2|L14|s0.5|q3831      ANSWER   60 tok  3.02s  'The runner went back to sending PowerShell its commands with'
+  [700/5076]  inner|40:60|f2|L14|s1.0|nr4102     REFUSE    8 tok  0.91s  'Not found in the provided PRs'
+  [725/5076]  inner|40:60|f2|L14|s2.0|nr3805     ANSWER   43 tok  2.16s  'To prevent users from mixing server-side configuration optio'
+  [750/5076]  inner|40:60|f2|L14|s4.0|nr3177     ANSWER   49 tok  2.15s  'The .deb files for other architectures were left in /tmp bec'
+  [775/5076]  inner|40:60|f2|L20|s0.5|rm3960     REFUSE    8 tok  0.68s  'Not found in the provided PRs'
+  [800/5076]  inner|40:60|f2|L20|s0.5|q5853      ANSWER   32 tok  1.46s  'GitLab developers switched from asdf to mise because the org'
+  [825/5076]  inner|40:60|f2|L20|s1.0|q5846      ANSWER   44 tok  1.88s  'To improve debugging and observability by providing complete'
+  [850/5076]  inner|40:60|f2|L20|s2.0|q2682      ANSWER   36 tok  1.66s  'To avoid depending on prebuilt helper images, the tests now '
+  [875/5076]  inner|40:60|f2|L20|s4.0|q4206      ANSWER   48 tok  2.09s  'To resolve a number of CVES vulnerabilities reported against'
+  [900/5076]  inner|40:60|f2|L25|s0.5|q2913      ANSWER   41 tok  2.23s  "The docker executor's user setting does not apply to service"
+  [925/5076]  inner|40:60|f2|L25|s1.0|rm2968     REFUSE    8 tok   0.8s  'Not found in the provided PRs'
+  [950/5076]  inner|40:60|f2|L25|s2.0|nr3147     REFUSE    8 tok  0.72s  'Not found in the provided PRs'
+  [975/5076]  inner|40:60|f2|L25|s4.0|rm4142     REFUSE    8 tok  0.72s  'Not found in the provided PRs'
+  [1000/5076]  inner|40:60|f3|L14|s0.5|rm3960     REFUSE    8 tok  0.71s  'Not found in the provided PRs'
+  [1025/5076]  inner|40:60|f3|L14|s1.0|nr1372     REFUSE    8 tok  0.84s  'Not found in the provided PRs'
+  [1050/5076]  inner|40:60|f3|L14|s1.0|q4218      ANSWER   75 tok  3.29s  "The runner's git fetch was changed to include the `+refs/tag"
+  [1075/5076]  inner|40:60|f3|L14|s2.0|q3958      ANSWER   62 tok  3.34s  'To address vulnerability reports against specific applicatio'
+  [1100/5076]  inner|40:60|f3|L14|s4.0|q5065      ANSWER   48 tok  2.55s  'The test was added because the error behavior was changed fr'
+  [1125/5076]  inner|40:60|f3|L20|s0.5|q3528      ANSWER   45 tok  1.91s  'The release stage now checks whether pushing is enabled for '
+  [1150/5076]  inner|40:60|f3|L20|s1.0|rm2968     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [1175/5076]  inner|40:60|f3|L20|s2.0|rm584      REFUSE    8 tok  0.78s  'Not found in the provided PRs'
+  [1200/5076]  inner|40:60|f3|L20|s4.0|rm4142     REFUSE    8 tok  0.85s  'Not found in the provided PRs'
+  [1225/5076]  inner|40:60|f3|L25|s0.5|rm2555     REFUSE    8 tok  0.78s  'Not found in the provided PRs'
+  [1250/5076]  inner|40:60|f3|L25|s1.0|nr5841     REFUSE    8 tok  0.78s  'Not found in the provided PRs'
+  [1275/5076]  inner|40:60|f3|L25|s1.0|q106       ANSWER   48 tok   1.9s  'To allow users to configure Git client settings (such as pro'
+  [1300/5076]  inner|40:60|f3|L25|s2.0|q7545      ANSWER   84 tok  3.03s  'The job fails immediately when the runtime cannot join the p'
+  [1325/5076]  inner|40:60|f3|L25|s4.0|q2682      ANSWER   46 tok  1.97s  "Otherwise we'd need to make the `unit test` job depend on th"
+  [1350/5076]  inner|40:60|f4|L14|s0.5|q3528      ANSWER   61 tok  2.36s  'The release stage now checks whether pushing is enabled for '
+  [1375/5076]  inner|40:60|f4|L14|s1.0|q3831      ANSWER   60 tok  2.64s  'The runner went back to sending PowerShell its commands with'
+  [1400/5076]  inner|40:60|f4|L14|s2.0|rm584      REFUSE    8 tok  0.79s  'Not found in the provided PRs'
+  [1425/5076]  inner|40:60|f4|L14|s4.0|rm3265     ANSWER   75 tok  3.63s  'The edge case was that if a submodule update succeeded (even'
+  [1450/5076]  inner|40:60|f4|L20|s0.5|nr1781     ANSWER   35 tok  1.53s  'To reduce the size of the image and align with Docker best p'
+  [1475/5076]  inner|40:60|f4|L20|s1.0|nr4460     ANSWER   38 tok  1.67s  'The test fails on modern Linux hosts with systemd because it'
+  [1500/5076]  inner|40:60|f4|L20|s1.0|q2461      ANSWER   54 tok  2.11s  'To allow storing VMs across multiple SSDs to avoid bottlenec'
+  [1525/5076]  inner|40:60|f4|L20|s2.0|q3958      ANSWER   50 tok  2.66s  'To address critical and high-severity vulnerabilities in pac'
+  [1550/5076]  inner|40:60|f4|L20|s4.0|q2211      ANSWER   34 tok  1.66s  'Because those tests are redundant as they are already covere'
+  [1575/5076]  inner|40:60|f4|L25|s0.5|q2227      ANSWER   44 tok  1.72s  'The custom executor translates `"step_script"` to `"build_sc'
+  [1600/5076]  inner|40:60|f4|L25|s1.0|q6056      ANSWER   88 tok  3.37s  'The reason step-runner exposes job variables under `vars` ra'
+  [1625/5076]  inner|40:60|f4|L25|s2.0|rm2971     REFUSE    8 tok  0.78s  'Not found in the provided PRs'
+  [1650/5076]  inner|40:60|f4|L25|s4.0|nr3805     ANSWER   54 tok  2.09s  'The registration token is meant to be used to authenticate t'
+  [1675/5076]  inner|50:50|f0|L14|s0.5|rm4142     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [1700/5076]  inner|50:50|f0|L14|s1.0|nr4460     ANSWER   64 tok  3.41s  'The test fails on modern Linux hosts with systemd because it'
+  [1725/5076]  inner|50:50|f0|L14|s1.0|q2461      ANSWER   52 tok  2.04s  'To allow storing VMs across multiple SSDs to avoid bottlenec'
+  [1750/5076]  inner|50:50|f0|L14|s2.0|q6695      ANSWER   93 tok  3.28s  'The checkout step was missing the `http.proactiveAuth=basic`'
+  [1775/5076]  inner|50:50|f0|L14|s4.0|q4206      ANSWER   61 tok  2.39s  "Git-lfs is compiled from source in the runner's ubi-fips ima"
+  [1800/5076]  inner|50:50|f0|L20|s0.5|q3831      ANSWER   60 tok  2.57s  'The runner went back to sending PowerShell its commands with'
+  [1825/5076]  inner|50:50|f0|L20|s1.0|rm2971     REFUSE    8 tok   0.8s  'Not found in the provided PRs'
+  [1850/5076]  inner|50:50|f0|L20|s2.0|rm3846     ANSWER   52 tok   2.2s  'The Windows integration test failure checks now run on MR pi'
+  [1875/5076]  inner|50:50|f0|L20|s4.0|rm3960     REFUSE    8 tok  0.66s  'Not found in the provided PRs'
+  [1900/5076]  inner|50:50|f0|L20|s4.0|q2003      ANSWER   19 tok  1.33s  'The excerpts do not state a reason for why the quick-reply t'
+  [1925/5076]  inner|50:50|f0|L25|s0.5|q7545      ANSWER   48 tok  2.02s  'The runner fails fast when the runtime cannot join the pod u'
+  [1950/5076]  inner|50:50|f0|L25|s1.0|q5065      ANSWER   42 tok  1.77s  'The test was added to verify the behavior when the service n'
+  [1975/5076]  inner|50:50|f0|L25|s2.0|q6056      ANSWER   88 tok  3.34s  'The reason step-runner exposes job variables under `vars` ra'
+  [2000/5076]  inner|50:50|f0|L25|s4.0|nr4102     REFUSE    8 tok  0.84s  'Not found in the provided PRs'
+  [2025/5076]  inner|50:50|f1|L14|s0.5|rm3265     ANSWER   48 tok  1.91s  'The change was made because the initial submodule update may'
+  [2050/5076]  inner|50:50|f1|L14|s1.0|rm2555     REFUSE    8 tok  0.86s  'Not found in the provided PRs'
+  [2075/5076]  inner|50:50|f1|L14|s2.0|nr1372     REFUSE    8 tok  0.89s  'Not found in the provided PRs'
+  [2100/5076]  inner|50:50|f1|L14|s2.0|q2461      ANSWER   61 tok  2.35s  'In our setup, we store the VMs across multiple SSDs to avoid'
+  [2125/5076]  inner|50:50|f1|L14|s4.0|q7545      ANSWER   54 tok   2.6s  'Because the gVisor error `error setting namespace of type us'
+  [2150/5076]  inner|50:50|f1|L20|s0.5|q3528      ANSWER   59 tok  2.42s  'The release stage now checks whether pushing is enabled for '
+  [2175/5076]  inner|50:50|f1|L20|s1.0|rm2968     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [2200/5076]  inner|50:50|f1|L20|s2.0|nr3805     EMPTY    10 tok  0.81s  '[PR3805-c0]'
+  [2225/5076]  inner|50:50|f1|L20|s4.0|nr1781     REFUSE    8 tok  0.82s  'Not found in the provided PRs'
+  [2250/5076]  inner|50:50|f1|L25|s0.5|nr5841     REFUSE    8 tok  0.75s  'Not found in the provided PRs'
+  [2275/5076]  inner|50:50|f1|L25|s0.5|q5853      ANSWER   32 tok  1.53s  'GitLab developers switched from asdf to mise because the org'
+  [2300/5076]  inner|50:50|f1|L25|s1.0|q5846      ANSWER   84 tok  3.01s  'To improve debugging and observability, the runner logs now '
+  [2325/5076]  inner|50:50|f1|L25|s2.0|q2211      ANSWER   47 tok  2.11s  'The tests `TestDockerCommandBuildFail` and `TestDockerComman'
+  [2350/5076]  inner|50:50|f1|L25|s4.0|rm7008     REFUSE    8 tok   0.8s  'Not found in the provided PRs'
+  [2375/5076]  inner|50:50|f2|L14|s0.5|rm584      REFUSE    8 tok  0.76s  'Not found in the provided PRs'
+  [2400/5076]  inner|50:50|f2|L14|s1.0|rm3846     ANSWER   67 tok   2.7s  'The Windows integration test failure checks now run on MR pi'
+  [2425/5076]  inner|50:50|f2|L14|s2.0|nr1781     ANSWER   54 tok  4.25s  'To reduce the size of the container and align with Docker be'
+  [2450/5076]  inner|50:50|f2|L14|s4.0|rm3119     ANSWER   30 tok  2.65s  'The excerpts do not state a reason for why the Kubernetes ex'
+  [2475/5076]  inner|50:50|f2|L14|s4.0|q2003      ANSWER   45 tok  3.39s  'To make it more obvious to the recipient that this is a temp'
+  [2500/5076]  inner|50:50|f2|L20|s0.5|q7545      ANSWER   56 tok  4.13s  'To prevent jobs from waiting in `Pending` indefinitely, the '
+  [2525/5076]  inner|50:50|f2|L20|s1.0|q2211      ANSWER   49 tok  2.11s  'Because `TestDockerCommandMultistepBuild` runs the same asse'
+  [2550/5076]  inner|50:50|f2|L20|s2.0|q2227      ANSWER   57 tok  2.13s  'The custom executor turns the `step_script` stage into `buil'
+  [2575/5076]  inner|50:50|f2|L20|s4.0|q3831      EMPTY     9 tok  0.99s  '[PR3831-c0'
+  [2600/5076]  inner|50:50|f2|L25|s0.5|nr4102     REFUSE    8 tok  0.86s  'Not found in the provided PRs'
+  [2625/5076]  inner|50:50|f2|L25|s1.0|nr3805     ANSWER   51 tok  2.14s  'The register command rejects server-side options given along'
+  [2650/5076]  inner|50:50|f2|L25|s2.0|nr3177     ANSWER   62 tok  2.41s  'The .deb files for other architectures were left in /tmp bec'
+  [2675/5076]  inner|50:50|f2|L25|s4.0|rm3960     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [2700/5076]  inner|50:50|f2|L25|s4.0|q5853      ANSWER   13 tok  0.92s  'The provided excerpts do not state reasons for the given inf'
+  [2725/5076]  inner|50:50|f3|L14|s0.5|q5846      ANSWER   45 tok  1.86s  'To improve debugging and observability by providing complete'
+  [2750/5076]  inner|50:50|f3|L14|s1.0|q6695      ANSWER  117 tok  4.01s  'Because in partial-clone repositories, `git checkout` can tr'
+  [2775/5076]  inner|50:50|f3|L14|s2.0|q4206      ANSWER   96 tok  3.59s  "Git-lfs is compiled from source in the runner's ubi-fips ima"
+  [2800/5076]  inner|50:50|f3|L14|s4.0|q2913      ANSWER   29 tok  1.42s  "The docker executor's user setting does not apply to service"
+  [2825/5076]  inner|50:50|f3|L20|s0.5|nr4102     REFUSE    8 tok  0.84s  'Not found in the provided PRs'
+  [2850/5076]  inner|50:50|f3|L20|s1.0|nr3147     REFUSE    8 tok  0.76s  'Not found in the provided PRs'
+  [2875/5076]  inner|50:50|f3|L20|s2.0|nr3177     ANSWER   44 tok   2.3s  'The .deb files for other architectures were left in /tmp bec'
+  [2900/5076]  inner|50:50|f3|L20|s4.0|rm3960     REFUSE    8 tok  0.73s  'Not found in the provided PRs'
+  [2925/5076]  inner|50:50|f3|L25|s0.5|nr1372     REFUSE    8 tok  0.87s  'Not found in the provided PRs'
+  [2950/5076]  inner|50:50|f3|L25|s0.5|q4218      ANSWER   89 tok  3.38s  "The runner's git fetch was changed to include the `+refs/tag"
+  [2975/5076]  inner|50:50|f3|L25|s1.0|q3958      ANSWER   55 tok  2.17s  'To address vulnerability reports against applications in the'
+  [3000/5076]  inner|50:50|f3|L25|s2.0|q5065      ANSWER   87 tok   3.1s  'The excerpts do not state a reason for adding a Docker execu'
+  [3025/5076]  inner|50:50|f3|L25|s4.0|q3528      ANSWER   87 tok  3.09s  'The pull requests indicate that the release stage changed to'
+  [3050/5076]  inner|50:50|f4|L14|s0.5|rm7008     REFUSE    8 tok  0.86s  'Not found in the provided PRs'
+  [3075/5076]  inner|50:50|f4|L14|s1.0|nr3147     REFUSE    8 tok  0.76s  'Not found in the provided PRs'
+  [3100/5076]  inner|50:50|f4|L14|s2.0|rm3846     ANSWER   67 tok  2.89s  'The Windows integration test failure checks now run on MR pi'
+  [3125/5076]  inner|50:50|f4|L14|s4.0|rm3960     REFUSE    8 tok  0.69s  'Not found in the provided PRs'
+  [3150/5076]  inner|50:50|f4|L20|s0.5|nr5841     REFUSE    8 tok  0.85s  'Not found in the provided PRs'
+  [3175/5076]  inner|50:50|f4|L20|s0.5|q4218      ANSWER   90 tok  3.27s  "The runner's git fetch was changed so that tags deleted upst"
+  [3200/5076]  inner|50:50|f4|L20|s1.0|q6695      ANSWER   56 tok  2.19s  'Because the checkout step in partial-clone repositories can '
+  [3225/5076]  inner|50:50|f4|L20|s2.0|q5065      ANSWER   35 tok  2.02s  'The test was added because the error behavior when the servi'
+  [3250/5076]  inner|50:50|f4|L20|s4.0|q3528      ANSWER   10 tok  0.84s  'The reason is in the provided PRs.'
+  [3275/5076]  inner|50:50|f4|L25|s0.5|q3831      ANSWER   60 tok  2.57s  'The runner went back to sending PowerShell its commands with'
+  [3300/5076]  inner|50:50|f4|L25|s1.0|rm584      REFUSE    8 tok  0.82s  'Not found in the provided PRs'
+  [3325/5076]  inner|50:50|f4|L25|s2.0|rm3265     ANSWER   55 tok  2.12s  'The excerpts do not state a reason for why git submodule ini'
+  [3350/5076]  inner|50:50|f4|L25|s4.0|nr1781     ANSWER   13 tok   1.0s  'The excerpts do not state reasons for removing apt-get upgra'
+  [3375/5076]  inner|60:40|f0|L14|s0.5|nr4460     ANSWER   64 tok  2.34s  'The test fails on modern Linux hosts with systemd because it'
+  [3400/5076]  inner|60:40|f0|L14|s0.5|q2461      ANSWER   52 tok  2.26s  'To allow storing VMs across multiple SSDs to avoid bottlenec'
+  [3425/5076]  inner|60:40|f0|L14|s1.0|q6695      ANSWER  117 tok   4.0s  'The checkout step was missing the `http.proactiveAuth=basic`'
+  [3450/5076]  inner|60:40|f0|L14|s2.0|q4206      ANSWER   61 tok  3.03s  "Git-lfs is compiled from source in the runner's ubi-fips ima"
+  [3475/5076]  inner|60:40|f0|L14|s4.0|q3831      EMPTY    10 tok  1.09s  '[PR3834-c0]'
+  [3500/5076]  inner|60:40|f0|L20|s0.5|rm2971     REFUSE    8 tok  0.79s  'Not found in the provided PRs'
+  [3525/5076]  inner|60:40|f0|L20|s1.0|rm3846     ANSWER   58 tok  2.88s  'The Windows integration test failure checks now run on MR pi'
+  [3550/5076]  inner|60:40|f0|L20|s2.0|rm3960     REFUSE    8 tok  0.69s  'Not found in the provided PRs'
+  [3575/5076]  inner|60:40|f0|L20|s2.0|q2003      ANSWER   21 tok  1.26s  'The excerpts do not state the reason why the quick-reply tem'
+  [3600/5076]  inner|60:40|f0|L20|s4.0|q7545      ANSWER   14 tok  1.16s  'The provided PRs do not contain information that answers the'
+  [3625/5076]  inner|60:40|f0|L25|s0.5|q5065      ANSWER   45 tok  2.07s  'The test was added to verify the behavior when the service n'
+  [3650/5076]  inner|60:40|f0|L25|s1.0|q6056      ANSWER   96 tok  3.22s  'The reason step-runner exposes job variables under `vars` ra'
+  [3675/5076]  inner|60:40|f0|L25|s2.0|nr4102     REFUSE    8 tok  1.46s  'Not found in the provided PRs'
+  [3700/5076]  inner|60:40|f0|L25|s4.0|rm3265     ANSWER   19 tok  1.24s  'The deceased PRs do not contain any discussions related to w'
+  [3725/5076]  inner|60:40|f1|L14|s0.5|rm2555     REFUSE    8 tok   0.8s  'Not found in the provided PRs'
+  [3750/5076]  inner|60:40|f1|L14|s1.0|nr1372     REFUSE    8 tok  0.85s  'Not found in the provided PRs'
+  [3775/5076]  inner|60:40|f1|L14|s1.0|q2461      ANSWER   52 tok  2.11s  'To allow storing VMs across multiple SSDs to avoid bottlenec'
+  [3800/5076]  inner|60:40|f1|L14|s2.0|q7545      ANSWER   62 tok  2.64s  'Because with `hostUsers: false` on gVisor and containerd 2.2'
+  [3825/5076]  inner|60:40|f1|L14|s4.0|q3528      EMPTY     9 tok  0.85s  '[PR3528-c0'
+  [3850/5076]  inner|60:40|f1|L20|s0.5|rm2968     REFUSE    8 tok  0.75s  'Not found in the provided PRs'
+  [3875/5076]  inner|60:40|f1|L20|s1.0|nr3805     ANSWER   58 tok  2.41s  'Because the glrt- runner token is intended to be used in pla'
+  [3900/5076]  inner|60:40|f1|L20|s2.0|nr1781     ANSWER   26 tok  1.58s  'The excerpts do not state a reason for why apt-get upgrade w'
+  [3925/5076]  inner|60:40|f1|L20|s4.0|nr5841     REFUSE    8 tok   0.8s  'Not found in the provided PRs'
+  [3950/5076]  inner|60:40|f1|L20|s4.0|q5853      ANSWER    5 tok  0.68s  'The provided PRs'
+  [3975/5076]  inner|60:40|f1|L25|s0.5|q5846      ANSWER   45 tok  1.84s  'To improve debugging and observability by providing complete'
+  [4000/5076]  inner|60:40|f1|L25|s1.0|q2211      ANSWER   52 tok  2.11s  'The tests `TestDockerCommandBuildFail` and `TestDockerComman'
+  [4025/5076]  inner|60:40|f1|L25|s2.0|rm7008     REFUSE    8 tok  0.87s  'Not found in the provided PRs'
+  [4050/5076]  inner|60:40|f1|L25|s4.0|rm584      ANSWER  512 tok 15.66s DEGEN hit_max_tokens,repeat4x247 'None of the provided excerpts discuss whether any_{related_{'
+  [4075/5076]  inner|60:40|f2|L14|s0.5|rm4142     REFUSE    8 tok  0.74s  'Not found in the provided PRs'
+  [4100/5076]  inner|60:40|f2|L14|s1.0|rm2555     REFUSE    8 tok  0.79s  'Not found in the provided PRs'
+  [4125/5076]  inner|60:40|f2|L14|s2.0|nr4460     ANSWER   28 tok  1.31s  'The test fails when run on a modern linux host OS with syste'
+  [4150/5076]  inner|60:40|f2|L14|s2.0|q106       ANSWER   95 tok   3.3s  'To allow Git repositories to be cloned efficiently when they'
+  [4175/5076]  inner|60:40|f2|L14|s4.0|q3958      ANSWER    7 tok  0.75s  'The excerpts state a reason.'
+  [4200/5076]  inner|60:40|f2|L20|s0.5|q5065      ANSWER   83 tok  2.99s  'To ensure the test reflects realistic and valid scenarios, t'
+  [4225/5076]  inner|60:40|f2|L20|s1.0|q3528      ANSWER   55 tok  2.15s  'The release stage now checks whether pushing is enabled for '
+  [4250/5076]  inner|60:40|f2|L20|s2.0|rm7008     REFUSE    8 tok  0.78s  'Not found in the provided PRs'
+  [4275/5076]  inner|60:40|f2|L20|s4.0|rm584      REFUSE    8 tok  0.87s  'Not found in the provided PRs'
+  [4300/5076]  inner|60:40|f2|L25|s0.5|rm3846     ANSWER  116 tok  4.42s  'The Windows integration test failure checks now run on MR pi'
+  [4325/5076]  inner|60:40|f2|L25|s1.0|nr1781     ANSWER   86 tok  3.03s  'The excerpts do not state a reason for removing `apt-get upg'
+  [4350/5076]  inner|60:40|f2|L25|s2.0|rm3119     ANSWER   24 tok   1.5s  'The provided excerpts do not contain any information that ex'
+  [4375/5076]  inner|60:40|f2|L25|s2.0|q2003      ANSWER   28 tok  1.34s  'The quick-reply templates in PROCESS.md were reworded to mak'
+  [4400/5076]  inner|60:40|f2|L25|s4.0|q7545      ANSWER   10 tok  0.87s  'The thereof been discussed in the given paragraphs.'
+  [4425/5076]  inner|60:40|f3|L14|s0.5|q2682      ANSWER   55 tok  2.98s  "Otherwise we'd need to make the `unit test` job depend on th"
+  [4450/5076]  inner|60:40|f3|L14|s1.0|q2227      ANSWER  101 tok  4.48s  'The custom executor turns the `step_script` stage into `buil'
+  [4475/5076]  inner|60:40|f3|L14|s2.0|q6056      ANSWER   74 tok  2.57s  'The reason is that the `step-runner` uses `vars.VAR_NAME` to'
+  [4500/5076]  inner|60:40|f3|L14|s4.0|rm2971     REFUSE    8 tok  0.77s  'Not found in the provided PRs'
+  [4525/5076]  inner|60:40|f3|L20|s0.5|rm3265     ANSWER   70 tok   3.3s  'The change was made because the initial submodule update may'
+  [4550/5076]  inner|60:40|f3|L20|s1.0|nr1781     ANSWER   23 tok  1.19s  'The change was made because there are no editors in a contai'
+  [4575/5076]  inner|60:40|f3|L20|s2.0|rm3119     ANSWER   22 tok  1.42s  'The excerpts do not state a reason for why the Kubernetes ex'
+  [4600/5076]  inner|60:40|f3|L20|s2.0|q2461      ANSWER   61 tok  3.18s  'In our setup, we store the VMs across multiple SSDs to avoid'
+  [4625/5076]  inner|60:40|f3|L20|s4.0|q5846      ANSWER    5 tok  0.69s  'The provided PRs'
+  [4650/5076]  inner|60:40|f3|L25|s0.5|q6695      ANSWER   87 tok   4.4s  'Because in partial-clone repositories, `git checkout` can tr'
+  [4675/5076]  inner|60:40|f3|L25|s1.0|q4206      ANSWER   72 tok  3.28s  "git-lfs is compiled from source in the runner's ubi-fips ima"
+  [4700/5076]  inner|60:40|f3|L25|s2.0|q2913      ANSWER   20 tok  1.08s  "The excerpts do not state why the docker executor's user set"
+  [4725/5076]  inner|60:40|f3|L25|s4.0|nr4102     ANSWER  512 tok 16.25s DEGEN hit_max_tokens,repeat4x84 'None of the provided excerpts discuss why the candidates pro'
+  [4750/5076]  inner|60:40|f4|L14|s0.5|nr3805     ANSWER   49 tok  2.45s  'To prevent users from mixing server-side configuration optio'
+  [4775/5076]  inner|60:40|f4|L14|s1.0|rm4142     REFUSE    8 tok  0.75s  'Not found in the provided PRs'
+  [4800/5076]  inner|60:40|f4|L14|s2.0|rm3119     ANSWER   43 tok  2.08s  'The Kubernetes executor does not force UTF-8 output for Powe'
+  [4825/5076]  inner|60:40|f4|L14|s4.0|nr1372     REFUSE    8 tok  0.84s  'Not found in the provided PRs'
+  [4850/5076]  inner|60:40|f4|L14|s4.0|q5846      ANSWER   10 tok  0.95s  'The reason is in the provided PRs.'
+  [4875/5076]  inner|60:40|f4|L20|s0.5|q2682      ANSWER   55 tok  2.24s  "Otherwise we'd need to make the `unit test` job depend on th"
+  [4900/5076]  inner|60:40|f4|L20|s1.0|q4206      ANSWER   60 tok  2.47s  "git-lfs is compiled from source in the runner's ubi-fips ima"
+  [4925/5076]  inner|60:40|f4|L20|s2.0|q2913      ANSWER   22 tok  1.31s  'The excerpts do not state the reason why the docker executor'
+  [4950/5076]  inner|60:40|f4|L20|s4.0|rm7008     REFUSE    8 tok  0.77s  'Not found in the provided PRs'
+  [4975/5076]  inner|60:40|f4|L25|s0.5|nr3147     REFUSE    8 tok  0.83s  'Not found in the provided PRs'
+  [5000/5076]  inner|60:40|f4|L25|s1.0|rm3846     ANSWER   59 tok  2.33s  'The Windows integration test failure checks now run on MR pi'
+  [5025/5076]  inner|60:40|f4|L25|s2.0|rm3960     REFUSE    8 tok  0.68s  'Not found in the provided PRs'
+  [5050/5076]  inner|60:40|f4|L25|s4.0|nr5841     ANSWER   20 tok  1.13s  'Neither thereof cited any information about why the AWS Secr'
+  [5075/5076]  inner|60:40|f4|L25|s4.0|q4218      ANSWER  512 tok 20.85s DEGEN hit_max_tokens,repeat4x82 'The thereof been provided PRs do not contain any statements '
+  [5076/5076]  inner|60:40|f4|L25|s4.0|q2461      ANSWER  512 tok  15.7s DEGEN hit_max_tokens,repeat4x507 'The thereof been been been been been been been been been bee'
+
+chosen settings (inner J on training MRs only; optimistic, not reported as a result):
+  40:60 fold 0: layer None strength 0.0 (J +0.667; unsteered J +0.667)
+  40:60 fold 1: layer None strength 0.0 (J +0.533; unsteered J +0.533)
+  40:60 fold 2: layer None strength 0.0 (J +0.571; unsteered J +0.571)
+  40:60 fold 3: layer None strength 0.0 (J +0.714; unsteered J +0.714)
+  40:60 fold 4: layer None strength 0.0 (J +0.571; unsteered J +0.571)
+  50:50 fold 0: layer None strength 0.0 (J +0.667; unsteered J +0.667)
+  50:50 fold 1: layer None strength 0.0 (J +0.533; unsteered J +0.533)
+  50:50 fold 2: layer None strength 0.0 (J +0.571; unsteered J +0.571)
+  50:50 fold 3: layer 20 strength 4.0 (J +0.786; unsteered J +0.714)
+  50:50 fold 4: layer None strength 0.0 (J +0.571; unsteered J +0.571)
+  60:40 fold 0: layer 20 strength 2.0 (J +0.729; unsteered J +0.667)
+  60:40 fold 1: layer 20 strength 4.0 (J +0.662; unsteered J +0.533)
+  60:40 fold 2: layer 20 strength 4.0 (J +0.643; unsteered J +0.571)
+  60:40 fold 3: layer None strength 0.0 (J +0.714; unsteered J +0.714)
+  60:40 fold 4: layer 20 strength 2.0 (J +0.643; unsteered J +0.571)
+SELECT OK
+[0m

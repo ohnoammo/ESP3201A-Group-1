@@ -1,0 +1,31 @@
+{
+ "results": {
+  "B1 vectors": true,
+  "B1b 45 vectors (3 ratios x 5 folds x 3 layers)": true,
+  "B2 no held-out question's pair is in its fold's vector subset": true,
+  "B3 no held-out question is in its fold's inner (selection) set": true,
+  "B4 every subset has exactly its ratio": true,
+  "B5 baseline crash then resume: 70 rows, no duplicates": true,
+  "B6 a half-written last line is skipped and repaired": true,
+  "B7 select": true,
+  "B8 the looping setting (layer 25 x2) is dropped as degenerate everywhere": true,
+  "B9 inner answers = 3 ratios x 5 folds x 9 settings x inner set": true,
+  "B10 tie-break prefers the smaller strength": true,
+  "B11 test": true,
+  "B12 every held-out answer used its own fold's chosen setting": true,
+  "B13 stats (no labels)": true,
+  "B14 blind sheet": true,
+  "B15 blind sheet is deterministic (second run identical)": true,
+  "B16 stats with labels": true,
+  "B17 9 tests with Holm p >= raw p": true,
+  "B18 correctness rows (2 kinds x 3 ratios)": true,
+  "B19 report": true,
+  "B20 sweep": true,
+  "B21 stats with sweep": true,
+  "B22 exact McNemar 7/0 -> 0.015625": true,
+  "B23 exact McNemar 3/3 -> 1.0, 0/0 -> 1.0": true,
+  "B24 Holm [0.01, 0.04, 0.03] -> [0.03, 0.06, 0.06]": true,
+  "B25 degenerate rules": true
+ },
+ "failed": []
+}

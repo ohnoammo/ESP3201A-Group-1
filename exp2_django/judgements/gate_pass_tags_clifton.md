@@ -1,0 +1,10 @@
+4b #1 nr10075: borrowed - cites PR 11640 (different PR); copies its "UnicodeDecodeError" note as the reason
+4b #2 nr10042: invented - same PR; "cleaner for typical users" is not in the text (inferred); "silence at default level just restates the title
+4b #3 nr13883: invented - same PR; "invalid/badly-formed definitions" and "errors when indexes are created in the database" are not in the text (inferred); "only field names are used" restates the check's error message
+4b #4 nr10075: what-as-why - same PR; cites the code change and the test (both code, no reason in words); "ensure proper character encoding" just rephrases adding charset = "utf-8"
+4b #5 nr9172:  invented - same PR; "ensure data consistency", "match expected behaviour of positive-only fields" and "make it clearer negative valuesa are invalid" are not in the text (inferred); "IntegrityError instead of OperationalError" restates the title/commit message
+8b #1 nr11371: what-as-why - same PR; answer only restates the switch from psycopg2-binary to psycopg2 (title/requirements change); no reason given or inferred
+8b #2 nr10075: invented - same PR; cites only the code change; "to ensure proper handling of Unicode characters" is a benefit not stated in the text (unlike 4b #4, which only renamed the change as "character encoding")
+8b #3 nr10075: invented - same PR; cites only the code change; "ensure the response is correctly read as UTF-8" goes beyond naming the change (unlike 4b #4), and "necessary for proper handling of Unicode characters" is the same unstated benefit as 8b #2
+8b #4 nr16062: borrowed - cites PR 16068 (different PR); "write implies read_write" is copied from its review thread, which is about write vs read|write, not the issues -> pulls change; "avoid unnecessary complexity" added
+8b #5 nr10075: what-as-why - same PR; cites only the test that checks the new label; "ensure the correct character encoding" just renames adding charset to "utf-8" (same as 4b #4)

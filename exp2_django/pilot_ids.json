@@ -1,0 +1,20 @@
+{
+ "rule": "Prompt DEV set. 10 answerable ids from the review-priority set (sha256('pilot:'+id) order) + the 5 dev no_reason cases (nr12338 replaced by nr16062 on 15 Oct). Full runs use split=test only.",
+ "ids": [
+  "q7927",
+  "q10082",
+  "q11283",
+  "q12259",
+  "q14349",
+  "q13658",
+  "q9617",
+  "q14727",
+  "q8930",
+  "q13680",
+  "nr11371",
+  "nr10075",
+  "nr16062",
+  "nr10042",
+  "nr10782"
+ ]
+}

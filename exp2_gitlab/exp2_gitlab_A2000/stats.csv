@@ -1,0 +1,5 @@
+outcome,n,F0,C1,only_F0,only_C1,p,holm,family,git_commit
+strict_correct,52,33,32,5,4,1.0,1,primary,cc0bd30
+answered,52,43,44,0,1,1.0,1,same Holm family,cc0bd30
+unanswerable_answered,18,5,3,2,0,0.5,1,same Holm family,cc0bd30
+lenient_correct,52,40,41,1,2,1.0,,"sensitivity, unadjusted",cc0bd30

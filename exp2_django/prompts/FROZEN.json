@@ -1,0 +1,37 @@
+{
+ "frozen_on": "2026-10-15",
+ "git_tag": "prompts-v2-frozen",
+ "dev_set": "pilot_ids.json (10 answerable + 5 no_reason)",
+ "dev_model": "qwen3:4b-instruct-2507-q4_K_M",
+ "changes": {
+  "v1 -> v2": "grounded prompt (c): cite only the excerpt that states the reason, usually one; never cite one that does not. (a) and (b) unchanged."
+ },
+ "dev_results": {
+  "v1": "results/gen_pilot_4b.jsonl",
+  "v2": "results/gen_pilot_4b_v2.jsonl"
+ },
+ "prompts": {
+  "a": {
+   "file": "prompts/a_no_retrieval.txt",
+   "sha1": "0aa6b80ad9"
+  },
+  "b": {
+   "file": "prompts/b_standard_rag.txt",
+   "sha1": "f35511cc33"
+  },
+  "c": {
+   "file": "prompts/c_strict_grounded.txt",
+   "sha1": "3a9009c452"
+  },
+  "c3": {
+   "file": "prompts/c_strict_grounded_v3_DRAFT.txt",
+   "sha1": "759a5e1219"
+  }
+ },
+ "v3": {
+  "frozen_on": "2026-10-22",
+  "git_tag": "prompts-v3-frozen",
+  "dev_evidence": "results/gen_dev2_prompt_v2v3_4b-instruct.jsonl (dev2 v2 vs v3)",
+  "change": "v3 grounded: a description of WHAT changed is not a reason WHY; v2 citation rules kept"
+ }
+}

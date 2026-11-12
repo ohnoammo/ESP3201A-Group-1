@@ -1,0 +1,17 @@
+Labelling the Codex activation-steering correctness sheet (blind_sheet_blank.csv)
+
+Save your labelled copy as blind_sheet_labels.csv in the same folder; never edit blind_sheet_blank.csv.
+Do not open keys/ until every label is final.
+
+Each row is one distinct model answer to a "why" question about a GitLab Runner merge request. You see the
+question, the gold answer, the gold quotes (verbatim MR text that states the reason) and the model answer.
+Which arm (unsteered or a steering ratio) produced it is hidden, citation ids were removed, and identical
+answers from several arms appear once.
+
+Fill `label` with exactly one of: correct / partial / wrong, and give a one-line `reason`.
+- correct: states the reason the gold quotes support (paraphrase is fine; extra details are fine only if they
+  do not contradict the MR).
+- partial: gets part of the reason, or is in the right area but misses the key point.
+- wrong: a different or invented reason, or contradicts the gold.
+Judge against the gold quotes, not against general knowledge. Do not change any other column.
+A reason must date from the change; bot notes are not in the model's documents.

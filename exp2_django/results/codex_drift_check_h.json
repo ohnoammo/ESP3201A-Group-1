@@ -1,0 +1,33 @@
+{
+ "n": 20,
+ "agree": 18,
+ "kappa_3class": 0.783,
+ "changes": [
+  {
+   "blind_id": "J0218",
+   "original": "partial",
+   "rejudged": "correct",
+   "original_note": "States repr is clear but omits expression complexity and non-copy-paste need",
+   "rejudged_note": "Matches the gold reason: OrderBy can wrap many kinds of expressions (Value(), Case(), ...), so a regex cannot anticipate every case, and the message does not need to be copy-pasteable; repr() is clear enough."
+  },
+  {
+   "blind_id": "J0345",
+   "original": "correct",
+   "rejudged": "partial",
+   "original_note": "States discoverability rationale",
+   "rejudged_note": "Captures discoverability but omits that the file was not added to satisfy a third-party advisor."
+  }
+ ],
+ "original_counts": {
+  "correct": 14,
+  "partial": 4,
+  "wrong": 2
+ },
+ "rejudged_counts": {
+  "correct": 14,
+  "partial": 4,
+  "wrong": 2
+ },
+ "codex_labels_h_sha256": "ae71cc4bfe0f012e78b9d15dacb952d9d5d7e4172c6335d4bf7ff77cd3ed5741",
+ "note": "drift labels are not used in any analysis; original labels unchanged"
+}

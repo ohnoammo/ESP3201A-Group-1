@@ -1,0 +1,34 @@
+{
+ "results": {
+  "A1 smoke command passes on the small model": true,
+  "A2 prompt + response ids are a prefix of the chat-template conversation ('Not found in the pro')": true,
+  "A2 prompt + response ids are a prefix of the chat-template conversation (\"To follow GitLab's b\")": true,
+  "A3 activations finite and response-only [unans:nr3177]": true,
+  "A3 activations finite and response-only [twin:q3220]": true,
+  "A3 activations finite and response-only [g_nf:q3220]": true,
+  "A3 activations finite and response-only [g_what:q3220]": true,
+  "A_vector_norm_ratio": 0.17199875046146412,
+  "A4 unsteered output restored after steering [main:q3220]": true,
+  "A5 no hook left on any layer [main:q3220]": true,
+  "A4 unsteered output restored after steering [main:nr3177]": true,
+  "A5 no hook left on any layer [main:nr3177]": true,
+  "A_steered_outputs": {
+   "main:q3220": {
+    "0": "Not found in the provided PRs.",
+    "0.5": "Not found in the provided PRs.",
+    "1.0": "Not found in the provided PRs.",
+    "2.0": "Not found in the provided PRs.",
+    "4.0": "The author considered taking the GitLab Technical Writing course."
+   },
+   "main:nr3177": {
+    "0": "Based on the information provided in the pull request excerpt, the main reason for keeping .deb files for other architectures (`arm`, `aarch64`, `s390x`) in `/",
+    "0.5": "Based on the information provided in the pull request excerpt, the main reason for keeping .deb files for other architectures (`arm`, `aarch64`, `s390x`) in `/",
+    "1.0": "Based on the information provided in the pull request excerpt, the main reasons why .deb files for other architectures were left in /tmp by the Ubuntu runner image's build were:\n\n1. The image was",
+    "2.0": "Based on the information in the provided pull request excerpt, the main reasons for keeping .deb files for other architectures (ARM, ARM64, S390x) in /tmp by the",
+    "4.0": "Based solely on the code, there is enough information to determine that the build process shows anything wrong with the .deb files for the Ubuntu image. However, a single excerpt in the code indicates that code"
+   }
+  },
+  "A6 some strength changes some output": true
+ },
+ "failed": []
+}

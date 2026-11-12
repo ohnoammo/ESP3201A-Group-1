@@ -1,0 +1,631 @@
+{
+ "rule": "Exp 2 shortlist.py thresholds; fixed SHA-256 order (seed 42); docs = doc/",
+ "funnel": [
+  {
+   "step": "in pool",
+   "n": 2075
+  },
+  {
+   "step": "merged",
+   "n": 1434
+  },
+  {
+   "step": "not docs-only",
+   "n": 1390
+  },
+  {
+   "step": "description >= 40 words",
+   "n": 648
+  },
+  {
+   "step": ">= 2 review threads or >= 4 threads + comments",
+   "n": 419
+  },
+  {
+   "step": "document <= 4000 tokens",
+   "n": 228
+  }
+ ],
+ "shortlist": [
+  {
+   "n": 16636,
+   "title": "plot_loading_results() now uses sympy's PlotGrid to obtain subplots",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 40,
+   "threads": 2,
+   "conv": 6,
+   "doc_tokens": 3222
+  },
+  {
+   "n": 15341,
+   "title": "matrices: Improved speed of solve() ",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 47,
+   "threads": 3,
+   "conv": 11,
+   "doc_tokens": 2607
+  },
+  {
+   "n": 22551,
+   "title": "core/containers: no longer create Tuple's with lists as arguments.",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 63,
+   "threads": 12,
+   "conv": 4,
+   "doc_tokens": 3588
+  },
+  {
+   "n": 16343,
+   "title": "SparseMatrix: accept values that are matrix-like",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 204,
+   "threads": 2,
+   "conv": 0,
+   "doc_tokens": 3235
+  },
+  {
+   "n": 12065,
+   "title": "Better support for complex numbers in nsolve",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 42,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 1700
+  },
+  {
+   "n": 18777,
+   "title": "Add in ordering='none' capability to srepr printer",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 54,
+   "threads": 1,
+   "conv": 5,
+   "doc_tokens": 1771
+  },
+  {
+   "n": 20208,
+   "title": "Fixed set is equal to set only",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 47,
+   "threads": 3,
+   "conv": 7,
+   "doc_tokens": 888
+  },
+  {
+   "n": 15036,
+   "title": "Added implementation of Cauchy's principal value in integrals.py",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 148,
+   "threads": 9,
+   "conv": 18,
+   "doc_tokens": 3301
+  },
+  {
+   "n": 15727,
+   "title": "Tweak solve_least_squares",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 92,
+   "threads": 1,
+   "conv": 6,
+   "doc_tokens": 1092
+  },
+  {
+   "n": 23426,
+   "title": "Make `CRootOf` lazy on irreducibles.",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 82,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 1679
+  },
+  {
+   "n": 15404,
+   "title": "Reducing matrix expressions involving transpose and powers",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 88,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 3915
+  },
+  {
+   "n": 19091,
+   "title": "Fixed tensor contraction problem",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 101,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 1293
+  },
+  {
+   "n": 16095,
+   "title": "Some code quality fixes",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 52,
+   "threads": 3,
+   "conv": 9,
+   "doc_tokens": 3161
+  },
+  {
+   "n": 21508,
+   "title": "strengthen equality test in replace/bottom_up",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 92,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 1415
+  },
+  {
+   "n": 21346,
+   "title": "refactor(assump) : redesign get_relevant_facts()",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 79,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 2796
+  },
+  {
+   "n": 14446,
+   "title": "continuum_mechanics : slope and deflection method now returns complete answer",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 170,
+   "threads": 1,
+   "conv": 9,
+   "doc_tokens": 3466
+  },
+  {
+   "n": 13335,
+   "title": "Caught and fixed: remove singularities from result of continuous_domain()",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 87,
+   "threads": 5,
+   "conv": 3,
+   "doc_tokens": 1581
+  },
+  {
+   "n": 13803,
+   "title": "Prevent substitution inside Derivative in some cases",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 372,
+   "threads": 3,
+   "conv": 6,
+   "doc_tokens": 3431
+  },
+  {
+   "n": 24313,
+   "title": "FKM algorithm for necklaces",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 136,
+   "threads": 3,
+   "conv": 3,
+   "doc_tokens": 1717
+  },
+  {
+   "n": 14739,
+   "title": "Add lambdified functions to the Python linecache",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 111,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 1847
+  },
+  {
+   "n": 16898,
+   "title": "Add matrix attributes zero and one",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 71,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 3004
+  },
+  {
+   "n": 12253,
+   "title": "Improved manual integrate for manualintegrate(x**y, x)",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 106,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 1493
+  },
+  {
+   "n": 18354,
+   "title": "Combinatorics: Added naive algorithm for computing conjugacy classes in permutation groups",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 55,
+   "threads": 0,
+   "conv": 10,
+   "doc_tokens": 1802
+  },
+  {
+   "n": 13406,
+   "title": " Remove unused arguments from contour in plot.py",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 43,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 512
+  },
+  {
+   "n": 15979,
+   "title": "Fix for finite fourier series",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 46,
+   "threads": 5,
+   "conv": 20,
+   "doc_tokens": 2885
+  },
+  {
+   "n": 23538,
+   "title": "Dummies now replaced in lambdify cse subexpressions.",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 55,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 1792
+  },
+  {
+   "n": 14942,
+   "title": "Get the release notes from the pull request description automatically using a bot",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 214,
+   "threads": 0,
+   "conv": 14,
+   "doc_tokens": 1327
+  },
+  {
+   "n": 12240,
+   "title": "example modified",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 89,
+   "threads": 2,
+   "conv": 18,
+   "doc_tokens": 1185
+  },
+  {
+   "n": 24096,
+   "title": "fix parse latex bug when the minuend is atom",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 48,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 650
+  },
+  {
+   "n": 15599,
+   "title": "Mod 3by2",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 49,
+   "threads": 3,
+   "conv": 7,
+   "doc_tokens": 1549
+  },
+  {
+   "n": 13974,
+   "title": " Adding support for simplifying powers of tensorproducts ",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 90,
+   "threads": 2,
+   "conv": 2,
+   "doc_tokens": 1682
+  },
+  {
+   "n": 17375,
+   "title": "polygamma improvements (evaluation, real and positivity determination)",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 40,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 1957
+  },
+  {
+   "n": 17348,
+   "title": "diophantine: note re parametric soln; remove gcd",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 63,
+   "threads": 1,
+   "conv": 3,
+   "doc_tokens": 2439
+  },
+  {
+   "n": 16108,
+   "title": "Stats:Improved parameter handling by Benini distribution",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 112,
+   "threads": 4,
+   "conv": 6,
+   "doc_tokens": 1459
+  },
+  {
+   "n": 16028,
+   "title": "Added Auxiliary Circle Feature For Ellipse",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 99,
+   "threads": 6,
+   "conv": 10,
+   "doc_tokens": 3364
+  },
+  {
+   "n": 15434,
+   "title": "Rescale ODEs to match Euler solver",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 175,
+   "threads": 1,
+   "conv": 5,
+   "doc_tokens": 2237
+  },
+  {
+   "n": 19004,
+   "title": "Series: Removes XFAIL Test of Limit",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 136,
+   "threads": 0,
+   "conv": 11,
+   "doc_tokens": 1622
+  },
+  {
+   "n": 18746,
+   "title": "fixes periodicity computation of trigonometric functions",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 49,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 1178
+  },
+  {
+   "n": 18577,
+   "title": "Fixed compute_expectation to use non-sympify parameters",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 53,
+   "threads": 0,
+   "conv": 14,
+   "doc_tokens": 1524
+  },
+  {
+   "n": 24382,
+   "title": "Implemented homogeneous option to Quaternion.to_rotation_matrix",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 135,
+   "threads": 0,
+   "conv": 15,
+   "doc_tokens": 3416
+  },
+  {
+   "n": 20754,
+   "title": "Added checks in _eval_as_leading_term and _eval_nseries",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 51,
+   "threads": 6,
+   "conv": 7,
+   "doc_tokens": 3295
+  },
+  {
+   "n": 23033,
+   "title": "vector : Scalar condition of vectors made False",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 85,
+   "threads": 0,
+   "conv": 7,
+   "doc_tokens": 745
+  },
+  {
+   "n": 23239,
+   "title": "Add config option diff_operator in latex printer",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 47,
+   "threads": 2,
+   "conv": 1,
+   "doc_tokens": 1419
+  },
+  {
+   "n": 15008,
+   "title": "Fix f(x,y).diff(y,y,x,y,x)",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 107,
+   "threads": 2,
+   "conv": 0,
+   "doc_tokens": 3862
+  },
+  {
+   "n": 18450,
+   "title": "Fixes recursion error in  Limit",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 47,
+   "threads": 1,
+   "conv": 4,
+   "doc_tokens": 1126
+  },
+  {
+   "n": 13943,
+   "title": " Partial fix for sampling Geometric and Poisson distributions",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 109,
+   "threads": 5,
+   "conv": 2,
+   "doc_tokens": 1939
+  },
+  {
+   "n": 11947,
+   "title": "aligned middle of matrix with baseline",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 97,
+   "threads": 0,
+   "conv": 13,
+   "doc_tokens": 3544
+  },
+  {
+   "n": 13325,
+   "title": "linsolve: `linsolve` now raises error for non-linear equations",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 63,
+   "threads": 0,
+   "conv": 4,
+   "doc_tokens": 777
+  },
+  {
+   "n": 16828,
+   "title": "fix dcm diff error",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 95,
+   "threads": 2,
+   "conv": 3,
+   "doc_tokens": 2264
+  },
+  {
+   "n": 14202,
+   "title": "fix ``print_gtk()`` in python3",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 95,
+   "threads": 0,
+   "conv": 10,
+   "doc_tokens": 3981
+  },
+  {
+   "n": 18630,
+   "title": "Implemented _eval_nseries() for Hyper",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 89,
+   "threads": 3,
+   "conv": 6,
+   "doc_tokens": 2259
+  },
+  {
+   "n": 20466,
+   "title": "maint(ci): run tests through github actions",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 78,
+   "threads": 0,
+   "conv": 6,
+   "doc_tokens": 671
+  },
+  {
+   "n": 17251,
+   "title": "Reduce exp() argument modulo 2*I*pi",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 68,
+   "threads": 2,
+   "conv": 10,
+   "doc_tokens": 3444
+  },
+  {
+   "n": 16192,
+   "title": "Increase test coverage of LaTeX printer",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 44,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 3693
+  },
+  {
+   "n": 16162,
+   "title": "Crypto : Improve speed of RSA",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 96,
+   "threads": 0,
+   "conv": 8,
+   "doc_tokens": 1825
+  },
+  {
+   "n": 19083,
+   "title": "Fix CSE to not construct invalid tree",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 48,
+   "threads": 1,
+   "conv": 7,
+   "doc_tokens": 934
+  },
+  {
+   "n": 20700,
+   "title": "gcd: Fix expansion of unevaluated Muls",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 73,
+   "threads": 2,
+   "conv": 28,
+   "doc_tokens": 3342
+  },
+  {
+   "n": 23456,
+   "title": "series - Fixes series expansion around float failing with NotImplementedError",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 55,
+   "threads": 6,
+   "conv": 8,
+   "doc_tokens": 1746
+  },
+  {
+   "n": 21208,
+   "title": "Remove redundant `.doit()` in `_matrix_derivative()`",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 71,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 894
+  },
+  {
+   "n": 20773,
+   "title": "Added exception catching for GeneratorsNeeded error in as_poly",
+   "merged": true,
+   "docs_only": false,
+   "desc_words": 61,
+   "threads": 0,
+   "conv": 5,
+   "doc_tokens": 1025
+  }
+ ]
+}

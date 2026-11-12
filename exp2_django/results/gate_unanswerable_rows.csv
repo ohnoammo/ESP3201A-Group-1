@@ -1,0 +1,142 @@
+model,arm,prompt,id,set,hedged,score,gate
+4b-instruct,F0,v2,nr12736,no_reason/test,False,0.864,let through
+4b-instruct,F0,v2,nr10453,no_reason/test,False,0.716,let through
+4b-instruct,F0,v2,nr9172,no_reason/test,False,0.796,let through
+4b-instruct,F0,v2,nr13883,no_reason/test,False,0.769,let through
+4b-instruct,F0,v2,nr10075,no_reason/dev,False,0.947,let through
+4b-instruct,F0,v2,nr16062,no_reason/dev,False,0.095,abstain
+4b-instruct,F0,v2,nr10042,no_reason/dev,False,0.526,let through
+4b-instruct,F0,v3,nr9172,no_reason/test,False,0.93,let through
+4b-instruct,F0,v3,nr10075,no_reason/dev,False,0.817,let through
+4b-instruct,F0,v3,nr10042,no_reason/dev,False,0.318,abstain
+4b-instruct,S0,v2,nr12736,no_reason/test,False,0.383,abstain
+4b-instruct,S0,v2,nr10453,no_reason/test,False,0.422,abstain
+4b-instruct,S0,v2,nr9172,no_reason/test,False,0.097,abstain
+4b-instruct,S0,v2,nr13883,no_reason/test,False,0.792,let through
+4b-instruct,S0,v2,nr10075,no_reason/dev,False,0.147,abstain
+4b-instruct,S0,v2,nr16062,no_reason/dev,False,0.061,abstain
+4b-instruct,S0,v2,rk16129,removed_kept,True,,abstain
+4b-instruct,S0,v3,nr12736,no_reason/test,False,0.149,abstain
+4b-instruct,S0,v3,nr10453,no_reason/test,False,0.046,abstain
+4b-instruct,S0,v3,nr13883,no_reason/test,False,0.028,abstain
+4b-instruct,S0,v3,nr10075,no_reason/dev,False,0.737,let through
+4b-instruct,S0-G,v2,nr12736,no_reason/test,False,0.3,abstain
+4b-instruct,S0-G,v2,nr10453,no_reason/test,False,0.7,let through
+4b-instruct,S0-G,v2,nr9172,no_reason/test,False,0.215,abstain
+4b-instruct,S0-G,v2,nr13883,no_reason/test,False,0.568,let through
+4b-instruct,S0-G,v2,nr10075,no_reason/dev,False,0.072,abstain
+4b-instruct,S0-G,v2,nr10042,no_reason/dev,False,0.201,abstain
+4b-instruct,S0-G,v3,nr12736,no_reason/test,False,0.426,abstain
+4b-instruct,S0-G,v3,nr10453,no_reason/test,False,0.057,abstain
+4b-instruct,S-0.25,v2,nr12736,no_reason/test,False,0.296,abstain
+4b-instruct,S-0.25,v2,nr10453,no_reason/test,False,0.7,let through
+4b-instruct,S-0.25,v2,nr9172,no_reason/test,False,0.353,abstain
+4b-instruct,S-0.25,v2,nr13883,no_reason/test,False,0.318,abstain
+4b-instruct,S-0.25,v2,rm12342,removed,False,0.073,abstain
+4b-instruct,S-0.25,v2,nr10075,no_reason/dev,False,0.656,let through
+4b-instruct,S-0.25,v2,nr10042,no_reason/dev,False,0.365,abstain
+4b-instruct,S-0.25,v3,nr10453,no_reason/test,False,0.057,abstain
+4b-instruct,S-0.25,v3,nr9172,no_reason/test,False,0.032,abstain
+4b-instruct,S-0.25,v3,nr13883,no_reason/test,False,0.556,let through
+4b-instruct,S-0.25,v3,nr10075,no_reason/dev,False,0.652,let through
+4b-instruct,S-0.25,v3,nr10042,no_reason/dev,False,0.103,abstain
+8b,F0,v2,nr14500,no_reason/test,False,0.241,abstain
+8b,F0,v2,nr12736,no_reason/test,False,0.86,let through
+8b,F0,v2,nr10453,no_reason/test,False,0.63,let through
+8b,F0,v2,nr9172,no_reason/test,False,0.791,let through
+8b,F0,v2,nr13883,no_reason/test,False,0.714,let through
+8b,F0,v2,rm16129,removed,False,0.04,abstain
+8b,F0,v2,rm12342,removed,False,0.112,abstain
+8b,F0,v2,nr11371,no_reason/dev,False,0.927,let through
+8b,F0,v2,nr10075,no_reason/dev,False,0.943,let through
+8b,F0,v2,nr16062,no_reason/dev,False,0.81,let through
+8b,F0,v2,nr10042,no_reason/dev,False,0.578,let through
+8b,F0,v2,nr10782,no_reason/dev,False,0.024,abstain
+8b,F0,v2,rk16129,removed_kept,False,0.516,let through
+8b,F0,v3,nr14500,no_reason/test,False,0.966,let through
+8b,F0,v3,nr12736,no_reason/test,False,0.947,let through
+8b,F0,v3,nr10453,no_reason/test,False,0.498,abstain
+8b,F0,v3,nr9172,no_reason/test,False,0.835,let through
+8b,F0,v3,nr13883,no_reason/test,False,0.124,abstain
+8b,F0,v3,rm16129,removed,False,0.134,abstain
+8b,F0,v3,rm12342,removed,False,0.085,abstain
+8b,F0,v3,nr11371,no_reason/dev,False,0.906,let through
+8b,F0,v3,nr10075,no_reason/dev,False,0.916,let through
+8b,F0,v3,nr16062,no_reason/dev,False,0.551,let through
+8b,F0,v3,nr10042,no_reason/dev,False,0.578,let through
+8b,F0,v3,nr10782,no_reason/dev,False,0.058,abstain
+8b,F0,v3,rk16129,removed_kept,False,0.5,abstain
+8b,S0,v2,nr12736,no_reason/test,False,0.079,abstain
+8b,S0,v2,nr10453,no_reason/test,False,0.792,let through
+8b,S0,v2,nr9172,no_reason/test,False,0.845,let through
+8b,S0,v2,nr13883,no_reason/test,False,0.255,abstain
+8b,S0,v2,rm13671,removed,False,0.028,abstain
+8b,S0,v2,rm16129,removed,False,0.079,abstain
+8b,S0,v2,rm12342,removed,False,0.466,abstain
+8b,S0,v2,nr11371,no_reason/dev,False,0.833,let through
+8b,S0,v2,nr10075,no_reason/dev,False,0.761,let through
+8b,S0,v2,nr16062,no_reason/dev,False,0.04,abstain
+8b,S0,v2,nr10042,no_reason/dev,False,0.078,abstain
+8b,S0,v2,nr10782,no_reason/dev,False,0.034,abstain
+8b,S0,v2,rk16129,removed_kept,False,0.087,abstain
+8b,S0,v3,nr12736,no_reason/test,False,0.688,let through
+8b,S0,v3,nr10453,no_reason/test,False,0.918,let through
+8b,S0,v3,nr9172,no_reason/test,False,0.625,let through
+8b,S0,v3,nr13883,no_reason/test,False,0.868,let through
+8b,S0,v3,rm16129,removed,False,0.273,abstain
+8b,S0,v3,nr11371,no_reason/dev,False,0.604,let through
+8b,S0,v3,nr10075,no_reason/dev,False,0.673,let through
+8b,S0,v3,nr16062,no_reason/dev,False,0.056,abstain
+8b,S0,v3,nr10042,no_reason/dev,False,0.349,abstain
+8b,S0,v3,nr10782,no_reason/dev,False,0.062,abstain
+8b,S0,v3,rk16129,removed_kept,False,0.174,abstain
+8b,S0-G,v2,nr12736,no_reason/test,False,0.917,let through
+8b,S0-G,v2,nr10453,no_reason/test,False,0.193,abstain
+8b,S0-G,v2,nr9172,no_reason/test,False,0.223,abstain
+8b,S0-G,v2,nr13883,no_reason/test,False,0.769,let through
+8b,S0-G,v2,rm16129,removed,False,0.167,abstain
+8b,S0-G,v2,rm12342,removed,False,0.053,abstain
+8b,S0-G,v2,nr11371,no_reason/dev,False,0.725,let through
+8b,S0-G,v2,nr10075,no_reason/dev,False,0.434,abstain
+8b,S0-G,v2,nr16062,no_reason/dev,False,0.751,let through
+8b,S0-G,v2,nr10042,no_reason/dev,False,0.05,abstain
+8b,S0-G,v2,nr10782,no_reason/dev,False,0.639,let through
+8b,S0-G,v2,rk16129,removed_kept,False,0.03,abstain
+8b,S0-G,v3,nr12736,no_reason/test,False,0.108,abstain
+8b,S0-G,v3,nr10453,no_reason/test,False,0.444,abstain
+8b,S0-G,v3,nr9172,no_reason/test,False,0.023,abstain
+8b,S0-G,v3,nr13883,no_reason/test,False,0.667,let through
+8b,S0-G,v3,rm16129,removed,False,0.514,let through
+8b,S0-G,v3,nr11371,no_reason/dev,False,0.604,let through
+8b,S0-G,v3,nr10075,no_reason/dev,False,0.673,let through
+8b,S0-G,v3,nr16062,no_reason/dev,False,0.556,let through
+8b,S0-G,v3,nr10042,no_reason/dev,False,0.063,abstain
+8b,S0-G,v3,nr10782,no_reason/dev,False,0.046,abstain
+8b,S0-G,v3,rk16129,removed_kept,False,0.062,abstain
+8b,S-0.25,v2,nr12736,no_reason/test,False,0.724,let through
+8b,S-0.25,v2,nr10453,no_reason/test,False,0.193,abstain
+8b,S-0.25,v2,nr9172,no_reason/test,False,0.198,abstain
+8b,S-0.25,v2,nr13883,no_reason/test,False,0.873,let through
+8b,S-0.25,v2,rm16129,removed,False,0.514,let through
+8b,S-0.25,v2,rm9789,removed,False,0.033,abstain
+8b,S-0.25,v2,rm12342,removed,False,0.03,abstain
+8b,S-0.25,v2,nr11371,no_reason/dev,False,0.725,let through
+8b,S-0.25,v2,nr10075,no_reason/dev,False,0.761,let through
+8b,S-0.25,v2,nr16062,no_reason/dev,False,0.751,let through
+8b,S-0.25,v2,nr10042,no_reason/dev,False,0.063,abstain
+8b,S-0.25,v2,nr10782,no_reason/dev,False,0.373,abstain
+8b,S-0.25,v2,rk16129,removed_kept,False,0.058,abstain
+8b,S-0.25,v2,rk9789,removed_kept,False,0.019,abstain
+8b,S-0.25,v3,nr12736,no_reason/test,False,0.213,abstain
+8b,S-0.25,v3,nr10453,no_reason/test,False,0.444,abstain
+8b,S-0.25,v3,nr9172,no_reason/test,False,0.349,abstain
+8b,S-0.25,v3,nr13883,no_reason/test,False,0.182,abstain
+8b,S-0.25,v3,rm16129,removed,False,0.485,abstain
+8b,S-0.25,v3,rm12342,removed,False,0.055,abstain
+8b,S-0.25,v3,nr11371,no_reason/dev,False,0.136,abstain
+8b,S-0.25,v3,nr10075,no_reason/dev,False,0.56,let through
+8b,S-0.25,v3,nr16062,no_reason/dev,False,0.363,abstain
+8b,S-0.25,v3,nr10042,no_reason/dev,False,0.151,abstain
+8b,S-0.25,v3,nr10782,no_reason/dev,False,0.03,abstain
+8b,S-0.25,v3,rk16129,removed_kept,False,0.092,abstain
+8b,S-0.25,v3,rk9789,removed_kept,False,0.043,abstain

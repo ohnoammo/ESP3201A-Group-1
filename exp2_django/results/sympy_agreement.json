@@ -1,0 +1,36 @@
+{
+ "n": 24,
+ "agree": 20,
+ "kappa_3class": 0.515,
+ "kappa_strict": 0.495,
+ "disagreements": [
+  {
+   "blind_id": "S002",
+   "arm": "S0-G",
+   "id": "q15727",
+   "alyssa": "correct",
+   "james": "partial"
+  },
+  {
+   "blind_id": "S004",
+   "arm": "S0-G",
+   "id": "q21508",
+   "alyssa": "partial",
+   "james": "correct"
+  },
+  {
+   "blind_id": "S016",
+   "arm": "S0-G",
+   "id": "q15404",
+   "alyssa": "partial",
+   "james": "correct"
+  },
+  {
+   "blind_id": "S021",
+   "arm": "S0-G",
+   "id": "q22551",
+   "alyssa": "correct",
+   "james": "partial"
+  }
+ ]
+}
