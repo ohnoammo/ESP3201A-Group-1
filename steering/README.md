@@ -32,4 +32,6 @@ python steering/verify/verify_codex_results.py --out "$PWD/steering/results_fina
 - **Post hoc, paraphrased refusals counted:** file `results_final/posthoc_paraphrased_refusals.md`.
 - **Trade-off figure:** `results_final/steering_tradeoff.png` / `.svg` and `sweep.png`.
 
+**Quantisation check (post hoc, report §6.3).** `quantisation_label_check.py` compares Liu's labels on the 4-bit Ollama F0 answers with those on the bf16 unsteered HF answers, question by question, for the 52 answerable questions (standard library only). Run it from the repo root with `python steering/quantisation_label_check.py`, which writes `results_final/quantisation_label_check.txt`.
+
 **Token note.** `prompts.jsonl` (in `out/` and `results_final/`) contains verbatim excerpts of public GitLab Runner MRs, including example and test-fixture runner tokens from those MRs (e.g. `helpers/shorten_token_test.go` in !5270/!5580/!7018, and the GDK example in !3910). They are not project credentials.

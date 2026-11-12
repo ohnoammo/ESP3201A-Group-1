@@ -1,0 +1,7 @@
+family,scoring,outcome,n,F0,H0,b_only_H0,c_only_F0,p,min_attainable_p,ids_only_H0,ids_only_F0,holm_p
+"hybrid-gitlab 2 (primary, Holm over 2)",answered_lenient,unanswerable_answered,18,5,5,0,0,1.0,1.0,,,1
+"hybrid-gitlab 2 (primary, Holm over 2)",answered_lenient,answerable_answered,52,43,46,4,1,0.375,0.0625,q2606 q3408 q1583 q6848,q5745,0.75
+secondary: strict (own Holm over 2),answered_strict,unanswerable_answered,18,5,5,0,0,1.0,1.0,,,1
+secondary: strict (own Holm over 2),answered_strict,answerable_answered,52,43,46,4,1,0.375,0.0625,q2606 q3408 q1583 q6848,q5745,0.75
+"sensitivity: excl. nr3177, nr4460 (unadjusted)",answered_lenient,unanswerable_answered,16,3,3,0,0,1.0,1.0,,,
+descriptive: overlap-cited (no test claimed),overlap_cited,overlap_cited,52,40,42,6,4,0.75390625,0.001953125,q2606 q3408 q1383 q1189 q1583 q6848,q7545 q589 q5745 q4218,

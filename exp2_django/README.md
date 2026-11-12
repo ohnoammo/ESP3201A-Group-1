@@ -14,6 +14,7 @@
 >   - Tests: `results/stats_test_arms*.csv`, `stats_correctness.csv`, `stats_hybrid.csv`.
 >   - Gate: `results/gate_eval*.csv`, `gate_auroc*.csv`.
 >   - SymPy transfer and H0 on SymPy: `results/sympy/`, `results/sympy_transfer.csv`, `results/sympy_h0/`.
+> - **13 Nov hybrid follow-up (Run 1, Django part, post hoc):** `h0_retrieval_tests.py` writes `results/retrieval_why_django.csv`, the per-question Hit@5, MRR@5 and span for dense (F0) vs hybrid (H0) on the 50 answerable test questions. No new retrieval: it reads the saved candidates. The tests (Holm over 6, with GitLab) are in `../exp2_gitlab/results/retrieval_why_tests.csv`.
 > - **Keys.** `blind/keys/`, `judging/keys/`, `results/sympy/sheet_key.json` and `results/sympy_h0/keys/` are included, because all their labels are final.
 
 ---

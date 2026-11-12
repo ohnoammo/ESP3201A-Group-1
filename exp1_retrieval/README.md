@@ -14,6 +14,7 @@
 > - **Post hoc test** (added after the test results were seen; labelled post hoc in the report). `posthoc_links_test.py` compares budget line recall with relation links: structural vs size-matched fixed, and structural vs fixed 512/77. It runs on dense retrieval over both pools, using each condition's locked alpha and a paired permutation test (10,000 draws, seed 0, unadjusted). It reads only the per-query test CSVs and uses the standard library only. Run it from this folder with `python posthoc_links_test.py > results/posthoc_links_test.txt`.
 >   - Pool A: 0.924 vs 0.923 vs 0.763. Structural vs size-matched p 0.0001; structural vs fixed 512 p 0.94.
 >   - Pool H: 0.858 vs 0.890 vs 0.698. Structural vs size-matched p 0.0001; structural vs fixed 512 p 0.078.
+> - **Secondary test, 13 Nov:** `hybrid_short_query_test.py` compares dense vs hybrid on full and first-line bug-report queries (alpha 0, test set, both pools; permutation and McNemar, uncorrected; standard library only). It is report §4.6 / Table 6, bug-report rows. Run it from the repo root with `python exp1_retrieval/hybrid_short_query_test.py`, which writes `results/hybrid_short_query_test.txt`.
 
 ---
 

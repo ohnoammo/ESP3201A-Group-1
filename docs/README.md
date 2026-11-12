@@ -20,6 +20,12 @@ These are copies of the project's handoff and handover notes. Each part folder a
 | `fig_app_answer.png`, `fig_app_notfound.png`, `fig_app_feedback.png`, `fig_app_supportcheck.png` | App figures 1–4 | Screenshots of `../app` (12 Nov). The captions are in `report_app_section.md`. |
 | `report_app_section.md` | The app section text and figure captions, as drafted for the report | – |
 
+## Report and run specification
+| File | What it is |
+|---|---|
+| `ESP3201A_Final_Report_v3.docx` | The final report (v3, 12 Nov). A PDF export, if one is made, goes alongside it. |
+| `PROMPT_hybrid_runs_13Nov.md` | The run specification for the 13 Nov hybrid follow-up (Runs 1 and 2). Its rule file is `../exp2_gitlab/tuning_rule_hybrid_13nov.md`. |
+
 The other report figures are in the result folders: `../exp2_gitlab/results/baselines_tradeoff.png`, and `../steering/results_final/steering_tradeoff.png` / `.svg` and `sweep.png`.
 
 ## Pre-registered rule files (written before the runs they govern)

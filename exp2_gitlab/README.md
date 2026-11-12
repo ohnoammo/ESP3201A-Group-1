@@ -30,6 +30,7 @@ python score_baselines_correctness.py                                           
 | Gate on GitLab, and retrieval carry-through | `results/baselines_gate*.csv`, `results/baselines_carry*.csv` |
 | Full write-up and decision log | `results/exp2_baselines_report.md`, `results/RUN_LOG.md`, `results/OVERNIGHT_SUMMARY.md` |
 | Scaled Exp 2 (provisional labels, 6 Nov) | `exp2_gitlab_A2000/stats.csv`, `report.csv`; `HANDOVER.md` |
+| Hybrid follow-up, 13 Nov (Runs 1 and 2; rule `tuning_rule_hybrid_13nov.md`, exploratory): retrieval on "why" questions, and H0 vs F0 generation | `gitlab_h0.py`, `exp2_gitlab_A2000/{gen_H0,candidates_fixed_s512_o77_k100_hybrid}.jsonl`, `results/retrieval_why_*.csv`, `results/h0_gitlab_*`, `results/HYBRID_13NOV_SUMMARY.md`. The H0 blind sheet is blank: H0 correctness was not labelled, and its key is not in the repo. `gitlab_h0.py` keeps its BM25 index at `C:/Users/kwekt/ESP3201A_local/gitlab_h0_bm25`, a regenerable cache (`python gitlab_h0.py retrieve` rebuilds it); change `BM25_DIR` for your machine. |
 
 **Keys.**
 - Included: `results/keys/` (baselines, labels final) and `exp2_gitlab/keys/` (pilot).

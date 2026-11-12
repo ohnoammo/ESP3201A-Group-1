@@ -2,7 +2,7 @@
 
 *Local, offline RAG assistant that answers "why was this code changed?" from GitHub PRs and GitLab MRs, with citations or an honest "not found". Evaluated on Django, SymPy and GitLab Runner.*
 
-NUS ESP3201A, Group 1 · Report: <!-- report link -->
+NUS ESP3201A, Group 1 · Report: [docs/ESP3201A_Final_Report_v3.docx](docs/ESP3201A_Final_Report_v3.docx)
 
 ## Project description
 Over this six-week project, we built a fully local, offline retrieval-augmented generation (RAG) assistant that answers "why was this code changed?" from a repository's pull requests (GitHub) or merge requests (GitLab). Each PR or MR is treated as one document: its title, description, commit messages, diff, and review and conversation comments.
@@ -76,6 +76,11 @@ Quick checks: `python exp1_retrieval/sparse_retrieval.py --selftest`, then `pyth
 | Scaled Exp 1 on GitLab Runner (alpha 1 vs 0, gold in budget) | `exp2_gitlab/results/exp1_gitlab_A2000_stats.txt` |
 | Steering: a trade-off of fewer hallucinations for more refusals; unsteered model best on correctness (39 → 12 at 60:40) | `steering/results_final/stats_tests.csv`, `codex_report.md`, `STEERING_RESULTS.md` |
 | Steering results independently verified | `steering/verify/README.md` |
+| Report §4.6 / Table 6, bug-report rows: dense vs hybrid on full and first-line bug reports (status: secondary; planned runs, tests computed later) | `exp1_retrieval/hybrid_short_query_test.py` → `exp1_retrieval/results/hybrid_short_query_test.txt` |
+| Report §4.6 / Table 6, "why" rows, Django: dense vs hybrid retrieval on the 50 answerable "why" questions (status: post hoc) | `exp2_django/results/retrieval_why_django.csv` (per question, `exp2_django/h0_retrieval_tests.py`); tests in `exp2_gitlab/results/retrieval_why_tests.csv` |
+| Report §4.6 / Table 6, "why" rows, GitLab Runner: dense vs hybrid retrieval on the 52 answerable "why" questions (status: exploratory; rule committed before the run) | `exp2_gitlab/results/retrieval_why_gitlab.csv`, `exp2_gitlab/results/retrieval_why_tests.csv` |
+| Report §5.9 / Table 13: hybrid (H0) vs dense (F0) generation on GitLab Runner, 5 vs 5 of 18 unanswerables answered (status: exploratory; rule committed before the run) | `exp2_gitlab/results/h0_gitlab_counts.csv`, `h0_gitlab_tests.csv`, `h0_gitlab_gate.csv`; summary `exp2_gitlab/results/HYBRID_13NOV_SUMMARY.md` |
+| Report §6.3, quantisation: 4-bit Ollama F0 vs bf16 unsteered HF, strictly correct 30 vs 39 of 52 (status: post hoc) | `steering/quantisation_label_check.py` → `steering/results_final/quantisation_label_check.txt` |
 | SymPy transfer, Exp 1 | `transfer_sympy/results/stats_sympy_full.txt` |
 | SymPy transfer, Exp 2 (F0 / S0-G counts), and H0 on SymPy | `transfer_sympy/exp2_sympy/summary.csv`, `exp2_django/results/sympy_h0/summary.csv` |
 

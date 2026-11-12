@@ -170,3 +170,49 @@ The extra Exp 2, SymPy and pilot keys were included on James's decision at the p
   - BM25 selftest: OK.
   - `app/server.py` import: OK.
   - All 119 `.py` files parse.
+
+## 8. Update, 13 Nov
+**Added: the 13 Nov hybrid follow-up (Runs 1 and 2).** All files are new, copied unchanged from their source commits; one path fix is listed below.
+
+| Repo path | Source |
+|---|---|
+| `exp2_gitlab/tuning_rule_hybrid_13nov.md` | `gitlab_runner_copy`, branch `exp2-baselines`: `12a0314` (rule written before any hybrid run), `963fac3` (records its own hash) |
+| `exp2_gitlab/gitlab_h0.py` | `6d96e5c` |
+| `exp2_gitlab/exp2_gitlab_A2000/candidates_fixed_s512_o77_k100_hybrid.jsonl`, `results/retrieval_why_gitlab.csv` | `4f47f16` |
+| `exp2_gitlab/results/retrieval_why_tests.csv` | `e13469c` |
+| `exp2_gitlab/exp2_gitlab_A2000/gen_H0.jsonl`, `results/logs/h0_gitlab_generate.log` | `daf7988` |
+| `exp2_gitlab/results/h0_gitlab_{blind_sheet_blank,counts,gate,tests}.csv`, `h0_gitlab_gate_rows.jsonl` | `170cac3` |
+| `exp2_gitlab/results/HYBRID_13NOV_SUMMARY.md` | `13d8c2f` |
+| `exp2_django/h0_retrieval_tests.py` | `ESP3201A_Exp2` `c507229` |
+| `exp2_django/results/retrieval_why_django.csv` | `ESP3201A_Exp2` `fbfe620` |
+
+Every file was checked to equal its content at `13d8c2f` (or `fbfe620`) before copying. The working-tree change that the source repos already had (`baselines_unanswerable_full.xlsx`) is not touched.
+
+**H0 key and blind sheet.**
+- **Key:** `results/keys/h0_gitlab_blind_key.json` was **left out** and **not opened**: H0 correctness was not labelled.
+- **Blind sheet:** `results/h0_gitlab_blind_sheet_blank.csv` was copied. It has no arm information:
+  - columns: `blind_id`, `question`, `gold_answer`, `gold_quotes`, `model_answer`, `label`, `reason`;
+  - 35 rows, all from arm H0 (H0 answers that differ from F0's), ordered by hash, with ids `HG001`–`HG035`;
+  - `label` and `reason` are blank.
+
+**Path fix (in the copy).**
+- `exp2_gitlab/gitlab_h0.py` line 30: `DJANGO_CSV` changed from `../ESP3201A_Exp2/results/retrieval_why_django.csv` to `../exp2_django/results/retrieval_why_django.csv`. The Exp 2 folder is named `exp2_django` here (same convention as section 3).
+- `BM25_DIR = C:/Users/kwekt/ESP3201A_local/gitlab_h0_bm25` was left as it is. The README documents it as a regenerable cache.
+
+**Added from `FOR_JAMES_update_13Nov/`.**
+- `exp1_retrieval/hybrid_short_query_test.py`, and its output `exp1_retrieval/results/hybrid_short_query_test.txt`;
+- `steering/quantisation_label_check.py`, and its output `steering/results_final/quantisation_label_check.txt`.
+
+Both scripts were run from the repo root. **Both outputs are byte-identical to the reference copies:**
+- `hybrid_short_query_test.txt`: 1,634 bytes, sha256 `ffdfad075e93050c…`;
+- `quantisation_label_check.txt`: 625 bytes, sha256 `4acd0eb5ea011f59…`.
+
+**Added to `docs/`.**
+- `ESP3201A_Final_Report_v3.docx` (the report; the top README links to it);
+- `PROMPT_hybrid_runs_13Nov.md` (the run specification).
+
+**READMEs updated.**
+- **Top README:** the report link, plus five results-index rows (Table 6 bug-report, Django "why" and GitLab "why" rows; Table 13; quantisation). Each row is labelled with the status from the report's Appendix C (Table 17).
+- **Folder READMEs:** one entry each in `exp1_retrieval`, `exp2_django`, `exp2_gitlab` and `steering`, plus a "Report and run specification" table in `docs/README.md`.
+
+No existing result or label file was changed.

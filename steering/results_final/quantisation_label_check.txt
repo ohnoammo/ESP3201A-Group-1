@@ -1,0 +1,13 @@
+4-bit Ollama F0 vs bf16 unsteered HF, 52 GitLab Runner answerable questions (Liu's labels; post hoc)
+
+4-bit label -> bf16 label: n  [ids, answer-text similarity]
+  correct  -> correct : 28
+  correct  -> partial :  2  q2737 (0.18), q535 (0.43)
+  partial  -> correct :  6  q106 (0.68), q1383 (0.12), q1647 (0.64), q2003 (0.70), q4206 (0.62), q5745 (0.56)
+  partial  -> partial :  6
+  refused  -> correct :  5  q2227 (0.04), q3239 (0.36), q3408 (0.18), q3881 (0.02), q6056 (0.01)
+  refused  -> refused :  4
+  wrong    -> wrong   :  1
+
+Strictly correct: 4-bit 30/52, bf16 39/52 (difference 9)
+Refused by bf16 but not by 4-bit: 0

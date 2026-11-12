@@ -1,0 +1,5 @@
+arm,scoring,unanswerable_answered_before,unanswerable_answered_after,answerable_answered_before,answerable_answered_after,answered_no_valid_cited_premise,unanswerable_kept_ids,note
+F0,lenient,5,2,43,42,0,nr1781 nr4460,reference: 12 Nov baselines gate rows
+F0,strict,5,2,43,42,0,nr1781 nr4460,reference: 12 Nov baselines gate rows
+H0,lenient,5,3,46,41,0,rm3846 nr3177 nr4460,counts only
+H0,strict,5,3,46,41,0,rm3846 nr3177 nr4460,counts only
